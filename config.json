@@ -1,0 +1,9 @@
+{
+  "secret": "$2a$10$pNFzBtN5WL/oXy/uu.NaSe",
+  "port": 23452,
+  "db": {
+    "host": "mongodb://localhost:27017",
+    "nameDB": "cmsEcomerce",
+    "options": { "useNewUrlParser": true, "useUnifiedTopology": true }
+  }
+}

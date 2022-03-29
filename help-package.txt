@@ -14,3 +14,6 @@ vue-lazy-hydration Уменьшаем Max Potential First Input Delay (очен�
 vue-lazyload Ленивая подгрузка картинок.
 vue-svg-loader SVG загрузчик.
 vuelidate Удобная валидация форм.
+
+
+! Для авторизации: https://dev.to/mohammadali0120/nuxt-js-and-express-js-authentication-with-auth-module-and-jwt-26gp

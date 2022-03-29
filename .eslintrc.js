@@ -11,5 +11,9 @@ module.exports = {
   extends: ['@nuxtjs', 'plugin:nuxt/recommended', 'prettier'],
   plugins: [],
   // add your custom rules here
-  rules: {},
+  rules: {
+    'no-console': 'off',
+    'vue/no-lone-template': ['error', { ignoreAccessible: false }],
+    'vue/multi-word-component-names': 0
+  },
 }

@@ -66,3 +66,10 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+
+https://dev.to/mohammadali0120/nuxt-js-and-express-js-authentication-with-auth-module-and-jwt-26gp
+
+
+Авторизация https://www.digitalocean.com/community/tutorials/implementing-authentication-in-nuxtjs-app
+            https://github.com/mohammadali0120/nuxt-express-mongodb-authentication
+            https://github.com/koajs/jwt
