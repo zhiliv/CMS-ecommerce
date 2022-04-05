@@ -20,6 +20,7 @@ const userModel = require('./models/userModel') // модуль для рабо�
  * Проверка количества записей в коллекции "User"
  * Если пользователей нет, добавляем пользователя admin / 1
  */
+// eslint-disable-next-line node/handle-callback-err
 userModel.count({}).exec(async (err, count) => {
   if (!count) {
     const hashedPassword = await bcrypt.hashSync('1', 12)

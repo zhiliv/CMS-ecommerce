@@ -1,20 +1,20 @@
-const mongoose = require('mongoose'),
-  Schema = mongoose.Schema
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const UserSchema = new Schema(
   {
     username: {
-      //имя пользователя
+      // имя пользователя
       type: String,
       required: true,
     },
     email: {
-      //адрес электронной почты
+      // адрес электронной почты
       type: String,
       required: true,
     },
     password: {
-      //пароль
+      // пароль
       type: String,
       minlength: 6,
       required: true,

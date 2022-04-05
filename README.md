@@ -73,3 +73,5 @@ https://dev.to/mohammadali0120/nuxt-js-and-express-js-authentication-with-auth-m
 Авторизация https://www.digitalocean.com/community/tutorials/implementing-authentication-in-nuxtjs-app
             https://github.com/mohammadali0120/nuxt-express-mongodb-authentication
             https://github.com/koajs/jwt
+
+Тесная тема https://bootswatch.com/darkly/

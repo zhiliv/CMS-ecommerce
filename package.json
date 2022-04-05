@@ -30,6 +30,7 @@
     "core-js": "^3.19.3",
     "cross-env": "^7.0.3",
     "cssnano": "^5.0.17",
+    "es5-ext": "0.10.50",
     "eslint-plugin-unicorn": "^41.0.1",
     "generate-password": "^1.7.0",
     "image-webpack-loader": "^8.1.0",

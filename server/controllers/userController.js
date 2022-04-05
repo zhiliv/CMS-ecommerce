@@ -9,39 +9,32 @@ let loadedUser // переменная для хранения найденны�
  * Создание пользователя
  * @module createUser
  */
-exports.createUser = async (req, next) => {
-  const { username, email, password } = req.body // получение параметров из запроса
+exports.createUser = async (ctx, next) => {
+  const { username, email, password } = ctx.request.body // получение параметров из запроса
   try {
-    const fndUser = await userModel.findOne({ email }) // поиск пользователя
-    if (fndUser) {
-      //
-      const error = new Error(
-        'Электронная почта уже существует, пожалуйста, выберите другое адрес электронной почты!'
-      ) // формирование ошибки
-      res.status(409).json({
-        error:
-          'Электронная почта уже существует, пожалуйста, выберите другое адрес электронной почты!',
-      })
-      error.statusCode = 409
-      throw error
-    }
+    const fndUser = await userModel.findOne({ username }).catch((error) => {
+      ctx.status = 409
+      ctx.throw(`Ошибка поиска пользователя: ${error}`)
+    }) // поиск пользователя
 
     const hashedPassword = await bcrypt.hash(password, 12) // шифровка пароля
-    const user = new userModel({
-      username,
-      email,
-      password: hashedPassword,
-    }) // формирование объекта пользователя
-    const result = await user.save() // сохранение данных пользователя
-    res.status(200).json({
-      message: 'Пользователь создал', // установка сообщения
-      user: { id: result._id, email: result.email },
-    })
-  } catch (err) {
-    if (!err.statusCode) {
-      err.statusCode = 500
+    if (!fndUser) {
+      // eslint-disable-next-line new-cap
+      const user = new userModel({
+        username,
+        email,
+        password: hashedPassword,
+      }) // формирование объекта пользователя
+      const result = await user.save() // сохранение данных пользователя
+      ctx.status = 200
+      ctx.body = {
+        message: 'Пользователь создан успешно', // установка сообщения
+        user: { id: result._id, email: result.email },
+      }
     }
-    next(err)
+  } catch (err) {
+    ctx.status = 500
+    ctx.throw(`Произошла ошибка: ${err}`)
   }
 }
 

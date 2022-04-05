@@ -12,7 +12,9 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    '~/assets/css/main.css'
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -39,7 +41,7 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     // https://github.com/nuxt-community/auth-module
-    '@nuxtjs/auth-next',
+    '@nuxtjs/auth-next'
   ],
   auth: {
     strategies: {
@@ -49,16 +51,18 @@ export default {
           property: "token",
           global: true,
           required: true,
-          type: "Bearer"
+          type: "Bearer",
+          maxAge: 3600
         },
         user: {
           property: "user",
-          autoFetch: true
+          autoFetch: true,
+          // maxAge: 3600
         },
-//      refreshToken: {  // it sends request automatically when the access token expires, and its expire time has set on the Back-end and does not need to we set it here, because is useless
-//        property: "refresh_token",
-//        data: "refresh_token",
-//      },
+/*       refreshToken: {  // it sends request automatically when the access token expires, and its expire time has set on the Back-end and does not need to we set it here, because is useless
+        property: "refresh_token",
+        data: "refresh_token",
+      }, */
         endpoints: {
           login: { url: "/auth/login", method: "post" },
 //        refresh: { url: "/api/auth/refresh-token", method: "post" },
