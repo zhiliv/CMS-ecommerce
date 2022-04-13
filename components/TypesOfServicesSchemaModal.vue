@@ -121,6 +121,7 @@ export default {
         type: null, // тип окна success(успех), danger(ошибка)
       }, // состояние для уведомления об ошибке
       disSave: false, // состояние активности кнопки "Сохранить"
+      cloneSelect: {},
     }
   },
 
@@ -143,8 +144,14 @@ export default {
 
     checkDisSave: {
       handler(value) {
-        const item = this.items[0]
+        const index = this.items.findIndex(
+          (item) =>
+            item.name === value.data.name &&
+            item.description === value.data.description
+        )
+        const item = index !== -1 ? this.items[index] : {}
         const { data } = value
+        if (this.data.description === '') this.data.description = null
         this.disSave =
           data.name === item.name && data.description === item.description
       },
@@ -165,6 +172,7 @@ export default {
       await this.getList() // получение списка всех документов
       this.items[0].select = true
       this.data = Object.assign({}, this.items[0]) // установка объекта редактирования
+      this.cloneSelect = Object.assign({}, this.items[0]) // установка объекта редактирования
     })
   },
 
@@ -208,8 +216,7 @@ export default {
       this.items.unshift({ name: null, description: null, new: true }) // добавление нового объекта для создания новой записи
       this.delSelect() // удаление выделенного элемента
       this.items[0].select = true // выделение строки
-      this.data = Object.assign({}, this.items[0] || {}) // установка объекта редактирования
-
+      this.data = Object.assign({}, this.items[0]) // установка объекта редактирования
     },
 
     /*
@@ -260,21 +267,22 @@ export default {
      * @param {Object} item Объект строки
      */
     async onSelect(item) {
-        this.delSelect() // удаление выделения строки
-        if (this.data.new) {
-          // если признак нового документа
-          const confirm = await this.showMsgBoxCancelNew() // вызов формы подтверждения не сохранения данных
-          if (confirm) this.items.unshift(this.cloneSelect)
-          else {
-            this.toogleIsNew()
-            this.items[0].select = true
-            this.data = Object.assign({}, item)
-          }
-        } else {
-          item.select = true
-          this.data = item
+      this.delSelect() // удаление выделения строки
+      if (this.data.new) {
+        // если признак нового документа
+        const confirm = await this.showMsgBoxCancelNew() // вызов формы подтверждения не сохранения данных
+        if (confirm) this.items.unshift(this.cloneSelect)
+        else {
+          this.toogleIsNew()
+          this.items[0].select = true
+          this.data = Object.assign({}, item)
         }
-      },
+      } else {
+        item.select = true
+        this.data = Object.assign({}, item)
+        this.closeSelect = Object.assign({}, item)
+      }
+    },
 
     /*
      * Событие при нажатии кнопки "Отмена"
