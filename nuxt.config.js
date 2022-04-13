@@ -90,5 +90,17 @@ export default {
   content: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    /*
+  * Удалить для прода
+  * Используется для отладки
+  */
+  extexd(config, ctx){
+    if (ctx.isDev) {
+      config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
+    }
+  }
+  },
+
+
 }

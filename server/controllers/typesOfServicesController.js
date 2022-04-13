@@ -27,7 +27,10 @@ exports.create = async (ctx) => {
  */
 exports.all = async (ctx) => {
   try {
-    const result = await typesServicesModel.find({}) // поиск всех записей
+    const result = await typesServicesModel.find(
+      {},
+      { name: true, description: true }
+    ) // поиск всех записей
     ctx.status = 200
     ctx.body = result
   } catch (err) {
@@ -39,12 +42,34 @@ exports.all = async (ctx) => {
 /*
  * Редактирование строки
  */
-exports.edit = async (ctx) => {
+exports.update = async (ctx) => {
   const { params } = ctx.request.body // входные параметры
-  /* try {
-    const result = await typesServicesModel()
+  try {
+    const result = await typesServicesModel.updateOne(
+      { _id: params._id },
+      params
+    )
+    ctx.status = 200
+    ctx.body = result
   } catch (err) {
     ctx.status = 500
     ctx.throw(`Произошла ошибка: ${err}`)
-  } */
+  }
+}
+
+/*
+ * Удаление строки
+ */
+exports.delete = async (ctx) => {
+  console.log('ctx.request', ctx.params)
+  const { params } = ctx.request.body // входные параметры
+  console.log('🚀 -> exports.delete -> params', params)
+  try {
+    const result = await typesServicesModel.deleteOne({ _id: ctx.params.id })
+    ctx.status = 200
+    ctx.body = result
+  } catch (err) {
+    ctx.status = 500
+    ctx.throw(`Произошла ошибка: ${err}`)
+  }
 }

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev-front": "nuxt",
-    "dev-back": "nodemon server/app.js",
+    "dev-back": "nodemon --inspect server/app.js",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",

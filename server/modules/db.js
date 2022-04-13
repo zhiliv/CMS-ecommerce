@@ -6,6 +6,7 @@ const config = JSON.parse(fs.readFileSync(`./config.json`).toString()) // пол
 mongoose.connect(`${config.db.host}/${config.db.nameDB}`, config.db.options) // установка соединения с БД
 const db = mongoose.connection
 
+
 db.on('error', (err) => {
   console.log(clc.red(`Произошла ошибка при работе с БД: ${err}`))
 })
