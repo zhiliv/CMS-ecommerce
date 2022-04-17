@@ -75,3 +75,5 @@ https://dev.to/mohammadali0120/nuxt-js-and-express-js-authentication-with-auth-m
             https://github.com/koajs/jwt
 
 Тесная тема https://bootswatch.com/darkly/
+
+БД https://code.tutsplus.com/ru/articles/an-introduction-to-mongoose-for-mongodb-and-nodejs--cms-29527

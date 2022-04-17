@@ -1,0 +1,682 @@
+[
+  {
+    "id": 1,
+    "kladr_code": "2800000000000",
+    "name": "Амурская область",
+    "status": "область",
+    "name_url": "amurskaya_oblast",
+    "sklon": "Амурской области"
+  },
+  {
+    "id": 2,
+    "kladr_code": "2900000000000",
+    "name": "Архангельская область",
+    "status": "область",
+    "name_url": "arhangelskaya_oblast",
+    "sklon": "Архангельской области"
+  },
+  {
+    "id": 3,
+    "kladr_code": "3000000000000",
+    "name": "Астраханская область",
+    "status": "область",
+    "name_url": "astrahanskaya_oblast",
+    "sklon": "Астраханской области"
+  },
+  {
+    "id": 4,
+    "kladr_code": "3100000000000",
+    "name": "Белгородская область",
+    "status": "область",
+    "name_url": "belgorodskaya_oblast",
+    "sklon": "Белгородской области"
+  },
+  {
+    "id": 5,
+    "kladr_code": "3200000000000",
+    "name": "Брянская область",
+    "status": "область",
+    "name_url": "bryanskaya_oblast",
+    "sklon": "Брянской области"
+  },
+  {
+    "id": 6,
+    "kladr_code": "3300000000000",
+    "name": "Владимирская область",
+    "status": "область",
+    "name_url": "vladimirskaya_oblast",
+    "sklon": "Владимирской области"
+  },
+  {
+    "id": 7,
+    "kladr_code": "3400000000000",
+    "name": "Волгоградская область",
+    "status": "область",
+    "name_url": "volgogradskaya_oblast",
+    "sklon": "Волгоградской области"
+  },
+  {
+    "id": 8,
+    "kladr_code": "3500000000000",
+    "name": "Вологодская область",
+    "status": "область",
+    "name_url": "vologodskaya_oblast",
+    "sklon": "Вологодской области"
+  },
+  {
+    "id": 9,
+    "kladr_code": "3600000000000",
+    "name": "Воронежская область",
+    "status": "область",
+    "name_url": "voronezhskaya_oblast",
+    "sklon": "Воронежской области"
+  },
+  {
+    "id": 10,
+    "kladr_code": "3700000000000",
+    "name": "Ивановская область",
+    "status": "область",
+    "name_url": "ivanovskaya_oblast",
+    "sklon": "Ивановской области"
+  },
+  {
+    "id": 11,
+    "kladr_code": "3800000000000",
+    "name": "Иркутская область",
+    "status": "область",
+    "name_url": "irkutskaya_oblast",
+    "sklon": "Иркутской области"
+  },
+  {
+    "id": 12,
+    "kladr_code": "3900000000000",
+    "name": "Калининградская область",
+    "status": "область",
+    "name_url": "kaliningradskaya_oblast",
+    "sklon": "Калининградской области"
+  },
+  {
+    "id": 13,
+    "kladr_code": "4000000000000",
+    "name": "Калужская область",
+    "status": "область",
+    "name_url": "kaluzhskaya_oblast",
+    "sklon": "Калужской области"
+  },
+  {
+    "id": 14,
+    "kladr_code": "4200000000000",
+    "name": "Кемеровская область",
+    "status": "область",
+    "name_url": "kemerovskaya_oblast",
+    "sklon": "Кемеровской области"
+  },
+  {
+    "id": 15,
+    "kladr_code": "4300000000000",
+    "name": "Кировская область",
+    "status": "область",
+    "name_url": "kirovskaya_oblast",
+    "sklon": "Кировской области"
+  },
+  {
+    "id": 16,
+    "kladr_code": "4400000000000",
+    "name": "Костромская область",
+    "status": "область",
+    "name_url": "kostromskaya_oblast",
+    "sklon": "Костромской области"
+  },
+  {
+    "id": 17,
+    "kladr_code": "4500000000000",
+    "name": "Курганская область",
+    "status": "область",
+    "name_url": "kurganskaya_oblast",
+    "sklon": "Курганской области"
+  },
+  {
+    "id": 18,
+    "kladr_code": "4600000000000",
+    "name": "Курская область",
+    "status": "область",
+    "name_url": "kurskaya_oblast",
+    "sklon": "Курской области"
+  },
+  {
+    "id": 19,
+    "kladr_code": "4700000000000",
+    "name": "Ленинградская область",
+    "status": "область",
+    "name_url": "leningradskaya_oblast",
+    "sklon": "Ленинградской области"
+  },
+  {
+    "id": 20,
+    "kladr_code": "4800000000000",
+    "name": "Липецкая область",
+    "status": "область",
+    "name_url": "lipeckaya_oblast",
+    "sklon": "Липецкой области"
+  },
+  {
+    "id": 21,
+    "kladr_code": "4900000000000",
+    "name": "Магаданская область",
+    "status": "область",
+    "name_url": "magadanskaya_oblast",
+    "sklon": "Магаданской области"
+  },
+  {
+    "id": 22,
+    "kladr_code": "5000000000000",
+    "name": "Московская область",
+    "status": "область",
+    "name_url": "moskovskaya_oblast",
+    "sklon": "Московской области"
+  },
+  {
+    "id": 23,
+    "kladr_code": "5100000000000",
+    "name": "Мурманская область",
+    "status": "область",
+    "name_url": "murmanskaya_oblast",
+    "sklon": "Мурманской области"
+  },
+  {
+    "id": 24,
+    "kladr_code": "5200000000000",
+    "name": "Нижегородская область",
+    "status": "область",
+    "name_url": "nizhegorodskaya_oblast",
+    "sklon": "Нижегородской области"
+  },
+  {
+    "id": 25,
+    "kladr_code": "5300000000000",
+    "name": "Новгородская область",
+    "status": "область",
+    "name_url": "novgorodskaya_oblast",
+    "sklon": "Новгородской области"
+  },
+  {
+    "id": 26,
+    "kladr_code": "5400000000000",
+    "name": "Новосибирская область",
+    "status": "область",
+    "name_url": "novosibirskaya_oblast",
+    "sklon": "Новосибирской области"
+  },
+  {
+    "id": 27,
+    "kladr_code": "5500000000000",
+    "name": "Омская область",
+    "status": "область",
+    "name_url": "omskaya_oblast",
+    "sklon": "Омской области"
+  },
+  {
+    "id": 28,
+    "kladr_code": "5600000000000",
+    "name": "Оренбургская область",
+    "status": "область",
+    "name_url": "orenburgskaya_oblast",
+    "sklon": "Оренбургской области"
+  },
+  {
+    "id": 29,
+    "kladr_code": "5700000000000",
+    "name": "Орловская область",
+    "status": "область",
+    "name_url": "orlovskaya_oblast",
+    "sklon": "Орловской области"
+  },
+  {
+    "id": 30,
+    "kladr_code": "5800000000000",
+    "name": "Пензенская область",
+    "status": "область",
+    "name_url": "penzenskaya_oblast",
+    "sklon": "Пензенской области"
+  },
+  {
+    "id": 31,
+    "kladr_code": "6000000000000",
+    "name": "Псковская область",
+    "status": "область",
+    "name_url": "pskovskaya_oblast",
+    "sklon": "Псковской области"
+  },
+  {
+    "id": 32,
+    "kladr_code": "6100000000000",
+    "name": "Ростовская область",
+    "status": "область",
+    "name_url": "rostovskaya_oblast",
+    "sklon": "Ростовской области"
+  },
+  {
+    "id": 33,
+    "kladr_code": "6200000000000",
+    "name": "Рязанская область",
+    "status": "область",
+    "name_url": "ryazanskaya_oblast",
+    "sklon": "Рязанской области"
+  },
+  {
+    "id": 34,
+    "kladr_code": "6300000000000",
+    "name": "Самарская область",
+    "status": "область",
+    "name_url": "samarskaya_oblast",
+    "sklon": "Самарской области"
+  },
+  {
+    "id": 35,
+    "kladr_code": "6400000000000",
+    "name": "Саратовская область",
+    "status": "область",
+    "name_url": "saratovskaya_oblast",
+    "sklon": "Саратовской области"
+  },
+  {
+    "id": 36,
+    "kladr_code": "6500000000000",
+    "name": "Сахалинская область",
+    "status": "область",
+    "name_url": "sahalinskaya_oblast",
+    "sklon": "Сахалинской области"
+  },
+  {
+    "id": 37,
+    "kladr_code": "6600000000000",
+    "name": "Свердловская область",
+    "status": "область",
+    "name_url": "sverdlovskaya_oblast",
+    "sklon": "Свердловской области"
+  },
+  {
+    "id": 38,
+    "kladr_code": "6700000000000",
+    "name": "Смоленская область",
+    "status": "область",
+    "name_url": "smolenskaya_oblast",
+    "sklon": "Смоленской области"
+  },
+  {
+    "id": 39,
+    "kladr_code": "6800000000000",
+    "name": "Тамбовская область",
+    "status": "область",
+    "name_url": "tambovskaya_oblast",
+    "sklon": "Тамбовской области"
+  },
+  {
+    "id": 40,
+    "kladr_code": "6900000000000",
+    "name": "Тверская область",
+    "status": "область",
+    "name_url": "tverskaya_oblast",
+    "sklon": "Тверской области"
+  },
+  {
+    "id": 41,
+    "kladr_code": "7000000000000",
+    "name": "Томская область",
+    "status": "область",
+    "name_url": "tomskaya_oblast",
+    "sklon": "Томской области"
+  },
+  {
+    "id": 42,
+    "kladr_code": "7100000000000",
+    "name": "Тульская область",
+    "status": "область",
+    "name_url": "tulskaya_oblast",
+    "sklon": "Тульской области"
+  },
+  {
+    "id": 43,
+    "kladr_code": "7200000000000",
+    "name": "Тюменская область",
+    "status": "область",
+    "name_url": "tyumenskaya_oblast",
+    "sklon": "Тюменской области"
+  },
+  {
+    "id": 44,
+    "kladr_code": "7300000000000",
+    "name": "Ульяновская область",
+    "status": "область",
+    "name_url": "ulyanovskaya_oblast",
+    "sklon": "Ульяновской области"
+  },
+  {
+    "id": 45,
+    "kladr_code": "7400000000000",
+    "name": "Челябинская область",
+    "status": "область",
+    "name_url": "chelyabinskaya_oblast",
+    "sklon": "Челябинской области"
+  },
+  {
+    "id": 46,
+    "kladr_code": "7600000000000",
+    "name": "Ярославская область",
+    "status": "область",
+    "name_url": "yaroslavskaya_oblast",
+    "sklon": "Ярославской области"
+  },
+  {
+    "id": 47,
+    "kladr_code": "100000000000",
+    "name": "Республика Адыгея",
+    "status": "республика",
+    "name_url": "respublika_adygeya",
+    "sklon": "Республике Адыгея"
+  },
+  {
+    "id": 48,
+    "kladr_code": "200000000000",
+    "name": "Республика Башкортостан",
+    "status": "республика",
+    "name_url": "respublika_bashkortostan",
+    "sklon": "Республике Башкортостан"
+  },
+  {
+    "id": 49,
+    "kladr_code": "300000000000",
+    "name": "Республика Бурятия",
+    "status": "республика",
+    "name_url": "respublika_buryatiya",
+    "sklon": "Республике Бурятия"
+  },
+  {
+    "id": 50,
+    "kladr_code": "500000000000",
+    "name": "Республика Дагестан",
+    "status": "республика",
+    "name_url": "respublika_dagestan",
+    "sklon": "Республике Дагестан"
+  },
+  {
+    "id": 51,
+    "kladr_code": "600000000000",
+    "name": "Республика Ингушетия",
+    "status": "республика",
+    "name_url": "respublika_ingushetiya",
+    "sklon": "Республике Ингушетия"
+  },
+  {
+    "id": 52,
+    "kladr_code": "700000000000",
+    "name": "Республика Кабардино-Балкария",
+    "status": "республика",
+    "name_url": "respublika_kabardino-balkariya",
+    "sklon": "Республике Кабардино-Балкария"
+  },
+  {
+    "id": 53,
+    "kladr_code": "800000000000",
+    "name": "Республика Калмыкия",
+    "status": "республика",
+    "name_url": "respublika_kalmykiya",
+    "sklon": "Республике Калмыкия"
+  },
+  {
+    "id": 54,
+    "kladr_code": "900000000000",
+    "name": "Республика Карачаево-Черкессия",
+    "status": "республика",
+    "name_url": "respublika_karachaevo-cherkessiya",
+    "sklon": "Республике Карачаево-Черкессия"
+  },
+  {
+    "id": 55,
+    "kladr_code": "1000000000000",
+    "name": "Республика Карелия",
+    "status": "республика",
+    "name_url": "respublika_kareliya",
+    "sklon": "Республике Карелия"
+  },
+  {
+    "id": 56,
+    "kladr_code": "1200000000000",
+    "name": "Республика Марий Эл",
+    "status": "республика",
+    "name_url": "respublika_mariy_el",
+    "sklon": "Республике Марий Эл"
+  },
+  {
+    "id": 57,
+    "kladr_code": "1300000000000",
+    "name": "Республика Мордовия",
+    "status": "республика",
+    "name_url": "respublika_mordoviya",
+    "sklon": "Республике Мордовия"
+  },
+  {
+    "id": 58,
+    "kladr_code": "400000000000",
+    "name": "Республика Алтай",
+    "status": "республика",
+    "name_url": "respublika_altay",
+    "sklon": "Республике Алтай"
+  },
+  {
+    "id": 59,
+    "kladr_code": "1100000000000",
+    "name": "Республика Коми",
+    "status": "республика",
+    "name_url": "respublika_komi",
+    "sklon": "Республике Коми"
+  },
+  {
+    "id": 60,
+    "kladr_code": "1400000000000",
+    "name": "Республика Саха (Якутия)",
+    "status": "республика",
+    "name_url": "respublika_saha_yakutiya",
+    "sklon": "Республике Саха (Якутия)"
+  },
+  {
+    "id": 61,
+    "kladr_code": "1500000000000",
+    "name": "Республика Северная Осетия (Алания)",
+    "status": "республика",
+    "name_url": "respublika_severnaya_osetiya_alaniya",
+    "sklon": "Республике Северная Осетия (Алания)"
+  },
+  {
+    "id": 62,
+    "kladr_code": "1600000000000",
+    "name": "Республика Татарстан",
+    "status": "республика",
+    "name_url": "respublika_tatarstan",
+    "sklon": "Республике Татарстан"
+  },
+  {
+    "id": 63,
+    "kladr_code": "1700000000000",
+    "name": "Республика Тыва (Тува)",
+    "status": "республика",
+    "name_url": "respublika_tyva_tuva",
+    "sklon": "Республике Тыва (Тува)"
+  },
+  {
+    "id": 64,
+    "kladr_code": "1800000000000",
+    "name": "Республика Удмуртия",
+    "status": "республика",
+    "name_url": "respublika_udmurtiya",
+    "sklon": "Республике Удмуртия"
+  },
+  {
+    "id": 65,
+    "kladr_code": "1900000000000",
+    "name": "Республика Хакасия",
+    "status": "республика",
+    "name_url": "respublika_hakasiya",
+    "sklon": "Республике Хакасия"
+  },
+  {
+    "id": 66,
+    "kladr_code": "2000000000000",
+    "name": "Республика Чечня",
+    "status": "республика",
+    "name_url": "respublika_chechnya",
+    "sklon": "Республике Чечня"
+  },
+  {
+    "id": 67,
+    "kladr_code": "2100000000000",
+    "name": "Республика Чувашия",
+    "status": "республика",
+    "name_url": "respublika_chuvashiya",
+    "sklon": "Республике Чувашия"
+  },
+  {
+    "id": 68,
+    "kladr_code": "2200000000000",
+    "name": "Алтайский край",
+    "status": "край",
+    "name_url": "altayskiy_kray",
+    "sklon": "Алтайском крае"
+  },
+  {
+    "id": 69,
+    "kladr_code": "7500000000000",
+    "name": "Забайкальский край",
+    "status": "край",
+    "name_url": "zabaykalskiy_kray",
+    "sklon": "Забайкальском крае"
+  },
+  {
+    "id": 70,
+    "kladr_code": "4100000000000",
+    "name": "Камчатский край",
+    "status": "край",
+    "name_url": "kamchatskiy_kray",
+    "sklon": "Камчатском крае"
+  },
+  {
+    "id": 71,
+    "kladr_code": "2300000000000",
+    "name": "Краснодарский край",
+    "status": "край",
+    "name_url": "krasnodarskiy_kray",
+    "sklon": "Краснодарском крае"
+  },
+  {
+    "id": 72,
+    "kladr_code": "2400000000000",
+    "name": "Красноярский край",
+    "status": "край",
+    "name_url": "krasnoyarskiy_kray",
+    "sklon": "Красноярском крае"
+  },
+  {
+    "id": 73,
+    "kladr_code": "5900000000000",
+    "name": "Пермский край",
+    "status": "край",
+    "name_url": "permskiy_kray",
+    "sklon": "Пермском крае"
+  },
+  {
+    "id": 74,
+    "kladr_code": "2500000000000",
+    "name": "Приморский край",
+    "status": "край",
+    "name_url": "primorskiy_kray",
+    "sklon": "Приморском крае"
+  },
+  {
+    "id": 75,
+    "kladr_code": "2600000000000",
+    "name": "Ставропольский край",
+    "status": "край",
+    "name_url": "stavropolskiy_kray",
+    "sklon": "Ставропольском крае"
+  },
+  {
+    "id": 76,
+    "kladr_code": "2700000000000",
+    "name": "Хабаровский край",
+    "status": "край",
+    "name_url": "habarovskiy_kray",
+    "sklon": "Хабаровском крае"
+  },
+  {
+    "id": 77,
+    "kladr_code": "8300000000000",
+    "name": "Ненецкий автономный округ",
+    "status": "автономный округ",
+    "name_url": "neneckiy_avtonomnyy_okrug",
+    "sklon": "Ненецком автономном округе"
+  },
+  {
+    "id": 78,
+    "kladr_code": "8600000000000",
+    "name": "Ханты-Мансийский Автономный округ - Югра",
+    "status": "автономный округ",
+    "name_url": "hanty-mansiyskiy_avtonomnyy_okrug_-_yugra",
+    "sklon": "Ханты-Мансийском Автономном округе - Югра"
+  },
+  {
+    "id": 79,
+    "kladr_code": "8700000000000",
+    "name": "Чукотский автономный округ",
+    "status": "автономный округ",
+    "name_url": "chukotskiy_avtonomnyy_okrug",
+    "sklon": "Чукотском автономном округе"
+  },
+  {
+    "id": 80,
+    "kladr_code": "8900000000000",
+    "name": "Ямало-Ненецкий автономный округ",
+    "status": "автономный округ",
+    "name_url": "yamalo-neneckiy_avtonomnyy_okrug",
+    "sklon": "Ямало-Ненецком автономном округе"
+  },
+  {
+    "id": 81,
+    "kladr_code": "7800000000000",
+    "name": "Санкт-Петербург",
+    "status": "город",
+    "name_url": "sankt-peterburg",
+    "sklon": "Санкт-Петербурге"
+  },
+  {
+    "id": 82,
+    "kladr_code": "7700000000000",
+    "name": "Москва",
+    "status": "город",
+    "name_url": "moskva",
+    "sklon": "Москве"
+  },
+  {
+    "id": 83,
+    "kladr_code": "7900000000000",
+    "name": "Еврейская автономная область",
+    "status": "автономная область",
+    "name_url": "evreyskaya_avtonomnaya_oblast",
+    "sklon": "Еврейской.автономной области"
+  },
+  {
+    "id": 84,
+    "kladr_code": "9200000000000",
+    "name": "Севастополь",
+    "status": "город",
+    "name_url": "sevastopol",
+    "sklon": "Севастополе"
+  },
+  {
+    "id": 85,
+    "kladr_code": "9100000000000",
+    "name": "Республика Крым",
+    "status": "автономная республика",
+    "name_url": "respublika_krym",
+    "sklon": "Республике Крым"
+  }
+]
