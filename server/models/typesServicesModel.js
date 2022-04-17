@@ -19,4 +19,4 @@ const TypesOfServicesSchema = new Schema(
   { timestamps: true }
 )
 
-module.exports = mongoose.model('TypesServices', TypesOfServicesSchema)
+module.exports = mongoose.model('TypeService', TypesOfServicesSchema)

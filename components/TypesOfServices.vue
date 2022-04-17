@@ -170,9 +170,11 @@ export default {
     this.$root.$on('bv::modal::show', async () => {
       // событие при показе формы
       await this.getList() // получение списка всех документов
-      this.items[0].select = true
-      this.data = Object.assign({}, this.items[0]) // установка объекта редактирования
-      this.cloneSelect = Object.assign({}, this.items[0]) // установка объекта редактирования
+      if (this.items.length) {
+        this.items[0].select = true
+        this.data = Object.assign({}, this.items[0]) // установка объекта редактирования
+        this.cloneSelect = Object.assign({}, this.items[0]) // установка объекта редактирования
+      }
     })
   },
 

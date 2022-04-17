@@ -22,17 +22,17 @@
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
-    <TypesOfServicesSchemaModal :show="$store.state.showModalTypesOfServices" />
+    <TypesOfServices :show="$store.state.showModalTypesOfServices" />
   </div>
 </template>
 
 <script>
-import TypesOfServicesSchemaModal from '~/components/TypesOfServicesSchemaModal.vue'
+import TypesOfServices from '~/components/TypesOfServices.vue'
 export default {
   /*
    * Подключение компонентов
    */
-  components: { TypesOfServicesSchemaModal },
+  components: { TypesOfServices },
   data() {
     return {}
   },
