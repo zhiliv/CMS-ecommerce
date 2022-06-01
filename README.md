@@ -77,3 +77,5 @@ https://dev.to/mohammadali0120/nuxt-js-and-express-js-authentication-with-auth-m
 Тесная тема https://bootswatch.com/darkly/
 
 БД https://code.tutsplus.com/ru/articles/an-introduction-to-mongoose-for-mongodb-and-nodejs--cms-29527
+
+Оптимизация https://tsh.io/blog/how-to-keep-your-lighthouse-score-high-in-next-js-applications-a-checklist/

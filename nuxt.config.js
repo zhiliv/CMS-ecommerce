@@ -1,9 +1,17 @@
+const imageminMozjpeg = require('imagemin-mozjpeg')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
+const isDev = process.env.NODE_ENV !== 'production'
+
 export default {
+  mode: 'universal',
+  ...(!isDev && {
+    modern: 'client'
+  }),
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'CMS-ecommerce',
     meta: [
-      { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
@@ -12,15 +20,18 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
+  // '~/assets/css/main.css'
   css: [
-    '~/assets/css/main.css'
+
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~plugins/vue-js-modal.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: [
+    '~/components',
+    { path: '~/components/app',  prefix: 'app' }],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -43,6 +54,31 @@ export default {
     // https://github.com/nuxt-community/auth-module
     '@nuxtjs/auth-next'
   ],
+
+  webfontloader: {
+    events: false,
+    google: {
+      families: ['Montserrat:400,500,600:cyrillic&display=swap']
+    },
+    timeout: 5000
+  },
+
+
+  render: {
+    // http2: {
+    //     push: true,
+    //     pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
+    //     .map(f => `<${publicPath}${f.file}>; rel=preload; as=${f.asType}`)
+    //   },
+    // compressor: false,
+    resourceHints: false,
+    etag: false,
+    static: {
+      etag: false
+    }
+  },
+
+
   auth: {
     strategies: {
       local: {
@@ -91,15 +127,79 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+
+    optimizeCss: true,
+    filenames: {
+      app: ({ isDev }) => isDev ? '[name].js' : 'js/[contenthash].js',
+      chunk: ({ isDev }) => isDev ? '[name].js' : 'js/[contenthash].js',
+      css: ({ isDev }) => isDev ? '[name].css' : 'css/[contenthash].css',
+      img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
+      font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]',
+      video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
+    },
+    ...(!isDev && {
+      html: {
+        minify: {
+          collapseBooleanAttributes: true,
+          decodeEntities: true,
+          minifyCSS: true,
+          minifyJS: true,
+          processConditionalComments: true,
+          removeEmptyAttributes: true,
+          removeRedundantAttributes: true,
+          trimCustomFragments: true,
+          useShortDoctype: true
+        }
+      }
+    }),
+    splitChunks: {
+      layouts: true,
+      pages: true,
+      commons: true
+    },
+    optimization: {
+      minimize: !isDev
+    },
+    ...(!isDev && {
+      extractCSS: {
+        ignoreOrder: true
+      }
+    }),
+    transpile: ['vue-lazy-hydration', 'intersection-observer'],
+    postcss: {
+      plugins: {
+        ...(!isDev && {
+          cssnano: {
+            preset: ['advanced', {
+              autoprefixer: false,
+              cssDeclarationSorter: false,
+              zindex: false,
+              discardComments: {
+                removeAll: true
+              }
+            }]
+          }
+        })
+      },
+      ...(!isDev && {
+        preset: {
+          browsers: 'cover 99.5%',
+          autoprefixer: true
+        }
+      }),
+
+      order: 'cssnanoLast'
+    },
+
     /*
   * Удалить для прода
   * Используется для отладки
   */
-  extexd(config, ctx){
+  /* extexd(config, ctx){
     if (ctx.isDev) {
       config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
     }
-  }
+  } */
   },
 
 

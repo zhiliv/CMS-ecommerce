@@ -1,5 +1,5 @@
 export const state = {
-  showModalTypesOfServices: false, // состояние отображения модального окна "Виды услуг"
+
 }
 
 export const getters = {
@@ -28,13 +28,9 @@ export const getters = {
  * Отслеживание запроса на изменение состояния
  */
 export const mutations = {
-  /*
-   * Изменение состояния отображения модального окна "Виды услуг"
-   * @function getShowModalTypesOfServices
-   */
-  getShowModalTypesOfServices(state) {
+  /* getShowModalTypesOfServices(state) {
     this.state.showModalTypesOfServices = !this.state.showModalTypesOfServices
-  },
+  }, */
 }
 
 export const actions = {}

@@ -8,7 +8,6 @@ const typesServicesModel = require('../models/typesServicesModel') // модул
  * Создание записи
  */
 exports.create = async (ctx) => {
-  console.log('ctx.request.body', ctx.request.body)
   const { params } = ctx.request.body // получение параметров
   try {
     // eslint-disable-next-line new-cap
@@ -31,6 +30,7 @@ exports.all = async (ctx) => {
       {},
       { name: true, description: true }
     ) // поиск всех записей
+    console.log('🚀 -> exports.all= -> result', result)
     ctx.status = 200
     ctx.body = result
   } catch (err) {
@@ -61,11 +61,9 @@ exports.update = async (ctx) => {
  * Удаление строки
  */
 exports.delete = async (ctx) => {
-  console.log('ctx.request', ctx.params)
-  const { params } = ctx.request.body // входные параметры
-  console.log('🚀 -> exports.delete -> params', params)
+  const { params } = ctx // входные параметры
   try {
-    const result = await typesServicesModel.deleteOne({ _id: ctx.params.id })
+    const result = await typesServicesModel.deleteOne({ _id: params.id })
     ctx.status = 200
     ctx.body = result
   } catch (err) {

@@ -4,35 +4,43 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item class="item" :active="isRouteActive('index')" name="offers"
+          <b-nav-item
+            class="item"
+            :active="isRouteActive('index')"
+            name="offers"
             >Офферы</b-nav-item
           >
           <b-nav-item-dropdown text="Данные" right class="item">
-            <b-dropdown-item  @click="setShowModalTypesOfServices"
+            <b-dropdown-item @click="setShowModalTypesOfServices"
               >Виды услуг</b-dropdown-item
             >
+            <b-dropdown-item @click="setShowModalOrganization">
+              Организации
+            </b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto item">
           <b-nav-item-dropdown text="Профиль" right class="item">
-            <b-dropdown-item @click="signOut"
-              >Выйти</b-dropdown-item
-            >
+            <b-dropdown-item @click="signOut">Выйти</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
-    <TypesOfServices :show="$store.state.showModalTypesOfServices" />
+    <typeServices />
+    <OrganizationModal
+      :show="$store.state.showModalOrganization"
+    ></OrganizationModal>
   </div>
 </template>
 
 <script>
-import TypesOfServices from '~/components/TypesOfServices.vue'
+import typeServices from '~/components/typeServices.vue'
+import OrganizationModal from '~/components/Organization.vue'
 export default {
   /*
    * Подключение компонентов
    */
-  components: { TypesOfServices },
+  components: { typeServices, OrganizationModal },
   data() {
     return {}
   },
@@ -61,7 +69,17 @@ export default {
      * @function setShowModalTypesOfServices
      */
     setShowModalTypesOfServices() {
-      this.$store.commit('getShowModalTypesOfServices')
+      this.$modal.show('type-services',   {
+        text: 'Пример',
+      }, {minWidth: '1000px'})
+    },
+
+    /*
+     * Изменение значения состояния открытого окна "Организации" в store
+     * @function setShowModalOrganization
+     */
+    setShowModalOrganization() {
+      this.$store.commit('getShowModalOrganization')
     },
   },
 }
@@ -72,9 +90,8 @@ export default {
   font-size: 14px;
 }
 
-.active{
+.active {
   font-weight: 600;
   text-decoration: underline;
-
 }
 </style>

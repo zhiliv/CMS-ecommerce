@@ -8,6 +8,10 @@ module.exports = {
   // add your custom config here
   // https://stylelint.io/user-guide/configuration
   rules: {
-    'no-empty-source': null
+    'no-empty-source': null,
+    'declaration-empty-line-before': 'never',
+    'at-rule-empty-line-before': null,
+    'rule-empty-line-before': null,
+    'no-missing-end-of-source-newline': null,
   },
 }

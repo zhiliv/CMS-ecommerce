@@ -1,8 +1,32 @@
 <template>
-  <div>
-    <b-modal id="modal" no-close-on-backdrop title="Виды услуг" size="lg">
+  <modal
+    name="type-services"
+    transition="nice-modal-fade"
+    styles="padding: 20px"
+    :min-width="1000"
+    :min-height="200"
+    :pivot-y="0.5"
+    :adaptive="true"
+    :scrollable="true"
+    :reset="true"
+    width="1%"
+    height="auto"
+  >
+    <div>
       <b-row>
-        <b-col cols="5">
+        <b-col cols="5" class="align-content-center">
+          <b-row>
+             <b-col class="mx-auto" md="12" lg="4">
+<b-button
+              v-show="!isNew"
+              class="w-75"
+              variant="success"
+              @click="onCreate"
+              >Новый</b-button
+            >
+          </b-col>
+          </b-row>
+
           <b-list-group class="max-h-280 overflow-x-hidden overflow-y-scroll">
             <b-list-group-item
               v-for="item in items"
@@ -51,16 +75,10 @@
           </b-row>
         </b-col>
       </b-row>
-      <template #modal-footer>
+      <div>
         <b-row class="w-100">
           <b-col cols="5" class="text-start pl-0">
-            <b-button
-              v-show="!isNew"
-              class="w-50"
-              variant="primary"
-              @click="onCreate"
-              >Новый</b-button
-            >
+
             <b-button
               v-show="isNew"
               class="w-50"
@@ -91,21 +109,13 @@
             </template>
           </b-col>
         </b-row>
-      </template>
-    </b-modal>
-  </div>
+      </div>
+    </div>
+  </modal>
 </template>
 
 <script>
 export default {
-  props: {
-    show: {
-      // свойство отвечающее за отображение модального окна
-      type: Boolean,
-      default: false,
-    },
-  },
-
   data() {
     return {
       data: {
@@ -139,7 +149,7 @@ export default {
      * @param {Boolean} Входной параметр из родительской формы
      */
     show(val) {
-      if (val) this.$root.$emit('bv::show::modal', 'modal')
+      if (val) this.$root.$emit('bv::show::modal', 'typeServices')
     },
 
     checkDisSave: {
@@ -206,6 +216,7 @@ export default {
         .catch((err) =>
           this.showHideAlert('danger', `Произошла ошибка: ${err}`)
         )
+      console.log('response', response)
       this.items = response.data
     },
 
@@ -276,8 +287,10 @@ export default {
         if (confirm) this.items.unshift(this.cloneSelect)
         else {
           this.toogleIsNew()
-          this.items[0].select = true
-          this.data = Object.assign({}, item)
+          if (this.items.liength) {
+            this.items[0].select = true
+            this.data = Object.assign({}, item)
+          }
         }
       } else {
         item.select = true

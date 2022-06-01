@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-container.js Содержимое html для app-container  1`] = `
+<div
+  class="container container-sm container-md container-lg container-xl container-xxl simple"
+  id="indent"
+  style="background: white;"
+/>
+`;

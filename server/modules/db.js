@@ -11,7 +11,8 @@ db.on('error', (err) => {
   console.log(clc.red(`Произошла ошибка при работе с БД: ${err}`))
 })
 
-require('./../models/userModel') // модуль для работы с пользователями
-require('../models/typesServicesModel') // модуль для видов услуг
+require('./../models/userModel') // модуль "Пользователи"
+require('../models/typesServicesModel') // модель "Виды услуг"
+require('../models/organizationModel') // модель "Организация"
 
 module.exports = mongoose
