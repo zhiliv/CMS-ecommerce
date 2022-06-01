@@ -8,7 +8,7 @@
 import { removeSpace } from './../../../scripts/component/func'
 export default {
   /*
-   * Установка размера для адаптивной ширины
+   * Входящие свойства
    * @typedef {Object} props
    * @property {Boolean} container - устанавливает максимальную ширину max-width в каждой отзывчивой контрольной точке(установлен по умолчанию). Для того чтобы не использовать значение должно быть false
    * @property {String} breakpoint - Адаптивное значение ширины
