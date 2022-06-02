@@ -1,6 +1,6 @@
 <template>
   <app-container breakpoint="sm, md">
-    <app-row row-cols="auto, 3"></app-row>
+    <app-row row-cols="2" row-cols-md="5"></app-row>
   </app-container>
 </template>
 

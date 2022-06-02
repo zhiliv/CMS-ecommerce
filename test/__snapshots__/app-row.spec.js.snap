@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-row.js Содержимое html для app-row  1`] = `
+<div
+  class="simple1"
+  id="indent"
+  style="background: white;"
+/>
+`;

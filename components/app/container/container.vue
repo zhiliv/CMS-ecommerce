@@ -62,11 +62,9 @@ export default {
     const arrOfBreakpoint = this.breakpoint
       ? removeSpace(this.breakpoint).split(',')
       : [] // преобразование строки в масси
-    arrOfBreakpoint.forEach((el) => {
-      const prop = `container-${el}` // получение имени класса
-      const obj = { [prop]: true } // формирование объекта
-      Object.assign(this.outClass, obj) // полученного объекта класса с выходными данными классов
-    }) // список классов контейнера
+    arrOfBreakpoint.forEach((el) =>
+      Object.assign(this.outClass, { [`container-${el}`]: true })
+    ) // добавление класса в выходной параметр классов
   },
 }
 </script>
