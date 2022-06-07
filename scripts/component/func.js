@@ -15,3 +15,19 @@ export const removeSpace = (string) => (string ? string.replace(/ /g, '') : '')
 export const camelToDash = (text) => {
   return text.replace(/[A-Z]/g, (m) => '-' + m.toLowerCase())
 }
+
+/*
+ * Проверка является ли значение логическим типом
+ * @function isBoolean
+ * @param {Any} data Проверяемое значение
+ * @return {Boolean} Результат проверки
+ */
+export const isBoolean = (data) => typeof data === 'boolean'
+
+/*
+ * Проверка является ли значение строкой
+ * @function isString
+ * @param {Any} data Проверяемое значение
+ * @return {Boolean} Результат проверки
+ */
+export const isString = (data) => typeof data === 'string'
