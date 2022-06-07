@@ -437,7 +437,7 @@ export default {
         item === 'flexXlShrink' ||
         item === 'flexXxlShrink'
       )
-        this.outClass[`${camelToDash(item)}-${this[item]}`] = this[item]
+        this.outClass[`${camelToDash(item)}-${this[item]}`] = removeSpace(this[item])
   },
 }
 </script>
