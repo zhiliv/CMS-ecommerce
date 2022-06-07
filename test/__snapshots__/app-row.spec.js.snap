@@ -2,7 +2,7 @@
 
 exports[`app-row.js Содержимое html для app-row  1`] = `
 <div
-  class="simple1"
+  class="row-cols-auto row-cols-sm-auto row-cols-md-auto row-cols-lg-auto row-cols-xl-auto row-cols-xxl-auto simple"
   id="indent"
   style="background: white;"
 />

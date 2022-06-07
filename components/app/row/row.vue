@@ -143,7 +143,6 @@ export default {
       addObjClass(`row-cols-xl-${removeSpace(this.rowColsXl)}`)
     if (checkCondition('rowColsXxl'))
       addObjClass(`row-cols-xxl-${removeSpace(this.rowColsXxl)}`)
-    console.log('this.outClass', this.outClass)
   },
 }
 </script>
