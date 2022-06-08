@@ -271,16 +271,37 @@ export default {
   mounted() {
     this.outClass = {}
     for (const item in this.$props) {
-      if ((item === 'col' || item === 'colSm' || item === 'colMd' || item === 'colLg' || item === 'colXl' || item === 'colXxl') && isBoolean(this[item]))
+      if (
+        (item === 'col' ||
+          item === 'colSm' ||
+          item === 'colMd' ||
+          item === 'colLg' ||
+          item === 'colXl' ||
+          item === 'colXxl') &&
+        isBoolean(this[item])
+      )
         this.outClass[`${item}`] = this[item]
       else if (
-        (item === 'col' || item === 'colSm' || item === 'colMd' || item === 'colLg' || item === 'colXl' || item === 'colSm' || item === 'colXxl') &&
+        (item === 'col' ||
+          item === 'colSm' ||
+          item === 'colMd' ||
+          item === 'colLg' ||
+          item === 'colXl' ||
+          item === 'colSm' ||
+          item === 'colXxl') &&
         (Number.isInteger(+this[item]) || isString(this[item]))
       )
         this.outClass[`${camelToDash(item)}-${this[item]}`] = removeSpace(
           this[item]
         )
-      if (item === 'offset' || item === 'offsetSm' || item === 'offsetMd' || item === 'offsetLg' || item === 'offsetXl' || item === 'offsetXxl')
+      if (
+        item === 'offset' ||
+        item === 'offsetSm' ||
+        item === 'offsetMd' ||
+        item === 'offsetLg' ||
+        item === 'offsetXl' ||
+        item === 'offsetXxl'
+      )
         this.outClass[`${camelToDash(item)}-${this[item]}`] = removeSpace(
           this[item]
         )
@@ -526,7 +547,6 @@ export default {
     flex: 1 0 0%;
   }
 
-
   .col-md-auto {
     flex: 0 0 auto;
     width: auto;
@@ -645,7 +665,6 @@ export default {
   .col-lg {
     flex: 1 0 0%;
   }
-
 
   .col-lg-auto {
     flex: 0 0 auto;
@@ -766,8 +785,6 @@ export default {
     flex: 1 0 0%;
   }
 
-
-
   .col-xl-auto {
     flex: 0 0 auto;
     width: auto;
@@ -886,7 +903,6 @@ export default {
   .col-xxl {
     flex: 1 0 0%;
   }
-
 
   .col-xxl-auto {
     flex: 0 0 auto;
