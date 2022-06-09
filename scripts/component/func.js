@@ -5,7 +5,7 @@
  * @param {String} string Строка, в которой необходимо удалить пробелы
  * @return {String} Строка без пробелов
  */
-export const removeSpace = (string) => (string ? string.replace(/ /g, '') : '')
+export const removeSpace = (string) => isString(string) ? (string ? string.replace(/ /g, '') : '') : string
 
 /*
  * Преобразование текста из формата camelCase в формат dash case
@@ -13,7 +13,7 @@ export const removeSpace = (string) => (string ? string.replace(/ /g, '') : '')
  * @param {String} text Преобразовываемое значение
  */
 export const camelToDash = (text) => {
-  return text.replace(/[A-Z]/g, (m) => '-' + m.toLowerCase())
+  return isString(text) ? text.replace(/[A-Z]/g, (m) => '-' + m.toLowerCase()) : text
 }
 
 /*
