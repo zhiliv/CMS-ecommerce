@@ -194,6 +194,14 @@ export default {
    */
   props: {
     // eslint-disable-next-line vue/require-default-prop
+      classes: {
+      type: String,
+      default: '',
+    },
+    styles: {
+      type: String,
+      default: '',
+    },
     col: {
       // col
       type: [Boolean, Number, String],
@@ -280,7 +288,7 @@ export default {
           item === 'colXxl') &&
         isBoolean(this[item])
       )
-        this.outClass[`${item}`] = this[item]
+        this.outClass[`${camelToDash(item)}`] = this[item]
       else if (
         (item === 'col' ||
           item === 'colSm' ||
