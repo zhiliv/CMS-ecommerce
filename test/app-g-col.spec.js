@@ -1,18 +1,18 @@
 import { shallowMount } from '@vue/test-utils'
-import Row from '@/components/app/col/col.vue'
+import Row from '@/components/app/g-col/g-col.vue'
 
-describe('app-col.js', () => {
+describe('app-g-col.js', () => {
   let cmp
 
   beforeEach(() => {
     cmp = shallowMount(Row, {
       // Создать поверхностный экземпляр компонента
       propsData: {
-        col: true,
-        colSm: 'auto',
-        colMd: true,
-        colXl: 4,
-        colXxl: 6,
+        gCol: true,
+        gColSm: 'auto',
+        gColMd: true,
+        gColXl: 4,
+        gColXxl: 6,
         offset: 3,
         offsetSm: 2,
         offsetMd: 3,
@@ -24,7 +24,7 @@ describe('app-col.js', () => {
       },
     })
   })
-  it('Содержимое html для app-row ', () => {
+  it('Содержимое html для app-g-col ', () => {
     expect(cmp.element).toMatchSnapshot()
   })
 })
