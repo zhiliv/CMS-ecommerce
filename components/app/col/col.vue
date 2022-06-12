@@ -329,12 +329,12 @@ export default {
 
 .col-1 {
   flex: 0 0 auto;
-  width: 8.33333333%;
+  width: 8.3333%;
 }
 
 .col-2 {
   flex: 0 0 auto;
-  width: 16.66666667%;
+  width: 16.6667%;
 }
 
 .col-3 {
@@ -344,12 +344,12 @@ export default {
 
 .col-4 {
   flex: 0 0 auto;
-  width: 33.33333333%;
+  width: 3.3333%;
 }
 
 .col-5 {
   flex: 0 0 auto;
-  width: 41.66666667%;
+  width: 41.6667%;
 }
 
 .col-6 {
@@ -359,12 +359,12 @@ export default {
 
 .col-7 {
   flex: 0 0 auto;
-  width: 58.33333333%;
+  width: 58.3333%;
 }
 
 .col-8 {
   flex: 0 0 auto;
-  width: 66.66666667%;
+  width: 66.6667%;
 }
 
 .col-9 {
@@ -374,12 +374,12 @@ export default {
 
 .col-10 {
   flex: 0 0 auto;
-  width: 83.33333333%;
+  width: 83.3333%;
 }
 
 .col-11 {
   flex: 0 0 auto;
-  width: 91.66666667%;
+  width: 91.6667%;
 }
 
 .col-12 {
@@ -388,11 +388,11 @@ export default {
 }
 
 .offset-1 {
-  margin-left: 8.33333333%;
+  margin-left: 8.3333%;
 }
 
 .offset-2 {
-  margin-left: 16.66666667%;
+  margin-left: 16.6667%;
 }
 
 .offset-3 {
@@ -400,11 +400,11 @@ export default {
 }
 
 .offset-4 {
-  margin-left: 33.33333333%;
+  margin-left: 3.3333%;
 }
 
 .offset-5 {
-  margin-left: 41.66666667%;
+  margin-left: 41.6667%;
 }
 
 .offset-6 {
@@ -412,11 +412,11 @@ export default {
 }
 
 .offset-7 {
-  margin-left: 58.33333333%;
+  margin-left: 58.3333%;
 }
 
 .offset-8 {
-  margin-left: 66.66666667%;
+  margin-left: 66.6667%;
 }
 
 .offset-9 {
@@ -424,11 +424,11 @@ export default {
 }
 
 .offset-10 {
-  margin-left: 83.33333333%;
+  margin-left: 83.3333%;
 }
 
 .offset-11 {
-  margin-left: 91.66666667%;
+  margin-left: 91.6667%;
 }
 
 @media (min-width: 576px) {
@@ -443,12 +443,12 @@ export default {
 
   .col-sm-1 {
     flex: 0 0 auto;
-    width: 8.33333333%;
+    width: 8.3333%;
   }
 
   .col-sm-2 {
     flex: 0 0 auto;
-    width: 16.66666667%;
+    width: 16.6667%;
   }
 
   .col-sm-3 {
@@ -458,12 +458,12 @@ export default {
 
   .col-sm-4 {
     flex: 0 0 auto;
-    width: 33.33333333%;
+    width: 3.3333%;
   }
 
   .col-sm-5 {
     flex: 0 0 auto;
-    width: 41.66666667%;
+    width: 41.6667%;
   }
 
   .col-sm-6 {
@@ -473,12 +473,12 @@ export default {
 
   .col-sm-7 {
     flex: 0 0 auto;
-    width: 58.33333333%;
+    width: 58.3333%;
   }
 
   .col-sm-8 {
     flex: 0 0 auto;
-    width: 66.66666667%;
+    width: 66.6667%;
   }
 
   .col-sm-9 {
@@ -488,12 +488,12 @@ export default {
 
   .col-sm-10 {
     flex: 0 0 auto;
-    width: 83.33333333%;
+    width: 83.3333%;
   }
 
   .col-sm-11 {
     flex: 0 0 auto;
-    width: 91.66666667%;
+    width: 91.6667%;
   }
 
   .col-sm-12 {
@@ -506,11 +506,11 @@ export default {
   }
 
   .offset-sm-1 {
-    margin-left: 8.33333333%;
+    margin-left: 8.3333%;
   }
 
   .offset-sm-2 {
-    margin-left: 16.66666667%;
+    margin-left: 16.6667%;
   }
 
   .offset-sm-3 {
@@ -518,11 +518,11 @@ export default {
   }
 
   .offset-sm-4 {
-    margin-left: 33.33333333%;
+    margin-left: 3.3333%;
   }
 
   .offset-sm-5 {
-    margin-left: 41.66666667%;
+    margin-left: 41.6667%;
   }
 
   .offset-sm-6 {
@@ -530,11 +530,11 @@ export default {
   }
 
   .offset-sm-7 {
-    margin-left: 58.33333333%;
+    margin-left: 58.3333%;
   }
 
   .offset-sm-8 {
-    margin-left: 66.66666667%;
+    margin-left: 66.6667%;
   }
 
   .offset-sm-9 {
@@ -542,11 +542,11 @@ export default {
   }
 
   .offset-sm-10 {
-    margin-left: 83.33333333%;
+    margin-left: 83.3333%;
   }
 
   .offset-sm-11 {
-    margin-left: 91.66666667%;
+    margin-left: 91.6667%;
   }
 }
 
@@ -562,12 +562,12 @@ export default {
 
   .col-md-1 {
     flex: 0 0 auto;
-    width: 8.33333333%;
+    width: 8.3333%;
   }
 
   .col-md-2 {
     flex: 0 0 auto;
-    width: 16.66666667%;
+    width: 16.6667%;
   }
 
   .col-md-3 {
@@ -577,12 +577,12 @@ export default {
 
   .col-md-4 {
     flex: 0 0 auto;
-    width: 33.33333333%;
+    width: 3.3333%;
   }
 
   .col-md-5 {
     flex: 0 0 auto;
-    width: 41.66666667%;
+    width: 41.6667%;
   }
 
   .col-md-6 {
@@ -592,12 +592,12 @@ export default {
 
   .col-md-7 {
     flex: 0 0 auto;
-    width: 58.33333333%;
+    width: 58.3333%;
   }
 
   .col-md-8 {
     flex: 0 0 auto;
-    width: 66.66666667%;
+    width: 66.6667%;
   }
 
   .col-md-9 {
@@ -607,12 +607,12 @@ export default {
 
   .col-md-10 {
     flex: 0 0 auto;
-    width: 83.33333333%;
+    width: 83.3333%;
   }
 
   .col-md-11 {
     flex: 0 0 auto;
-    width: 91.66666667%;
+    width: 91.6667%;
   }
 
   .col-md-12 {
@@ -625,11 +625,11 @@ export default {
   }
 
   .offset-md-1 {
-    margin-left: 8.33333333%;
+    margin-left: 8.3333%;
   }
 
   .offset-md-2 {
-    margin-left: 16.66666667%;
+    margin-left: 16.6667%;
   }
 
   .offset-md-3 {
@@ -637,11 +637,11 @@ export default {
   }
 
   .offset-md-4 {
-    margin-left: 33.33333333%;
+    margin-left: 3.3333%;
   }
 
   .offset-md-5 {
-    margin-left: 41.66666667%;
+    margin-left: 41.6667%;
   }
 
   .offset-md-6 {
@@ -649,11 +649,11 @@ export default {
   }
 
   .offset-md-7 {
-    margin-left: 58.33333333%;
+    margin-left: 58.3333%;
   }
 
   .offset-md-8 {
-    margin-left: 66.66666667%;
+    margin-left: 66.6667%;
   }
 
   .offset-md-9 {
@@ -661,11 +661,11 @@ export default {
   }
 
   .offset-md-10 {
-    margin-left: 83.33333333%;
+    margin-left: 83.3333%;
   }
 
   .offset-md-11 {
-    margin-left: 91.66666667%;
+    margin-left: 91.6667%;
   }
 }
 
@@ -681,12 +681,12 @@ export default {
 
   .col-lg-1 {
     flex: 0 0 auto;
-    width: 8.33333333%;
+    width: 8.3333%;
   }
 
   .col-lg-2 {
     flex: 0 0 auto;
-    width: 16.66666667%;
+    width: 16.6667%;
   }
 
   .col-lg-3 {
@@ -696,12 +696,12 @@ export default {
 
   .col-lg-4 {
     flex: 0 0 auto;
-    width: 33.33333333%;
+    width: 3.3333%;
   }
 
   .col-lg-5 {
     flex: 0 0 auto;
-    width: 41.66666667%;
+    width: 41.6667%;
   }
 
   .col-lg-6 {
@@ -711,12 +711,12 @@ export default {
 
   .col-lg-7 {
     flex: 0 0 auto;
-    width: 58.33333333%;
+    width: 58.3333%;
   }
 
   .col-lg-8 {
     flex: 0 0 auto;
-    width: 66.66666667%;
+    width: 66.6667%;
   }
 
   .col-lg-9 {
@@ -726,12 +726,12 @@ export default {
 
   .col-lg-10 {
     flex: 0 0 auto;
-    width: 83.33333333%;
+    width: 83.3333%;
   }
 
   .col-lg-11 {
     flex: 0 0 auto;
-    width: 91.66666667%;
+    width: 91.6667%;
   }
 
   .col-lg-12 {
@@ -744,11 +744,11 @@ export default {
   }
 
   .offset-lg-1 {
-    margin-left: 8.33333333%;
+    margin-left: 8.3333%;
   }
 
   .offset-lg-2 {
-    margin-left: 16.66666667%;
+    margin-left: 16.6667%;
   }
 
   .offset-lg-3 {
@@ -756,11 +756,11 @@ export default {
   }
 
   .offset-lg-4 {
-    margin-left: 33.33333333%;
+    margin-left: 3.3333%;
   }
 
   .offset-lg-5 {
-    margin-left: 41.66666667%;
+    margin-left: 41.6667%;
   }
 
   .offset-lg-6 {
@@ -768,11 +768,11 @@ export default {
   }
 
   .offset-lg-7 {
-    margin-left: 58.33333333%;
+    margin-left: 58.3333%;
   }
 
   .offset-lg-8 {
-    margin-left: 66.66666667%;
+    margin-left: 66.6667%;
   }
 
   .offset-lg-9 {
@@ -780,11 +780,11 @@ export default {
   }
 
   .offset-lg-10 {
-    margin-left: 83.33333333%;
+    margin-left: 83.3333%;
   }
 
   .offset-lg-11 {
-    margin-left: 91.66666667%;
+    margin-left: 91.6667%;
   }
 }
 
@@ -800,12 +800,12 @@ export default {
 
   .col-xl-1 {
     flex: 0 0 auto;
-    width: 8.33333333%;
+    width: 8.3333%;
   }
 
   .col-xl-2 {
     flex: 0 0 auto;
-    width: 16.66666667%;
+    width: 16.6667%;
   }
 
   .col-xl-3 {
@@ -815,12 +815,12 @@ export default {
 
   .col-xl-4 {
     flex: 0 0 auto;
-    width: 33.33333333%;
+    width: 3.3333%;
   }
 
   .col-xl-5 {
     flex: 0 0 auto;
-    width: 41.66666667%;
+    width: 41.6667%;
   }
 
   .col-xl-6 {
@@ -830,12 +830,12 @@ export default {
 
   .col-xl-7 {
     flex: 0 0 auto;
-    width: 58.33333333%;
+    width: 58.3333%;
   }
 
   .col-xl-8 {
     flex: 0 0 auto;
-    width: 66.66666667%;
+    width: 66.6667%;
   }
 
   .col-xl-9 {
@@ -845,12 +845,12 @@ export default {
 
   .col-xl-10 {
     flex: 0 0 auto;
-    width: 83.33333333%;
+    width: 83.3333%;
   }
 
   .col-xl-11 {
     flex: 0 0 auto;
-    width: 91.66666667%;
+    width: 91.6667%;
   }
 
   .col-xl-12 {
@@ -863,11 +863,11 @@ export default {
   }
 
   .offset-xl-1 {
-    margin-left: 8.33333333%;
+    margin-left: 8.3333%;
   }
 
   .offset-xl-2 {
-    margin-left: 16.66666667%;
+    margin-left: 16.6667%;
   }
 
   .offset-xl-3 {
@@ -875,11 +875,11 @@ export default {
   }
 
   .offset-xl-4 {
-    margin-left: 33.33333333%;
+    margin-left: 3.3333%;
   }
 
   .offset-xl-5 {
-    margin-left: 41.66666667%;
+    margin-left: 41.6667%;
   }
 
   .offset-xl-6 {
@@ -887,11 +887,11 @@ export default {
   }
 
   .offset-xl-7 {
-    margin-left: 58.33333333%;
+    margin-left: 58.3333%;
   }
 
   .offset-xl-8 {
-    margin-left: 66.66666667%;
+    margin-left: 66.6667%;
   }
 
   .offset-xl-9 {
@@ -899,11 +899,11 @@ export default {
   }
 
   .offset-xl-10 {
-    margin-left: 83.33333333%;
+    margin-left: 83.3333%;
   }
 
   .offset-xl-11 {
-    margin-left: 91.66666667%;
+    margin-left: 91.6667%;
   }
 }
 
@@ -919,12 +919,12 @@ export default {
 
   .col-xxl-1 {
     flex: 0 0 auto;
-    width: 8.33333333%;
+    width: 8.3333%;
   }
 
   .col-xxl-2 {
     flex: 0 0 auto;
-    width: 16.66666667%;
+    width: 16.6667%;
   }
 
   .col-xxl-3 {
@@ -934,12 +934,12 @@ export default {
 
   .col-xxl-4 {
     flex: 0 0 auto;
-    width: 33.33333333%;
+    width: 3.3333%;
   }
 
   .col-xxl-5 {
     flex: 0 0 auto;
-    width: 41.66666667%;
+    width: 41.6667%;
   }
 
   .col-xxl-6 {
@@ -949,12 +949,12 @@ export default {
 
   .col-xxl-7 {
     flex: 0 0 auto;
-    width: 58.33333333%;
+    width: 58.3333%;
   }
 
   .col-xxl-8 {
     flex: 0 0 auto;
-    width: 66.66666667%;
+    width: 66.6667%;
   }
 
   .col-xxl-9 {
@@ -964,12 +964,12 @@ export default {
 
   .col-xxl-10 {
     flex: 0 0 auto;
-    width: 83.33333333%;
+    width: 83.3333%;
   }
 
   .col-xxl-11 {
     flex: 0 0 auto;
-    width: 91.66666667%;
+    width: 91.6667%;
   }
 
   .col-xxl-12 {
@@ -982,11 +982,11 @@ export default {
   }
 
   .offset-xxl-1 {
-    margin-left: 8.33333333%;
+    margin-left: 8.3333%;
   }
 
   .offset-xxl-2 {
-    margin-left: 16.66666667%;
+    margin-left: 16.6667%;
   }
 
   .offset-xxl-3 {
@@ -994,11 +994,11 @@ export default {
   }
 
   .offset-xxl-4 {
-    margin-left: 33.33333333%;
+    margin-left: 3.3333%;
   }
 
   .offset-xxl-5 {
-    margin-left: 41.66666667%;
+    margin-left: 41.6667%;
   }
 
   .offset-xxl-6 {
@@ -1006,11 +1006,11 @@ export default {
   }
 
   .offset-xxl-7 {
-    margin-left: 58.33333333%;
+    margin-left: 58.3333%;
   }
 
   .offset-xxl-8 {
-    margin-left: 66.66666667%;
+    margin-left: 66.6667%;
   }
 
   .offset-xxl-9 {
@@ -1018,11 +1018,11 @@ export default {
   }
 
   .offset-xxl-10 {
-    margin-left: 83.33333333%;
+    margin-left: 83.3333%;
   }
 
   .offset-xxl-11 {
-    margin-left: 91.66666667%;
+    margin-left: 91.6667%;
   }
 }
 </style>
