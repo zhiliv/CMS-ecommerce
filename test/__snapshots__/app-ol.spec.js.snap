@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-ol.js Содержимое html для app-ol  1`] = `
+<ol
+  class="simple simple-xl"
+  id="indent"
+  style="background: white;"
+>
+  <li>
+    Тест
+  </li>
+</ol>
+`;
