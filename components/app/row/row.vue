@@ -110,9 +110,7 @@ export default {
    * При монтировании компонента
    */
   mounted() {
-    this.outClass = {
-
-    }
+    this.outClass = {}
     /*
      * Проверка условий для добавления классов
      * @function checkCondition
