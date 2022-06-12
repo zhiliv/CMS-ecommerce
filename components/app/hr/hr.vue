@@ -11,7 +11,7 @@ export default {
    * @property {String} classes - Входные классы
    * @property {String} styles - Входные стили
    */
-  prop: {
+  props: {
     classes: {
       type: String,
       default: '',
