@@ -5,6 +5,12 @@
 
 <script>
 export default {
+  /*
+   * Входящие свойства
+   * @typedef {Object} props
+   * @property {String} classes - Входные классы
+   * @property {String} styles - Входные стили
+   */
   prop: {
     classes: {
       type: String,
