@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
-import OL from '@/components/app/ol/ol.vue'
+import OL from '@/components/app/ol-ul/ol-ul.vue'
 
-describe('app-ol.js', () => {
+describe('app-ol-ul.js', () => {
   let cmp
 
   beforeEach(() => {
@@ -11,6 +11,7 @@ describe('app-ol.js', () => {
         classes: 'simple simple-xl',
         styles: 'background: white',
         id: 'indent',
+        type: 'ul'
       },
 
       slots:{
@@ -18,7 +19,7 @@ describe('app-ol.js', () => {
       }
     })
   })
-  it('Содержимое html для app-ol ', () => {
+  it('Содержимое html для app-ol-ul ', () => {
     expect(cmp.element).toMatchSnapshot()
   })
 })
