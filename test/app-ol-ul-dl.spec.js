@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import OL from '@/components/app/ol-ul/ol-ul.vue'
+import OL from '@/components/app/ol-ul-dl/ol-ul-dl.vue'
 
 describe('app-ol-ul.js', () => {
   let cmp

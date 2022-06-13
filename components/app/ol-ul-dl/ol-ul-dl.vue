@@ -9,6 +9,7 @@ export default {
    * Доступные варианты
    *  -ol
    *  -ul
+   *  -dl
    */
   props: {
     classes: {
@@ -24,7 +25,7 @@ export default {
       required: true,
       validator(value) {
         // валидация на ввод значения
-        return value === 'ul' || value === 'ol'
+        return value === 'ul' || value === 'ol' || value === 'dl'
       },
     },
   },
@@ -63,7 +64,7 @@ ul ol {
   margin-bottom: 0;
 }
 
-ul {
+ul,dl {
   margin-top: 0;
   margin-bottom: 1rem;
 }
