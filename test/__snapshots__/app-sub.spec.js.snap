@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-sub.js Содержимое html для app-sub  1`] = `
+<sub
+  class="simple simple-xl"
+  id="indent"
+  style="background: white;"
+>
+  Содержимое
+</sub>
+`;
