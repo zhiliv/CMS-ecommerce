@@ -48,5 +48,8 @@ export default {
 </script>
 
 <style>
-
+b,
+strong {
+  font-weight: bolder;
+}
 </style>
