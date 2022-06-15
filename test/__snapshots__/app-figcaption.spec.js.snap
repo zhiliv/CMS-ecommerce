@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-figcaption.js Содержимое html для app-figcaption  1`] = `
+<figcaption
+  class="figure-caption simple"
+  id="indent"
+/>
+`;

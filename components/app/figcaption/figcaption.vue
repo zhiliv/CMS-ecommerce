@@ -1,5 +1,5 @@
 <template>
-  <figure
+  <figcaption
     :class="[outClass, classes]"
     :style="style"
     v-bind="$attrs"
@@ -23,17 +23,18 @@
     @unload="$emit('unload', $event)"
   >
     <slot></slot>
-  </figure>
+  </figcaption>
 </template>
 
 <script>
+import { camelToDash } from './../../../scripts/component/func'
 export default {
   /*
    * Входящие свойства
    * @typedef {Object} props
    * @property {String} classes - Входные классы
    * @property {String} styles - Входные стили
-   * @property {Boolean} figure - Класс figure
+   * @property {Boolean} figure - Класс figure-caption
    */
   props: {
     classes: {
@@ -44,12 +45,12 @@ export default {
       type: String,
       default: '',
     },
-    figure: {
+    figureCaption: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
-   data() {
+  data() {
     /*
      * @typedef {Object} Внутренние свойства компонента
      * @property {Object} outClass Выходные классы
@@ -64,23 +65,15 @@ export default {
    */
   mounted() {
     this.outClass = {
-      figure: this.figure,
+      'figure-caption': this.figureCaption
     }
-  }
+  },
 }
 </script>
 
 <style>
-figure {
-  margin: 0 0 1rem;
-}
-
-.figure {
-  display: inline-block;
-}
-
-.figure-img {
-  margin-bottom: 0.5rem;
-  line-height: 1;
+.figure-caption {
+  font-size: 0.875em;
+  color: #6c757d;
 }
 </style>
