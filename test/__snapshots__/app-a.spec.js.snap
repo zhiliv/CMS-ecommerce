@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-a.js Содержимое html для app-a  1`] = `
+<a
+  class="simple simple-xl"
+  href="/testlink"
+  id="indent"
+  style="background: white;"
+>
+  Содержимое
+</a>
+`;
