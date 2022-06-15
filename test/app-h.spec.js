@@ -11,7 +11,7 @@ describe('app-h.js', () => {
         classes: 'simple simple-xl',
         styles: 'background: white',
         id: 'indent',
-        level: 6,
+        level: '6',
       },
       slots:{
         default: 'Содержимое'

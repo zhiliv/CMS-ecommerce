@@ -1,5 +1,27 @@
 <template>
-  <div :class="[outClass, classes]" :style="styles">
+  <div
+    :class="[outClass, classes]"
+    :style="styles"
+    v-bind="$attrs"
+    @dblclick="$emit('dblclick', $event)"
+    @click="$emit('click', $event)"
+    @change="$emit('change', $event)"
+    @blur="$emit('blur', $event)"
+    @focus="$emit('focus', $event)"
+    @keydown="$emit('keydown', $event)"
+    @keypress="$emit('keypress', $event)"
+    @keyup="$emit('keyup', $event)"
+    @load="$emit('load', $event)"
+    @mousedown="$emit('mousedown', $event)"
+    @mousemove="$emit('mousemove', $event)"
+    @mouseout="$emit('mouseout', $event)"
+    @mouseover="$emit('mouseover', $event)"
+    @mouseup="$emit('mouseup', $event)"
+    @reset="$emit('reset', $event)"
+    @select="$emit('select', $event)"
+    @submit="$emit('submit', $event)"
+    @unload="$emit('unload', $event)"
+  >
     <slot></slot>
   </div>
 </template>
@@ -7,6 +29,7 @@
 <script>
 import { removeSpace } from './../../../scripts/component/func'
 export default {
+  inheritAttrs: true,
   /*
    * Установка свойств для входных параметров
    * @typedef {Object} props
@@ -68,6 +91,10 @@ export default {
    * @property {String} styles - Входные стили
    */
   props: {
+    row: {
+      type: Boolean,
+      default: true,
+    },
     rowCols: {
       type: String,
       default: '',
@@ -110,7 +137,9 @@ export default {
    * При монтировании компонента
    */
   mounted() {
-    this.outClass = {}
+    this.outClass = {
+      row: this.row,
+    }
     /*
      * Проверка условий для добавления классов
      * @function checkCondition

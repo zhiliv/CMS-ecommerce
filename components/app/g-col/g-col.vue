@@ -1,6 +1,28 @@
 /* eslint-disable vue/no-reserved-props */
 <template>
-  <div :class="[outClass, classes]" :style="styles">
+  <div
+    :class="[outClass, classes]"
+    :style="styles"
+    v-bind="$attrs"
+    @dblclick="$emit('dblclick', $event)"
+    @click="$emit('click', $event)"
+    @change="$emit('change', $event)"
+    @blur="$emit('blur', $event)"
+    @focus="$emit('focus', $event)"
+    @keydown="$emit('keydown', $event)"
+    @keypress="$emit('keypress', $event)"
+    @keyup="$emit('keyup', $event)"
+    @load="$emit('load', $event)"
+    @mousedown="$emit('mousedown', $event)"
+    @mousemove="$emit('mousemove', $event)"
+    @mouseout="$emit('mouseout', $event)"
+    @mouseover="$emit('mouseover', $event)"
+    @mouseup="$emit('mouseup', $event)"
+    @reset="$emit('reset', $event)"
+    @select="$emit('select', $event)"
+    @submit="$emit('submit', $event)"
+    @unload="$emit('unload', $event)"
+  >
     <slot></slot>
   </div>
 </template>
@@ -194,7 +216,7 @@ export default {
    */
   props: {
     // eslint-disable-next-line vue/require-default-prop
-      classes: {
+    classes: {
       type: String,
       default: '',
     },
@@ -318,71 +340,71 @@ export default {
 }
 </script>
 <style>
-.g-Col {
+.g-col {
   flex: 1 0 0%;
 }
 
-.g-Col-auto {
+.g-col-auto {
   flex: 0 0 auto;
   grid-column: auto;
 }
 
-.g-Col-1 {
+.g-col-1 {
   flex: 0 0 auto;
   grid-column: 8.3333%;
 }
 
-.g-Col-2 {
+.g-col-2 {
   flex: 0 0 auto;
   grid-column: 16.6667%;
 }
 
-.g-Col-3 {
+.g-col-3 {
   flex: 0 0 auto;
   grid-column: 25%;
 }
 
-.g-Col-4 {
+.g-col-4 {
   flex: 0 0 auto;
   grid-column: 3.3333%;
 }
 
-.g-Col-5 {
+.g-col-5 {
   flex: 0 0 auto;
   grid-column: 41.6667%;
 }
 
-.g-Col-6 {
+.g-col-6 {
   flex: 0 0 auto;
   grid-column: 50%;
 }
 
-.g-Col-7 {
+.g-col-7 {
   flex: 0 0 auto;
   grid-column: 58.3333%;
 }
 
-.g-Col-8 {
+.g-col-8 {
   flex: 0 0 auto;
   grid-column: 66.6667%;
 }
 
-.g-Col-9 {
+.g-col-9 {
   flex: 0 0 auto;
   grid-column: 75%;
 }
 
-.g-Col-10 {
+.g-col-10 {
   flex: 0 0 auto;
   grid-column: 83.3333%;
 }
 
-.g-Col-11 {
+.g-col-11 {
   flex: 0 0 auto;
   grid-column: 91.6667%;
 }
 
-.g-Col-12 {
+.g-col-12 {
   flex: 0 0 auto;
   grid-column: 100%;
 }
@@ -432,71 +454,71 @@ export default {
 }
 
 @media (min-width: 576px) {
-  .g-Col-sm {
+  .g-col-sm {
     flex: 1 0 0%;
   }
 
-  .g-Col-sm-auto {
+  .g-col-sm-auto {
     flex: 0 0 auto;
     grid-column: auto;
   }
 
-  .g-Col-sm-1 {
+  .g-col-sm-1 {
     flex: 0 0 auto;
     grid-column: 8.3333%;
   }
 
-  .g-Col-sm-2 {
+  .g-col-sm-2 {
     flex: 0 0 auto;
     grid-column: 16.6667%;
   }
 
-  .g-Col-sm-3 {
+  .g-col-sm-3 {
     flex: 0 0 auto;
     grid-column: 25%;
   }
 
-  .g-Col-sm-4 {
+  .g-col-sm-4 {
     flex: 0 0 auto;
     grid-column: 3.3333%;
   }
 
-  .g-Col-sm-5 {
+  .g-col-sm-5 {
     flex: 0 0 auto;
     grid-column: 41.6667%;
   }
 
-  .g-Col-sm-6 {
+  .g-col-sm-6 {
     flex: 0 0 auto;
     grid-column: 50%;
   }
 
-  .g-Col-sm-7 {
+  .g-col-sm-7 {
     flex: 0 0 auto;
     grid-column: 58.3333%;
   }
 
-  .g-Col-sm-8 {
+  .g-col-sm-8 {
     flex: 0 0 auto;
     grid-column: 66.6667%;
   }
 
-  .g-Col-sm-9 {
+  .g-col-sm-9 {
     flex: 0 0 auto;
     grid-column: 75%;
   }
 
-  .g-Col-sm-10 {
+  .g-col-sm-10 {
     flex: 0 0 auto;
     grid-column: 83.3333%;
   }
 
-  .g-Col-sm-11 {
+  .g-col-sm-11 {
     flex: 0 0 auto;
     grid-column: 91.6667%;
   }
 
-  .g-Col-sm-12 {
+  .g-col-sm-12 {
     flex: 0 0 auto;
     grid-column: 100%;
   }
@@ -551,71 +573,71 @@ export default {
 }
 
 @media (min-width: 768px) {
-  .g-Col-md {
+  .g-col-md {
     flex: 1 0 0%;
   }
 
-  .g-Col-md-auto {
+  .g-col-md-auto {
     flex: 0 0 auto;
     grid-column: auto;
   }
 
-  .g-Col-md-1 {
+  .g-col-md-1 {
     flex: 0 0 auto;
     grid-column: 8.3333%;
   }
 
-  .g-Col-md-2 {
+  .g-col-md-2 {
     flex: 0 0 auto;
     grid-column: 16.6667%;
   }
 
-  .g-Col-md-3 {
+  .g-col-md-3 {
     flex: 0 0 auto;
     grid-column: 25%;
   }
 
-  .g-Col-md-4 {
+  .g-col-md-4 {
     flex: 0 0 auto;
     grid-column: 3.3333%;
   }
 
-  .g-Col-md-5 {
+  .g-col-md-5 {
     flex: 0 0 auto;
     grid-column: 41.6667%;
   }
 
-  .g-Col-md-6 {
+  .g-col-md-6 {
     flex: 0 0 auto;
     grid-column: 50%;
   }
 
-  .g-Col-md-7 {
+  .g-col-md-7 {
     flex: 0 0 auto;
     grid-column: 58.3333%;
   }
 
-  .g-Col-md-8 {
+  .g-col-md-8 {
     flex: 0 0 auto;
     grid-column: 66.6667%;
   }
 
-  .g-Col-md-9 {
+  .g-col-md-9 {
     flex: 0 0 auto;
     grid-column: 75%;
   }
 
-  .g-Col-md-10 {
+  .g-col-md-10 {
     flex: 0 0 auto;
     grid-column: 83.3333%;
   }
 
-  .g-Col-md-11 {
+  .g-col-md-11 {
     flex: 0 0 auto;
     grid-column: 91.6667%;
   }
 
-  .g-Col-md-12 {
+  .g-col-md-12 {
     flex: 0 0 auto;
     grid-column: 100%;
   }
@@ -670,71 +692,71 @@ export default {
 }
 
 @media (min-width: 992px) {
-  .g-Col-lg {
+  .g-col-lg {
     flex: 1 0 0%;
   }
 
-  .g-Col-lg-auto {
+  .g-col-lg-auto {
     flex: 0 0 auto;
     grid-column: auto;
   }
 
-  .g-Col-lg-1 {
+  .g-col-lg-1 {
     flex: 0 0 auto;
     grid-column: 8.3333%;
   }
 
-  .g-Col-lg-2 {
+  .g-col-lg-2 {
     flex: 0 0 auto;
     grid-column: 16.6667%;
   }
 
-  .g-Col-lg-3 {
+  .g-col-lg-3 {
     flex: 0 0 auto;
     grid-column: 25%;
   }
 
-  .g-Col-lg-4 {
+  .g-col-lg-4 {
     flex: 0 0 auto;
     grid-column: 3.3333%;
   }
 
-  .g-Col-lg-5 {
+  .g-col-lg-5 {
     flex: 0 0 auto;
     grid-column: 41.6667%;
   }
 
-  .g-Col-lg-6 {
+  .g-col-lg-6 {
     flex: 0 0 auto;
     grid-column: 50%;
   }
 
-  .g-Col-lg-7 {
+  .g-col-lg-7 {
     flex: 0 0 auto;
     grid-column: 58.3333%;
   }
 
-  .g-Col-lg-8 {
+  .g-col-lg-8 {
     flex: 0 0 auto;
     grid-column: 66.6667%;
   }
 
-  .g-Col-lg-9 {
+  .g-col-lg-9 {
     flex: 0 0 auto;
     grid-column: 75%;
   }
 
-  .g-Col-lg-10 {
+  .g-col-lg-10 {
     flex: 0 0 auto;
     grid-column: 83.3333%;
   }
 
-  .g-Col-lg-11 {
+  .g-col-lg-11 {
     flex: 0 0 auto;
     grid-column: 91.6667%;
   }
 
-  .g-Col-lg-12 {
+  .g-col-lg-12 {
     flex: 0 0 auto;
     grid-column: 100%;
   }
@@ -789,71 +811,71 @@ export default {
 }
 
 @media (min-width: 1200px) {
-  .g-Col-xl {
+  .g-col-xl {
     flex: 1 0 0%;
   }
 
-  .g-Col-xl-auto {
+  .g-col-xl-auto {
     flex: 0 0 auto;
     grid-column: auto;
   }
 
-  .g-Col-xl-1 {
+  .g-col-xl-1 {
     flex: 0 0 auto;
     grid-column: 8.3333%;
   }
 
-  .g-Col-xl-2 {
+  .g-col-xl-2 {
     flex: 0 0 auto;
     grid-column: 16.6667%;
   }
 
-  .g-Col-xl-3 {
+  .g-col-xl-3 {
     flex: 0 0 auto;
     grid-column: 25%;
   }
 
-  .g-Col-xl-4 {
+  .g-col-xl-4 {
     flex: 0 0 auto;
     grid-column: 3.3333%;
   }
 
-  .g-Col-xl-5 {
+  .g-col-xl-5 {
     flex: 0 0 auto;
     grid-column: 41.6667%;
   }
 
-  .g-Col-xl-6 {
+  .g-col-xl-6 {
     flex: 0 0 auto;
     grid-column: 50%;
   }
 
-  .g-Col-xl-7 {
+  .g-col-xl-7 {
     flex: 0 0 auto;
     grid-column: 58.3333%;
   }
 
-  .g-Col-xl-8 {
+  .g-col-xl-8 {
     flex: 0 0 auto;
     grid-column: 66.6667%;
   }
 
-  .g-Col-xl-9 {
+  .g-col-xl-9 {
     flex: 0 0 auto;
     grid-column: 75%;
   }
 
-  .g-Col-xl-10 {
+  .g-col-xl-10 {
     flex: 0 0 auto;
     grid-column: 83.3333%;
   }
 
-  .g-Col-xl-11 {
+  .g-col-xl-11 {
     flex: 0 0 auto;
     grid-column: 91.6667%;
   }
 
-  .g-Col-xl-12 {
+  .g-col-xl-12 {
     flex: 0 0 auto;
     grid-column: 100%;
   }
@@ -908,71 +930,71 @@ export default {
 }
 
 @media (min-width: 1400px) {
-  .g-Col-xxl {
+  .g-col-xxl {
     flex: 1 0 0%;
   }
 
-  .g-Col-xxl-auto {
+  .g-col-xxl-auto {
     flex: 0 0 auto;
     grid-column: auto;
   }
 
-  .g-Col-xxl-1 {
+  .g-col-xxl-1 {
     flex: 0 0 auto;
     grid-column: 8.3333%;
   }
 
-  .g-Col-xxl-2 {
+  .g-col-xxl-2 {
     flex: 0 0 auto;
     grid-column: 16.6667%;
   }
 
-  .g-Col-xxl-3 {
+  .g-col-xxl-3 {
     flex: 0 0 auto;
     grid-column: 25%;
   }
 
-  .g-Col-xxl-4 {
+  .g-col-xxl-4 {
     flex: 0 0 auto;
     grid-column: 3.3333%;
   }
 
-  .g-Col-xxl-5 {
+  .g-col-xxl-5 {
     flex: 0 0 auto;
     grid-column: 41.6667%;
   }
 
-  .g-Col-xxl-6 {
+  .g-col-xxl-6 {
     flex: 0 0 auto;
     grid-column: 50%;
   }
 
-  .g-Col-xxl-7 {
+  .g-col-xxl-7 {
     flex: 0 0 auto;
     grid-column: 58.3333%;
   }
 
-  .g-Col-xxl-8 {
+  .g-col-xxl-8 {
     flex: 0 0 auto;
     grid-column: 66.6667%;
   }
 
-  .g-Col-xxl-9 {
+  .g-col-xxl-9 {
     flex: 0 0 auto;
     grid-column: 75%;
   }
 
-  .g-Col-xxl-10 {
+  .g-col-xxl-10 {
     flex: 0 0 auto;
     grid-column: 83.3333%;
   }
 
-  .g-Col-xxl-11 {
+  .g-col-xxl-11 {
     flex: 0 0 auto;
     grid-column: 91.6667%;
   }
 
-  .g-Col-xxl-12 {
+  .g-col-xxl-12 {
     flex: 0 0 auto;
     grid-column: 100%;
   }

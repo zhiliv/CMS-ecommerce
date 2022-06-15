@@ -16,10 +16,10 @@ export default {
    */
   props: {
     level: {
-      type: Number,
+      type: String,
       required: true,
       min: 1,
-      max: 6
+      max: 6,
     },
     classes: {
       type: String,
@@ -30,15 +30,35 @@ export default {
       default: '',
     },
   },
-/*
- * Рендер компонента
- * @param {Object} createElement Функция создания элемента
-*/
+  /*
+   * Рендер компонента
+   * @param {Object} createElement Функция создания элемента
+   */
   render(createElement) {
     return createElement(
       'h' + this.level, // имя тега
       {
-        attrs: { // указание аттрибутов
+        on: {
+          click: (event) => this.$emit('click', event),
+          dblclick: (event) => this.$emit('dblclick', event),
+          change: (event) => this.$emit('change', event),
+          keydown: (event) => this.$emit('keydown', event),
+          focus: (event) => this.$emit('focus', event),
+          keypress: (event) => this.$emit('keypress', event),
+          keyup: (event) => this.$emit('keyup', event),
+          load: (event) => this.$emit('load', event),
+          mousedown: (event) => this.$emit('mousedown', event),
+          mousemove: (event) => this.$emit('mousemove', event),
+          mouseout: (event) => this.$emit('mouseout', event),
+          mouseover: (event) => this.$emit('mouseover', event),
+          mouseup: (event) => this.$emit('mouseup', event),
+          reset: (event) => this.$emit('reset', event),
+          select: (event) => this.$emit('select', event),
+          submit: (event) => this.$emit('submit', event),
+          unload: (event) => this.$emit('unload', event),
+        },
+        attrs: {
+          // указание аттрибутов
           class: this.classes, // классы
           style: this.styles, // стили
         },

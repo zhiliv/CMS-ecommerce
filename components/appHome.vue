@@ -1,6 +1,6 @@
 <template>
   <div>
-
+фывафыва
   </div>
 </template>
 <script>

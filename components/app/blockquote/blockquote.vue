@@ -1,5 +1,27 @@
 <template>
-  <blockquote :class="classes" :style="style">
+  <blockquote
+    :class="classes"
+    :style="style"
+    v-bind="$attrs"
+    @dblclick="$emit('dblclick', $event)"
+    @click="$emit('click', $event)"
+    @change="$emit('change', $event)"
+    @blur="$emit('blur', $event)"
+    @focus="$emit('focus', $event)"
+    @keydown="$emit('keydown', $event)"
+    @keypress="$emit('keypress', $event)"
+    @keyup="$emit('keyup', $event)"
+    @load="$emit('load', $event)"
+    @mousedown="$emit('mousedown', $event)"
+    @mousemove="$emit('mousemove', $event)"
+    @mouseout="$emit('mouseout', $event)"
+    @mouseover="$emit('mouseover', $event)"
+    @mouseup="$emit('mouseup', $event)"
+    @reset="$emit('reset', $event)"
+    @select="$emit('select', $event)"
+    @submit="$emit('submit', $event)"
+    @unload="$emit('unload', $event)"
+  >
     <slot></slot>
   </blockquote>
 </template>

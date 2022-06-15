@@ -1,5 +1,27 @@
 <template>
-  <abbr :title="title" :style="styles" :class="classes">
+  <abbr
+    :style="styles"
+    :class="classes"
+    v-bind="$attrs"
+    @dblclick="$emit('dblclick', $event)"
+    @click="$emit('click', $event)"
+    @change="$emit('change', $event)"
+    @blur="$emit('blur', $event)"
+    @focus="$emit('focus', $event)"
+    @keydown="$emit('keydown', $event)"
+    @keypress="$emit('keypress', $event)"
+    @keyup="$emit('keyup', $event)"
+    @load="$emit('load', $event)"
+    @mousedown="$emit('mousedown', $event)"
+    @mousemove="$emit('mousemove', $event)"
+    @mouseout="$emit('mouseout', $event)"
+    @mouseover="$emit('mouseover', $event)"
+    @mouseup="$emit('mouseup', $event)"
+    @reset="$emit('reset', $event)"
+    @select="$emit('select', $event)"
+    @submit="$emit('submit', $event)"
+    @unload="$emit('unload', $event)"
+  >
     <slot></slot>
   </abbr>
 </template>
@@ -22,20 +44,14 @@ export default {
       type: String,
       default: '',
     },
-    title: {
-      type: String,
-      default: '',
-    },
   },
 }
 </script>
 
 <style>
 abbr[title] {
-  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   cursor: help;
-  -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
 }
 </style>
