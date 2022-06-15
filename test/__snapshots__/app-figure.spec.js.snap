@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-figure.js Содержимое html для app-figure  1`] = `
+<figure
+  class="figure simple"
+  id="indent"
+/>
+`;
