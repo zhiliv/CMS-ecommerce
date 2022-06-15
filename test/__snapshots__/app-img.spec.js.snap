@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-img.js Содержимое html для app-img  1`] = `
+<img
+  class="simple simple-xl"
+  id="indent"
+  src="img.jpg"
+  style="background: white;"
+/>
+`;
