@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-pre-code-kbd-samp.js Содержимое html для app-ol-ul  1`] = `
+<code
+  class="simple simple-xl"
+  id="indent"
+  style="background: white"
+>
+  <li>
+    Тест
+  </li>
+</code>
+`;
