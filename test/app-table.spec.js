@@ -10,7 +10,10 @@ describe('app-table.js', () => {
       propsData: {
         classes: 'simple',
         styles: 'background: white',
-        id: 'indent'
+        id: 'indent',
+        tableStripedColumns: true,
+        tableStriped: true,
+        tableHover: true
       },
     })
   })

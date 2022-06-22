@@ -1,5 +1,27 @@
 <template>
-  <div :class="[outClass, classes]" :style="styles">
+  <div
+    :class="[outClass, classes]"
+    :style="styles"
+    v-bind="$attrs"
+    @dblclick="$emit('dblclick', $event)"
+    @click="$emit('click', $event)"
+    @change="$emit('change', $event)"
+    @blur="$emit('blur', $event)"
+    @focus="$emit('focus', $event)"
+    @keydown="$emit('keydown', $event)"
+    @keypress="$emit('keypress', $event)"
+    @keyup="$emit('keyup', $event)"
+    @load="$emit('load', $event)"
+    @mousedown="$emit('mousedown', $event)"
+    @mousemove="$emit('mousemove', $event)"
+    @mouseout="$emit('mouseout', $event)"
+    @mouseover="$emit('mouseover', $event)"
+    @mouseup="$emit('mouseup', $event)"
+    @reset="$emit('reset', $event)"
+    @select="$emit('select', $event)"
+    @submit="$emit('submit', $event)"
+    @unload="$emit('unload', $event)"
+  >
     <slot></slot>
   </div>
 </template>
@@ -34,10 +56,6 @@ export default {
       type: String,
       default: '',
     },
-    tableSm: {
-      type: Boolean,
-      default: false,
-    },
     // eslint-disable-next-line vue/require-default-prop
     responsive: {
       type: [String, Boolean],
@@ -51,7 +69,10 @@ export default {
   },
   mounted() {
     this.outClass = {}
-    if ((isBoolean(this.responsive) === true && this.responsive === true) || this.responsive === 'true')
+    if (
+      (isBoolean(this.responsive) === true && this.responsive === true) ||
+      this.responsive === 'true'
+    )
       Object.assign(this.outClass, { responsive: true })
     else if (isString(this.responsive))
       Object.assign(this.outClass, {
