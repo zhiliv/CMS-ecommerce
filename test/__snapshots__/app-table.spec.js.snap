@@ -4,5 +4,6 @@ exports[`app-table.js Содержимое html для app-table  1`] = `
 <table
   class="table simple"
   id="indent"
+  style="background: white;"
 />
 `;
