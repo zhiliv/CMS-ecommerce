@@ -154,4 +154,15 @@ table {
 .table-sm > :not(caption) > * > * {
   padding: 0.25rem 0.25rem;
 }
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
 </style>

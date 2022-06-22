@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-tbody.js Содержимое html для app-tbody  1`] = `
+<tbody
+  class="simple simple-xl"
+  id="indent"
+  style="background: white;"
+>
+  Содержимое
+</tbody>
+`;
