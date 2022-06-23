@@ -1,7 +1,7 @@
 <template>
   <a
     :href="href"
-    :class="[outClass, classes]"
+    :class="[classes]"
     :style="styles"
     v-bind="$attrs"
     @dblclick="$emit('dblclick', $event)"
@@ -52,7 +52,6 @@ export default {
   },
 }
 </script>
-
 <style>
 a {
   color: var(--bs-link-color);
