@@ -1,8 +1,8 @@
 <template>
-  <textarea
+  <input
     v-bind="$attrs"
     v-model="value"
-    :class="[outClass, classes]"
+    :class="classes"
     :style="styles"
     @dblclick="$emit('dblclick', $event)"
     @click="$emit('click', $event)"
@@ -22,9 +22,7 @@
     @select="$emit('select', $event)"
     @submit="$emit('submit', $event)"
     @unload="$emit('unload', $event)"
-  >
-    <slot></slot>
-  </textarea>
+  />
 </template>
 
 <script>
@@ -34,6 +32,7 @@ export default {
    * @typedef {Object} props
    * @property {String} classes - Входные классы
    * @property {String} styles - Входные стили
+   * @property {String} value - Значение поля
    */
   props: {
     classes: {
@@ -45,31 +44,14 @@ export default {
       default: '',
     }
   },
-  data() {
-    return {
-      outClass: null, // классы, сформированные аттрибутами
-    }
-  },
-
 }
 </script>
 
 <style>
-textarea {
+input {
   margin: 0;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-  resize: vertical;
-}
-
-textarea.form-control {
-  min-height: calc(1.5em + 0.75rem + 2px);
-}
-textarea.form-control-sm {
-  min-height: calc(1.5em + 0.5rem + 2px);
-}
-textarea.form-control-lg {
-  min-height: calc(1.5em + 1rem + 2px);
 }
 </style>

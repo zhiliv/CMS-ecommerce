@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-input.js Содержимое html для app-input  1`] = `
+<input
+  class="simple simple-xl"
+  id="indent"
+  placeholder="Предпоказ текста"
+  style="background: white;"
+  value="тест"
+/>
+`;

@@ -72,8 +72,8 @@ export default {
     },
     size: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   data() {
     return {
@@ -85,7 +85,7 @@ export default {
    */
   mounted() {
     this.outClass = {
-      btn: true
+      btn: true,
     }
     if (this.type) this.outClass[`btn-${this.type}`] = true
     if (this.size) this.outClass[`btn-${this.size}`] = true
@@ -95,7 +95,6 @@ export default {
 
 <style>
 button {
-
 }
 
 button:focus:not(:focus-visible) {
