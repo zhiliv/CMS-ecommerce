@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { removeSpace, camelToDash } from './../../../scripts/component/func'
+import { camelToDash } from './../../../scripts/component/func'
 export default {
   /*
    * Входящие свойства

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-caption.js Содержимое html для app-caption  1`] = `
+<caption
+  class="caption-top simple simple-xl"
+  id="indent"
+  style="background: white;"
+>
+  Содержимое
+</caption>
+`;
