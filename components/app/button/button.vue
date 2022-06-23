@@ -95,7 +95,7 @@ export default {
 
 <style>
 button {
-  border-radius: 0;
+
 }
 
 button:focus:not(:focus-visible) {
@@ -103,6 +103,8 @@ button:focus:not(:focus-visible) {
 }
 
 button {
+  text-transform: none;
+  border-radius: 0;
   margin: 0;
   font-family: inherit;
   font-size: inherit;
