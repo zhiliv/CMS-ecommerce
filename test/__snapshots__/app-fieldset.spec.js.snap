@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`app-optgroup.js Содержимое html для app-optgroup  1`] = `
-<optgroup
+exports[`app-fieldset.js Содержимое html для app-fieldset  1`] = `
+<fieldset
   class="simple simple-xl"
   id="indent"
   style="background: white;"
 >
   Содержимое
-</optgroup>
+</fieldset>
 `;
