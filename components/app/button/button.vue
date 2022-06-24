@@ -94,9 +94,7 @@ export default {
 </script>
 
 <style>
-button {
-}
-
+/* stylelint-disable no-descending-specificity */
 button:focus:not(:focus-visible) {
   outline: 0;
 }
@@ -108,10 +106,6 @@ button {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-}
-
-button {
-  text-transform: none;
 }
 
 [role='button'] {

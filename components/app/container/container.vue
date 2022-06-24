@@ -27,7 +27,7 @@
   </div>
 </template>
 <script>
-import { removeSpace } from './../../../scripts/component/func'
+import { removeSpace, StrToBool } from './../../../scripts/component/func'
 export default {
   /*
    * Входящие свойства
@@ -47,7 +47,7 @@ export default {
   props: {
     // eslint-disable-next-line vue/require-default-prop
     container: {
-      type: Boolean,
+      type: [Boolean,String],
       default: true,
     },
     breakpoint: {
@@ -78,7 +78,7 @@ export default {
    */
   mounted() {
     this.outClass = {
-      container: this.container,
+      container: StrToBool(this.container) ,
     }
     // создание объекта для установки выходных классов
     const arrOfBreakpoint = this.breakpoint

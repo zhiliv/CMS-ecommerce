@@ -1,7 +1,7 @@
 <template>
   <figcaption
     :class="[outClass, classes]"
-    :style="style"
+    :style="styles"
     v-bind="$attrs"
     @dblclick="$emit('dblclick', $event)"
     @click="$emit('click', $event)"
@@ -27,7 +27,6 @@
 </template>
 
 <script>
-import { camelToDash } from './../../../scripts/component/func'
 export default {
   /*
    * Входящие свойства

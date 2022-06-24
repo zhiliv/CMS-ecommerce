@@ -5,7 +5,8 @@
  * @param {String} string Строка, в которой необходимо удалить пробелы
  * @return {String} Строка без пробелов
  */
-export const removeSpace = (string) => isString(string) ? (string ? string.replace(/ /g, '') : '') : string
+export const removeSpace = (string) =>
+  isString(string) ? (string ? string.replace(/ /g, '') : '') : string
 
 /*
  * Преобразование текста из формата camelCase в формат dash case
@@ -13,7 +14,9 @@ export const removeSpace = (string) => isString(string) ? (string ? string.repla
  * @param {String} text Преобразовываемое значение
  */
 export const camelToDash = (text) => {
-  return isString(text) ? text.replace(/[A-Z]/g, (m) => '-' + m.toLowerCase()) : text
+  return isString(text)
+    ? text.replace(/[A-Z]/g, (m) => '-' + m.toLowerCase())
+    : text
 }
 
 /*
@@ -31,3 +34,14 @@ export const isBoolean = (data) => typeof data === 'boolean'
  * @return {Boolean} Результат проверки
  */
 export const isString = (data) => typeof data === 'string'
+
+/*
+ * Преобразование строки в логический тип
+ * @function  StrToBool
+ * @param {String} data - Значение, которое необходимо преобразовать в логический тип
+ */
+export const StrToBool = (data) => {
+  if (data === 'true' && isString(data)) return true
+  else if (data === 'false' && isString(data)) return false
+  else return data
+}

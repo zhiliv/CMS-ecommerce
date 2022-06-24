@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 <template>
   <div
     :class="[outClass, classes]"
@@ -80,12 +81,15 @@ export default {
 </script>
 
 <style>
+/* stylelint-disable no-descending-specificity */
 .btn-group,
 .btn-group-vertical {
   position: relative;
   display: inline-flex;
   vertical-align: middle;
+  border-radius: 0.375rem;
 }
+
 
 .btn-group-sm > .btn {
   --bs-btn-padding-y: 0.25rem;
@@ -99,40 +103,47 @@ export default {
   position: relative;
   flex: 1 1 auto;
 }
-.btn-group > .btn-check:checked + .btn,
-.btn-group > .btn-check:focus + .btn,
-.btn-group > .btn:hover,
-.btn-group > .btn:focus,
-.btn-group > .btn:active,
-.btn-group > .btn.active,
-.btn-group-vertical > .btn-check:checked + .btn,
-.btn-group-vertical > .btn-check:focus + .btn,
-.btn-group-vertical > .btn:hover,
-.btn-group-vertical > .btn:focus,
-.btn-group-vertical > .btn:active,
-.btn-group-vertical > .btn.active {
-  z-index: 1;
-}
 
-.btn-group {
-  border-radius: 0.375rem;
-}
+
 .btn-group > .btn:not(:first-child),
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px;
 }
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle),
-.btn-group > .btn.dropdown-toggle-split:first-child,
-.btn-group > .btn-group:not(:last-child) > .btn {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+
+.btn-group > .btn:hover,
+.btn-group > .btn:focus,
+.btn-group > .btn:active,
+.btn-group-vertical > .btn:hover,
+.btn-group-vertical > .btn:focus,
+.btn-group-vertical > .btn:active,
+.btn-group > .btn-check:checked + .btn,
+.btn-group > .btn-check:focus + .btn,
+.btn-group-vertical > .btn-check:checked + .btn,
+.btn-group > .btn.active,
+.btn-group-vertical > .btn-check:focus + .btn,
+.btn-group-vertical > .btn.active {
+  z-index: 1;
 }
+
+
+
 .btn-group > .btn:nth-child(n + 3),
 .btn-group > :not(.btn-check) + .btn,
 .btn-group > .btn-group:not(:first-child) > .btn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
+
+
+
+
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn.dropdown-toggle-split:first-child,
+.btn-group > .btn-group:not(:last-child) > .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 
 .btn-group-sm > .btn + .dropdown-toggle-split {
   padding-right: 0.375rem;

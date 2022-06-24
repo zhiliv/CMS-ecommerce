@@ -1,7 +1,7 @@
 <template>
   <blockquote
     :class="classes"
-    :style="style"
+    :style="styles"
     v-bind="$attrs"
     @dblclick="$emit('dblclick', $event)"
     @click="$emit('click', $event)"
