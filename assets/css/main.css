@@ -146,3 +146,6 @@ body {
   -webkit-appearance: button;
 }
 
+[hidden] {
+  display: none !important;
+}

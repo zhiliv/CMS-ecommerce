@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-lead.js Содержимое html для app-lead  1`] = `
+<p
+  class="lead simple simple-xl"
+  id="indent"
+  style="background: white;"
+>
+  Содержимое
+</p>
+`;
