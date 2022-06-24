@@ -4,6 +4,7 @@ exports[`app-blockquote.js Содержимое html для app-blockquote  1`] 
 <blockquote
   class="simple simple-xl"
   id="indent"
+  style="background: white;"
 >
   Содержимое
 </blockquote>

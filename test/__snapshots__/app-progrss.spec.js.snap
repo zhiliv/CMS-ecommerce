@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-progress.js Содержимое html для app-progress  1`] = `
+<div
+  class="progress"
+  id="indent"
+>
+  <div
+    aria-valuemax="50"
+    aria-valuemin="50"
+    aria-valuenow="50"
+    class="progress-bar simple simple-xl"
+    role="progressbar"
+    style="background: white;"
+  />
+</div>
+`;

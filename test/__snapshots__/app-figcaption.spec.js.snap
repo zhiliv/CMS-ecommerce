@@ -4,5 +4,6 @@ exports[`app-figcaption.js Содержимое html для app-figcaption  1`] 
 <figcaption
   class="figure-caption simple"
   id="indent"
+  style="background: white;"
 />
 `;

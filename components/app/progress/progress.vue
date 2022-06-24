@@ -7,7 +7,6 @@
       :aria-valuemin="ariaValuemin"
       :aria-valuemax="ariaValuemax"
       :style="styles"
-
       @dblclick="$emit('dblclick', $event)"
       @click="$emit('click', $event)"
       @change="$emit('change', $event)"
@@ -52,16 +51,16 @@ export default {
     },
     ariaValuenow: {
       type: Number,
-      default: 50
+      default: 50,
     },
     ariaValuemin: {
       type: Number,
-      default: 0
+      default: 0,
     },
     ariaValuemax: {
       type: Number,
-      default: 100
-    }
+      default: 100,
+    },
   },
   data() {
     return {
@@ -84,7 +83,6 @@ export default {
 progress {
   vertical-align: baseline;
 }
-
 
 .progress {
   --bs-progress-height: 1rem;
@@ -121,7 +119,16 @@ progress {
 }
 
 .progress-bar-striped {
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
   background-size: var(--bs-progress-height) var(--bs-progress-height);
 }
 
@@ -135,5 +142,4 @@ progress {
     animation: none;
   }
 }
-
 </style>

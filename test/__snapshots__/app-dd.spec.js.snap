@@ -4,6 +4,7 @@ exports[`app-dd.js Содержимое html для app-dd  1`] = `
 <dd
   class="simple simple-xl"
   id="indent"
+  style="background: white;"
 >
   Содержимое
 </dd>
