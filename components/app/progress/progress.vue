@@ -50,15 +50,15 @@ export default {
       default: '',
     },
     ariaValuenow: {
-      type: Number,
+      type: [Number, String],
       default: 50,
     },
     ariaValuemin: {
-      type: Number,
+      type: [Number, String],
       default: 0,
     },
     ariaValuemax: {
-      type: Number,
+      type: [String, Number],
       default: 100,
     },
   },
@@ -71,7 +71,6 @@ export default {
    * При монтировании компонента
    */
   mounted() {
-    console.log('styles', this.$props)
     this.outClass = {
       'progress-bar': true,
     }
