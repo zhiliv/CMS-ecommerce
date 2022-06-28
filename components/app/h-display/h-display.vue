@@ -36,18 +36,13 @@ export default {
   },
   data() {
     return {
-      outClass: {}, // классы, сформированные аттрибутами
+      outClass: '', // классы, сформированные аттрибутами
     }
   },
   mounted() {
-    this.outClass = {}
-    if (this.size) this.outClass[`display-${this.size}`] = true
-    // let test = Object.assign(this.outClass, this.classes ? this.classes : {})
-    for(const item in this.outClass){
-      if(this.outClass[item]) this.classes += '1'
-    }
-    console.log('this.outClass', this.outClass)
-    console.log('this.classes', this.classes)
+    this.outClass = ''
+    if (this.size) this.outClass += ` display-${this.size}`
+      this.outClass += ` ${this.classes}`
   },
   /*
    * Рендер компонента
@@ -79,7 +74,7 @@ export default {
         attrs: {
 
           // указание аттрибутов
-          class: this.classes,
+          class: this.outClass,
           style: this.styles, // стили
         },
       },
