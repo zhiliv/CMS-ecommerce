@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-ul-list.js Содержимое html для app-ul-list  1`] = `
+<ul
+  class="list-unstyled simple simple-xl"
+  id="indent"
+  style="background: white;"
+>
+  <li>
+    Тест
+  </li>
+</ul>
+`;
