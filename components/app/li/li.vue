@@ -1,5 +1,5 @@
 <template>
-  <ul
+  <li
     v-bind="$attrs"
     :class="[outClass, classes]"
     :style="styles"
@@ -23,7 +23,7 @@
     @unload="$emit('unload', $event)"
   >
     <slot></slot>
-  </ul>
+  </li>
 </template>
 
 <script>
@@ -43,10 +43,6 @@ export default {
       type: String,
       default: '',
     },
-    unstyled: {
-      type: Boolean,
-      default: true,
-    },
     inline: {
       type: Boolean,
       default: false,
@@ -59,36 +55,17 @@ export default {
   },
   mounted() {
     this.outClass = {
-      'list-unstyled': this.unstyled,
-      'list-inline': this.inline,
+      'list-inline-item': this.inline,
     }
   },
 }
 </script>
 
 <style>
-ul {
-  padding-left: 2rem;
-  margin-top: 0;
-  margin-bottom: 1rem;
+.list-inline-item {
+  display: inline-block;
 }
-
-ul {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-ul ul {
-  margin-bottom: 0;
-}
-
-.list-unstyled {
-  padding-left: 0;
-  list-style: none;
-}
-
-.list-inline {
-  padding-left: 0;
-  list-style: none;
+.list-inline-item:not(:last-child) {
+  margin-right: 0.5rem;
 }
 </style>
