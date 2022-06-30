@@ -47,6 +47,18 @@ export default {
       type: Boolean,
       default: true,
     },
+    colFormLabel: {
+      type: Boolean,
+      default: false,
+    },
+    colFormLabelSm: {
+      type: Boolean,
+      default: false,
+    },
+    colFormLabelLg: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     /*
@@ -61,6 +73,9 @@ export default {
   mounted() {
     this.outClass = {
       'form-label': this.formLabel,
+      'col-form-label': this.colFormLabel,
+      'col-form-label-lg': this.colFormLabelLg,
+      'col-form-label-sm': this.colFormLabelSm,
     }
   },
 }
@@ -73,5 +88,25 @@ label {
 
 .form-label {
   margin-bottom: 0.5rem;
+}
+
+.col-form-label {
+  padding-top: calc(0.375rem + 1px);
+  padding-bottom: calc(0.375rem + 1px);
+  margin-bottom: 0;
+  font-size: inherit;
+  line-height: 1.5;
+}
+
+.col-form-label-lg {
+  padding-top: calc(0.5rem + 1px);
+  padding-bottom: calc(0.5rem + 1px);
+  font-size: 1.25rem;
+}
+
+.col-form-label-sm {
+  padding-top: calc(0.25rem + 1px);
+  padding-bottom: calc(0.25rem + 1px);
+  font-size: 0.875rem;
 }
 </style>
