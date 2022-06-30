@@ -1,6 +1,6 @@
 <template>
   <blockquote
-    :class="classes"
+    :class="[outClass, classes]"
     :style="styles"
     v-bind="$attrs"
     @dblclick="$emit('dblclick', $event)"
@@ -43,6 +43,21 @@ export default {
       type: String,
       default: '',
     },
+    footer: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data() {
+    return {
+      outClass: null,
+    }
+  },
+  mounted() {
+    this.outClass = {
+      blockquote: true,
+      'blockquote-footer': this.footer,
+    }
   },
 }
 </script>
@@ -50,5 +65,23 @@ export default {
 <style>
 blockquote {
   margin: 0 0 1rem;
+}
+
+.blockquote {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+.blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.blockquote-footer {
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  font-size: 0.875em;
+  color: #6c757d;
+}
+.blockquote-footer::before {
+  content: '—';
 }
 </style>

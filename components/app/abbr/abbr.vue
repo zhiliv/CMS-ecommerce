@@ -1,7 +1,7 @@
 <template>
   <abbr
     :style="styles"
-    :class="classes"
+    :class="[outClass, classes]"
     v-bind="$attrs"
     @dblclick="$emit('dblclick', $event)"
     @click="$emit('click', $event)"
@@ -44,6 +44,20 @@ export default {
       type: String,
       default: '',
     },
+    initialism: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data() {
+    return {
+      outClass: null,
+    }
+  },
+  mounted() {
+    this.outClass = {
+      initialism: this.initialism,
+    }
   },
 }
 </script>
@@ -53,5 +67,10 @@ abbr[title] {
   text-decoration: underline dotted;
   cursor: help;
   text-decoration-skip-ink: none;
+}
+
+.initialism {
+  font-size: 0.875em;
+  text-transform: uppercase;
 }
 </style>

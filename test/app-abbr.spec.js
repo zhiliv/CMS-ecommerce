@@ -11,7 +11,8 @@ describe('app-abbr.js', () => {
         classes: 'simple simple-xl',
         styles: 'background: white',
         id: 'indent',
-        title: 'Подсказка'
+        title: 'Подсказка',
+        initialism: true
       },
 
       slots:{

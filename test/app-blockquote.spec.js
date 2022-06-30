@@ -10,7 +10,8 @@ describe('app-blockquote.js', () => {
       propsData: {
         classes: 'simple simple-xl',
         styles: 'background: white',
-        id: 'indent'
+        id: 'indent',
+        footer: true
       },
 
       slots:{
