@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-th.js Содержимое html для app-th  1`] = `
+<tr
+  class="table-active simple simple-xl"
+  id="indent"
+  style="background: white;"
+>
+  Содержимое
+</tr>
+`;

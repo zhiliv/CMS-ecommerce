@@ -1,7 +1,3 @@
-.table-active {
-  --bs-table-accent-bg: var(--bs-table-active-bg);
-  color: var(--bs-table-active-color);
-}
 
 
 .form-label {
