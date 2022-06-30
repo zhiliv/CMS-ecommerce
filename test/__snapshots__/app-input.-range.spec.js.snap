@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`app-input-check.js Содержимое html для app-input-check  1`] = `
+exports[`app-input-range.js Содержимое html для app-input-range  1`] = `
 <input
-  class="form-check-input simple simple-xl"
+  class="form-range simple simple-xl"
   id="indent"
   placeholder="Предпоказ текста"
   style="background: white;"
-  type="radio"
+  type="range"
   value="тест"
 />
 `;
