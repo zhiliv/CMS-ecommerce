@@ -1,6 +1,6 @@
 <template>
   <label
-    :class="[classes]"
+    :class="[outClass, classes]"
     :style="styles"
     v-bind="$attrs"
     @dblclick="$emit('dblclick', $event)"
@@ -43,6 +43,25 @@ export default {
       type: String,
       default: '',
     },
+    formLabel: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  data() {
+    /*
+     * @typedef {Object} Внутренние свойства компонента
+     * @property {Object} outClass Выходные классы
+     *
+     */
+    return {
+      outClass: {}, // классы, сформированные аттрибутами
+    }
+  },
+  mounted() {
+    this.outClass = {
+      'form-label': this.formLabel,
+    }
   },
 }
 </script>
@@ -50,5 +69,9 @@ export default {
 <style>
 label {
   display: inline-block;
+}
+
+.form-label {
+  margin-bottom: 0.5rem;
 }
 </style>
