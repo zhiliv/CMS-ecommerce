@@ -256,32 +256,32 @@ export default {
     },
     offset: {
       // offset
-      type: Number,
+      type: [Number, String],
       default: null,
     },
     offsetSm: {
       // offset-sm
-      type: Number,
+      type: [Number, String],
       default: null,
     },
     offsetMd: {
       // offset-md
-      type: Number,
+      type: [Number, String],
       default: null,
     },
     offsetLg: {
       // offset-lg
-      type: Number,
+      type: [Number, String],
       default: null,
     },
     offsetXl: {
       // offset-xl
-      type: Number,
+      type: [Number, String],
       default: null,
     },
     offsetXxl: {
       // offset-xxl
-      type: Number,
+      type: [Number, String],
       default: null,
     },
   },

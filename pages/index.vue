@@ -1,19 +1,25 @@
 <template>
-  <app-container breakpoint="fluid">
-    sdrfasdf
-    <app-progress styles="width: 25%;" aria-valuenow="50"></app-progress>
-    <app-row style="height: 300px;" @click="alt($event)"> </app-row>
+  <app-container classes="border border-secondary rounded-2 vh-100">
+    <app-row>
+      <app-col col="3">
+        <router-link to="/offers/">
+          <app-button classes="btn-primary m-3 w-100" size="lg"
+            >Офферы</app-button
+          >
+        </router-link>
+      </app-col>
+      <app-col col="3"> </app-col>
+    </app-row>
   </app-container>
 </template>
 
 <script>
-export default {
-  methods: {
-    alt(event) {
-      console.log('event', event)
-    },
-  },
-}
+export default {}
 </script>
 
-<style></style>
+<style>
+@import './../assets/css/height.css';
+@import './../assets/css/width.css';
+@import './../assets/css/margin.css';
+@import './../assets/css/border.css';
+</style>

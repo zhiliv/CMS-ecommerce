@@ -14,5 +14,6 @@ db.on('error', (err) => {
 require('./../models/userModel') // модуль "Пользователи"
 require('../models/typesServicesModel') // модель "Виды услуг"
 require('../models/organizationModel') // модель "Организация"
+require('../models/offersModel') // модель "Офферы"
 
 module.exports = mongoose

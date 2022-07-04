@@ -3,6 +3,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default
 const isDev = process.env.NODE_ENV !== 'production'
 
 export default {
+  loading: false,
   mode: 'universal',
   ...(!isDev && {
     modern: 'client'
@@ -14,7 +15,6 @@ export default {
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
@@ -22,7 +22,7 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   // '~/assets/css/main.css'
   css: [
-
+    '~/assets/css/main.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -37,20 +37,41 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    'nuxt-purgecss',
     // https://go.nuxtjs.dev/stylelint
     // '@nuxtjs/stylelint-module',
+
   ],
+  purgeCSS: {
+    paths: [
+      'components/**/*.vue',
+      'components/app/*.vue',
+      'layouts/**/*.vue',
+      'layouts/*.vue',
+      'pages/**/*.vue',
+      'pages/*.vue',
+      'plugins/**/*.js'
+    ],
+    styleExtensions: ['.css'],
+    whitelist: ['body', 'html', 'nuxt-progress'],
+    extractors: [
+      {
+        extractor: content => content.match(/[A-z0-9-:\\/]+/g) || [],
+        extensions: ['html', 'vue', 'js']
+      }
+    ]
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/bootstrap
-    'bootstrap-vue/nuxt',
+    // 'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
-    '@nuxt/content',
+    // '@nuxt/content',
     // https://github.com/nuxt-community/auth-module
     '@nuxtjs/auth-next'
   ],
