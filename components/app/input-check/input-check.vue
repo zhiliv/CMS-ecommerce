@@ -1,9 +1,10 @@
 <template>
-  <input
+  <div :class="{'form-check': true,  'form-switch': this.switch}" >
+<input
     v-bind="$attrs"
     v-model="value"
-    :type="type"
     :class="[outClass, classes]"
+    :type="type"
     :style="styles"
     @dblclick="$emit('dblclick', $event)"
     @click="$emit('click', $event)"
@@ -24,9 +25,13 @@
     @submit="$emit('submit', $event)"
     @unload="$emit('unload', $event)"
   />
+  <app-label classes="form-check-label">{{text}}</app-label>
+  </div>
+
 </template>
 
 <script>
+
 export default {
   /*
    * Входящие свойства
@@ -38,6 +43,7 @@ export default {
    *  Доступные варианты
    *  -checkbox
    *  -radio
+   * @property {String} text - Значение для подписи
    */
   props: {
     classes: {
@@ -53,9 +59,13 @@ export default {
       default: 'checkbox',
     },
     switch: {
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
+    text: {
+      type: String,
+      default: ''
+    }
   },
   data() {
     /*
@@ -65,12 +75,13 @@ export default {
      */
     return {
       outClass: {}, // классы, сформированные аттрибутами
+      value: null
     }
   },
   mounted() {
     this.outClass = {
       'form-check-input': true,
-      'form-switch': this.switch,
+
     }
   },
 }

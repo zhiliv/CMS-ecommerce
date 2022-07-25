@@ -2,7 +2,7 @@
   <input
     v-bind="$attrs"
     v-model="value"
-    :class="classes"
+    :class="[outClass, classes]"
     :style="styles"
     @dblclick="$emit('dblclick', $event)"
     @click="$emit('click', $event)"
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { StrToBool} from './../../../scripts/component/func'
 export default {
   /*
    * Входящие свойства
@@ -42,6 +43,21 @@ export default {
     styles: {
       type: String,
       default: '',
+    },
+    formControl: {
+      type: [String, Boolean],
+      default: true,
+    },
+  },
+  data() {
+    return {
+      value: '',
+      outClass: null,
+    }
+  },
+  mounted() {
+    this.outClass = {
+      'form-control': StrToBool(this.formControl),
     }
   },
 }

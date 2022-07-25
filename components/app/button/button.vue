@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import { StrToBool } from './../../../scripts/component/func'
 export default {
   /*
    * Входящие свойства
@@ -56,6 +57,7 @@ export default {
    * Доступные варианты
    *  -sm
    *  -lg
+   * @property {String} collapse Скрывать кнопку для больших экранов
    */
   props: {
     classes: {
@@ -74,6 +76,14 @@ export default {
       type: String,
       default: '',
     },
+    btn: {
+      type: [Boolean, String],
+      default: true
+    },
+    collapse: {
+      type: [Boolean, String],
+      default: false
+    }
   },
   data() {
     return {
@@ -85,7 +95,9 @@ export default {
    */
   mounted() {
     this.outClass = {
-      btn: true,
+      btn: StrToBool(this.btn),
+      show: StrToBool(this.collapse),
+      hidden: StrToBool(this.collapse)
     }
     if (this.type) this.outClass[`btn-${this.type}`] = true
     if (this.size) this.outClass[`btn-${this.size}`] = true
@@ -298,8 +310,7 @@ fieldset:disabled .btn {
   --bs-btn-color: #000;
   --bs-btn-bg: #f8f9fa;
   --bs-btn-border-color: #f8f9fa;
-  --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #f9fafb;
+  --bs-btn-hover-color: #000;--bs-btn-hover-bg: #f9fafb;
   --bs-btn-hover-border-color: #f9fafb;
   --bs-btn-focus-shadow-rgb: 211, 212, 213;
   --bs-btn-active-color: #000;
@@ -483,4 +494,18 @@ fieldset:disabled .btn {
   --bs-btn-font-size: 0.875rem;
   --bs-btn-border-radius: 0.25rem;
 }
+
+
+@media (max-width: 991px) {
+  .show{
+    display: block
+  }
+}
+
+@media (min-width: 991px) {
+  .hidden{
+    display: none
+  }
+}
+
 </style>

@@ -32,6 +32,7 @@ import {
   camelToDash,
   isBoolean,
   isString,
+  StrToBool
 } from './../../../scripts/component/func'
 export default {
   /*
@@ -308,9 +309,9 @@ export default {
           item === 'colLg' ||
           item === 'colXl' ||
           item === 'colXxl') &&
-        isBoolean(this[item])
+        isBoolean(StrToBool(this[item]))
       )
-        this.outClass[`${camelToDash(item)}`] = this[item]
+        this.outClass[`${camelToDash(item)}`] = StrToBool(this[item])
       else if (
         (item === 'col' ||
           item === 'colSm' ||
@@ -366,7 +367,7 @@ export default {
 
 .col-4 {
   flex: 0 0 auto;
-  width: 3.3333%;
+  width: 33.3333%;
 }
 
 .col-5 {
@@ -422,7 +423,7 @@ export default {
 }
 
 .offset-4 {
-  margin-left: 3.3333%;
+  margin-left: 33.3333%;
 }
 
 .offset-5 {
@@ -480,7 +481,7 @@ export default {
 
   .col-sm-4 {
     flex: 0 0 auto;
-    width: 3.3333%;
+    width: 33.3333%;
   }
 
   .col-sm-5 {
@@ -540,7 +541,7 @@ export default {
   }
 
   .offset-sm-4 {
-    margin-left: 3.3333%;
+    margin-left: 33.3333%;
   }
 
   .offset-sm-5 {
@@ -599,7 +600,7 @@ export default {
 
   .col-md-4 {
     flex: 0 0 auto;
-    width: 3.3333%;
+    width: 33.3333%;
   }
 
   .col-md-5 {
@@ -659,7 +660,7 @@ export default {
   }
 
   .offset-md-4 {
-    margin-left: 3.3333%;
+    margin-left: 33.3333%;
   }
 
   .offset-md-5 {
@@ -718,7 +719,7 @@ export default {
 
   .col-lg-4 {
     flex: 0 0 auto;
-    width: 3.3333%;
+    width: 33.3333%;
   }
 
   .col-lg-5 {
@@ -778,7 +779,7 @@ export default {
   }
 
   .offset-lg-4 {
-    margin-left: 3.3333%;
+    margin-left: 33.3333%;
   }
 
   .offset-lg-5 {
@@ -837,7 +838,7 @@ export default {
 
   .col-xl-4 {
     flex: 0 0 auto;
-    width: 3.3333%;
+    width: 33.3333%;
   }
 
   .col-xl-5 {
@@ -897,7 +898,7 @@ export default {
   }
 
   .offset-xl-4 {
-    margin-left: 3.3333%;
+    margin-left: 33.3333%;
   }
 
   .offset-xl-5 {
@@ -956,7 +957,7 @@ export default {
 
   .col-xxl-4 {
     flex: 0 0 auto;
-    width: 3.3333%;
+    width: 33.3333%;
   }
 
   .col-xxl-5 {
@@ -1016,7 +1017,7 @@ export default {
   }
 
   .offset-xxl-4 {
-    margin-left: 3.3333%;
+    margin-left: 33.3333%;
   }
 
   .offset-xxl-5 {

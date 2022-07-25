@@ -2,11 +2,19 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./*"],
-      "@/*": ["./*"],
-      "~~/*": ["./*"],
-      "@@/*": ["./*"]
+        "components/*": [
+            "components/*"
+        ]
     }
-  },
-  "exclude": ["node_modules", ".nuxt", "dist"]
+},
+  "include": [
+    "./components/**/*.vue",
+    "./components/app/**/*.vue",
+    "./components/app/button/button.vue"
+  ],
+  "exclude": [
+    "node_modules",
+    ".nuxt",
+    "dist"
+  ]
 }

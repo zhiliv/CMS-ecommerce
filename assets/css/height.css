@@ -38,3 +38,7 @@
 .max-vh-99 {
   max-height: 99vh !important;
 }
+
+.min-h-100{
+  min-height: 100% !important;
+}

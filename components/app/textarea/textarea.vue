@@ -23,7 +23,6 @@
     @submit="$emit('submit', $event)"
     @unload="$emit('unload', $event)"
   >
-    <slot></slot>
   </textarea>
 </template>
 
@@ -48,9 +47,14 @@ export default {
   data() {
     return {
       outClass: null, // классы, сформированные аттрибутами
+      value: ''
     }
   },
-
+  mounted() {
+    this.outClass = {
+      'form-control': true
+    }
+  }
 }
 </script>
 

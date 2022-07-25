@@ -3,8 +3,8 @@
  */
 
 const Router = require('koa-router')
-const router = new Router({ prefix: '/api/offers' })
-const controller = require('../controllers/offersController')
+const router = new Router({ prefix: '/api/products' })
+const controller = require('../controllers/productController')
 
 router.post('/', controller.create) // создание документа
 router.get('/', controller.all) // получение всех документов
