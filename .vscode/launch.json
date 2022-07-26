@@ -6,14 +6,18 @@
   "configurations": [
     {
       "type": "chrome",
-      "request": "attach",
-      "name": "client: chrome",
+      "request": "launch",
+      "name": "client: yandex",
       "runtimeExecutable": "C:\\Users\\zhili\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe",
       "webRoot": "${workspaceFolder}",
       "sourceMapPathOverrides": {
         "webpack:///*": "${workspaceRoot}/*"
       },
       "url": "http://localhost:3000",
+      "runtimeArgs": [
+        "run",
+        "dev-debug"
+      ],
       "port": 9222
     },
     {
@@ -43,7 +47,7 @@
   "compounds": [
     {
       "name": "fullstack: nuxt",
-      "configurations": ["server: nuxt", "client: chrome"]
+      "configurations": ["server: nuxt", "client: yandex"]
     }
   ],
 

@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { StrToBool} from './../../../scripts/component/func'
+import { strToBool} from './../../../scripts/component/func'
 export default {
   /*
    * Входящие свойства
@@ -57,7 +57,7 @@ export default {
   },
   mounted() {
     this.outClass = {
-      'form-control': StrToBool(this.formControl),
+      'form-control': strToBool(this.formControl),
     }
   },
 }

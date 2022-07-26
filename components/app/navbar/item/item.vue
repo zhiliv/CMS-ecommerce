@@ -2,7 +2,7 @@
   <li
     ref="item"
     v-bind="$attrs"
-    :class="outClass"
+    :class="[outClass, classes]"
     @mouseover="hover = true"
     @mouseleave="hover = false"
     @click="$emit('click', $event)"
@@ -17,8 +17,13 @@ export default {
    * @property {String} hoverColor - Класс для добавления в элемент при наведении мыши
    * @property {String} size - Размер
    * @property {String} color - Цвет панели
+   * @property {String} textColor - Цвет текста
    */
   props: {
+    classes: {
+      type: String,
+      default: ''
+    },
     hoverColor: {
       type: String,
       default: '',
@@ -61,10 +66,10 @@ export default {
       if (val) {
         // если курсор наведен на элемент
         elCls.add(this.hoverColor) // добавление класса отвечающего за наведение курсора на элемент
-        elCls.remove(`bg-${this.color}`) // удаление класса с основным цветом элемента
+        elCls.remove(`${this.color}`) // удаление класса с основным цветом элемента
       } else {
         elCls.remove(this.hoverColor) // удаление класса отвечающего за наведение курсора на элемент
-        elCls.add(`bg-${this.color}`) // добавление класса с основным цветом элемента
+        elCls.add(`${this.color}`) // добавление класса с основным цветом элемента
       }
     },
   },

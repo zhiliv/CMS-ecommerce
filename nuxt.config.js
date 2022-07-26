@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 const imageminMozjpeg = require('imagemin-mozjpeg')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const isDev = process.env.NODE_ENV !== 'production'
@@ -212,16 +213,13 @@ export default {
       order: 'cssnanoLast'
     },
 
-    /*
-  * Удалить для прода
-  * Используется для отладки
-  */
-  /* extexd(config, ctx){
-    if (ctx.isDev) {
-      config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
-    }
-  } */
   },
-
+  build: {
+    extend(config, ctx) {
+      if (ctx.isDev) {
+        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
+      }
+    }
+}
 
 }

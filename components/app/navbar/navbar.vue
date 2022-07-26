@@ -23,6 +23,7 @@
         <template v-if="!Array.isArray(item)">
           <app-navbar-item
             :key="item.id"
+            :classes="outClass"
             :hover-color="hoverColor"
             :color="color"
             :size="size"
@@ -33,6 +34,7 @@
         <template v-else>
           <app-navbar-dropdown
             :key="item.id"
+            :classes="outClass"
             :size="size"
             :caption="item[0].caption"
             :color="color"
@@ -111,8 +113,8 @@ export default {
     if (this.size) this.outClass[this.size] = true // если задан размер то устанавливаем размер
     if (this.color) {
       // при указании цвета элемента
-      this.outClass[`bg-${this.color}`] = true // добавление класса цвета элементу
-      this.parentClass[`bg-${this.color}`] = true // добавление класса цвета родительскому элементу
+      this.outClass[`${this.color}`] = true // добавление класса цвета элементу
+      this.parentClass[`${this.color}`] = true // добавление класса цвета родительскому элементу
     }
   },
   /*

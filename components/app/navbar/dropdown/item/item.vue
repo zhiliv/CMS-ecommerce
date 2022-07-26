@@ -68,10 +68,10 @@ export default {
       if (val) {
         // если курсор наведен на элемент
         elCls.add(this.hoverColor) // добавление класса отвечающего за наведение курсора на элемент
-        elCls.remove(`bg-${this.color}`) // удаление класса с основным цветом элемента
+        elCls.remove(`${this.color}`) // удаление класса с основным цветом элемента
       } else {
         elCls.remove(this.hoverColor) // удаление класса отвечающего за наведение курсора на элемент
-        elCls.add(`bg-${this.color}`) // добавление класса с основным цветом элемента
+        elCls.add(`${this.color}`) // добавление класса с основным цветом элемента
       }
     },
   },
@@ -80,7 +80,7 @@ export default {
    * @function mounted
    */
   beforeMount() {
-    if (this.color) this.outClass[`bg-${this.color}`] = true // если указан цвет то добавляем его в классы компонента
+    if (this.color) this.outClass[`${this.color}`] = true // если указан цвет то добавляем его в классы компонента
     if (this.size) this.outClass[this.size] = true // если задан размер то устанавливаем размер
   },
 }

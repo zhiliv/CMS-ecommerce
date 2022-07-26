@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { StrToBool } from './../../../scripts/component/func'
+import { strToBool } from './../../../scripts/component/func'
 export default {
   /*
    * Входящие свойства
@@ -61,7 +61,7 @@ export default {
    */
   props: {
     classes: {
-      type: String,
+      type: [String, Array],
       default: '',
     },
     styles: {
@@ -95,9 +95,9 @@ export default {
    */
   mounted() {
     this.outClass = {
-      btn: StrToBool(this.btn),
-      show: StrToBool(this.collapse),
-      hidden: StrToBool(this.collapse)
+      btn: strToBool(this.btn),
+      show: strToBool(this.collapse),
+      hidden: strToBool(this.collapse)
     }
     if (this.type) this.outClass[`btn-${this.type}`] = true
     if (this.size) this.outClass[`btn-${this.size}`] = true

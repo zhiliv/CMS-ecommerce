@@ -37,11 +37,18 @@ export const isString = (data) => typeof data === 'string'
 
 /*
  * Преобразование строки в логический тип
- * @function  StrToBool
+ * @function  strToBool
  * @param {String} data - Значение, которое необходимо преобразовать в логический тип
  */
-export const StrToBool = (data) => {
+export const strToBool = (data) => {
   if (data === 'true' && isString(data)) return true
   else if (data === 'false' && isString(data)) return false
   else return data
 }
+
+/*
+ * Преобразование строки в массив
+ * @function strToArr
+ * @param {String} data - Строка для преобразования
+ */
+export const strToArr = (data) => (data ? data.trim().split(' ') : [])

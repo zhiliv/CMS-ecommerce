@@ -41,8 +41,8 @@ export default {
    */
   props: {
     classes: {
-      type: String,
-      default: '',
+      type: [String, Object],
+      default: null,
     },
     caption: {
       type: String,
@@ -50,7 +50,7 @@ export default {
     },
     hoverColor: {
       type: String,
-      default: '',
+      default: null,
       required: true,
     },
     color: {
@@ -93,21 +93,20 @@ export default {
      * @property {Any} val - Полученное значение
      */
     hover(val) {
-      if (val) {
-        // если курсор наведен на элемент
-        this.$refs.item.classList.add(this.hoverColor) // добавление класса отвечающего за наведение курсора на элемент
-        this.$refs.item.classList.remove(`bg-${this.color}`) // удаление класса с основным цветом элемента
-      } else {
-        this.$refs.item.classList.remove(this.hoverColor) // удаление класса отвечающего за наведение курсора на элемент
-        this.$refs.item.classList.add(`bg-${this.color}`) // добавление класса с основным цветом элемента
-      }
+      const elCls = this.$refs.item.classList // получение элемента для управления его классами
+      val && this.hoverColor
+        ? elCls.add(this.hoverColor)
+        : elCls.remove(this.hoverColor)
+      val && this.color
+        ? elCls.remove(`${this.color}`)
+        : elCls.add(`${this.color}`)
     },
   },
   /*
    * При монтировании компонента
    */
   mounted() {
-    if (this.color) this.outClass[`bg-${this.color}`] = true // если задан размер то устанавливаем размер
+    if (this.color) this.outClass[`${this.color}`] = true // если задан размер то устанавливаем размер
     if (this.size) this.outClass[this.size] = true // если задан размер то устанавливаем размер
     if (this.size) this.outClassParent[this.size] = true // если задан размер то устанавливаем размер
   },

@@ -208,3 +208,7 @@
 .ms-auto {
   margin-left: auto !important;
 }
+
+.m-3p{
+  margin: 3px;
+}

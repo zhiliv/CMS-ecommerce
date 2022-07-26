@@ -27,7 +27,7 @@
   </div>
 </template>
 <script>
-import { removeSpace, StrToBool } from './../../../scripts/component/func'
+import { removeSpace, strToBool } from './../../../scripts/component/func'
 export default {
   /*
    * Входящие свойства
@@ -78,7 +78,7 @@ export default {
    */
   mounted() {
     this.outClass = {
-      container: StrToBool(this.container) ,
+      container: strToBool(this.container) ,
     }
     // создание объекта для установки выходных классов
     const arrOfBreakpoint = this.breakpoint

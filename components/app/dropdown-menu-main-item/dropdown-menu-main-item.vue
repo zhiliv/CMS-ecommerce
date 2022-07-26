@@ -2,7 +2,7 @@
   <div></div>
 </template>
 <script>
-import { StrToBool } from '../../../scripts/component/func'
+import { strToBool } from '../../../scripts/component/func'
 export default {
   props: {
     /*
@@ -21,8 +21,7 @@ export default {
   },
   data() {
     return {
-      hover: false,
-      outHoverClass: {},
+      hover: false
     }
   },
   watch: {
@@ -32,7 +31,7 @@ export default {
         val
           ? this.$refs.item.classList.add(cls)
           : this.$refs.item.classList.remove(cls)
-        if (StrToBool(this.checkHover)) this.$emit('hover-status', val)
+        if (strToBool(this.checkHover)) this.$emit('hover-status', val)
       })
     },
   },

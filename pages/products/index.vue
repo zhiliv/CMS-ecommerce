@@ -1,3 +1,4 @@
+
 <template>
   <app-container
     container="false"
@@ -7,6 +8,7 @@
   >
     <app-row classes="h-100">
       <app-col
+        classes="p-0 border-end border-primary"
         col="false"
         col-sm="12"
         col-md="12"
@@ -14,12 +16,17 @@
         col-xl="3"
         col-xxl="2"
       >
-        <app-list-group classes=" overflow-y-scroll" style="height: 89vh;">
+        <div class="d-flex justify-content-center border-bottom border-secondary">
+          <app-h level="3" >Офферы</app-h>
+        </div>
+
+        <app-list-group classes="overflow-y-scroll ps-2" style="height: 86vh;">
           <app-list-group-item
             v-for="item in listOffers"
             :key="item.name"
-            classes-active="bg-blue white-text"
-            classes="border border-secondary rounded-1"
+            hover-color="bg-blue-lighten-5"
+            classes-active="bg-blue-darken-2 white-text"
+            classes="border border-secondary"
             >{{ item.name }}</app-list-group-item
           >
         </app-list-group>
@@ -31,16 +38,16 @@
         col-lg="12"
         col-xl="9"
         col-xxl="10"
-        classes="min-h-100"
+        classes="min-h-100 p-0"
       >
         <app-navbar
-          color="blue-accent-2"
+          color="bg-blue-accent-2"
           burger-class="white-text"
           hover-color="bg-blue-darken-3"
           :menu="navOffer"
         >
         </app-navbar>
-        <form class="h-100">
+        <form class="h-100 p-3">
           <app-row classes="h-100">
             <app-col
               col="false"
@@ -112,6 +119,7 @@
 </template>
 
 <script>
+import formTypeOffers from '../form-type-offers.vue'
 export default {
   layout: 'backmenu', // шаблон
   data() {
@@ -119,38 +127,17 @@ export default {
       listOffers: [],
       listTypeOffer: [{}],
       navOffer: [
-        {
-          id: 1,
-          caption: 'Главная',
-          click: () => {
-            alert(1)
-          },
-        },
         [
           {
             id: 2,
-            caption: 'Главный пункт',
+            caption: 'Данные',
             parent: true,
           },
           {
-            id: 3,
-            caption: 'Подпункт 1',
-            click: () => {
-              alert(2)
-            },
-          },
-          {
             id: 4,
-            caption: 'Подпункт 2',
+            caption: 'Типы офферов',
             click: () => {
-              alert(3)
-            },
-          },
-          {
-            id: 5,
-            caption: 'Подпункт 3',
-            click: () => {
-              alert(4)
+              this.$modal.show(formTypeOffers, {}, {width: '900px', height: '600px'})
             },
           },
         ],
@@ -190,7 +177,9 @@ export default {
 <style>
 @import './../../assets/css/width.css';
 @import './../../assets/css/height.css';
+@import './../../assets/css/align.css';
 @import './../../assets/css/margin.css';
+@import './../../assets/css/padding.css';
 @import './../../assets/css/border.css';
 @import './../../assets/css/overflow.css';
 @import './../../assets/css/form-control.css';

@@ -26,7 +26,7 @@
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
-    <typeServices />
+    <typeOffers />
     <OrganizationModal
       :show="$store.state.showModalOrganization"
     ></OrganizationModal>
@@ -34,13 +34,13 @@
 </template>
 
 <script>
-import typeServices from '~/components/typeServices.vue'
+import typeOffers from '~/pages/form-type-offers.vue'
 import OrganizationModal from '~/components/Organization.vue'
 export default {
   /*
    * Подключение компонентов
    */
-  components: { typeServices, OrganizationModal },
+  components: { typeOffers, OrganizationModal },
   data() {
     return {}
   },
@@ -69,9 +69,13 @@ export default {
      * @function setShowModalTypesOfServices
      */
     setShowModalTypesOfServices() {
-      this.$modal.show('type-services',   {
-        text: 'Пример',
-      }, {minWidth: '1000px'})
+      this.$modal.show(
+        'type-services',
+        {
+          text: 'Пример',
+        },
+        { minWidth: '1000px' }
+      )
     },
 
     /*

@@ -32,7 +32,7 @@ import {
   camelToDash,
   isBoolean,
   isString,
-  StrToBool
+  strToBool
 } from './../../../scripts/component/func'
 export default {
   /*
@@ -309,9 +309,9 @@ export default {
           item === 'colLg' ||
           item === 'colXl' ||
           item === 'colXxl') &&
-        isBoolean(StrToBool(this[item]))
+        isBoolean(strToBool(this[item]))
       )
-        this.outClass[`${camelToDash(item)}`] = StrToBool(this[item])
+        this.outClass[`${camelToDash(item)}`] = strToBool(this[item])
       else if (
         (item === 'col' ||
           item === 'colSm' ||
