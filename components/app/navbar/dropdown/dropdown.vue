@@ -2,10 +2,7 @@
   <div class="dropdown">
     <li
       ref="item"
-      :class="outClassParent"
-      @mouseover="hover = true"
-      @mouseleave="hover = false"
-    >
+      :class="[classes, outClassParent]">
       {{ caption }}
     </li>
     <div :class="outClass">
@@ -13,12 +10,9 @@
         <template v-if="!item.parent">
           <app-navbar-dropdown-item
             :key="item.id"
-            :color="color"
             :size="size"
-            :hover-color="hoverColor"
-            classes="w-100 border-bottom"
+            :classes="classes"
             @click="item.click"
-            @hover-status="hoverStatus"
             >{{ item.caption }}</app-navbar-dropdown-item
           >
         </template>
@@ -34,26 +28,15 @@ export default {
    * @typedef {Object} props
    * @property {String} classes - Входные классы
    * @property {String} caption - Наименование кнопки
-   * @property {String} color - Классы для dropdown и его дочерних элементов
-   * @property {String} hoverColor - Класс при наведении мыши
    * @property {Array} list - Список раскрываемого меню
    * @property {String} size - Размер
    */
   props: {
     classes: {
-      type: [String, Object],
+      type: [String, Array],
       default: null,
     },
     caption: {
-      type: String,
-      default: '',
-    },
-    hoverColor: {
-      type: String,
-      default: null,
-      required: true,
-    },
-    color: {
       type: String,
       default: '',
     },
@@ -73,11 +56,9 @@ export default {
   data() {
     return {
       /*
-       * @property {Boolean} hover - свойство для получения параметра из родительского элемента для отображения списка
        * @property {Object} outClassParent - классы для родительского элемента выпадающего меню
        * @property {Object} outClass - Классы для выпадающего списка
        */
-      hover: false,
       outClassParent: { transition: true, 'no-select': true },
       outClass: {
         'dropdown-content': true,
@@ -86,52 +67,24 @@ export default {
       },
     }
   },
-  watch: {
-    /*
-     * Отслеживание наведения мыши на элемент
-     * @function hover
-     * @property {Any} val - Полученное значение
-     */
-    hover(val) {
-      const elCls = this.$refs.item.classList // получение элемента для управления его классами
-      val && this.hoverColor
-        ? elCls.add(this.hoverColor)
-        : elCls.remove(this.hoverColor)
-      val && this.color
-        ? elCls.remove(`${this.color}`)
-        : elCls.add(`${this.color}`)
-    },
-  },
   /*
    * При монтировании компонента
    */
   mounted() {
-    if (this.color) this.outClass[`${this.color}`] = true // если задан размер то устанавливаем размер
-    if (this.size) this.outClass[this.size] = true // если задан размер то устанавливаем размер
-    if (this.size) this.outClassParent[this.size] = true // если задан размер то устанавливаем размер
-  },
-  /*
-   * Методы компонента
-   */
-  methods: {
-    /*
-     * Отслеживание события наведения курсора - hover-status из дочернего компонента и устанавливает свойству hover этого компонента значение наведения
-     * @function hoverStatus
-     * @param {Boolean} hover - Значение наведения курсора на дочерний элемент
-     */
-    hoverStatus(hover) {
-      this.hover = hover
-    },
+    if (this.size) {
+      this.outClass[this.size] = true // если задан размер то устанавливаем размер
+      this.outClassParent[this.size] = true // если задан размер то устанавливаем размер
+    }
   },
 }
 </script>
 
 <style scoped>
-@import './../../../../assets/css/color.css';
 @import './../../../../assets/css/border.css';
 @import './../../../../assets/css/align.css';
 @import './../../../../assets/css/animate.css';
 @import './../../../../assets/css/text.css';
+
 .dropdown {
   position: absolute;
   display: inline-block;

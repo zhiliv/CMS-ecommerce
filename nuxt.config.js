@@ -5,6 +5,7 @@ const isDev = process.env.NODE_ENV !== 'production'
 
 export default {
   loading: false,
+
   mode: 'universal',
   ...(!isDev && {
     modern: 'client'
@@ -33,7 +34,6 @@ export default {
   components: [
     '~/components',
     { path: '~/components/app',  prefix: 'app' }],
-
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
@@ -50,6 +50,7 @@ export default {
       'layouts/**/*.vue',
       'layouts/*.vue',
       'pages/**/*.vue',
+      'pages/**/**/*.vue',
       'pages/*.vue',
       'plugins/**/*.js'
     ],

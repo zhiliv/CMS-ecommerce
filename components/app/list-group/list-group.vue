@@ -1,11 +1,9 @@
 <template>
   <ul
-    style="width: 100%;"
+    style="width: 100%"
     v-bind="$attrs"
     :class="[outClass, classes]"
-    :size="size"
-    :hover-color="hoverColor"
-  >
+    :size="size">
     <slot></slot>
   </ul>
 </template>
@@ -17,7 +15,6 @@ export default {
    * @typedef {Object} props
    * @property {String} classes - Входные классы
    * @property {String} size - Размер(Доступные размеры sm, lg)
-   * @property {String} hoverColor - цвет при наведении
    */
   props: {
     classes: {
@@ -25,10 +22,6 @@ export default {
       default: '',
     },
     size: {
-      type: String,
-      default: '',
-    },
-    hoverColor: {
       type: String,
       default: '',
     },

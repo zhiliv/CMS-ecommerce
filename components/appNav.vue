@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import typeOffers from '~/pages/form-type-offers.vue'
+import typeOffers from '../pages/modal/type-offers/type-offers.vue'
 import OrganizationModal from '~/components/Organization.vue'
 export default {
   /*

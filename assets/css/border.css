@@ -1,1261 +1,2269 @@
 .border {
   border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
 }
-
 .border-0 {
   border: 0 !important;
 }
-
 .border-top {
-  border-top: var(--bs-border-width) var(--bs-border-style)
-    var(--bs-border-color) !important;
+  border-top: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
 }
-
 .border-top-0 {
   border-top: 0 !important;
 }
-
 .border-end {
-  border-right: var(--bs-border-width) var(--bs-border-style)
-    var(--bs-border-color) !important;
+  border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
 }
-
 .border-end-0 {
   border-right: 0 !important;
 }
-
 .border-bottom {
-  border-bottom: var(--bs-border-width) var(--bs-border-style)
-    var(--bs-border-color) !important;
+  border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
 }
-
 .border-bottom-0 {
   border-bottom: 0 !important;
 }
-
 .border-start {
-  border-left: var(--bs-border-width) var(--bs-border-style)
-    var(--bs-border-color) !important;
+  border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
 }
-
 .border-start-0 {
   border-left: 0 !important;
 }
-
 .border-primary {
   --bs-border-opacity: 1;
-  border-color: rgba(
-    var(--bs-primary-rgb),
-    var(--bs-border-opacity)
-  ) !important;
+  border-color: rgba(var(--bs-primary-rgb), var(--bs-border-opacity)) !important;
 }
-
 .border-secondary {
   --bs-border-opacity: 1;
-  border-color: rgba(
-    var(--bs-secondary-rgb),
-    var(--bs-border-opacity)
-  ) !important;
+  border-color: rgba(var(--bs-secondary-rgb), var(--bs-border-opacity)) !important;
 }
-
 .border-success {
   --bs-border-opacity: 1;
-  border-color: rgba(
-    var(--bs-success-rgb),
-    var(--bs-border-opacity)
-  ) !important;
+  border-color: rgba(var(--bs-success-rgb), var(--bs-border-opacity)) !important;
 }
-
 .border-info {
   --bs-border-opacity: 1;
   border-color: rgba(var(--bs-info-rgb), var(--bs-border-opacity)) !important;
 }
-
 .border-warning {
   --bs-border-opacity: 1;
-  border-color: rgba(
-    var(--bs-warning-rgb),
-    var(--bs-border-opacity)
-  ) !important;
+  border-color: rgba(var(--bs-warning-rgb), var(--bs-border-opacity)) !important;
 }
-
 .border-danger {
   --bs-border-opacity: 1;
   border-color: rgba(var(--bs-danger-rgb), var(--bs-border-opacity)) !important;
 }
-
 .border-light {
   --bs-border-opacity: 1;
   border-color: rgba(var(--bs-light-rgb), var(--bs-border-opacity)) !important;
 }
-
 .border-dark {
   --bs-border-opacity: 1;
   border-color: rgba(var(--bs-dark-rgb), var(--bs-border-opacity)) !important;
 }
-
 .border-white {
   --bs-border-opacity: 1;
   border-color: rgba(var(--bs-white-rgb), var(--bs-border-opacity)) !important;
 }
-
-
 .border-1 {
   --bs-border-width: 1px;
 }
-
 .border-2 {
   --bs-border-width: 2px;
 }
-
 .border-3 {
   --bs-border-width: 3px;
 }
-
 .border-4 {
   --bs-border-width: 4px;
 }
-
 .border-5 {
   --bs-border-width: 5px;
 }
-
 .border-opacity-10 {
   --bs-border-opacity: 0.1;
 }
-
 .border-opacity-25 {
   --bs-border-opacity: 0.25;
 }
-
 .border-opacity-50 {
   --bs-border-opacity: 0.5;
 }
-
 .border-opacity-75 {
   --bs-border-opacity: 0.75;
 }
-
 .border-opacity-100 {
   --bs-border-opacity: 1;
 }
 
-
 .rounded {
   border-radius: var(--bs-border-radius) !important;
 }
-
 .rounded-0 {
   border-radius: 0 !important;
 }
-
 .rounded-1 {
   border-radius: var(--bs-border-radius-sm) !important;
 }
-
 .rounded-2 {
   border-radius: var(--bs-border-radius) !important;
 }
-
 .rounded-3 {
   border-radius: var(--bs-border-radius-lg) !important;
 }
-
 .rounded-4 {
   border-radius: var(--bs-border-radius-xl) !important;
 }
-
 .rounded-5 {
   border-radius: var(--bs-border-radius-2xl) !important;
 }
-
 .rounded-circle {
   border-radius: 50% !important;
 }
-
 .rounded-pill {
   border-radius: var(--bs-border-radius-pill) !important;
 }
-
 .rounded-top {
   border-top-left-radius: var(--bs-border-radius) !important;
   border-top-right-radius: var(--bs-border-radius) !important;
 }
-
 .rounded-end {
   border-top-right-radius: var(--bs-border-radius) !important;
   border-bottom-right-radius: var(--bs-border-radius) !important;
 }
-
 .rounded-bottom {
   border-bottom-right-radius: var(--bs-border-radius) !important;
   border-bottom-left-radius: var(--bs-border-radius) !important;
 }
-
 .rounded-start {
   border-bottom-left-radius: var(--bs-border-radius) !important;
   border-top-left-radius: var(--bs-border-radius) !important;
 }
 
-
 .border-materialize-red {
-   border-color: #e51c23;
+  border-color: var(--materialize-red) !important;
 }
 
 .border-materialize-red-lighten-5 {
-   border-color: #fdeaeb;
+  border-color: var(--materialize-red-lighten-5) !important;
 }
 
 .border-materialize-red-lighten-4 {
-   border-color: #f8c1c3;
+  border-color: var(--materialize-red-lighten-4) !important;
 }
 
 .border-materialize-red-lighten-3 {
-   border-color: #f3989b;
+  border-color: var(--materialize-red-lighten-3) !important;
 }
 
 .border-materialize-red-lighten-2 {
-   border-color: #ee6e73;
+  border-color: var(--materialize-red-lighten-2) !important;
 }
 
 .border-materialize-red-lighten-1 {
-   border-color: #ea454b;
+  border-color: var(--materialize-red-lighten-1) !important;
 }
 
 .border-materialize-red-darken-1 {
-   border-color: #d0181e;
+  border-color: var(--materialize-red-darken-1) !important;
 }
 
 .border-materialize-red-darken-2 {
-   border-color: #b9151b;
+  border-color: var(--materialize-red-darken-2) !important;
 }
 
 .border-materialize-red-darken-3 {
-   border-color: #a21318;
+  border-color: var(--materialize-red-darken-3) !important;
 }
 
 .border-materialize-red-darken-4 {
-   border-color: #8b1014;
+  border-color: var(--materialize-red-darken-4) !important;
 }
 
 .border-red {
-   border-color: #f44336;
+  border-color: var(--red) !important;
 }
 
 .border-red-lighten-5 {
-   border-color: #ffebee;
+  border-color: var(--red-lighten-5) !important;
 }
 
 .border-red-lighten-4 {
-   border-color: #ffcdd2;
+  border-color: var(--red-lighten-4) !important;
 }
 
 .border-red-lighten-3 {
-   border-color: #ef9a9a;
+  border-color: var(--red-lighten-3) !important;
 }
 
 .border-red-lighten-2 {
-   border-color: #e57373;
+  border-color: var(--red-lighten-2) !important;
 }
 
 .border-red-lighten-1 {
-   border-color: #ef5350;
+  border-color: var(--red-lighten-1) !important;
 }
 
 .border-red-darken-1 {
-   border-color: #e53935;
+  border-color: var(--red-darken-1) !important;
 }
 
 .border-red-darken-2 {
-   border-color: #d32f2f;
+  border-color: var(--red-darken-2) !important;
 }
 
 .border-red-darken-3 {
-   border-color: #c62828;
+  border-color: var(--red-darken-3) !important;
 }
 
 .border-red-darken-4 {
-   border-color: #b71c1c;
+  border-color: var(--red-darken-4) !important;
 }
 
 .border-red-accent-1 {
-   border-color: #ff8a80;
+  border-color: var(--red-accent-1) !important;
 }
 
 .border-red-accent-2 {
-   border-color: #ff5252;
+  border-color: var(--red-accent-2) !important;
 }
 
 .border-red-accent-3 {
-   border-color: #ff1744;
+  border-color: var(--red-accent-3) !important;
 }
 
 .border-red-accent-4 {
-   border-color: #d50000;
+  border-color: var(--red-accent-4) !important;
 }
 
 .border-pink {
-   border-color: #e91e63;
+  border-color: var(--pink) !important;
 }
 
 .border-pink-lighten-5 {
-   border-color: #fce4ec;
+  border-color: var(--pink-lighten-5) !important;
 }
 
 .border-pink-lighten-4 {
-   border-color: #f8bbd0;
+  border-color: var(--pink-lighten-4) !important;
 }
 
 .border-pink-lighten-3 {
-   border-color: #f48fb1;
+  border-color: var(--pink-lighten-3) !important;
 }
 
 .border-pink-lighten-2 {
-   border-color: #f06292;
+  border-color: var(--pink-lighten-2) !important;
 }
 
 .border-pink-lighten-1 {
-   border-color: #ec407a;
+  border-color: var(--pink-lighten-1) !important;
 }
 
 .border-pink-darken-1 {
-   border-color: #d81b60;
+  border-color: var(--pink-darken-1) !important;
 }
 
 .border-pink-darken-2 {
-   border-color: #c2185b;
+  border-color: var(--pink-darken-2) !important;
 }
 
 .border-pink-darken-3 {
-   border-color: #ad1457;
+  border-color: var(--pink-darken-3) !important;
 }
 
 .border-pink-darken-4 {
-   border-color: #880e4f;
+  border-color: var(--pink-darken-4) !important;
 }
 .border-pink-accent-1 {
-   border-color: #ff80ab;
+  border-color: var(--pink-accent-1) !important;
 }
 
 .border-pink-accent-2 {
-   border-color: #ff4081;
+  border-color: var(--pink-accent-2) !important;
 }
 
 .border-pink-accent-3 {
-   border-color: #f50057;
+  border-color: var(--pink-accent-3) !important;
 }
 
 .border-pink-accent-4 {
-   border-color: #c51162;
+  border-color: var(--pink-accent-4) !important;
 }
 
 .border-purple {
-   border-color: #9c27b0;
+  border-color: var(--purple) !important;
 }
 
 .border-purple-lighten-5 {
-   border-color: #f3e5f5;
+  border-color: var(--purple-lighten-5) !important;
 }
 
 .border-purple-lighten-4 {
-   border-color: #e1bee7;
+  border-color: var(--purple-lighten-4) !important;
 }
 
 .border-purple-lighten-3 {
-   border-color: #ce93d8;
+  border-color: var(--purple-lighten-3) !important;
 }
 
 .border-purple-lighten-2 {
-   border-color: #ba68c8;
+  border-color: var(--purple-lighten-2) !important;
 }
 .border-purple-lighten-1 {
-   border-color: #ab47bc;
+  border-color: var(--purple-lighten-1) !important;
 }
 
 .border-purple-darken-1 {
-   border-color: #8e24aa;
+  border-color: var(--purple-darken-1) !important;
 }
 
 .border-purple-darken-2 {
-   border-color: #7b1fa2;
+  border-color: var(--purple-darken-2) !important;
 }
 
 .border-purple-darken-3 {
-   border-color: #6a1b9a;
+  border-color: var(--purple-darken-3) !important;
 }
 
 .border-purple-darken-4 {
-   border-color: #4a148c;
+  border-color: var(--purple-darken-4) !important;
 }
 
 .border-purple-accent-1 {
-   border-color: #ea80fc;
+  border-color: var(--purple-accent-1) !important;
 }
 
 .border-purple-accent-2 {
-   border-color: #e040fb;
+  border-color: var(--purple-accent-2) !important;
 }
 
 .border-purple-accent-3 {
-   border-color: #d500f9;
+  border-color: var(--purple-accent-3) !important;
 }
 
 .border-purple-accent-4 {
-   border-color: #aa00ff;
+  border-color: var(--purple-accent-4) !important;
 }
 
 .border-deep-purple {
-   border-color: #673ab7;
+  border-color: var(--deep-purple) !important;
 }
 
 .border-deep-purple-lighten-5 {
-   border-color: #ede7f6;
+  border-color: var(--deep-purple-lighten-5) !important;
 }
 
 .border-deep-purple-lighten-4 {
-   border-color: #d1c4e9;
+  border-color: var(--deep-purple-lighten-4) !important;
 }
 
 .border-deep-purple-lighten-3 {
-   border-color: #b39ddb;
+  border-color: var(--deep-purple-lighten-3) !important;
 }
 
 .border-deep-purple-lighten-2 {
-   border-color: #9575cd;
+  border-color: var(--deep-purple-lighten-2) !important;
 }
 
 .border-deep-purple-lighten-1 {
-   border-color: #7e57c2;
+  border-color: var(--deep-purple-lighten-1) !important;
 }
 
 .border-deep-purple-darken-1 {
-   border-color: #5e35b1;
+  border-color: var(--deep-purple-darken-1) !important;
 }
 
 .border-deep-purple-darken-2 {
-   border-color: #512da8;
+  border-color: var(--deep-purple-darken-2) !important;
 }
 
 .border-deep-purple-darken-3 {
-   border-color: #4527a0;
+  border-color: var(--deep-purple-darken-3) !important;
 }
 
 .border-deep-purple-darken-4 {
-   border-color: #311b92;
+  border-color: var(--deep-purple-darken-4) !important;
 }
 
 .border-deep-purple-accent-1 {
-   border-color: #b388ff;
+  border-color: var(--deep-purple-accent-1) !important;
 }
 
 .border-deep-purple-accent-2 {
-   border-color: #7c4dff;
+  border-color: var(--deep-purple-accent-2) !important;
 }
 
 .border-deep-purple-accent-3 {
-   border-color: #651fff;
+  border-color: var(--deep-purple-accent-3) !important;
 }
 
 .border-deep-purple-accent-4 {
-   border-color: #6200ea;
+  border-color: var(--deep-purple-accent-4) !important;
 }
 
 .border-indigo {
-   border-color: #3f51b5;
+  border-color: var(--indigo) !important;
 }
 
 .border-indigo-lighten-5 {
-   border-color: #e8eaf6;
+  border-color: var(--indigo-lighten-5) !important;
 }
 
 .border-indigo-lighten-4 {
-   border-color: #c5cae9;
+  border-color: var(--indigo-lighten-4) !important;
 }
 
 .border-indigo-lighten-3 {
-   border-color: #9fa8da;
+  border-color: var(--indigo-lighten-3) !important;
 }
 
 .border-indigo-lighten-2 {
-   border-color: #7986cb;
+  border-color: var(--indigo-lighten-2) !important;
 }
 
 .border-indigo-lighten-1 {
-   border-color: #5c6bc0;
+  border-color: var(--indigo-lighten-1) !important;
 }
 
 .border-indigo-darken-1 {
-   border-color: #3949ab;
+  border-color: var(--indigo-darken-1) !important;
 }
 
 .border-indigo-darken-2 {
-   border-color: #303f9f;
+  border-color: var(--indigo-darken-2) !important;
 }
 
 .border-indigo-darken-3 {
-   border-color: #283593;
+  border-color: var(--indigo-darken-3) !important;
 }
 
 .border-indigo-darken-4 {
-   border-color: #1a237e;
+  border-color: var(--indigo-darken-4) !important;
 }
 
 .border-indigo-accent-1 {
-   border-color: #8c9eff;
+  border-color: var(--indigo-accent-1) !important;
 }
 
 .border-indigo-accent-2 {
-   border-color: #536dfe;
+  border-color: var(--indigo-accent-2) !important;
 }
 
 .border-indigo-accent-3 {
-   border-color: #3d5afe;
+  border-color: var(--indigo-accent-3) !important;
 }
 
 .border-indigo-accent-4 {
-   border-color: #304ffe;
+  border-color: var(--indigo-accent-4) !important;
 }
 
 .border-blue {
-   border-color: #2196f3;
+  border-color: var(--blue) !important;
 }
 
 .border-blue-lighten-5 {
-   border-color: #e3f2fd;
+  border-color: var(--blue-lighten-5) !important;
 }
 
 .border-blue-lighten-4 {
-   border-color: #bbdefb;
+  border-color: var(--blue-lighten-4) !important;
 }
 
 .border-blue-lighten-3 {
-   border-color: #90caf9;
+  border-color: var(--blue-lighten-3) !important;
 }
 
 .border-blue-lighten-2 {
-   border-color: #64b5f6;
+  border-color: var(--blue-lighten-2) !important;
 }
 
 .border-blue-lighten-1 {
-   border-color: #42a5f5;
+  border-color: var(--blue-lighten-1) !important;
 }
 
 .border-blue-darken-1 {
-   border-color: #1e88e5;
+  border-color: var(--blue-darken-1) !important;
 }
 
 .border-blue-darken-2 {
-   border-color: #1976d2;
+  border-color: var(--blue-darken-2) !important;
 }
 
 .border-blue-darken-3 {
-   border-color: #1565c0;
+  border-color: var(--blue-darken-3) !important;
 }
 
 .border-blue-darken-4 {
-   border-color: #0d47a1;
+  --bs-border-color: var(--blue-darken-4) !important;
 }
 
 .border-blue-accent-1 {
-   border-color: #82b1ff;
+  border-color: var(--blue-accent-1) !important;
 }
 
 .border-blue-accent-2 {
-   border-color: #448aff;
+  border-color: var(--blue-accent-2) !important;
 }
 
 .border-blue-accent-3 {
-   border-color: #2979ff;
+  border-color: var(--blue-accent-3) !important;
 }
 
 .border-blue-accent-4 {
-   border-color: #2962ff;
+  border-color: var(--blue-accent-4) !important;
 }
 
 .border-light-blue {
-   border-color: #03a9f4;
+  border-color: var(--light-blue) !important;
 }
 
 .border-light-blue-lighten-5 {
-   border-color: #e1f5fe;
+  border-color: var(--light-blue-lighten-5) !important;
 }
 
 .border-light-blue-lighten-4 {
-   border-color: #b3e5fc;
+  border-color: var(--light-blue-lighten-4) !important;
 }
 
 .border-light-blue-lighten-3 {
-   border-color: #81d4fa;
+  border-color: var(--light-blue-lighten-3) !important;
 }
 
 .border-light-blue-lighten-2 {
-   border-color: #4fc3f7;
+  border-color: var(--light-blue-lighten-2) !important;
 }
 
 .border-light-blue-lighten-1 {
-   border-color: #29b6f6;
+  border-color: var(--light-blue-lighten-1) !important;
 }
 
 .border-light-blue-darken-1 {
-   border-color: #039be5;
+  border-color: var(--light-blue-darken-1) !important;
 }
 
 .border-light-blue-darken-2 {
-   border-color: #0288d1;
+  border-color: var(--light-blue-darken-2) !important;
 }
 
 .border-light-blue-darken-3 {
-   border-color: #0277bd;
+  border-color: var(--light-blue-darken-3) !important;
 }
 
 .border-light-blue-darken-4 {
-   border-color: #01579b;
+  border-color: var(--light-blue-darken-4) !important;
 }
 
 .border-light-blue-accent-1 {
-   border-color: #80d8ff;
+  border-color: var(--light-blue-accent-1) !important;
 }
 
 .border-light-blue-accent-2 {
-   border-color: #40c4ff;
+  border-color: var(--light-blue-accent-2) !important;
 }
 
 .border-light-blue-accent-3 {
-   border-color: #00b0ff;
+  border-color: var(--light-blue-accent-3) !important;
 }
 
 .border-light-blue-accent-4 {
-   border-color: #0091ea;
+  border-color: var(--light-blue-accent-4) !important;
 }
 
 .border-cyan {
-   border-color: #00bcd4;
+  border-color: var(--cyan) !important;
 }
 
 .border-cyan-lighten-5 {
-   border-color: #e0f7fa;
+  border-color: var(--cyan-lighten-5) !important;
 }
 
 .border-cyan-lighten-4 {
-   border-color: #b2ebf2;
+  border-color: var(--cyan-lighten-4) !important;
 }
 
 .border-cyan-lighten-3 {
-   border-color: #80deea;
+  border-color: var(--cyan-lighten-3) !important;
 }
 
 .border-cyan-lighten-2 {
-   border-color: #4dd0e1;
+  border-color: var(--cyan-lighten-2) !important;
 }
 
 .border-cyan-lighten-1 {
-   border-color: #26c6da;
+  border-color: var(--cyan-lighten-1) !important;
 }
 
 .border-cyan-darken-1 {
-   border-color: #00acc1;
+  border-color: var(--cyan-darken-1) !important;
 }
 
 .border-cyan-darken-2 {
-   border-color: #0097a7;
+  border-color: var(--cyan-darken-2) !important;
 }
 
 .border-cyan-darken-3 {
-   border-color: #00838f;
+  border-color: var(--cyan-darken-3) !important;
 }
 
 .border-cyan-darken-4 {
-   border-color: #006064;
+  border-color: var(--cyan-darken-4) !important;
 }
 
 .border-cyan-accent-1 {
-   border-color: #84ffff;
+  border-color: var(--cyan-accent-1) !important;
 }
 
 .border-cyan-accent-2 {
-   border-color: #18ffff;
+  border-color: var(--cyan-accent-2) !important;
 }
 
 .border-cyan-accent-3 {
-   border-color: #00e5ff;
+  border-color: var(--cyan-accent-3) !important;
 }
 
 .border-cyan-accent-4 {
-   border-color: #00b8d4;
+  border-color: var(--cyan-accent-4) !important;
 }
 
 .border-teal {
-   border-color: #009688;
+  border-color: var(--teal) !important;
 }
 
 .border-teal-lighten-5 {
-   border-color: #e0f2f1;
+  border-color: var(--teal-lighten-5) !important;
 }
 
 .border-teal-lighten-4 {
-   border-color: #b2dfdb;
+  border-color: var(--teal-lighten-4) !important;
 }
 
 .border-teal-lighten-3 {
-   border-color: #80cbc4;
+  border-color: var(--teal-lighten-3) !important;
 }
 
 .border-teal-lighten-2 {
-   border-color: #4db6ac;
+  border-color: var(--teal-lighten-2) !important;
 }
 
 .border-teal-lighten-1 {
-   border-color: #26a69a;
+  border-color: var(--teal-lighten-1) !important;
 }
 
 .border-teal-darken-1 {
-   border-color: #00897b;
+  border-color: var(--teal-darken-1) !important;
 }
 
 .border-teal-darken-2 {
-   border-color: #00796b;
+  border-color: var(--teal-darken-2) !important;
 }
 
 .border-teal-darken-3 {
-   border-color: #00695c;
+  border-color: var(--teal-darken-3) !important;
 }
 
 .border-teal-darken-4 {
-   border-color: #004d40;
+  border-color: var(--teal-darken-4) !important;
 }
 
 .border-teal-accent-1 {
-   border-color: #a7ffeb;
+  border-color: var(--teal-accent-1) !important;
 }
 
 .border-teal-accent-2 {
-   border-color: #64ffda;
+  border-color: var(--teal-accent-2) !important;
 }
 
 .border-teal-accent-3 {
-   border-color: #1de9b6;
+  border-color: var(--teal-accent-3) !important;
 }
 
 .border-teal-accent-4 {
-   border-color: #00bfa5;
+  border-color: var(--teal-accent-4) !important;
 }
 
 .border-green {
-   border-color: #4caf50;
+  border-color: var(--green) !important;
 }
 
 .border-green-lighten-5 {
-   border-color: #e8f5e9;
+  border-color: var(--green-lighten-5) !important;
 }
 
 .border-green-lighten-4 {
-   border-color: #c8e6c9;
+  border-color: var(--green-lighten-4) !important;
 }
 
 .border-green-lighten-3 {
-   border-color: #a5d6a7;
+  border-color: var(--green-lighten-3) !important;
 }
 
 .border-green-lighten-2 {
-   border-color: #81c784;
+  border-color: var(--green-lighten-2) !important;
 }
 
 .border-green-lighten-1 {
-   border-color: #66bb6a;
+  border-color: var(--green-lighten-1) !important;
 }
 
 .border-green-darken-1 {
-   border-color: #43a047;
+  border-color: var(--green-darken-1) !important;
 }
 
 .border-green-darken-2 {
-   border-color: #388e3c;
+  border-color: var(--green-darken-2) !important;
 }
 
 .border-green-darken-3 {
-   border-color: #2e7d32;
+  border-color: var(--green-darken-3) !important;
 }
 
 .border-green-darken-4 {
-   border-color: #1b5e20;
+  border-color: var(--green-darken-4) !important;
 }
 
 .border-green-accent-1 {
-   border-color: #b9f6ca;
+  border-color: var(--green-accent-1) !important;
 }
 
 .border-green-accent-2 {
-   border-color: #69f0ae;
+  border-color: var(--green-accent-2) !important;
 }
 
 .border-green-accent-3 {
-   border-color: #00e676;
+  border-color: var(--green-accent-3) !important;
 }
 
 .border-green-accent-4 {
-   border-color: #00c853;
+  border-color: var(--green-accent-4) !important;
 }
 
 .border-light-green {
-   border-color: #8bc34a;
+  border-color: var(--light-green) !important;
 }
 
 .border-light-green-lighten-5 {
-   border-color: #f1f8e9;
+  border-color: var(--light-green-lighten-5) !important;
 }
 
 .border-light-green-lighten-4 {
-   border-color: #dcedc8;
+  border-color: var(--light-green-lighten-4) !important;
 }
 
 .border-light-green-lighten-3 {
-   border-color: #c5e1a5;
+  border-color: var(--light-green-lighten-3) !important;
 }
 
 .border-light-green-lighten-2 {
-   border-color: #aed581;
+  border-color: var(--light-green-lighten-2) !important;
 }
 
 .border-light-green-lighten-1 {
-   border-color: #9ccc65;
+  border-color: var(--light-green-lighten-1) !important;
 }
 
 .border-light-green-darken-1 {
-   border-color: #7cb342;
+  border-color: var(--light-green-darken-1) !important;
 }
 
 .border-light-green-darken-2 {
-   border-color: #689f38;
+  border-color: var(--light-green-darken-2) !important;
 }
 
 .border-light-green-darken-3 {
-   border-color: #558b2f;
+  border-color: var(--light-green-darken-3) !important;
 }
 
 .border-light-green-darken-4 {
-   border-color: #33691e;
+  border-color: var(--light-green-darken-4) !important;
 }
 
 .border-light-green-accent-1 {
-   border-color: #ccff90;
+  border-color: var(--light-green-accent-1) !important;
 }
 
 .border-light-green-accent-2 {
-   border-color: #b2ff59;
+  border-color: var(--light-green-accent-2) !important;
 }
 
 .border-light-green-accent-3 {
-   border-color: #76ff03;
+  border-color: var(--light-green-accent-3) !important;
 }
 
 .border-light-green-accent-4 {
-   border-color: #64dd17;
+  border-color: var(--light-green-accent-4) !important;
 }
 
 .border-lime {
-   border-color: #cddc39;
+  border-color: var(--lime) !important;
 }
 
 .border-lime-lighten-5 {
-   border-color: #f9fbe7;
+  border-color: var(--lime-lighten-5) !important;
 }
 
 .border-lime-lighten-4 {
-   border-color: #f0f4c3;
+  border-color: var(--lime-lighten-4) !important;
 }
 
 .border-lime-lighten-3 {
-   border-color: #e6ee9c;
+  border-color: var(--lime-lighten-3) !important;
 }
 
 .border-lime-lighten-2 {
-   border-color: #dce775;
+  border-color: var(--lime-lighten-2) !important;
 }
 
 .border-lime-lighten-1 {
-   border-color: #d4e157;
+  border-color: var(--lime-lighten-1) !important;
 }
 
 .border-lime-darken-1 {
-   border-color: #c0ca33;
+  border-color: var(--lime-darken-1) !important;
 }
 
 .border-lime-darken-2 {
-   border-color: #afb42b;
+  border-color: var(--lime-darken-2) !important;
 }
 
 .border-lime-darken-3 {
-   border-color: #9e9d24;
+  border-color: var(--lime-darken-3) !important;
 }
 
 .border-lime-darken-4 {
-   border-color: #827717;
+  border-color: var(--lime-darken-4) !important;
 }
 
 .border-lime-accent-1 {
-   border-color: #f4ff81;
+  border-color: var(--lime-accent-1) !important;
 }
 
 .border-lime-accent-2 {
-   border-color: #eeff41;
+  border-color: var(--lime-accent-2) !important;
 }
 
 .border-lime-accent-3 {
-   border-color: #c6ff00;
+  border-color: var(--lime-accent-3) !important;
 }
 
 .border-lime-accent-4 {
-   border-color: #aeea00;
+  border-color: var(--lime-accent-4) !important;
 }
 
 .border-yellow {
-   border-color: #ffeb3b;
+  border-color: var(--yellow) !important;
 }
 
 .border-yellow-lighten-5 {
-   border-color: #fffde7;
+  border-color: var(--yellow-lighten-5) !important;
 }
 
 .border-yellow-lighten-4 {
-   border-color: #fff9c4;
+  border-color: var(--yellow-lighten-4) !important;
 }
 
 .border-yellow-lighten-3 {
-   border-color: #fff59d;
+  border-color: var(--yellow-lighten-3) !important;
 }
 
 .border-yellow-lighten-2 {
-   border-color: #fff176;
+  border-color: var(--yellow-lighten-2) !important;
 }
 
 .border-yellow-lighten-1 {
-   border-color: #ffee58;
+  border-color: var(--yellow-lighten-1) !important;
 }
 
 .border-yellow-darken-1 {
-   border-color: #fdd835;
+  border-color: var(--yellow-darken-1) !important;
 }
 
 .border-yellow-darken-2 {
-   border-color: #fbc02d;
+  border-color: var(--yellow-darken-2) !important;
 }
 
 .border-yellow-darken-3 {
-   border-color: #f9a825;
+  border-color: var(--yellow-darken-3) !important;
 }
 
 .border-yellow-darken-4 {
-   border-color: #f57f17;
+  border-color: var(--yellow-darken-4) !important;
 }
 
 .border-yellow-accent-1 {
-   border-color: #ffff8d;
+  border-color: var(--yellow-accent-1) !important;
 }
 
 .border-yellow-accent-2 {
-   border-color: #ffff00;
+  border-color: var(--yellow-accent-2) !important;
 }
 
 .border-yellow-accent-3 {
-   border-color: #ffea00;
+  border-color: var(--yellow-accent-3) !important;
 }
 
 .border-yellow-accent-4 {
-   border-color: #ffd600;
+  border-color: var(--yellow-accent-4) !important;
 }
 
 .border-amber {
-   border-color: #ffc107;
+  border-color: var(--amber) !important;
 }
 
 .border-amber-lighten-5 {
-   border-color: #fff8e1;
+  border-color: var(--amber-lighten-5) !important;
 }
 
 .border-amber-lighten-4 {
-   border-color: #ffecb3;
+  border-color: var(--amber-lighten-4) !important;
 }
 
 .border-amber-lighten-3 {
-   border-color: #ffe082;
+  border-color: var(--amber-lighten-3) !important;
 }
 
 .border-amber-lighten-2 {
-   border-color: #ffd54f;
+  border-color: var(--amber-lighten-2) !important;
 }
 
 .border-amber-lighten-1 {
-   border-color: #ffca28;
+  border-color: var(--amber-lighten-1) !important;
 }
 
 .border-amber-darken-1 {
-   border-color: #ffb300;
+  border-color: var(--amber-darken-1) !important;
 }
 
 .border-amber-darken-2 {
-   border-color: #ffa000;
+  border-color: var(--amber-darken-2) !important;
 }
 
 .border-amber-darken-3 {
-   border-color: #ff8f00;
+  border-color: var(--amber-darken-3) !important;
 }
 
 .border-amber-darken-4 {
-   border-color: #ff6f00;
+  border-color: var(--amber-darken-4) !important;
 }
 
 .border-amber-accent-1 {
-   border-color: #ffe57f;
+  border-color: var(--amber-accent-1) !important;
 }
 
 .border-amber-accent-2 {
-   border-color: #ffd740;
+  border-color: var(--amber-accent-2) !important;
 }
 
 .border-amber-accent-3 {
-   border-color: #ffc400;
+  border-color: var(--amber-accent-3) !important;
 }
 
 .border-amber-accent-4 {
-   border-color: #ffab00;
+  border-color: var(--amber-accent-4) !important;
 }
 
 .border-orange {
-   border-color: #ff9800;
+  border-color: var(--orange) !important;
 }
 
 .border-orange-lighten-5 {
-   border-color: #fff3e0;
+  border-color: var(--orange-lighten-5) !important;
 }
 
 .border-orange-lighten-4 {
-   border-color: #ffe0b2;
+  border-color: var(--orange-lighten-4) !important;
 }
 
 .border-orange-lighten-3 {
-   border-color: #ffcc80;
+  border-color: var(--orange-lighten-3) !important;
 }
 
 .border-orange-lighten-2 {
-   border-color: #ffb74d;
+  border-color: var(--orange-lighten-2) !important;
 }
 
 .border-orange-lighten-1 {
-   border-color: #ffa726;
+  border-color: var(--orange-lighten-1) !important;
 }
 
 .border-orange-darken-1 {
-   border-color: #fb8c00;
+  border-color: var(--orange-darken-1) !important;
 }
 
 .border-orange-darken-2 {
-   border-color: #f57c00;
+  border-color: var(--orange-darken-2) !important;
 }
 
 .border-orange-darken-3 {
-   border-color: #ef6c00;
+  border-color: var(--orange-darken-3) !important;
 }
 
 .border-orange-darken-4 {
-   border-color: #e65100;
+  border-color: var(--orange-darken-4) !important;
 }
 
 .border-orange-accent-1 {
-   border-color: #ffd180;
+  border-color: var(--orange-accent-1) !important;
 }
 
 .border-orange-accent-2 {
-   border-color: #ffab40;
+  border-color: var(--orange-accent-2) !important;
 }
 
 .border-orange-accent-3 {
-   border-color: #ff9100;
+  border-color: var(--orange-accent-3) !important;
 }
 
 .border-orange-accent-4 {
-   border-color: #ff6d00;
+  border-color: var(--orange-accent-4) !important;
 }
 
 .border-deep-orange {
-   border-color: #ff5722;
+  border-color: var(--deep-orange) !important;
 }
 
 .border-deep-orange-lighten-5 {
-   border-color: #fbe9e7;
+  border-color: var(--deep-orange-lighten-5) !important;
 }
 
 .border-deep-orange-lighten-4 {
-   border-color: #ffccbc;
+  border-color: var(--deep-orange-lighten-4) !important;
 }
 
 .border-deep-orange-lighten-3 {
-   border-color: #ffab91;
+  border-color: var(--deep-orange-lighten-3) !important;
 }
 
 .border-deep-orange-lighten-2 {
-   border-color: #ff8a65;
+  border-color: var(--deep-orange-lighten-2) !important;
 }
 
 .border-deep-orange-lighten-1 {
-   border-color: #ff7043;
+  border-color: var(--deep-orange-lighten-1) !important;
 }
 
 .border-deep-orange-darken-1 {
-   border-color: #f4511e;
+  border-color: var(--deep-orange-darken-1) !important;
 }
 
 .border-deep-orange-darken-2 {
-   border-color: #e64a19;
+  border-color: var(--deep-orange-darken-2) !important;
 }
 
 .border-deep-orange-darken-3 {
-   border-color: #d84315;
+  border-color: var(--deep-orange-darken-3) !important;
 }
 
 .border-deep-orange-darken-4 {
-   border-color: #bf360c;
+  border-color: var(--deep-orange-darken-4) !important;
 }
 
 .border-deep-orange-accent-1 {
-   border-color: #ff9e80;
+  border-color: var(--deep-orange-accent-1) !important;
 }
 
 .border-deep-orange-accent-2 {
-   border-color: #ff6e40;
+  border-color: var(--deep-orange-accent-2) !important;
 }
 
 .border-deep-orange-accent-3 {
-   border-color: #ff3d00;
+  border-color: var(--deep-orange-accent-3) !important;
 }
 
 .border-deep-orange-accent-4 {
-   border-color: #dd2c00;
+  border-color: var(--deep-orange-accent-4) !important;
 }
 
 .border-brown {
-   border-color: #795548;
+  border-color: var(--brown) !important;
 }
 
 .border-brown-lighten-5 {
-   border-color: #efebe9;
+  border-color: var(--brown-lighten-5) !important;
 }
 
 .border-brown-lighten-4 {
-   border-color: #d7ccc8;
+  border-color: var(--brown-lighten-4) !important;
 }
 
 .border-brown-lighten-3 {
-   border-color: #bcaaa4;
+  border-color: var(--brown-lighten-3) !important;
 }
 
 .border-brown-lighten-2 {
-   border-color: #a1887f;
+  border-color: var(--brown-lighten-2) !important;
 }
 
 .border-brown-lighten-1 {
-   border-color: #8d6e63;
+  border-color: var(--brown-lighten-1) !important;
 }
 
 .border-brown-darken-1 {
-   border-color: #6d4c41;
+  border-color: var(--brown-darken-1) !important;
 }
 
 .border-brown-darken-2 {
-   border-color: #5d4037;
+  border-color: var(--brown-darken-2) !important;
 }
 
 .border-brown-darken-3 {
-   border-color: #4e342e;
+  border-color: var(--brown-darken-3) !important;
 }
 
 .border-brown-darken-4 {
-   border-color: #3e2723;
+  border-color: var(--brown-darken-4) !important;
 }
 
 .border-blue-grey {
-   border-color: #607d8b;
+  border-color: var(--blue-grey) !important;
 }
 
 .border-blue-grey-lighten-5 {
-   border-color: #eceff1;
+  border-color: var(--blue-grey-lighten-5) !important;
 }
 
 .border-blue-grey-lighten-4 {
-   border-color: #cfd8dc;
+  border-color: var(--blue-grey-lighten-4) !important;
 }
 
 .border-blue-grey-lighten-3 {
-   border-color: #b0bec5;
+  border-color: var(--blue-grey-lighten-3) !important;
 }
 
 .border-blue-grey-lighten-2 {
-   border-color: #90a4ae;
+  border-color: var(--blue-grey-lighten-2) !important;
 }
 
 .border-blue-grey-lighten-1 {
-   border-color: #78909c;
+  border-color: var(--blue-grey-lighten-1) !important;
 }
 
 .border-blue-grey-darken-1 {
-   border-color: #546e7a;
+  border-color: var(--blue-grey-darken-1) !important;
 }
 
 .border-blue-grey-darken-2 {
-   border-color: #455a64;
+  border-color: var(--blue-grey-darken-2) !important;
 }
 
 .border-blue-grey-darken-3 {
-   border-color: #37474f;
+  border-color: var(--blue-grey-darken-3) !important;
 }
 
 .border-blue-grey-darken-4 {
-   border-color: #263238;
+  border-color: var(--blue-grey-darken-4) !important;
 }
 
 .border-grey {
-   border-color: #9e9e9e;
+  border-color: var(--grey) !important;
 }
 
 .border-grey-lighten-5 {
-   border-color: #fafafa;
+  border-color: var(--grey-lighten-5) !important;
 }
 
 .border-grey-lighten-4 {
-   border-color: #f5f5f5;
+  border-color: var(--grey-lighten-4) !important;
 }
 
 .border-grey-lighten-3 {
-   border-color: #eeeeee;
+  border-color: var(--grey-lighten-3) !important;
 }
 
 .border-grey-lighten-2 {
-   border-color: #e0e0e0;
+  border-color: var(--grey-lighten-2) !important;
 }
 
 .border-grey-lighten-1 {
-   border-color: #bdbdbd;
+  border-color: var(--grey-lighten-1) !important;
 }
 
 .border-grey-darken-1 {
-   border-color: #757575;
+  border-color: var(--grey-darken-1) !important;
 }
 
 .border-grey-darken-2 {
-   border-color: #616161;
+  border-color: var(--grey-darken-2) !important;
 }
 
 .border-grey-darken-3 {
-   border-color: #424242;
+  border-color: var(--grey-darken-3) !important;
 }
 
 .border-grey-darken-4 {
-   border-color: #212121;
+  border-color: var(--grey-darken-4) !important;
 }
 
 .border-black {
-   border-color: #000000;
+  border-color: var(--black) !important;
 }
 
 .border-white {
-   border-color: #ffffff;
+  border-color: var(--white) !important;
 }
+
+.border-transparent {
+  border-color: transparent;
+}
+
+.border-materialize-red-hvr:hover {
+  border-color: var(--materialize-red) !important;
+}
+
+.border-materialize-red-lighten-5-hvr:hover {
+  border-color: var(--materialize-red-lighten-5) !important;
+}
+
+.border-materialize-red-lighten-4-hvr:hover {
+  border-color: var(--materialize-red-lighten-4) !important;
+}
+
+.border-materialize-red-lighten-3-hvr:hover {
+  border-color: var(--materialize-red-lighten-3) !important;
+}
+
+.border-materialize-red-lighten-2-hvr:hover {
+  border-color: var(--materialize-red-lighten-2) !important;
+}
+
+.border-materialize-red-lighten-1-hvr:hover {
+  border-color: var(--materialize-red-lighten-1) !important;
+}
+
+.border-materialize-red-darken-1-hvr:hover {
+  border-color: var(--materialize-red-darken-1) !important;
+}
+
+.border-materialize-red-darken-2-hvr:hover {
+  border-color: var(--materialize-red-darken-2) !important;
+}
+
+.border-materialize-red-darken-3-hvr:hover {
+  border-color: var(--materialize-red-darken-3) !important;
+}
+
+.border-materialize-red-darken-4-hvr:hover {
+  border-color: var(--materialize-red-darken-4) !important;
+}
+
+.border-red-hvr:hover {
+  border-color: var(--red) !important;
+}
+
+.border-red-lighten-5-hvr:hover {
+  border-color: var(--red-lighten-5) !important;
+}
+
+.border-red-lighten-4-hvr:hover {
+  border-color: var(--red-lighten-4) !important;
+}
+
+.border-red-lighten-3-hvr:hover {
+  border-color: var(--red-lighten-3) !important;
+}
+
+.border-red-lighten-2-hvr:hover {
+  border-color: var(--red-lighten-2) !important;
+}
+
+.border-red-lighten-1-hvr:hover {
+  border-color: var(--red-lighten-1) !important;
+}
+
+.border-red-darken-1-hvr:hover {
+  border-color: var(--red-darken-1) !important;
+}
+
+.border-red-darken-2-hvr:hover {
+  border-color: var(--red-darken-2) !important;
+}
+
+.border-red-darken-3-hvr:hover {
+  border-color: var(--red-darken-3) !important;
+}
+
+.border-red-darken-4-hvr:hover {
+  border-color: var(--red-darken-4) !important;
+}
+
+.border-red-accent-1-hvr:hover {
+  border-color: var(--red-accent-1) !important;
+}
+
+.border-red-accent-2-hvr:hover {
+  border-color: var(--red-accent-2) !important;
+}
+
+.border-red-accent-3-hvr:hover {
+  border-color: var(--red-accent-3) !important;
+}
+
+.border-red-accent-4-hvr:hover {
+  border-color: var(--red-accent-4) !important;
+}
+
+.border-pink-hvr:hover {
+  border-color: var(--pink) !important;
+}
+
+.border-pink-lighten-5-hvr:hover {
+  border-color: var(--pink-lighten-5) !important;
+}
+
+.border-pink-lighten-4-hvr:hover {
+  border-color: var(--pink-lighten-4) !important;
+}
+
+.border-pink-lighten-3-hvr:hover {
+  border-color: var(--pink-lighten-3) !important;
+}
+
+.border-pink-lighten-2-hvr:hover {
+  border-color: var(--pink-lighten-2) !important;
+}
+
+.border-pink-lighten-1-hvr:hover {
+  border-color: var(--pink-lighten-1) !important;
+}
+
+.border-pink-darken-1-hvr:hover {
+  border-color: var(--pink-darken-1) !important;
+}
+
+.border-pink-darken-2-hvr:hover {
+  border-color: var(--pink-darken-2) !important;
+}
+
+.border-pink-darken-3-hvr:hover {
+  border-color: var(--pink-darken-3) !important;
+}
+
+.border-pink-darken-4-hvr:hover {
+  border-color: var(--pink-darken-4) !important;
+}
+.border-pink-accent-1-hvr:hover {
+  border-color: var(--pink-accent-1) !important;
+}
+
+.border-pink-accent-2-hvr:hover {
+  border-color: var(--pink-accent-2) !important;
+}
+
+.border-pink-accent-3-hvr:hover {
+  border-color: var(--pink-accent-3) !important;
+}
+
+.border-pink-accent-4-hvr:hover {
+  border-color: var(--pink-accent-4) !important;
+}
+
+.border-purple-hvr:hover {
+  border-color: var(--purple) !important;
+}
+
+.border-purple-lighten-5-hvr:hover {
+  border-color: var(--purple-lighten-5) !important;
+}
+
+.border-purple-lighten-4-hvr:hover {
+  border-color: var(--purple-lighten-4) !important;
+}
+
+.border-purple-lighten-3-hvr:hover {
+  border-color: var(--purple-lighten-3) !important;
+}
+
+.border-purple-lighten-2-hvr:hover {
+  border-color: var(--purple-lighten-2) !important;
+}
+.border-purple-lighten-1-hvr:hover {
+  border-color: var(--purple-lighten-1) !important;
+}
+
+.border-purple-darken-1-hvr:hover {
+  border-color: var(--purple-darken-1) !important;
+}
+
+.border-purple-darken-2-hvr:hover {
+  border-color: var(--purple-darken-2) !important;
+}
+
+.border-purple-darken-3-hvr:hover {
+  border-color: var(--purple-darken-3) !important;
+}
+
+.border-purple-darken-4-hvr:hover {
+  border-color: var(--purple-darken-4) !important;
+}
+
+.border-purple-accent-1-hvr:hover {
+  border-color: var(--purple-accent-1) !important;
+}
+
+.border-purple-accent-2-hvr:hover {
+  border-color: var(--purple-accent-2) !important;
+}
+
+.border-purple-accent-3-hvr:hover {
+  border-color: var(--purple-accent-3) !important;
+}
+
+.border-purple-accent-4-hvr:hover {
+  border-color: var(--purple-accent-4) !important;
+}
+
+.border-deep-purple-hvr:hover {
+  border-color: var(--deep-purple) !important;
+}
+
+.border-deep-purple-lighten-5-hvr:hover {
+  border-color: var(--deep-purple-lighten-5) !important;
+}
+
+.border-deep-purple-lighten-4-hvr:hover {
+  border-color: var(--deep-purple-lighten-4) !important;
+}
+
+.border-deep-purple-lighten-3-hvr:hover {
+  border-color: var(--deep-purple-lighten-3) !important;
+}
+
+.border-deep-purple-lighten-2-hvr:hover {
+  border-color: var(--deep-purple-lighten-2) !important;
+}
+
+.border-deep-purple-lighten-1-hvr:hover {
+  border-color: var(--deep-purple-lighten-1) !important;
+}
+
+.border-deep-purple-darken-1-hvr:hover {
+  border-color: var(--deep-purple-darken-1) !important;
+}
+
+.border-deep-purple-darken-2-hvr:hover {
+  border-color: var(--deep-purple-darken-2) !important;
+}
+
+.border-deep-purple-darken-3-hvr:hover {
+  border-color: var(--deep-purple-darken-3) !important;
+}
+
+.border-deep-purple-darken-4-hvr:hover {
+  border-color: var(--deep-purple-darken-4) !important;
+}
+
+.border-deep-purple-accent-1-hvr:hover {
+  border-color: var(--deep-purple-accent-1) !important;
+}
+
+.border-deep-purple-accent-2-hvr:hover {
+  border-color: var(--deep-purple-accent-2) !important;
+}
+
+.border-deep-purple-accent-3-hvr:hover {
+  border-color: var(--deep-purple-accent-3) !important;
+}
+
+.border-deep-purple-accent-4-hvr:hover {
+  border-color: var(--deep-purple-accent-4) !important;
+}
+
+.border-indigo-hvr:hover {
+  border-color: var(--indigo) !important;
+}
+
+.border-indigo-lighten-5-hvr:hover {
+  border-color: var(--indigo-lighten-5) !important;
+}
+
+.border-indigo-lighten-4-hvr:hover {
+  border-color: var(--indigo-lighten-4) !important;
+}
+
+.border-indigo-lighten-3-hvr:hover {
+  border-color: var(--indigo-lighten-3) !important;
+}
+
+.border-indigo-lighten-2-hvr:hover {
+  border-color: var(--indigo-lighten-2) !important;
+}
+
+.border-indigo-lighten-1-hvr:hover {
+  border-color: var(--indigo-lighten-1) !important;
+}
+
+.border-indigo-darken-1-hvr:hover {
+  border-color: var(--indigo-darken-1) !important;
+}
+
+.border-indigo-darken-2-hvr:hover {
+  border-color: var(--indigo-darken-2) !important;
+}
+
+.border-indigo-darken-3-hvr:hover {
+  border-color: var(--indigo-darken-3) !important;
+}
+
+.border-indigo-darken-4-hvr:hover {
+  border-color: var(--indigo-darken-4) !important;
+}
+
+.border-indigo-accent-1-hvr:hover {
+  border-color: var(--indigo-accent-1) !important;
+}
+
+.border-indigo-accent-2-hvr:hover {
+  border-color: var(--indigo-accent-2) !important;
+}
+
+.border-indigo-accent-3-hvr:hover {
+  border-color: var(--indigo-accent-3) !important;
+}
+
+.border-indigo-accent-4-hvr:hover {
+  border-color: var(--indigo-accent-4) !important;
+}
+
+.border-blue-hvr:hover {
+  border-color: var(--blue) !important;
+}
+
+.border-blue-lighten-5-hvr:hover {
+  border-color: var(--blue-lighten-5) !important;
+}
+
+.border-blue-lighten-4-hvr:hover {
+  border-color: var(--blue-lighten-4) !important;
+}
+
+.border-blue-lighten-3-hvr:hover {
+  border-color: var(--blue-lighten-3) !important;
+}
+
+.border-blue-lighten-2-hvr:hover {
+  border-color: var(--blue-lighten-2) !important;
+}
+
+.border-blue-lighten-1-hvr:hover {
+  border-color: var(--blue-lighten-1) !important;
+}
+
+.border-blue-darken-1-hvr:hover {
+  border-color: var(--blue-darken-1) !important;
+}
+
+.border-blue-darken-2-hvr:hover {
+  border-color: var(--blue-darken-2) !important;
+}
+
+.border-blue-darken-3-hvr:hover {
+  border-color: var(--blue-darken-3) !important;
+}
+
+.border-blue-darken-4-hvr:hover {
+  border-color: var(--blue-darken-4) !important;
+}
+
+.border-blue-accent-1-hvr:hover {
+  border-color: var(--blue-accent-1) !important;
+}
+
+.border-blue-accent-2-hvr:hover {
+  border-color: var(--blue-accent-2) !important;
+}
+
+.border-blue-accent-3-hvr:hover {
+  border-color: var(--blue-accent-3) !important;
+}
+
+.border-blue-accent-4-hvr:hover {
+  border-color: var(--blue-accent-4) !important;
+}
+
+.border-light-blue-hvr:hover {
+  border-color: var(--light-blue) !important;
+}
+
+.border-light-blue-lighten-5-hvr:hover {
+  border-color: var(--light-blue-lighten-5) !important;
+}
+
+.border-light-blue-lighten-4-hvr:hover {
+  border-color: var(--light-blue-lighten-4) !important;
+}
+
+.border-light-blue-lighten-3-hvr:hover {
+  border-color: var(--light-blue-lighten-3) !important;
+}
+
+.border-light-blue-lighten-2-hvr:hover {
+  border-color: var(--light-blue-lighten-2) !important;
+}
+
+.border-light-blue-lighten-1-hvr:hover {
+  border-color: var(--light-blue-lighten-1) !important;
+}
+
+.border-light-blue-darken-1-hvr:hover {
+  border-color: var(--light-blue-darken-1) !important;
+}
+
+.border-light-blue-darken-2-hvr:hover {
+  border-color: var(--light-blue-darken-2) !important;
+}
+
+.border-light-blue-darken-3-hvr:hover {
+  border-color: var(--light-blue-darken-3) !important;
+}
+
+.border-light-blue-darken-4-hvr:hover {
+  border-color: var(--light-blue-darken-4) !important;
+}
+
+.border-light-blue-accent-1-hvr:hover {
+  border-color: var(--light-blue-accent-1) !important;
+}
+
+.border-light-blue-accent-2-hvr:hover {
+  border-color: var(--light-blue-accent-2) !important;
+}
+
+.border-light-blue-accent-3-hvr:hover {
+  border-color: var(--light-blue-accent-3) !important;
+}
+
+.border-light-blue-accent-4-hvr:hover {
+  border-color: var(--light-blue-accent-4) !important;
+}
+
+.border-cyan-hvr:hover {
+  border-color: var(--cyan) !important;
+}
+
+.border-cyan-lighten-5-hvr:hover {
+  border-color: var(--cyan-lighten-5) !important;
+}
+
+.border-cyan-lighten-4-hvr:hover {
+  border-color: var(--cyan-lighten-4) !important;
+}
+
+.border-cyan-lighten-3-hvr:hover {
+  border-color: var(--cyan-lighten-3) !important;
+}
+
+.border-cyan-lighten-2-hvr:hover {
+  border-color: var(--cyan-lighten-2) !important;
+}
+
+.border-cyan-lighten-1-hvr:hover {
+  border-color: var(--cyan-lighten-1) !important;
+}
+
+.border-cyan-darken-1-hvr:hover {
+  border-color: var(--cyan-darken-1) !important;
+}
+
+.border-cyan-darken-2-hvr:hover {
+  border-color: var(--cyan-darken-2) !important;
+}
+
+.border-cyan-darken-3-hvr:hover {
+  border-color: var(--cyan-darken-3) !important;
+}
+
+.border-cyan-darken-4-hvr:hover {
+  border-color: var(--cyan-darken-4) !important;
+}
+
+.border-cyan-accent-1-hvr:hover {
+  border-color: var(--cyan-accent-1) !important;
+}
+
+.border-cyan-accent-2-hvr:hover {
+  border-color: var(--cyan-accent-2) !important;
+}
+
+.border-cyan-accent-3-hvr:hover {
+  border-color: var(--cyan-accent-3) !important;
+}
+
+.border-cyan-accent-4-hvr:hover {
+  border-color: var(--cyan-accent-4) !important;
+}
+
+.border-teal-hvr:hover {
+  border-color: var(--teal) !important;
+}
+
+.border-teal-lighten-5-hvr:hover {
+  border-color: var(--teal-lighten-5) !important;
+}
+
+.border-teal-lighten-4-hvr:hover {
+  border-color: var(--teal-lighten-4) !important;
+}
+
+.border-teal-lighten-3-hvr:hover {
+  border-color: var(--teal-lighten-3) !important;
+}
+
+.border-teal-lighten-2-hvr:hover {
+  border-color: var(--teal-lighten-2) !important;
+}
+
+.border-teal-lighten-1-hvr:hover {
+  border-color: var(--teal-lighten-1) !important;
+}
+
+.border-teal-darken-1-hvr:hover {
+  border-color: var(--teal-darken-1) !important;
+}
+
+.border-teal-darken-2-hvr:hover {
+  border-color: var(--teal-darken-2) !important;
+}
+
+.border-teal-darken-3-hvr:hover {
+  border-color: var(--teal-darken-3) !important;
+}
+
+.border-teal-darken-4-hvr:hover {
+  border-color: var(--teal-darken-4) !important;
+}
+
+.border-teal-accent-1-hvr:hover {
+  border-color: var(--teal-accent-1) !important;
+}
+
+.border-teal-accent-2-hvr:hover {
+  border-color: var(--teal-accent-2) !important;
+}
+
+.border-teal-accent-3-hvr:hover {
+  border-color: var(--teal-accent-3) !important;
+}
+
+.border-teal-accent-4-hvr:hover {
+  border-color: var(--teal-accent-4) !important;
+}
+
+.border-green-hvr:hover {
+  border-color: var(--green) !important;
+}
+
+.border-green-lighten-5-hvr:hover {
+  border-color: var(--green-lighten-5) !important;
+}
+
+.border-green-lighten-4-hvr:hover {
+  border-color: var(--green-lighten-4) !important;
+}
+
+.border-green-lighten-3-hvr:hover {
+  border-color: var(--green-lighten-3) !important;
+}
+
+.border-green-lighten-2-hvr:hover {
+  border-color: var(--green-lighten-2) !important;
+}
+
+.border-green-lighten-1-hvr:hover {
+  border-color: var(--green-lighten-1) !important;
+}
+
+.border-green-darken-1-hvr:hover {
+  border-color: var(--green-darken-1) !important;
+}
+
+.border-green-darken-2-hvr:hover {
+  border-color: var(--green-darken-2) !important;
+}
+
+.border-green-darken-3-hvr:hover {
+  border-color: var(--green-darken-3) !important;
+}
+
+.border-green-darken-4-hvr:hover {
+  border-color: var(--green-darken-4) !important;
+}
+
+.border-green-accent-1-hvr:hover {
+  border-color: var(--green-accent-1) !important;
+}
+
+.border-green-accent-2-hvr:hover {
+  border-color: var(--green-accent-2) !important;
+}
+
+.border-green-accent-3-hvr:hover {
+  border-color: var(--green-accent-3) !important;
+}
+
+.border-green-accent-4-hvr:hover {
+  border-color: var(--green-accent-4) !important;
+}
+
+.border-light-green-hvr:hover {
+  border-color: var(--light-green) !important;
+}
+
+.border-light-green-lighten-5-hvr:hover {
+  border-color: var(--light-green-lighten-5) !important;
+}
+
+.border-light-green-lighten-4-hvr:hover {
+  border-color: var(--light-green-lighten-4) !important;
+}
+
+.border-light-green-lighten-3-hvr:hover {
+  border-color: var(--light-green-lighten-3) !important;
+}
+
+.border-light-green-lighten-2-hvr:hover {
+  border-color: var(--light-green-lighten-2) !important;
+}
+
+.border-light-green-lighten-1-hvr:hover {
+  border-color: var(--light-green-lighten-1) !important;
+}
+
+.border-light-green-darken-1-hvr:hover {
+  border-color: var(--light-green-darken-1) !important;
+}
+
+.border-light-green-darken-2-hvr:hover {
+  border-color: var(--light-green-darken-2) !important;
+}
+
+.border-light-green-darken-3-hvr:hover {
+  border-color: var(--light-green-darken-3) !important;
+}
+
+.border-light-green-darken-4-hvr:hover {
+  border-color: var(--light-green-darken-4) !important;
+}
+
+.border-light-green-accent-1-hvr:hover {
+  border-color: var(--light-green-accent-1) !important;
+}
+
+.border-light-green-accent-2-hvr:hover {
+  border-color: var(--light-green-accent-2) !important;
+}
+
+.border-light-green-accent-3-hvr:hover {
+  border-color: var(--light-green-accent-3) !important;
+}
+
+.border-light-green-accent-4-hvr:hover {
+  border-color: var(--light-green-accent-4) !important;
+}
+
+.border-lime-hvr:hover {
+  border-color: var(--lime) !important;
+}
+
+.border-lime-lighten-5-hvr:hover {
+  border-color: var(--lime-lighten-5) !important;
+}
+
+.border-lime-lighten-4-hvr:hover {
+  border-color: var(--lime-lighten-4) !important;
+}
+
+.border-lime-lighten-3-hvr:hover {
+  border-color: var(--lime-lighten-3) !important;
+}
+
+.border-lime-lighten-2-hvr:hover {
+  border-color: var(--lime-lighten-2) !important;
+}
+
+.border-lime-lighten-1-hvr:hover {
+  border-color: var(--lime-lighten-1) !important;
+}
+
+.border-lime-darken-1-hvr:hover {
+  border-color: var(--lime-darken-1) !important;
+}
+
+.border-lime-darken-2-hvr:hover {
+  border-color: var(--lime-darken-2) !important;
+}
+
+.border-lime-darken-3-hvr:hover {
+  border-color: var(--lime-darken-3) !important;
+}
+
+.border-lime-darken-4-hvr:hover {
+  border-color: var(--lime-darken-4) !important;
+}
+
+.border-lime-accent-1-hvr:hover {
+  border-color: var(--lime-accent-1) !important;
+}
+
+.border-lime-accent-2-hvr:hover {
+  border-color: var(--lime-accent-2) !important;
+}
+
+.border-lime-accent-3-hvr:hover {
+  border-color: var(--lime-accent-3) !important;
+}
+
+.border-lime-accent-4-hvr:hover {
+  border-color: var(--lime-accent-4) !important;
+}
+
+.border-yellow-hvr:hover {
+  border-color: var(--yellow) !important;
+}
+
+.border-yellow-lighten-5-hvr:hover {
+  border-color: var(--yellow-lighten-5) !important;
+}
+
+.border-yellow-lighten-4-hvr:hover {
+  border-color: var(--yellow-lighten-4) !important;
+}
+
+.border-yellow-lighten-3-hvr:hover {
+  border-color: var(--yellow-lighten-3) !important;
+}
+
+.border-yellow-lighten-2-hvr:hover {
+  border-color: var(--yellow-lighten-2) !important;
+}
+
+.border-yellow-lighten-1-hvr:hover {
+  border-color: var(--yellow-lighten-1) !important;
+}
+
+.border-yellow-darken-1-hvr:hover {
+  border-color: var(--yellow-darken-1) !important;
+}
+
+.border-yellow-darken-2-hvr:hover {
+  border-color: var(--yellow-darken-2) !important;
+}
+
+.border-yellow-darken-3-hvr:hover {
+  border-color: var(--yellow-darken-3) !important;
+}
+
+.border-yellow-darken-4-hvr:hover {
+  border-color: var(--yellow-darken-4) !important;
+}
+
+.border-yellow-accent-1-hvr:hover {
+  border-color: var(--yellow-accent-1) !important;
+}
+
+.border-yellow-accent-2-hvr:hover {
+  border-color: var(--yellow-accent-2) !important;
+}
+
+.border-yellow-accent-3-hvr:hover {
+  border-color: var(--yellow-accent-3) !important;
+}
+
+.border-yellow-accent-4-hvr:hover {
+  border-color: var(--yellow-accent-4) !important;
+}
+
+.border-amber-hvr:hover {
+  border-color: var(--amber) !important;
+}
+
+.border-amber-lighten-5-hvr:hover {
+  border-color: var(--amber-lighten-5) !important;
+}
+
+.border-amber-lighten-4-hvr:hover {
+  border-color: var(--amber-lighten-4) !important;
+}
+
+.border-amber-lighten-3-hvr:hover {
+  border-color: var(--amber-lighten-3) !important;
+}
+
+.border-amber-lighten-2-hvr:hover {
+  border-color: var(--amber-lighten-2) !important;
+}
+
+.border-amber-lighten-1-hvr:hover {
+  border-color: var(--amber-lighten-1) !important;
+}
+
+.border-amber-darken-1-hvr:hover {
+  border-color: var(--amber-darken-1) !important;
+}
+
+.border-amber-darken-2-hvr:hover {
+  border-color: var(--amber-darken-2) !important;
+}
+
+.border-amber-darken-3-hvr:hover {
+  border-color: var(--amber-darken-3) !important;
+}
+
+.border-amber-darken-4-hvr:hover {
+  border-color: var(--amber-darken-4) !important;
+}
+
+.border-amber-accent-1-hvr:hover {
+  border-color: var(--amber-accent-1) !important;
+}
+
+.border-amber-accent-2-hvr:hover {
+  border-color: var(--amber-accent-2) !important;
+}
+
+.border-amber-accent-3-hvr:hover {
+  border-color: var(--amber-accent-3) !important;
+}
+
+.border-amber-accent-4-hvr:hover {
+  border-color: var(--amber-accent-4) !important;
+}
+
+.border-orange-hvr:hover {
+  border-color: var(--orange) !important;
+}
+
+.border-orange-lighten-5-hvr:hover {
+  border-color: var(--orange-lighten-5) !important;
+}
+
+.border-orange-lighten-4-hvr:hover {
+  border-color: var(--orange-lighten-4) !important;
+}
+
+.border-orange-lighten-3-hvr:hover {
+  border-color: var(--orange-lighten-3) !important;
+}
+
+.border-orange-lighten-2-hvr:hover {
+  border-color: var(--orange-lighten-2) !important;
+}
+
+.border-orange-lighten-1-hvr:hover {
+  border-color: var(--orange-lighten-1) !important;
+}
+
+.border-orange-darken-1-hvr:hover {
+  border-color: var(--orange-darken-1) !important;
+}
+
+.border-orange-darken-2-hvr:hover {
+  border-color: var(--orange-darken-2) !important;
+}
+
+.border-orange-darken-3-hvr:hover {
+  border-color: var(--orange-darken-3) !important;
+}
+
+.border-orange-darken-4-hvr:hover {
+  border-color: var(--orange-darken-4) !important;
+}
+
+.border-orange-accent-1-hvr:hover {
+  border-color: var(--orange-accent-1) !important;
+}
+
+.border-orange-accent-2-hvr:hover {
+  border-color: var(--orange-accent-2) !important;
+}
+
+.border-orange-accent-3-hvr:hover {
+  border-color: var(--orange-accent-3) !important;
+}
+
+.border-orange-accent-4-hvr:hover {
+  border-color: var(--orange-accent-4) !important;
+}
+
+.border-deep-orange-hvr:hover {
+  border-color: var(--deep-orange) !important;
+}
+
+.border-deep-orange-lighten-5-hvr:hover {
+  border-color: var(--deep-orange-lighten-5) !important;
+}
+
+.border-deep-orange-lighten-4-hvr:hover {
+  border-color: var(--deep-orange-lighten-4) !important;
+}
+
+.border-deep-orange-lighten-3-hvr:hover {
+  border-color: var(--deep-orange-lighten-3) !important;
+}
+
+.border-deep-orange-lighten-2-hvr:hover {
+  border-color: var(--deep-orange-lighten-2) !important;
+}
+
+.border-deep-orange-lighten-1-hvr:hover {
+  border-color: var(--deep-orange-lighten-1) !important;
+}
+
+.border-deep-orange-darken-1-hvr:hover {
+  border-color: var(--deep-orange-darken-1) !important;
+}
+
+.border-deep-orange-darken-2-hvr:hover {
+  border-color: var(--deep-orange-darken-2) !important;
+}
+
+.border-deep-orange-darken-3-hvr:hover {
+  border-color: var(--deep-orange-darken-3) !important;
+}
+
+.border-deep-orange-darken-4-hvr:hover {
+  border-color: var(--deep-orange-darken-4) !important;
+}
+
+.border-deep-orange-accent-1-hvr:hover {
+  border-color: var(--deep-orange-accent-1) !important;
+}
+
+.border-deep-orange-accent-2-hvr:hover {
+  border-color: var(--deep-orange-accent-2) !important;
+}
+
+.border-deep-orange-accent-3-hvr:hover {
+  border-color: var(--deep-orange-accent-3) !important;
+}
+
+.border-deep-orange-accent-4-hvr:hover {
+  border-color: var(--deep-orange-accent-4) !important;
+}
+
+.border-brown-hvr:hover {
+  border-color: var(--brown) !important;
+}
+
+.border-brown-lighten-5-hvr:hover {
+  border-color: var(--brown-lighten-5) !important;
+}
+
+.border-brown-lighten-4-hvr:hover {
+  border-color: var(--brown-lighten-4) !important;
+}
+
+.border-brown-lighten-3-hvr:hover {
+  border-color: var(--brown-lighten-3) !important;
+}
+
+.border-brown-lighten-2-hvr:hover {
+  border-color: var(--brown-lighten-2) !important;
+}
+
+.border-brown-lighten-1-hvr:hover {
+  border-color: var(--brown-lighten-1) !important;
+}
+
+.border-brown-darken-1-hvr:hover {
+  border-color: var(--brown-darken-1) !important;
+}
+
+.border-brown-darken-2-hvr:hover {
+  border-color: var(--brown-darken-2) !important;
+}
+
+.border-brown-darken-3-hvr:hover {
+  border-color: var(--brown-darken-3) !important;
+}
+
+.border-brown-darken-4-hvr:hover {
+  border-color: var(--brown-darken-4) !important;
+}
+
+.border-blue-grey-hvr:hover {
+  border-color: var(--blue-grey) !important;
+}
+
+.border-blue-grey-lighten-5-hvr:hover {
+  border-color: var(--blue-grey-lighten-5) !important;
+}
+
+.border-blue-grey-lighten-4-hvr:hover {
+  border-color: var(--blue-grey-lighten-4) !important;
+}
+
+.border-blue-grey-lighten-3-hvr:hover {
+  border-color: var(--blue-grey-lighten-3) !important;
+}
+
+.border-blue-grey-lighten-2-hvr:hover {
+  border-color: var(--blue-grey-lighten-2) !important;
+}
+
+.border-blue-grey-lighten-1-hvr:hover {
+  border-color: var(--blue-grey-lighten-1) !important;
+}
+
+.border-blue-grey-darken-1-hvr:hover {
+  border-color: var(--blue-grey-darken-1) !important;
+}
+
+.border-blue-grey-darken-2-hvr:hover {
+  border-color: var(--blue-grey-darken-2) !important;
+}
+
+.border-blue-grey-darken-3-hvr:hover {
+  border-color: var(--blue-grey-darken-3) !important;
+}
+
+.border-blue-grey-darken-4-hvr:hover {
+  border-color: var(--blue-grey-darken-4) !important;
+}
+
+.border-grey-hvr:hover {
+  border-color: var(--grey) !important;
+}
+
+.border-grey-lighten-5-hvr:hover {
+  border-color: var(--grey-lighten-5) !important;
+}
+
+.border-grey-lighten-4-hvr:hover {
+  border-color: var(--grey-lighten-4) !important;
+}
+
+.border-grey-lighten-3-hvr:hover {
+  border-color: var(--grey-lighten-3) !important;
+}
+
+.border-grey-lighten-2-hvr:hover {
+  border-color: var(--grey-lighten-2) !important;
+}
+
+.border-grey-lighten-1-hvr:hover {
+  border-color: var(--grey-lighten-1) !important;
+}
+
+.border-grey-darken-1-hvr:hover {
+  border-color: var(--grey-darken-1) !important;
+}
+
+.border-grey-darken-2-hvr:hover {
+  border-color: var(--grey-darken-2) !important;
+}
+
+.border-grey-darken-3-hvr:hover {
+  border-color: var(--grey-darken-3) !important;
+}
+
+.border-grey-darken-4-hvr:hover {
+  border-color: var(--grey-darken-4) !important;
+}
+
+.border-black-hvr:hover {
+  border-color: var(--black) !important;
+}
+
+.border-white-hvr:hover {
+  border-color: var(--white) !important;
+}
+

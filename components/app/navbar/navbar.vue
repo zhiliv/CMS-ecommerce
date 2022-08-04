@@ -23,8 +23,7 @@
         <template v-if="!Array.isArray(item)">
           <app-navbar-item
             :key="item.id"
-            :classes="outClass"
-            :hover-color="hoverColor"
+            :classes="[outClassItem, classesItem]"
             :color="color"
             :size="size"
             @click="item.click"
@@ -34,12 +33,11 @@
         <template v-else>
           <app-navbar-dropdown
             :key="item.id"
-            :classes="outClass"
+            :classes="[outClassItem, classesItem]"
             :size="size"
             :caption="item[0].caption"
             :color="color"
             :list="item"
-            :hover-color="hoverColor"
           >
           </app-navbar-dropdown>
         </template>
@@ -56,8 +54,8 @@ export default {
    * @property {String} color - Цвет панели(класс)
    * @property {String} burgerClass - Класс1ы для кнопки выпадающего меню
    * @property {String} size - Размер панели(Варианты: sm, lg)
-   * @property {String} hoverColor - Класс для добавления в элемент при наведении мыши
    * @property {Array} menu - Список меню
+   * @property {String} classesItem - Классы для строк
    */
   props: {
     classes: {
@@ -76,15 +74,14 @@ export default {
       type: String,
       default: null,
     },
-    hoverColor: {
-      type: String,
-      default: '',
-      required: true,
-    },
     menu: {
       type: Array,
       // eslint-disable-next-line vue/require-valid-default-prop
       default: [],
+    },
+    classesItem: {
+      type: String,
+      default: '',
     },
   },
   /*
@@ -92,14 +89,13 @@ export default {
    * @function data
    * @property {String} outClass - Классы сформированные при монтировании компонента
    * @property {String} parentClass - классы для родительского элемента
-   * @property {Boolean} hover - статус наведения мыши
-   * @return {Object}
+   * @return {Object} outClassItem - сформированные классы для строк
    */
   data() {
     return {
-      outClass: {},
+      outClass: { navbar: true },
+      outClassItem: {},
       parentClass: {},
-      hover: false,
     }
   },
   /*
@@ -107,15 +103,9 @@ export default {
    * @function mounted
    */
   mounted() {
-    this.outClass = {
-      navbar: true,
-    } // формирование классов
-    if (this.size) this.outClass[this.size] = true // если задан размер то устанавливаем размер
-    if (this.color) {
-      // при указании цвета элемента
-      this.outClass[`${this.color}`] = true // добавление класса цвета элементу
-      this.parentClass[`${this.color}`] = true // добавление класса цвета родительскому элементу
-    }
+    this.parentClass[`${this.color}`] = true // добавление класса цвета родительскому элементу
+    if (this.size) this.outClassItem[this.size] = true // если задан размер то устанавливаем размер
+    if (this.color) this.outClassItem[`${this.color}`] = true // добавление класса цвета элементу при указании цвета элемента
   },
   /*
    * Методы компонента
@@ -139,7 +129,7 @@ export default {
 </script>
 
 <style scoped>
-@import './../../../assets/css/color.css';
+@import './../../../assets/css/bg-color.css';
 @import './../../../assets/css/align.css';
 
 .mt-10p {

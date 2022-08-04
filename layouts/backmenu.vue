@@ -119,7 +119,7 @@ export default {
 @import './../assets/css/height.css';
 @import './../assets/css/align.css';
 @import './../assets/css/margin.css';
-@import './../assets/css/color.css';
+@import './../assets/css/bg-color.css';
 @import './../assets/css/text-color.css';
 
 .w-30p {

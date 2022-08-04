@@ -3,8 +3,6 @@
     ref="item"
     :class="[classes, outClass]"
     @click="$emit('click', $event)"
-    @mouseover="hover = true"
-    @mouseleave="hover = false"
   >
     <slot></slot>
   </li>
@@ -15,21 +13,11 @@ export default {
     /*
      * Входящие свойства
      * @typedef {Object} props
-     * @property {String} hoverColor - Класс при наведении мыши
-     * @property {String} color - Классы для dropdown и его дочерних элементов
      * @property {String} classes - Классы для пункта меню
      * @property {String} size - Размер
      */
-    hoverColor: {
-      type: String,
-      default: '',
-    },
-    color: {
-      type: String,
-      default: '',
-    },
     classes: {
-      type: String,
+      type: [String, Array],
       default: '',
     },
     size: {
@@ -44,49 +32,22 @@ export default {
   data() {
     /*
      * @typedef {Object}
-     * @property {Boolean} hover - устанавливает статус наведения курсора на элемент
      * @property {String} outClass - Классы сформированные в компоненте
      */
     return {
-      hover: false,
-      outClass: {},
+      outClass: {'w-100': true},
     }
-  },
-  /*
-   * Наблюдатель за изменением свойств
-   * @typedef {Object} watch
-   */
-  watch: {
-    /*
-     * Отслеживание наведения мыши
-     * @function hover
-     * @property {Boolean} val Значение при наведение курсора на элемент
-     */
-    hover(val) {
-      this.$emit('hover-status', val) // отправка события со значением наведения курсора на элемент
-      const elCls = this.$refs.item.classList // обращение к элементу для управления его классами
-      if (val) {
-        // если курсор наведен на элемент
-        elCls.add(this.hoverColor) // добавление класса отвечающего за наведение курсора на элемент
-        elCls.remove(`${this.color}`) // удаление класса с основным цветом элемента
-      } else {
-        elCls.remove(this.hoverColor) // удаление класса отвечающего за наведение курсора на элемент
-        elCls.add(`${this.color}`) // добавление класса с основным цветом элемента
-      }
-    },
   },
   /*
    * При монтировании компонента
    * @function mounted
    */
   beforeMount() {
-    if (this.color) this.outClass[`${this.color}`] = true // если указан цвет то добавляем его в классы компонента
     if (this.size) this.outClass[this.size] = true // если задан размер то устанавливаем размер
   },
 }
 </script>
 <style scoped>
-@import './../../../../../assets/css/color.css';
 li {
   display: block;
   color: white;
