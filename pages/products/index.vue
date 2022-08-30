@@ -129,7 +129,7 @@ export default {
             id: 4,
             caption: 'Типы офферов',
             click: () => {
-              this.$modal.show(formTypeOffers, {}, { width: '900px', height: '600px' })
+              this.$modal.show(formTypeOffers, {}, { width: '900px', height: '600px', draggable: '.modal-header', resizable: true, clickToClose: false })
             },
           },
         ],
@@ -165,8 +165,7 @@ export default {
 </script>
 
 <style>
-@import './../../assets/css/width.css';
-@import './../../assets/css/height.css';
+@import './../../assets/css/size.css';
 @import './../../assets/css/align.css';
 @import './../../assets/css/margin.css';
 @import './../../assets/css/padding.css';

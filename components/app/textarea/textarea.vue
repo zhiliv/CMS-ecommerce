@@ -1,28 +1,9 @@
 <template>
   <textarea
-    v-bind="$attrs"
-    v-model="value"
+    :value="value"
     :class="[outClass, classes]"
-    :style="styles"
-    @dblclick="$emit('dblclick', $event)"
-    @click="$emit('click', $event)"
-    @change="$emit('change', $event)"
-    @blur="$emit('blur', $event)"
-    @focus="$emit('focus', $event)"
-    @keydown="$emit('keydown', $event)"
-    @keypress="$emit('keypress', $event)"
-    @keyup="$emit('keyup', $event)"
-    @load="$emit('load', $event)"
-    @mousedown="$emit('mousedown', $event)"
-    @mousemove="$emit('mousemove', $event)"
-    @mouseout="$emit('mouseout', $event)"
-    @mouseover="$emit('mouseover', $event)"
-    @mouseup="$emit('mouseup', $event)"
-    @reset="$emit('reset', $event)"
-    @select="$emit('select', $event)"
-    @submit="$emit('submit', $event)"
-    @unload="$emit('unload', $event)"
-  >
+    type="text"
+    @input="$emit('input', $event.target.value)">
   </textarea>
 </template>
 
@@ -32,29 +13,28 @@ export default {
    * Входящие свойства
    * @typedef {Object} props
    * @property {String} classes - Входные классы
-   * @property {String} styles - Входные стили
+   * @property {String} value - Значение поля
    */
   props: {
     classes: {
       type: String,
       default: '',
     },
-    styles: {
-      type: String,
+    value: {
+      type: [String, Number],
       default: '',
-    }
+    },
   },
   data() {
     return {
       outClass: null, // классы, сформированные аттрибутами
-      value: ''
     }
   },
   mounted() {
     this.outClass = {
-      'form-control': true
+      'form-control': true,
     }
-  }
+  },
 }
 </script>
 

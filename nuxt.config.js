@@ -189,7 +189,7 @@ export default {
       }
     }),
     transpile: ['vue-lazy-hydration', 'intersection-observer'],
-    postcss: {
+/*     postcss: {
       plugins: {
         ...(!isDev && {
           cssnano: {
@@ -212,7 +212,7 @@ export default {
       }),
 
       order: 'cssnanoLast'
-    },
+    }, */
 
   },
   build: {

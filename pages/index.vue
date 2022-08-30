@@ -18,8 +18,7 @@ export default {}
 </script>
 
 <style>
-@import './../assets/css/height.css';
-@import './../assets/css/width.css';
+@import './../assets/css/size.css';
 @import './../assets/css/margin.css';
 @import './../assets/css/border.css';
 </style>

@@ -6,6 +6,7 @@
   "configurations": [
     {
       "type": "chrome",
+      "console": "integratedTerminal",
       "request": "launch",
       "name": "client: yandex",
       "runtimeExecutable": "C:\\Users\\zhili\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe",

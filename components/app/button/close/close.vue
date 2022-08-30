@@ -1,5 +1,7 @@
 <template>
-  <app-button :classes="[outClass, classes]"></app-button>
+  <app-button
+    :classes="[outClass, classes]"
+    @click="$emit('click', $event)"></app-button>
 </template>
 
 <script>

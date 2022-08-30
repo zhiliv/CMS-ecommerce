@@ -139,6 +139,7 @@
   border-top-left-radius: var(--bs-border-radius) !important;
 }
 
+
 .border-materialize-red {
   border-color: var(--materialize-red) !important;
 }
@@ -494,7 +495,7 @@
 }
 
 .border-blue-darken-4 {
-  --bs-border-color: var(--blue-darken-4) !important;
+  border-color: var(--blue-darken-4) !important;
 }
 
 .border-blue-accent-1 {
@@ -2266,4 +2267,3 @@
 .border-white-hvr:hover {
   border-color: var(--white) !important;
 }
-
