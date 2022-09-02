@@ -1,23 +1,27 @@
 <template>
-  <div class="dropdown">
-    <li
+  <div class="relative">
+    <app-button
       ref="item"
-      :class="[classes, outClassParent]">
+      size="sm"
+      :classes="[classButtonToogle, outClassParent]"
+      @click="onViewDropDown">
       {{ caption }}
-    </li>
-    <div :class="outClass">
+    </app-button>
+    <ul
+      ref="drowdown"
+      :class="[outClass, classDropdown]">
       <template v-for="item in list">
         <template v-if="!item.parent">
           <app-navbar-dropdown-item
             :key="item.id"
             :size="size"
-            :classes="classes"
+            :classes="classItemDropdown"
             @click="item.click"
             >{{ item.caption }}</app-navbar-dropdown-item
           >
         </template>
       </template>
-    </div>
+    </ul>
   </div>
 </template>
 
@@ -26,16 +30,14 @@ export default {
   /*
    * Входящие свойства
    * @typedef {Object} props
-   * @property {String} classes - Входные классы
    * @property {String} caption - Наименование кнопки
    * @property {Array} list - Список раскрываемого меню
    * @property {String} size - Размер
+   * @property {String} classButtonToogle - Классы для родительского элемента dropdownКнопки выпадающего списка)
+   * @property {String} classDropdown - Классы для выпадающего меню
+   * @property {String} classItemDropdown - Классы для пунктов меню выпадающего списка
    */
   props: {
-    classes: {
-      type: [String, Array],
-      default: null,
-    },
     caption: {
       type: String,
       default: '',
@@ -49,6 +51,18 @@ export default {
       type: String,
       default: '',
     },
+    classButtonToogle: {
+      type: String,
+      default: '',
+    },
+    classDropdown: {
+      type: String,
+      default: '',
+    },
+    classItemDropdown: {
+      type: String,
+      default: '',
+    },
   },
   /*
    * Свойства компонента
@@ -59,9 +73,9 @@ export default {
        * @property {Object} outClassParent - классы для родительского элемента выпадающего меню
        * @property {Object} outClass - Классы для выпадающего списка
        */
-      outClassParent: { transition: true, 'no-select': true },
+      outClassParent: { transition: true, 'no-select': true, 'dropdown-toggle': true, 'm-1': true, 'p-1': true },
       outClass: {
-        'dropdown-content': true,
+        'dropdown-menu': true,
         'show-animation': true,
         'no-select': true,
       },
@@ -76,59 +90,93 @@ export default {
       this.outClassParent[this.size] = true // если задан размер то устанавливаем размер
     }
   },
+  methods: {
+    /*
+     * Отображение списка меню при клике
+     * @function onViewDropDown
+     */
+    onViewDropDown() {
+      const elClasslist = this.$el.querySelector('ul').classList // активный список
+      if (elClasslist.contains('show'))
+        // проверка есть такой класс у элемента
+        elClasslist.remove('show') // удаление класса если он есть в классах
+      else {
+        const allEl = this.$el.parentNode.querySelectorAll('ul') // получение всех элементов dropdown
+        allEl.forEach(el => el.classList.remove('show')) // удаление класса у всех элементов dropdown
+        elClasslist.add('show') // добавление класса активному списку
+      }
+    },
+  },
 }
 </script>
 
 <style scoped>
 @import './../../../../assets/css/border.css';
+@import './../../../../assets/css/padding.css';
+@import './../../../../assets/css/margin.css';
 @import './../../../../assets/css/align.css';
 @import './../../../../assets/css/animate.css';
 @import './../../../../assets/css/text.css';
 
-.dropdown {
+.dropdown-menu {
+  max-width: 240px;
+  --bs-dropdown-min-width: 10rem;
+  --bs-dropdown-padding-x: 0;
+  --bs-dropdown-padding-y: 0.5rem;
+  --bs-dropdown-spacer: 0.125rem;
+  --bs-dropdown-font-size: 0.9rem;
+  --bs-dropdown-color: #212529;
+  --bs-dropdown-bg: #fff;
+  --bs-dropdown-border-color: var(--bs-border-color-translucent);
+  --bs-dropdown-border-radius: 0.375rem;
+  --bs-dropdown-border-width: 1px;
+  --bs-dropdown-inner-border-radius: calc(0.375rem - 1px);
+  --bs-dropdown-divider-bg: var(--bs-border-color-translucent);
+  --bs-dropdown-divider-margin-y: 0.5rem;
+  --bs-dropdown-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --bs-dropdown-link-color: #212529;
+  --bs-dropdown-link-hover-color: #1e2125;
+  --bs-dropdown-link-hover-bg: #e9ecef;
+  --bs-dropdown-link-active-color: #fff;
+  --bs-dropdown-link-active-bg: #0d6efd;
+  --bs-dropdown-link-disabled-color: #adb5bd;
+  --bs-dropdown-item-padding-x: 1rem;
+  --bs-dropdown-item-padding-y: 0.25rem;
+  --bs-dropdown-header-color: #6c757d;
+  --bs-dropdown-header-padding-x: 1rem;
+  --bs-dropdown-header-padding-y: 0.5rem;
   position: absolute;
-  display: inline-block;
-}
-
-.dropdown-content {
+  z-index: 1000;
+  min-width: var(--bs-dropdown-min-width);
+  padding: 0px;
+  margin: -1px;
+  font-size: var(--bs-dropdown-font-size);
+  color: var(--bs-dropdown-color);
+  text-align: left;
+  list-style: none;
+  background-color: var(--bs-dropdown-bg);
+  background-clip: padding-box;
   display: none;
-  position: relative;
-  background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-toggle {
+  white-space: nowrap;
+}
+.dropdown-toggle::after {
   display: inline-block;
-  position: relative;
-  left: 0;
-  top: 100%;
-  width: 100%;
-  z-index: 100;
-  opacity: 1;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: '';
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
 }
-
-.dropdown-content.sm {
-  padding-top: 2px;
-}
-
-li {
-  height: 32px;
-  padding: 4px 8px;
-}
-
-li.sm {
-  height: 21px !important;
-  padding: 0px 14px;
-  margin: 1px 5px;
-}
-
-li.lg {
-  height: 40px !important;
-  padding: 7px 14px !important;
-}
-
-.show-animation {
-  -webkit-animation: fadeInTopRight 0.4s;
-  animation: fadeInTopRight 0.4s;
+.dropdown-toggle:empty::after {
+  margin-left: 0;
 }
 </style>

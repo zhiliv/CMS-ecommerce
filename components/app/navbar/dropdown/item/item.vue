@@ -2,8 +2,7 @@
   <li
     ref="item"
     :class="[classes, outClass]"
-    @click="$emit('click', $event)"
-  >
+    @click="$emit('click', $event)">
     <slot></slot>
   </li>
 </template>
@@ -35,7 +34,7 @@ export default {
      * @property {String} outClass - Классы сформированные в компоненте
      */
     return {
-      outClass: {'w-100': true},
+      outClass: { 'w-100': true, 'dropdown-item': true },
     }
   },
   /*
@@ -48,29 +47,17 @@ export default {
 }
 </script>
 <style scoped>
-li {
-  display: block;
-  color: white;
-  text-align: left !important;
-  padding: 4px 8px;
-  height: 32px;
+.dropdown-item {
+  width: 100%;
+  padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+  clear: both;
+  font-weight: 400;
+  color: var(--bs-dropdown-link-color);
+  text-align: inherit;
   text-decoration: none;
-}
-
-li.sm {
-  height: 23px !important;
-  padding: 0px 5px !important;
-  margin: 0px !important;
-}
-
-li.lg {
-  height: 40px !important;
-  padding: 7px 14px !important;
-}
-
-@media (max-width: 767px) {
-  li {
-    display: none;
-  }
+  overflow-wrap: break-word;
+  background-color: transparent;
+  border: 0;
+  z-index: 9999;
 }
 </style>

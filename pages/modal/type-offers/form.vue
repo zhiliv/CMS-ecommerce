@@ -48,7 +48,7 @@ export default {
      */
     dataInp: {
       /*
-       * @@function handler
+       * @function handler
        * Событие при изменении свойства
        * @param {Object} newValue - Полученное значение объекта
        */

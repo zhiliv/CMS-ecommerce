@@ -1,0 +1,88 @@
+Относительно окна :: 100vh
+body {
+  margin: 0;
+}
+
+div {
+  height: 100vh;
+  background: linear-gradient(blue, red);
+}
+<div></div>
+
+
+
+
+Относительно окна :: 100%
+html, body, div {
+  margin: 0;
+  height: 100%;
+}
+
+div {
+  background: linear-gradient(blue, red);
+}
+<div></div>
+
+
+
+Относительно окна :: absolute / fixed
+div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(blue, red);
+}
+<div></div>
+
+
+
+Относительно контейнера :: absolute
+section {
+  position: relative;
+
+  min-height: 120px;
+  margin: 1em;
+  outline: 1px dotted green;
+}
+
+div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(blue, red);
+}
+<section><div></div></section>
+
+Относительно контейнера :: flex
+section {
+  display: flex;
+
+  min-height: 120px;
+  margin: 1em;
+  outline: 1px dotted green;
+}
+
+div {
+  width: 100%;
+  background: linear-gradient(blue, red);
+}
+<section><div></div></section>
+
+
+Относительно контейнера :: grid
+section {
+  display: grid;
+
+  min-height: 120px;
+  margin: 1em;
+  outline: 1px dotted green;
+}
+
+div {
+  background: linear-gradient(blue, red);
+}
+<section><div></div></section>

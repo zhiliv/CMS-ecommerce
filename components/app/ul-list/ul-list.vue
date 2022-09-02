@@ -71,6 +71,7 @@ ul {
   padding-left: 2rem;
   margin-top: 0;
   margin-bottom: 1rem;
+
 }
 
 ul {
