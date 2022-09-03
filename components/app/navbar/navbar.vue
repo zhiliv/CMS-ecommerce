@@ -1,5 +1,7 @@
 <template>
-  <div :class="parentClass" style="width: 100%;">
+  <div
+    :class="parentClass"
+    style="width: 100%">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="28"
@@ -25,6 +27,7 @@
             :classes="[outClassItem, classesItem]"
             :color="color"
             :size="size"
+            :class-item-active="classItemActive"
             @click="item.click"
             >{{ item.caption }}</app-navbar-item
           >
@@ -38,6 +41,7 @@
             :size="size"
             :caption="item.caption"
             :color="color"
+            :class-item-active="classItemActive"
             :list="item.list">
           </app-navbar-dropdown>
         </template>
@@ -59,6 +63,7 @@ export default {
    * @property {String} classButtonToogle - Классы для кнопки выпадающего списка
    * @property {String} classDropdown - Классы для меню
    * @property {String} classItemDropdown - Классы для пунктов выпадающего списка
+   * @property {String} classItemActive - Классы для активного не dropdown
    */
   props: {
     classes: {
@@ -98,6 +103,10 @@ export default {
       type: String,
       default: '',
     },
+    classItemActive: {
+      type: String,
+      default: '',
+    },
   },
   /*
    * Данные компонента
@@ -110,12 +119,10 @@ export default {
     return {
       outClass: { navbar: true },
       outClassItem: {},
-      parentClass: {}
+      parentClass: {},
     }
   },
-  watch: {
-
-  },
+  watch: {},
   /*
    * При монтировании компонента
    * @function mounted
@@ -137,8 +144,8 @@ export default {
       const els = this.$el.querySelectorAll('li') // получение элемента
       // eslint-disable-next-line no-return-assign
       els.forEach(el => (el.style.display === 'block' ? (el.style.display = 'none') : (el.style.display = 'block')))
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -146,7 +153,7 @@ export default {
 @import './../../../assets/css/bg-color.css';
 @import './../../../assets/css/align.css';
 
-.navbar{
+.navbar {
   display: flex;
 }
 

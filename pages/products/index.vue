@@ -31,11 +31,12 @@
         classes="p-1 h-93">
         <app-navbar
           burger-class="white-text"
-          classes-item="bg-grey-darken-4 bg-grey-darken-3-hvr grey-lighten-1-text nav-underline  border-1 border-bottom border-grey-lighten-1"
+          classes-item="nav-item bg-grey-darken-3-hvr border-grey-lighten-1-hvr rounded-0 rounded-1-hvr grey-lighten-1-text-hvr"
+          class-item-active="bg-grey-darken-2 grey-lighten-1-text border rounded-1"
           classes="bg-grey-darken-4 border"
-          class-button-toogle="bg-grey-darken-4 bg-grey-darken-3-hvr bg-grey-darken-2-fcs grey-lighten-4-text-fcs grey-lighten-1-text border-bottom border-2 border-grey-lighten-1-hvr rounded-0 rounded-1-hvr rounded-1-fcs border-grey-lighten-1-fcs"
-          class-dropdown="bg-grey-darken-4 grey-lighten-1-text"
-          class-item-dropdown="bg-grey-darken-3-hvr grey-lighten-1-text bg-grey-darken-2-fcs border-bottom border-1 border-grey-lighten-1"
+          class-button-toogle="bg-grey-darken-4 bg-grey-darken-3-hvr bg-grey-darken-2-fcs grey-lighten-1-text border-bottom border-2 border-grey-lighten-1-hvr rounded-0 rounded-1-hvr rounded-1-fcs border-grey-lighten-1-fcs transition-1"
+          class-dropdown="bg-grey-darken-4 grey-lighten-1-text transition-1"
+          class-item-dropdown="bg-grey-darken-3 bg-grey-darken-2-hvr grey-lighten-1-text bg-grey-darken-1-fcs border-bottom border-1 border-grey-lighten-1 transition-1 grey-lighten-1-text"
           :menu="navOffer"></app-navbar>
         <form class="p-3 h-97 border border-grey-lighten-2 shadow-10">
           <app-row classes="h-100">
@@ -129,11 +130,11 @@ export default {
       listTypeOffer: [{}],
       navOffer: [
         {
-          id: 2,
+          id: 1,
           caption: 'Управление',
           list: [
             {
-              id: 4,
+              id: 2,
               caption: 'Типы офферов',
               click: () => {
                 this.$modal.show(
@@ -146,25 +147,12 @@ export default {
 
           ],
         },
-
         {
           id: 3,
-          caption: 'Управление',
-          list: [
-            {
-              id: 5,
-              caption: 'Типы офферов',
-              click: () => {
-                this.$modal.show(
-                  formTypeOffers,
-                  {},
-                  { width: '900px', height: '600px', draggable: '.modal-header', resizable: true, clickToClose: false },
-                )
-              },
-            },
+          caption: 'Управление 3',
+          click: () => {}
+        }
 
-          ],
-        },
       ],
     }
   },
@@ -208,7 +196,8 @@ export default {
 @import './../../assets/css/bg-color.css';
 @import './../../assets/css/text-color.css';
 
-.nav-underline {
-  text-decoration: underline;
+.nav-item{
+  color: var(--grey-lighten-1);
+  border-bottom: .2em solid var(--grey-lighten-1)
 }
 </style>

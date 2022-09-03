@@ -739,3 +739,7 @@ body {
 .relative{
   position: relative;
 }
+
+.transition-1{
+  transition-duration: 1s !important;
+}

@@ -4,6 +4,7 @@
       ref="item"
       size="sm"
       :classes="[classButtonToogle, outClassParent]"
+      @blur="onBlur"
       @click="onViewDropDown">
       {{ caption }}
     </app-button>
@@ -63,6 +64,10 @@ export default {
       type: String,
       default: '',
     },
+    classItemActive: {
+      type: String,
+      default: '',
+    },
   },
   /*
    * Свойства компонента
@@ -104,7 +109,20 @@ export default {
         const allEl = this.$el.parentNode.querySelectorAll('ul') // получение всех элементов dropdown
         allEl.forEach(el => el.classList.remove('show')) // удаление класса у всех элементов dropdown
         elClasslist.add('show') // добавление класса активному списку
+        this.$el.parentNode.querySelectorAll('button[dropdown-item]').forEach(el => {
+          if (this.classItemActive) this.classItemActive.split(' ').forEach(cls => el.classList.remove(cls)) // удаление классов активности у элементов не являющихся dropdown
+        })
       }
+    },
+    /*
+     * При потере фокуса у кнопки dropdown
+     * @function onBlur
+     */
+    onBlur() {
+      /* Таймер добавлен, чтобы нажатый элемент не пропал раньше вызова */
+      setTimeout(() => {
+        this.$el.querySelector('ul').classList.remove('show') // удаление класса у элемента
+      }, 1000)
     },
   },
 }
@@ -149,7 +167,7 @@ export default {
   z-index: 1000;
   min-width: var(--bs-dropdown-min-width);
   padding: 0px;
-  margin: -1px;
+  margin: -6px;
   font-size: var(--bs-dropdown-font-size);
   color: var(--bs-dropdown-color);
   text-align: left;
