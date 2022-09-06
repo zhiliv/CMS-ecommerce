@@ -2,18 +2,26 @@
   <!-- <template v-if="isAuthenticated"> -->
   <app-container
     breakpoint="fluid"
-    container="false" classes="vh-100 mh-100">
-    <app-row classes="h-100 mh-100">
+    container="false"
+    classes="vh-100">
+    <app-row classes="h-100">
       <app-col
-        col="2"
-        classes="h-100 mh-100 bg-grey-darken-4">
+        col="false"
+        col-sm="12"
+        col-md="12"
+        col-lg="3"
+        col-xl="2"
+        col-xxl="2"
+        classes="bg-grey-darken-4 col-menu">
         <template v-for="item in menu">
           <router-link
             :key="item.name"
             v-slot="{ href, navigate, isActive }"
             style="text-decoration: none; color: inherit"
             :to="item.link">
-            <a :href="href" @click="navigate">
+            <a
+              :href="href"
+              @click="navigate">
               <app-list-group-button
                 :key="item.name"
                 :is-active="isActive"
@@ -27,7 +35,13 @@
         </template>
         <app-list-group> </app-list-group>
       </app-col>
-      <app-col col="10" classes="h-100 overflow-auto">
+      <app-col
+        col-sm="12"
+        col-md="12"
+        col-lg="9"
+        col-xl="10"
+        col-xxl="10"
+        classes="h-100 overflow-auto">
         <nuxt />
       </app-col>
     </app-row>
@@ -84,4 +98,18 @@ export default {
 </script>
 <style>
 @import './../assets/css/padding.css';
+
+/* sm */
+@media (only screen and (min-width: 576px) and (orientation: landscape)) {
+  .col-menu {
+    height: auto;
+  }
+}
+
+/* lg */
+@media (min-width: 992px) {
+  .col-menu {
+    height: 100%;
+  }
+}
 </style>

@@ -2,26 +2,7 @@
 <template>
   <div
     :class="[outClass, classes]"
-    :style="styles"
     v-bind="$attrs"
-    @dblclick="$emit('dblclick', $event)"
-    @click="$emit('click', $event)"
-    @change="$emit('change', $event)"
-    @blur="$emit('blur', $event)"
-    @focus="$emit('focus', $event)"
-    @keydown="$emit('keydown', $event)"
-    @keypress="$emit('keypress', $event)"
-    @keyup="$emit('keyup', $event)"
-    @load="$emit('load', $event)"
-    @mousedown="$emit('mousedown', $event)"
-    @mousemove="$emit('mousemove', $event)"
-    @mouseout="$emit('mouseout', $event)"
-    @mouseover="$emit('mouseover', $event)"
-    @mouseup="$emit('mouseup', $event)"
-    @reset="$emit('reset', $event)"
-    @select="$emit('select', $event)"
-    @submit="$emit('submit', $event)"
-    @unload="$emit('unload', $event)"
   >
     <slot></slot>
   </div>
@@ -328,221 +309,221 @@ export default {
 
   props: {
     classes: {
-      type: String,
+      type: [Boolean, String],
       default: '',
     },
     styles: {
-      type: String,
+      type: [Boolean, String],
       default: '',
     },
     dFlex: {
       // d-flex
-      type: Boolean,
+      type: [Boolean, String],
       default: true,
     },
     dInlineFlex: {
       // d-inline-flex
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexRow: {
       // flex-row
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     dSmFlex: {
       // d-sm-flex
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     dSmInlineFlex: {
       // d-sm-inline-flex
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     dMdFlex: {
       // d-md-flex
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     dMdInlineFlex: {
       // d-md-inline-flex
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     dLgFlex: {
       // d-lg-flex
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     dLgInlineFlex: {
       // d-lg-inline-flex
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     dXlFlex: {
       // d-xl-flex
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     dXlInlineFlex: {
       // d-xl-inline-flex
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     dXxlFlex: {
       // d-xxl-flex
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     dXxlInlineFlex: {
       // d-xxl-inline-flex
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexRowReverse: {
       // flex-row-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexColumn: {
       // flex-column
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexColumnReverse: {
       // flex-column-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexSmRow: {
       // flex-sm-row
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexSmRowReverse: {
       // flex-sm-row-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexSmColumn: {
       // flex-sm-column
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexSmColumnReverse: {
       // flex-sm-column-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexMdRow: {
       // flex-md-row
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexMdRowReverse: {
       // flex-md-row-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexMdColumn: {
       // flex-md-column
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexMdColumnReverse: {
       // flex-md-column-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexLgRow: {
       // flex-lg-row
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexLgRowReverse: {
       // flex-lg-row-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexLgColumn: {
       // flex-lg-column
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexLgColumnReverse: {
       // flex-lg-column-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexXlRow: {
       // flex-xl-row
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexXlRowReverse: {
       // flex-xl-row-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexXlColumn: {
       // flex-xl-column
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexXlColumnReverse: {
       // flex-xl-column-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexXxlRow: {
       // flex-xxl-row
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexXxlRowReverse: {
       // flex-xxl-row-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexXxlColumn: {
       // flex-xxl-column
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexXxlColumnReverse: {
       // flex-xxl-column-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexFill: {
       // flex-fill
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexSmFill: {
       // flex-sm-fill
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexMdFill: {
       // flex-md-fill
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexLgFill: {
       // flex-lg-fill
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexXlFill: {
       // flex-xl-fill
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexXxlFill: {
       // flex-xxl-fill
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexGrow: {
@@ -613,92 +594,92 @@ export default {
     },
     flexNowrap: {
       // flex-nowrap
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexWrap: {
       // flex-wrap
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexWrapReverse: {
       // flex-wrap-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexSmWrap: {
       // flex-sm-wrap
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexSmNowrap: {
       // flex-sm-nowrap
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexSmWrapReverse: {
       // flex-sm-wrap-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexMdWrap: {
       // flex-md-wrap
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexMdNowrap: {
       // flex-md-nowrap
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexMdWrapReverse: {
       // flex-md-wrap-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexLgWrap: {
       // flex-lg-wrap
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexLgNowrap: {
       // flex-lg-nowrap
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexLgWrapReverse: {
       // flex-lg-wrap-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexXlWrap: {
       // flex-xl-wrap
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexXlNowrap: {
       // flex-xl-nowrap
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexXlWrapReverse: {
       // flex-xl-wrap-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexXxlWrap: {
       // flex-xxl-wrap
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexXxlNowrap: {
       // flex-xxl-wrap
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     flexXxlWrapReverse: {
       // flex-xxl-wrap-reverse
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
   },

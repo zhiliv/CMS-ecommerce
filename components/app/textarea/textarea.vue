@@ -1,19 +1,28 @@
 <template>
-  <textarea
-    :value="value"
-    :class="[outClass, classes]"
-    type="text"
-    @input="$emit('input', $event.target.value)">
-  </textarea>
+  <div :class="parentClass">
+    <app-label :classes="labelClass">{{ label }}</app-label>
+    <textarea
+      v-bind="$attrs"
+      :value="value"
+      :class="[outClass, classes]"
+      type="text"
+      @input="$emit('input', $event.target.value)">
+    </textarea>
+  </div>
 </template>
 
 <script>
+
 export default {
   /*
    * Входящие свойства
    * @typedef {Object} props
    * @property {String} classes - Входные классы
    * @property {String} value - Значение поля
+   * @property {String} label - Заголовок
+   * @property {String} parentClass - Классы для родительского блока
+   * @property {String} size - Размер, доступные варианты sm, lg
+   * @property {String} labelClass - Классы для заголовка компонента
    */
   props: {
     classes: {
@@ -24,6 +33,22 @@ export default {
       type: [String, Number],
       default: '',
     },
+    label: {
+      type: String,
+      default: '',
+    },
+    parentClass: {
+      type: String,
+      default: ''
+    },
+    size: {
+      type: String,
+      default: null
+    },
+    labelClass: {
+      type: String,
+      default: ''
+    }
   },
   data() {
     return {
@@ -34,6 +59,7 @@ export default {
     this.outClass = {
       'form-control': true,
     }
+    if(this.size) this.outClass[`form-control-${this.size}`] = true
   },
 }
 </script>

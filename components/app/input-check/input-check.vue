@@ -1,31 +1,19 @@
 <template>
-  <div :class="{'form-check': true,  'form-switch': this.switch}" >
-<input
+  <div :class="{'form-check': true,  'form-switch': this.switch}">
+    <div class="w-100">
+      <app-label classes="form-check-label w-100 mt-2">{{label}}</app-label>
+    </div>
+    <div class="w-100">
+    <input
     v-bind="$attrs"
     v-model="value"
     :class="[outClass, classes]"
     :type="type"
-    :style="styles"
     @dblclick="$emit('dblclick', $event)"
     @click="$emit('click', $event)"
     @change="$emit('change', $event)"
-    @blur="$emit('blur', $event)"
-    @focus="$emit('focus', $event)"
-    @keydown="$emit('keydown', $event)"
-    @keypress="$emit('keypress', $event)"
-    @keyup="$emit('keyup', $event)"
-    @load="$emit('load', $event)"
-    @mousedown="$emit('mousedown', $event)"
-    @mousemove="$emit('mousemove', $event)"
-    @mouseout="$emit('mouseout', $event)"
-    @mouseover="$emit('mouseover', $event)"
-    @mouseup="$emit('mouseup', $event)"
-    @reset="$emit('reset', $event)"
-    @select="$emit('select', $event)"
-    @submit="$emit('submit', $event)"
-    @unload="$emit('unload', $event)"
   />
-  <app-label classes="form-check-label">{{text}}</app-label>
+</div>
   </div>
 
 </template>
@@ -62,7 +50,7 @@ export default {
       type: [Boolean, String],
       default: false,
     },
-    text: {
+    label: {
       type: String,
       default: ''
     }
@@ -74,7 +62,7 @@ export default {
      *
      */
     return {
-      outClass: {}, // классы, сформированные аттрибутами
+      outClass: {'w-100': true, 'pt-5': true}, // классы, сформированные аттрибутами
       value: null
     }
   },
@@ -88,6 +76,9 @@ export default {
 </script>
 
 <style>
+  @import './../../../assets/css/size.css';
+  @import './../../../assets/css/padding.css';
+  @import './../../../assets/css/margin.css';
 input {
   margin: 0;
   font-family: inherit;
