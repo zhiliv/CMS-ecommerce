@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`app-flex-row.js Содержимое html для app-flex-row  1`] = `
-<div
-  class="d-flex d-inline-flex flex-row d-sm-flex d-sm-inline-flex d-md-flex d-md-inline-flex d-lg-flex d-lg-inline-flex d-xl-flex d-xl-inline-flex d-xxl-flex d-xxl-inline-flex flex-row-reverse flex-column flex-column-reverse flex-sm-row flex-sm-row-reverse flex-sm-column flex-sm-column-reverse flex-md-row flex-md-row-reverse flex-md-column flex-md-column-reverse flex-lg-row flex-lg-row-reverse flex-lg-column flex-lg-column-reverse flex-xl-row flex-xl-row-reverse flex-xl-column flex-xl-column-reverse flex-xxl-row flex-xxl-row-reverse flex-xxl-column flex-xxl-column-reverse flex-fill flex-sm-fill flex-md-fill flex-lg-fill flex-xl-fill flex-xxl-fill flex-grow-1 flex-sm-grow-1 flex-md-grow-1 flex-lg-grow-1 flex-xl-grow-1 flex-xxl-grow-1 flex-shrink-1 flex-sm-shrink-1 flex-md-shrink-1 flex-lg-shrink-1 flex-xl-shrink-1 flex-xxl-shrink-1 flex-nowrap flex-wrap flex-wrap-reverse flex-sm-wrap flex-sm-nowrap flex-sm-wrap-reverse flex-md-wrap flex-md-nowrap flex-md-wrap-reverse flex-lg-wrap flex-lg-nowrap flex-lg-wrap-reverse flex-xl-wrap flex-xl-nowrap flex-xl-wrap-reverse flex-xxl-wrap flex-xxl-nowrap flex-xxl-wrap-reverse simple"
-  id="indent"
-  style="background: white;"
-/>
-`;

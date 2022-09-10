@@ -1,0 +1,9 @@
+
+:root{
+  --bs-blue: #0d6efd;
+  --bbb: brown;
+}
+
+.bg-test{
+  border-color: var(--bs-blue);
+}

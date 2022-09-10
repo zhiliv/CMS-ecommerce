@@ -61,6 +61,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 @import '~/assets/css/size.css';
 </style>

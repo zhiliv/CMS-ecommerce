@@ -149,7 +149,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 @import './../../../assets/css/bg-color.css';
 @import './../../../assets/css/align.css';
 

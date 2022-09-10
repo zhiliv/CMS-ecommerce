@@ -87,7 +87,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 @import './../../../../assets/css/text.css';
 @import './../../../../assets/css/align.css';
 @import './../../../../assets/css/margin.css';

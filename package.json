@@ -5,7 +5,7 @@
   "scripts": {
     "dev-front": "cross-env NODE_ENV=development node_modules/.bin/nuxt --debug",
     "dev-back": "nodemon --inspect server/app.js",
-    "build": "nuxt build",
+    "build": "nuxt build --modern",
     "start": "cross-env NODE_ENV=production nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
@@ -16,15 +16,13 @@
     "test": "jest -u"
   },
   "dependencies": {
-    "@koa/cors": "^3.2.0",
+    "@koa/cors": "^3.4.1",
     "@nuxt/content": "^1.15.1",
     "@nuxtjs/auth-next": "^5.0.0-1647967358.de1bb0f",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/style-resources": "^1.2.1",
     "bcryptjs": "^2.4.3",
-    "bootstrap": "^4.6.1",
-    "bootstrap-vue": "^2.21.2",
     "cli-color": "^2.0.1",
     "cookie-universal-nuxt": "^2.1.5",
     "core-js": "^3.19.3",
@@ -71,6 +69,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.17.0",
+    "@nuxt/postcss8": "^1.1.3",
     "@nuxtjs/eslint-config": "^9.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/stylelint-module": "^4.1.0",
@@ -81,7 +80,6 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^3.2.0",
     "eslint-plugin-vue": "^8.5.0",
-    "jest": "^27.4.4",
     "postcss-html": "^1.3.0",
     "prettier": "^2.5.1",
     "puppeteer": "^14.1.1",

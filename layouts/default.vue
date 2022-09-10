@@ -4,7 +4,10 @@
     breakpoint="fluid"
     container="false"
     classes="vh-100">
-    <app-row classes="h-100">
+    <div
+      style="width: 300px; height: 300px"
+      class="border-b bg-test"></div>
+    <app-row classes="h-100 transition-1">
       <app-col
         col="false"
         col-sm="12"
@@ -12,7 +15,7 @@
         col-lg="3"
         col-xl="2"
         col-xxl="2"
-        classes="bg-grey-darken-4 col-menu">
+        classes="bg-grey-darken-4 col-menu ">
         <template v-for="item in menu">
           <router-link
             :key="item.name"
@@ -55,6 +58,7 @@
 
 <script>
 export default {
+
   data() {
     return {
       menu: [
@@ -98,6 +102,9 @@ export default {
 </script>
 <style>
 @import './../assets/css/padding.css';
+@import './../assets/css/color/test.css';
+@import './../assets/css/color/test1.css';
+@import './../assets/css/color/test3.css';
 
 /* sm */
 @media (only screen and (min-width: 576px) and (orientation: landscape)) {

@@ -89,7 +89,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .item {
   font-size: 14px;
 }

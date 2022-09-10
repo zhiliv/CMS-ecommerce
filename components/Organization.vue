@@ -157,7 +157,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .active {
   background: #6610f2;
   border: #6f42c1;

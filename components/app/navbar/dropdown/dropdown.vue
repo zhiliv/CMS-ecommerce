@@ -128,7 +128,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 @import './../../../../assets/css/border.css';
 @import './../../../../assets/css/padding.css';
 @import './../../../../assets/css/margin.css';

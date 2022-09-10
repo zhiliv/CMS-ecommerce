@@ -38,7 +38,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 ul {
   display: block;
   list-style-type: none;

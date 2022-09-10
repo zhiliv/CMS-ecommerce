@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .btn-close {
   box-sizing: content-box;
   width: 1em;

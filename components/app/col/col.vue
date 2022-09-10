@@ -341,6 +341,7 @@ export default {
 }
 </script>
 <style>
+
 .col {
   flex: 1 0 0%;
 }
@@ -1048,4 +1049,5 @@ export default {
     margin-left: 91.6667%;
   }
 }
+
 </style>

@@ -46,7 +46,7 @@ export default {
   },
 }
 </script>
-<style scoped>
+<style>
 .dropdown-item {
   width: 100%;
   padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);

@@ -52,7 +52,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 input {
   margin: 0;
   font-family: inherit;

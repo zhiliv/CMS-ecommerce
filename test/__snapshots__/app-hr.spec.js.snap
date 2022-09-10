@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`app-hr.js Содержимое html для app-hr  1`] = `
-<hr
-  class="simple simple-xl"
-  id="indent"
-  style="background: white;"
-/>
-`;

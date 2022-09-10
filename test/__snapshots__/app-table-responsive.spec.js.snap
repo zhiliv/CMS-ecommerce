@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`app-table-responsive.js Содержимое html для app-table-responsive  1`] = `
-<div
-  class="responsive simple"
-  id="indent"
-  style="background: white;"
-/>
-`;

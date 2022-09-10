@@ -2,8 +2,7 @@
 <template>
   <div
     :class="[outClass, classes]"
-    v-bind="$attrs"
-  >
+    v-bind="$attrs">
     <slot></slot>
   </div>
 </template>
@@ -731,9 +730,7 @@ export default {
         item === 'flexXlShrink' ||
         item === 'flexXxlShrink'
       )
-        this.outClass[`${camelToDash(item)}-${this[item]}`] = removeSpace(
-          this[item]
-        )
+        this.outClass[`${camelToDash(item)}-${this[item]}`] = removeSpace(this[item])
   },
 }
 </script>

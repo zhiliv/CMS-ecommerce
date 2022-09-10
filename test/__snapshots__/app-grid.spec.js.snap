@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`app-grid.js Содержимое html для app-grid  1`] = `
-<div
-  class="grid simple"
-  id="indent"
-  style="background: white;"
-/>
-`;
