@@ -1,0 +1,27 @@
+.black-text {
+  color: var(--black) !important;
+}
+
+.white-text {
+  color: var(--white) !important;
+}
+
+.transparent-text {
+  color: transparent;
+}
+
+.black-text-hvr:hover {
+  color: var(--black) !important;
+}
+
+.white-text-hvr:hover {
+  color: var(--white) !important;
+}
+
+.black-text-fcs:focus {
+  color: var(--black) !important;
+}
+
+.white-text-fcs:focus {
+  color: var(--white) !important;
+}
