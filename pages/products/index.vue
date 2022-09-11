@@ -163,7 +163,6 @@ export default {
 @import './../../assets/css/overflow.css';
 @import './../../assets/css/form-control.css';
 @import './../../assets/css/form.css';
-@import './../../assets/css/bg-color.css';
 @import './../../assets/css/text-color.css';
 @import './../../assets/css/font.css';
 

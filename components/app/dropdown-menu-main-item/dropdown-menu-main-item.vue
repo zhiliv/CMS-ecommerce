@@ -38,7 +38,6 @@ export default {
 }
 </script>
 <style>
-@import './../../../assets/css/bg-color.css';
 li {
   float: left;
   display: block;

@@ -4,9 +4,6 @@
     breakpoint="fluid"
     container="false"
     classes="vh-100">
-    <div
-      style="width: 300px; height: 300px"
-      class="border-b bg-test"></div>
     <app-row classes="h-100 transition-1">
       <app-col
         col="false"
@@ -57,8 +54,17 @@
 </template>
 
 <script>
+import appContainer from '../components/app/container/container.vue'
+import appRow from '../components/app/row/row.vue'
+import appCol from '../components/app/col/col.vue'
+import appListGroupButton from '../components/app/list-group/button/button.vue'
 export default {
-
+  components: {
+    'app-container': appContainer,
+    'app-row': appRow,
+    'app-col': appCol,
+    'app-list-group-button': appListGroupButton
+  },
   data() {
     return {
       menu: [
@@ -102,9 +108,6 @@ export default {
 </script>
 <style>
 @import './../assets/css/padding.css';
-@import './../assets/css/color/test.css';
-@import './../assets/css/color/test1.css';
-@import './../assets/css/color/test3.css';
 
 /* sm */
 @media (only screen and (min-width: 576px) and (orientation: landscape)) {

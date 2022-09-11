@@ -150,7 +150,6 @@ export default {
 </script>
 
 <style>
-@import './../../../assets/css/bg-color.css';
 @import './../../../assets/css/align.css';
 
 .navbar {

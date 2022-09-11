@@ -30,7 +30,7 @@
   --bs-highlight-bg: #fff3cd;
 }
 
-.transition-1{
+.transition-1 {
   transition-duration: 1s !important;
 }
 
@@ -366,24 +366,23 @@ body {
   background: #555;
 }
 
-.shadow-2{
-  box-shadow: 2.5px 2.5px 1.25px 0px rgba(0,0,0,0.36);
-  -webkit-box-shadow: 2.5px 2.5px 1.25px 0px rgba(0,0,0,0.36);
-  -moz-box-shadow: 2.5px 2.5px 1.25px 0px rgba(0,0,0,0.36);
+.shadow-2 {
+  box-shadow: 2.5px 2.5px 1.25px 0px rgba(0, 0, 0, 0.36);
+  -webkit-box-shadow: 2.5px 2.5px 1.25px 0px rgba(0, 0, 0, 0.36);
+  -moz-box-shadow: 2.5px 2.5px 1.25px 0px rgba(0, 0, 0, 0.36);
 }
 
-.shadow-5{
-  box-shadow: 5px 5px 2.5px 0px rgba(0,0,0,0.36);
-  -webkit-box-shadow: 5px 5px 2.5px 0px rgba(0,0,0,0.36);
-  -moz-box-shadow: 5px 5px 2.5px 0px rgba(0,0,0,0.36);
+.shadow-5 {
+  box-shadow: 5px 5px 2.5px 0px rgba(0, 0, 0, 0.36);
+  -webkit-box-shadow: 5px 5px 2.5px 0px rgba(0, 0, 0, 0.36);
+  -moz-box-shadow: 5px 5px 2.5px 0px rgba(0, 0, 0, 0.36);
 }
 
-.shadow-10{
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.36);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.36);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.36);
+.shadow-10 {
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.36);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.36);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.36);
 }
-
 
 .d-inline {
   display: inline !important;
@@ -425,10 +424,42 @@ body {
   display: none !important;
 }
 
-.relative{
+.relative {
   position: relative;
 }
 
-.transition-1{
+.transition-1 {
   transition-duration: 1s !important;
+}
+
+.bg-black {
+  background-color: var(--black) !important;
+}
+
+.bg-white {
+  background-color: var(--white) !important;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-black-hvr:hover {
+  background-color: var(--black) !important;
+}
+
+.bg-white-hvr:hover {
+  background-color: var(--white) !important;
+}
+
+.bg-black-fcs:focus {
+  background-color: var(--black) !important;
+}
+
+.bg-white-fcs:focus {
+  background-color: var(--white) !important;
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
