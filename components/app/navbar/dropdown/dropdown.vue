@@ -132,7 +132,6 @@ export default {
 @import './../../../../assets/css/border.css';
 @import './../../../../assets/css/padding.css';
 @import './../../../../assets/css/margin.css';
-@import './../../../../assets/css/align.css';
 @import './../../../../assets/css/animate.css';
 @import './../../../../assets/css/text.css';
 

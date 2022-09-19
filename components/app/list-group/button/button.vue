@@ -1,41 +1,35 @@
 <template>
   <app-button
-    style="width: 100%"
     v-bind="$attrs"
-    :class="[outClass, classes]"
-    @click="$emit('click', click($event))">
+    :class="{'no-select': true,'align-items-start': true,'d-flex': true,'my-1': true}"
+    @click="$emit('click', click($event))"
+  >
     <slot></slot>
   </app-button>
 </template>
 
 <script>
-
+import appButton from './../../button/button.vue'
 export default {
-  /*
-   * Входящие свойства
-   * @typedef {Object} props
-   * @property {String} classes - Входные классы
-   * @property {String} classesActive - классы для активной строки
-   * @property {String} size - Размер(Доступные размеры sm, lg)
-   * @property {Boolean} isActive - Статус активности
-   */
+  components: {
+    'app-button': appButton,
+  },
   props: {
-    classes: {
-      type: String,
-      default: '',
-    },
+    /* Классы при активности */
     classesActive: {
       type: String,
       default: '',
     },
+    /* Размер */
     size: {
       type: String,
       default: '',
     },
+    /* Статус активности */
     isActive: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     /*
@@ -45,17 +39,12 @@ export default {
      */
     return {
       outClass: {
-        'no-select': true, // установка класса для запрета выделения текста
+        'no-select': true,
         'align-items-start': true,
         'd-flex': true,
-        'my-1': true
+        'my-1': true,
       },
     }
-  },
-
-  beforeMount() {
-    if (this.size) this.outClass[this.size] = true // если задан размер то устанавливаем размер
-    if(this.isActive) this.outClass[this.classesActive] = true // установка класса для активного элемента
   },
   /*
    * Методы компонента
@@ -88,8 +77,6 @@ export default {
 </script>
 
 <style>
-@import './../../../../assets/css/text.css';
-@import './../../../../assets/css/align.css';
-@import './../../../../assets/css/margin.css';
-
+  @import './../../../../assets/css/margin.css';
+  @import './../../../../assets/css/text/text.css';
 </style>

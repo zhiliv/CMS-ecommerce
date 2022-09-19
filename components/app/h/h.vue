@@ -1,33 +1,15 @@
 <script>
 export default {
-  /*
-   * Входящие свойства
-   * @typedef {Object} props
-   * @property {String} classes - Входные классы
-   * @property {String} styles - Входные стили
-   * @property {Number} level - Уровень заголовка
-   * Доступные варианты:
-   *  -1
-   *  -2
-   *  -3
-   *  -4
-   *  -5
-   *  -6
-   */
   props: {
+    /* Уровень заголовка */
     level: {
       type: String,
       required: true,
       min: 1,
       max: 6,
-    },
-    classes: {
-      type: String,
-      default: '',
-    },
-    styles: {
-      type: String,
-      default: '',
+      validator(value){
+        return +value > 0 && +value <=6
+      }
     },
   },
   /*
@@ -39,28 +21,11 @@ export default {
       'h' + this.level, // имя тега
       {
         on: {
-          click: (event) => this.$emit('click', event),
-          dblclick: (event) => this.$emit('dblclick', event),
-          change: (event) => this.$emit('change', event),
-          keydown: (event) => this.$emit('keydown', event),
-          focus: (event) => this.$emit('focus', event),
-          keypress: (event) => this.$emit('keypress', event),
-          keyup: (event) => this.$emit('keyup', event),
-          load: (event) => this.$emit('load', event),
-          mousedown: (event) => this.$emit('mousedown', event),
-          mousemove: (event) => this.$emit('mousemove', event),
-          mouseout: (event) => this.$emit('mouseout', event),
-          mouseover: (event) => this.$emit('mouseover', event),
-          mouseup: (event) => this.$emit('mouseup', event),
-          reset: (event) => this.$emit('reset', event),
-          select: (event) => this.$emit('select', event),
-          submit: (event) => this.$emit('submit', event),
-          unload: (event) => this.$emit('unload', event),
+          click: (event) => this.$emit('click', event)
         },
         attrs: {
           // указание аттрибутов
-          class: this.classes, // классы
-          style: this.styles, // стили
+          // class: this.classes, // классы
         },
       },
       this.$slots.default // массив дочерних элементов

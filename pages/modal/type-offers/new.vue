@@ -94,5 +94,5 @@ export default {
 </script>
 
 <style>
-@import '~/assets/css/align.css';
+
 </style>

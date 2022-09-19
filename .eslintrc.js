@@ -30,6 +30,7 @@ module.exports = {
         "CONTENT"
       ],
       "alphabetical": false
-    }]
+    }],
+    "vue/no-multiple-template-root": 0
   },
 }

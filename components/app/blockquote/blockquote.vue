@@ -1,87 +1,63 @@
 <template>
-  <blockquote
-    :class="[outClass, classes]"
-    :style="styles"
-    v-bind="$attrs"
-    @dblclick="$emit('dblclick', $event)"
-    @click="$emit('click', $event)"
-    @change="$emit('change', $event)"
-    @blur="$emit('blur', $event)"
-    @focus="$emit('focus', $event)"
-    @keydown="$emit('keydown', $event)"
-    @keypress="$emit('keypress', $event)"
-    @keyup="$emit('keyup', $event)"
-    @load="$emit('load', $event)"
-    @mousedown="$emit('mousedown', $event)"
-    @mousemove="$emit('mousemove', $event)"
-    @mouseout="$emit('mouseout', $event)"
-    @mouseover="$emit('mouseover', $event)"
-    @mouseup="$emit('mouseup', $event)"
-    @reset="$emit('reset', $event)"
-    @select="$emit('select', $event)"
-    @submit="$emit('submit', $event)"
-    @unload="$emit('unload', $event)"
-  >
-    <slot></slot>
-  </blockquote>
+  <div :class="classParent">
+    <blockquote :class="[{'blockquote': true}, $attrs.class]" v-bind="$attrs">
+      <slot></slot>
+    </blockquote>
+    <template v-if="$slots.footer">
+      <app-figcaption :class="[{'blockquote-footer': true}, classFooter]">
+        <slot name="footer"></slot>
+      </app-figcaption>
+    </template>
+  </div>
 </template>
 
 <script>
+import appFigcaption from './../figcaption/figcaption.vue'
 export default {
-  /*
-   * Входящие свойства
-   * @typedef {Object} props
-   * @property {String} classes - Входные классы
-   * @property {String} styles - Входные стили
-   */
+  components: {
+    'app-figcaption': appFigcaption
+  },
   props: {
-    classes: {
+    /*
+    * Классы для нижней подписи
+    */
+    classFooter: {
       type: String,
-      default: '',
+      default: ''
     },
-    styles: {
+    /*
+    * Классы для родительского блока
+    */
+    classParent: {
       type: String,
-      default: '',
-    },
-    footer: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  data() {
-    return {
-      outClass: null,
+      default: ''
     }
-  },
-  mounted() {
-    this.outClass = {
-      blockquote: true,
-      'blockquote-footer': this.footer,
-    }
-  },
+  }
 }
 </script>
 
 <style>
-blockquote {
-  margin: 0 0 1rem;
-}
+  blockquote {
+    margin: 0 0 1rem;
+  }
 
-.blockquote {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-}
-.blockquote > :last-child {
-  margin-bottom: 0;
-}
+  .blockquote {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
 
-.blockquote-footer {
-  margin-top: -1rem;
-  margin-bottom: 1rem;
-  font-size: 0.875em;
-  color: #6c757d;
-}
-.blockquote-footer::before {
-  content: '—';
-}
+  .blockquote > :last-child {
+    margin-bottom: 0;
+  }
+
+  .blockquote-footer {
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    font-size: 0.875em;
+    color: #6c757d;
+  }
+
+  .blockquote-footer::before {
+    content: '—';
+  }
 </style>

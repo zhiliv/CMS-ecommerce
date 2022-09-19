@@ -1,167 +1,102 @@
 <template>
-  <input
-    v-bind="$attrs"
-    v-model="value"
-    :class="[outClass, classes]"
-    :style="styles"
-    type="range"
-    @dblclick="$emit('dblclick', $event)"
-    @click="$emit('click', $event)"
-    @change="$emit('change', $event)"
-    @blur="$emit('blur', $event)"
-    @focus="$emit('focus', $event)"
-    @keydown="$emit('keydown', $event)"
-    @keypress="$emit('keypress', $event)"
-    @keyup="$emit('keyup', $event)"
-    @load="$emit('load', $event)"
-    @mousedown="$emit('mousedown', $event)"
-    @mousemove="$emit('mousemove', $event)"
-    @mouseout="$emit('mouseout', $event)"
-    @mouseover="$emit('mouseover', $event)"
-    @mouseup="$emit('mouseup', $event)"
-    @reset="$emit('reset', $event)"
-    @select="$emit('select', $event)"
-    @submit="$emit('submit', $event)"
-    @unload="$emit('unload', $event)"
-  />
+  <input v-bind="$attrs" v-model="value" :class="[{'form-range': true}]" type="range" />
 </template>
 
-<script>
-export default {
-  /*
-   * Входящие свойства
-   * @typedef {Object} props
-   * @property {String} classes - Входные классы
-   * @property {String} styles - Входные стили
-   * @property {String} value - Значение поля
-   */
-  props: {
-    classes: {
-      type: String,
-      default: '',
-    },
-    styles: {
-      type: String,
-      default: '',
-    },
-  },
-  data() {
-    /*
-     * @typedef {Object} Внутренние свойства компонента
-     * @property {Object} outClass Выходные классы
-     *
-     */
-    return {
-      outClass: {}, // классы, сформированные аттрибутами
-    }
-  },
-  mounted() {
-    this.outClass = {
-      'form-range': true,
-    }
-  },
-}
-</script>
-
 <style>
-input {
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
+  input {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
 
-.form-range {
-  width: 100%;
-  height: 1.5rem;
-  padding: 0;
-  background-color: transparent;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-.form-range:focus {
-  outline: 0;
-}
-.form-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-}
-.form-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-}
-.form-range::-moz-focus-outer {
-  border: 0;
-}
-.form-range::-webkit-slider-thumb {
-  width: 1rem;
-  height: 1rem;
-  margin-top: -0.25rem;
-  background-color: #0d6efd;
-  border: 0;
-  border-radius: 1rem;
-  -webkit-transition: background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
-  -webkit-appearance: none;
-  appearance: none;
-}
-@media (prefers-reduced-motion: reduce) {
+  .form-range {
+    width: 100%;
+    height: 1.5rem;
+    padding: 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .form-range:focus {
+    outline: 0;
+  }
+  .form-range:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  }
+  .form-range:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  }
+  .form-range::-moz-focus-outer {
+    border: 0;
+  }
   .form-range::-webkit-slider-thumb {
-    -webkit-transition: none;
-    transition: none;
+    width: 1rem;
+    height: 1rem;
+    margin-top: -0.25rem;
+    background-color: #0d6efd;
+    border: 0;
+    border-radius: 1rem;
+    -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-appearance: none;
+    appearance: none;
   }
-}
-.form-range::-webkit-slider-thumb:active {
-  background-color: #b6d4fe;
-}
-.form-range::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 0.5rem;
-  color: transparent;
-  cursor: pointer;
-  background-color: #dee2e6;
-  border-color: transparent;
-  border-radius: 1rem;
-}
-.form-range::-moz-range-thumb {
-  width: 1rem;
-  height: 1rem;
-  background-color: #0d6efd;
-  border: 0;
-  border-radius: 1rem;
-  -moz-transition: background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
-  -moz-appearance: none;
-  appearance: none;
-}
-@media (prefers-reduced-motion: reduce) {
+  @media (prefers-reduced-motion: reduce) {
+    .form-range::-webkit-slider-thumb {
+      -webkit-transition: none;
+      transition: none;
+    }
+  }
+  .form-range::-webkit-slider-thumb:active {
+    background-color: #b6d4fe;
+  }
+  .form-range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 0.5rem;
+    color: transparent;
+    cursor: pointer;
+    background-color: #dee2e6;
+    border-color: transparent;
+    border-radius: 1rem;
+  }
   .form-range::-moz-range-thumb {
-    -moz-transition: none;
-    transition: none;
+    width: 1rem;
+    height: 1rem;
+    background-color: #0d6efd;
+    border: 0;
+    border-radius: 1rem;
+    -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -moz-appearance: none;
+    appearance: none;
   }
-}
-.form-range::-moz-range-thumb:active {
-  background-color: #b6d4fe;
-}
-.form-range::-moz-range-track {
-  width: 100%;
-  height: 0.5rem;
-  color: transparent;
-  cursor: pointer;
-  background-color: #dee2e6;
-  border-color: transparent;
-  border-radius: 1rem;
-}
-.form-range:disabled {
-  pointer-events: none;
-}
-.form-range:disabled::-webkit-slider-thumb {
-  background-color: #adb5bd;
-}
-.form-range:disabled::-moz-range-thumb {
-  background-color: #adb5bd;
-}
+  @media (prefers-reduced-motion: reduce) {
+    .form-range::-moz-range-thumb {
+      -moz-transition: none;
+      transition: none;
+    }
+  }
+  .form-range::-moz-range-thumb:active {
+    background-color: #b6d4fe;
+  }
+  .form-range::-moz-range-track {
+    width: 100%;
+    height: 0.5rem;
+    color: transparent;
+    cursor: pointer;
+    background-color: #dee2e6;
+    border-color: transparent;
+    border-radius: 1rem;
+  }
+  .form-range:disabled {
+    pointer-events: none;
+  }
+  .form-range:disabled::-webkit-slider-thumb {
+    background-color: #adb5bd;
+  }
+  .form-range:disabled::-moz-range-thumb {
+    background-color: #adb5bd;
+  }
 </style>

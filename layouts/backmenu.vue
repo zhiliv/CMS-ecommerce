@@ -117,7 +117,6 @@ export default {
 <style>
 @import './../assets/css/border.css';
 @import './../assets/css/size.css';
-@import './../assets/css/align.css';
 @import './../assets/css/margin.css';
 
 .w-30p {

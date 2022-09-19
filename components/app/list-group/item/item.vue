@@ -1,9 +1,9 @@
 <template>
   <li
-    style="width: 100%"
     v-bind="$attrs"
-    :class="[outClass, classes]"
-    @click="$emit('click', click($event))">
+    :class="[{'no-select': true, 'align-items-start': true, 'd-block': true, 'list-group-item': trues}]"
+    @click="$emit('click', click($event))"
+  >
     <slot></slot>
   </li>
 </template>
@@ -11,48 +11,21 @@
 <script>
 import { strToArr } from './../../../../scripts/component/func'
 export default {
-  /*
-   * Входящие свойства
-   * @typedef {Object} props
-   * @property {String} classes - Входные классы
-   * @property {String} classesActive - классы для активной строки
-   * @property {String} size - Размер(Доступные размеры sm, lg)
-   */
   props: {
-    classes: {
-      type: String,
-      default: '',
-    },
+    /* Классы при активности */
     classesActive: {
       type: String,
       default: '',
     },
+    /* Размер */
     size: {
       type: String,
-      default: '',
+      default: null,
+      validator(value) {
+        return value === null || value === 'sm' || value === 'lg'
+      },
     },
   },
-  data() {
-    /*
-     * Данные компонента
-     * @typedef {Object}
-     * @property {Object} outClass - Устанавливаемые классы
-     */
-    return {
-      outClass: {
-        'no-select': true, // установка класса для запрета выделения текста
-        'align-items-start': true,
-        'd-flex': true,
-      },
-    }
-  },
-
-  beforeMount() {
-    if (this.size) this.outClass[this.size] = true // если задан размер то устанавливаем размер
-  },
-  /*
-   * Методы компонента
-   */
   methods: {
     /*
      * При клике на пункт списка
@@ -63,16 +36,16 @@ export default {
       const list = event.target.parentElement.querySelectorAll('li') // получение списка элементов
       const arrActiveClass = strToArr(this.classesActive) // получение массива из строки
       if (list && list.length) {
-        list.forEach((el) => {
+        list.forEach(el => {
           // обход всех элементов списка
           arrActiveClass.forEach(
-            (activeClass) => el.classList.remove(activeClass), // удаление класса активности у элементов, у которых есть активность
+            activeClass => el.classList.remove(activeClass), // удаление класса активности у элементов, у которых есть активность
           )
           el.classList.remove('active') // удаление класса активности у элементов
         })
       }
       arrActiveClass.forEach(
-        (activeClass) => event.target.classList.add(activeClass), // добавление класса выделенному элементу
+        activeClass => event.target.classList.add(activeClass), // добавление класса выделенному элементу
       )
       event.target.classList.add('active')
     },
@@ -81,20 +54,15 @@ export default {
 </script>
 
 <style>
-@import './../../../../assets/css/text.css';
-@import './../../../../assets/css/align.css';
+  .list-group-item {
+    padding: 4px 8px;
+  }
 
-li {
-  padding: 4px 8px;
-  color: rgba(0, 0, 0, 0.787);
-  display: block;
-}
+  .list-group-item.sm {
+    padding: 0px;
+  }
 
-li.sm {
-  padding: 0px;
-}
-
-li.lg {
-  padding: 8px 16px;
-}
+  .list-group-item.lg {
+    padding: 8px 16px;
+  }
 </style>

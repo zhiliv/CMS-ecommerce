@@ -1,9 +1,31 @@
+/* eslint-disable import/order */
+/* eslint-disable import/first */
 /* eslint-disable no-dupe-keys */
-const imageminMozjpeg = require('imagemin-mozjpeg')
-const ImageminPlugin = require('imagemin-webpack-plugin').default
-const isDev = process.env.NODE_ENV !== 'production'
+// const imageminMozjpeg = require('imagemin-mozjpeg')// const ImageminPlugin = require('imagemin-webpack-plugin').default
 
+const {start} = require('./generator-whitelist')
+start()
+import * as fs from 'fs'
+const whitelist = fs.readFileSync('whitelist.js').toString()
+
+
+
+const isDev = process.env.NODE_ENV !== 'production'
 export default {
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/axios',
+    // https://go.nuxtjs.dev/pwa
+    // '@nuxtjs/pwa',
+    // https://go.nuxtjs.dev/content
+    // '@nuxt/content',
+    // https://github.com/nuxt-community/auth-module
+    '@nuxtjs/auth-next',
+    'nuxt-trailingslash-module',
+    'nuxt-webfontloader',
+    'cookie-universal-nuxt',
+  ],
   loading: false,
 
   mode: 'universal',
@@ -13,6 +35,9 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
+    htmlAttrs: {
+      lang: 'ru',
+    },
     title: 'CMS-ecommerce',
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -20,13 +45,16 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-
+  rootDir: __dirname, // указание корневого каталога для построения ссылок в подключаемых файлах
   // Global CSS: https://go.nuxtjs.dev/config-css
   // '~/assets/css/main.css'
-  css: ['~/assets/css/main.css'],
+  css: [ '~/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~plugins/vue-js-modal.js'],
+  plugins: [
+    { src: '~~/plugins/vue-js-modal.js', mode: 'client' },
+    // { src: '~~/plugins/vue-lazy-load.js' }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -34,7 +62,7 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     'nuxt-purgecss',
-    '@nuxt/postcss8'
+    // '@nuxt/postcss8',
     // https://go.nuxtjs.dev/stylelint
     // '@nuxtjs/stylelint-module',
   ],
@@ -52,50 +80,13 @@ export default {
       'pages/*.vue',
       'plugins/**/*.js'
     ],
-    styleExtensions: ['style.css'],
-    whitelist: [
-      'html',
-      'body',
-      'row',
-      'container',
-      'container-fluid',
-      'h-100',
-      'vh-100',
-      'd-flex',
-      'modals-container',
-      'vm--container',
-      'vm--overlay',
-      'vm--top-right-slot',
-      'vm--modal',
-    ],
+    whitelist: whitelist.split(','),
     extractors: [
       {
         extractor: content => content.match(/[A-z0-9-:\\/]+/g) || [],
         extensions: ['html', 'vue', 'js'],
       },
     ],
-  },
-
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    // https://go.nuxtjs.dev/bootstrap
-    // 'bootstrap-vue/nuxt',
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
-    // https://go.nuxtjs.dev/content
-    // '@nuxt/content',
-    // https://github.com/nuxt-community/auth-module
-    '@nuxtjs/auth-next'
-  ],
-
-  webfontloader: {
-    events: false,
-    google: {
-      families: ['Montserrat:400,500,600:cyrillic&display=swap'],
-    },
-    timeout: 5000,
   },
 
   render: {
@@ -106,10 +97,10 @@ export default {
     //   },
     // compressor: false,
     resourceHints: false,
-    etag: false,
-    static: {
-      etag: false,
-    },
+    // etag: false,
+    // static: {
+    //   etag: false,
+    // },
   },
 
   auth: {
@@ -208,31 +199,6 @@ export default {
       },
     }),
     transpile: ['vue-lazy-hydration', 'intersection-observer'],
-    postcss: {
-      plugins: {
-        cssnano: {
-          preset: [
-            'advanced',
-            {
-              autoprefixer: false,
-              cssDeclarationSorter: false,
-              zindex: false,
-              discardComments: {
-                removeAll: true,
-              },
-            },
-          ],
-        },
-      },
-      ...(!isDev && {
-        preset: {
-          browsers: 'cover 99.5%',
-          autoprefixer: true,
-        },
-      }),
-
-      order: 'cssnanoLast',
-    },
     extend(config, ctx) {
       if (ctx.isDev) {
         config.devtool = ctx.isClient ? '#source-map' : '#inline-source-map'

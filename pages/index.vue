@@ -5,7 +5,12 @@
 </template>
 
 <script>
-export default {}
+  import appContainer from '../components/app/container/container.vue'
+export default {
+  components: {
+    'app-container': appContainer
+  }
+}
 </script>
 
 <style>

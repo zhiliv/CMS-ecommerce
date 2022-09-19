@@ -36,6 +36,14 @@ export const isBoolean = (data) => typeof data === 'boolean'
 export const isString = (data) => typeof data === 'string'
 
 /*
+* Проверка, является ли значение числом
+* @function isNumber
+* @param {Any} data Проверяемое значение
+* @return {Boolean} Результат проверки
+*/
+export const isNumber = data => Number.isInteger(+data)
+
+/*
  * Преобразование строки в логический тип
  * @function  strToBool
  * @param {String} data - Значение, которое необходимо преобразовать в логический тип
