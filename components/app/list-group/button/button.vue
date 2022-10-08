@@ -11,7 +11,8 @@
 
 <script>
 import appButton from './../../button/button.vue'
-import {strToArr} from './../../../../scripts/component/func'
+import { strToArr } from './../../../../scripts/component/func'
+
 export default {
   components: {
     'app-button': appButton,
@@ -27,38 +28,38 @@ export default {
       type: String,
       default: null,
     },
-    /* Статус активности */
-    isActive: {
-      type: Boolean,
-      default: false,
-    },
   },
-  watch:{
-    /*
-    * Установка активности для элемента
-    * @function isActive
-    * @param {Boolean}  newVal - Текущее значение
-    * @param {Boolean} oldVal - Прошлое значение
-    */
-    isActive(newVal, oldVal){
-      if(newVal){
-        const list = this.$el.parentElement.parentElement.querySelectorAll('button') // получение списка элементов
-      const arrActiveClass = strToArr(this.classesActive) // получение массива из строки
-      if (list && list.length) {
-        list.forEach((el) => {
-          // обход всех элементов списка
-          arrActiveClass.forEach(
-            (activeClass) => el.classList.remove(activeClass), // удаление класса активности у элементов, у которых есть активность
-          )
-          el.classList.remove('active') // удаление класса активности у элементов
-        })
-      }
-      arrActiveClass.forEach(
-        (activeClass) => this.$el.classList.add(activeClass), // добавление класса выделенному элементу
-      )
-      this.$el.classList.add('active')
-      }
+  data() {
+    return {
+      isActive: null,
     }
+  },
+  watch: {
+    /*
+     * Установка активности для элемента
+     * @function isActive
+     * @param {Boolean}  newVal - Текущее значение
+     * @param {Boolean} oldVal - Прошлое значение
+     */
+    isActive(newVal, oldVal) {
+      if (newVal) {
+        const list = this.$parent.$parent.$children // получение массива элементов списка
+        const arrActiveClass = strToArr(this.classesActive) // получение массива из строки
+        if (list && list.length) {
+          list.forEach(item => {
+            // обход всех элементов списка
+            arrActiveClass.forEach(
+              activeClass => item.$children[0].$el.classList.remove(activeClass), // удаление класса активности у элементов, у которых есть активность
+            )
+            item.$children[0].$el.classList.remove('active') // удаление класса активности у элементов
+          })
+        }
+        arrActiveClass.forEach(
+          activeClass => this.$el.classList.add(activeClass), // добавление класса выделенному элементу
+        )
+        this.$el.classList.add('active')
+      }
+    },
   },
   /*
    * Методы компонента
@@ -70,7 +71,11 @@ export default {
      * @props {Object} event - Данные события
      */
     click(event) {
-
+      const list = this.$parent.$parent.$children // получение всех элементов списка
+      list.forEach(item => {
+        item.$children[0]._data.isActive = false
+      }) // установка для всех элементов свойства isActive
+      this.isActive = true // установка для текущего элемента
     },
   },
 }

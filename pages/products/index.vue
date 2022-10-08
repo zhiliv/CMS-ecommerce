@@ -89,7 +89,7 @@ export default {
     'app-input': appInput,
     'app-select': appSelect,
     'app-textarea': appTextarea,
-    'app-h': appH
+    'app-h': appH,
   },
   layout: 'default',
   data() {
@@ -166,23 +166,6 @@ export default {
   @import './../../assets/css/background/amber.css';
   @import './../../assets/css/text/grey.css';
   @import './../../assets/css/background/grey.css';
-  .nav-item {
-    color: var(--grey-lighten-1);
-    border-bottom: 0.2em solid var(--grey-lighten-1);
-  }
-
-  @media (max-width: 576px) {
-    .data-form {
-      height: 81%;
-      overflow-y: auto;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .data-form {
-      height: 90%;
-    }
-  }
 
   .p-02 {
     padding: 0.2em;

@@ -3,14 +3,14 @@
   <app-container container-fluid="true" class="vh-100">
     <app-row class="h-100 transition-1">
       <app-col col="2" class="bg-grey-darken-4 col-menu">
-        <app-list-group>
+        <app-list-group ref="menu">
           <template v-for="item in menu">
             <router-link
               v-if="item.name !== null"
               :key="item.name"
               v-slot="{ href, navigate, isActive }"
-              style="text-decoration: none; color: inherit"
               :to="item.link"
+              class="text-decoration-none text-reset"
             >
               <a :href="href" @click="navigate">
                 <app-list-group-button
@@ -90,6 +90,21 @@ export default {
       ]
     },
   },
+  mounted() {
+    this.menu.forEach((item, index) => {
+      if (`${this.$route.path}/` === item.link) this.selectItemMenu(index)
+    })
+  },
+  methods: {
+    /*
+     * Выделение пункта меню для активной страницы
+     * @function selectItemMenu
+     * @param {Number} index - Индекс элемента активного пункта меню
+     */
+    selectItemMenu(index) {
+      this.$refs.menu.$children[index].$children[0].isActive = true // установка активности для пункта меню загруженной страницы
+    },
+  },
 }
 </script>
 <style>
@@ -97,6 +112,7 @@ export default {
   @import './../assets/css/background/grey.css';
   @import './../assets/css/background/amber.css';
   @import './../assets/css/text/grey.css';
+  @import './../assets/css/text/text.css';
   @import './../assets/css/size.css';
 
   /* sm */
