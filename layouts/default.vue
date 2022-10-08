@@ -2,19 +2,11 @@
   <!-- <template v-if="isAuthenticated"> -->
   <app-container container-fluid="true" class="vh-100">
     <app-row class="h-100 transition-1">
-      <app-col
-        col="false"
-        col-sm="12"
-        col-md="12"
-        col-lg="3"
-        col-xl="3"
-        col-xxl="2"
-        class="bg-grey-darken-4 col-menu"
-      >
-        <app-a href="https://ya.ru">Ссылка на яндекс</app-a>
+      <app-col col="2" class="bg-grey-darken-4 col-menu">
         <app-list-group>
           <template v-for="item in menu">
             <router-link
+              v-if="item.name !== null"
               :key="item.name"
               v-slot="{ href, navigate, isActive }"
               style="text-decoration: none; color: inherit"
@@ -24,8 +16,8 @@
                 <app-list-group-button
                   :key="item.name"
                   :is-active="isActive"
-                  classes="grey-lighten-1-text"
-                  classes-active="white-text bg-grey-darken-3"
+                  class="grey-lighten-1-text w-100"
+                  classes-active="grey-darken-4-text bg-amber-accent-4"
                   :title="item.name"
                 >{{ item.name }}</app-list-group-button>
               </a>
@@ -33,14 +25,7 @@
           </template>
         </app-list-group>
       </app-col>
-      <app-col
-        col-sm="12"
-        col-md="12"
-        col-lg="9"
-        col-xl="9"
-        col-xxl="10"
-        class="h-100 overflow-auto"
-      >
+      <app-col col="10" class="h-100 overflow-auto">
         <nuxt />
       </app-col>
     </app-row>
@@ -58,7 +43,6 @@ import appRow from '../components/app/row/row.vue'
 import appCol from '../components/app/col/col.vue'
 import appListGroup from '../components/app/list-group/list-group.vue'
 import appListGroupButton from '../components/app/list-group/button/button.vue'
-import appA from '../components/app/a/a.vue'
 export default {
   components: {
     'app-container': appContainer,
@@ -66,7 +50,6 @@ export default {
     'app-col': appCol,
     'app-list-group-button': appListGroupButton,
     'app-list-group': appListGroup,
-    'app-a': appA,
   },
   data() {
     return {
@@ -78,13 +61,12 @@ export default {
   },
   head() {
     const canonical = `http://localhost:3000${this.$route.path.toLowerCase().replace(/\/$/, '')}`
-    console.log('🚀 -> head -> canonical', canonical)
     return {
       meta: [...this.meta],
       script: [
         // { src: 'https://markknol.github.io/console-log-viewer/console-log-viewer.js' }
       ],
-      // link: [{ rel: 'stylesheet', href: canonical }],
+      link: [{ rel: 'stylesheet', href: canonical }],
     }
   },
   computed: {
@@ -112,9 +94,13 @@ export default {
 </script>
 <style>
   @import './../assets/css/padding.css';
+  @import './../assets/css/background/grey.css';
+  @import './../assets/css/background/amber.css';
+  @import './../assets/css/text/grey.css';
+  @import './../assets/css/size.css';
 
   /* sm */
-  @media ((min-width: 576px) and (orientation: landscape)) {
+  @media (min-width: 576px) {
     .col-menu {
       height: auto;
     }
@@ -124,7 +110,6 @@ export default {
   @media (min-width: 992px) {
     .col-menu {
       height: 100%;
-      background-color: var(--bs-blue);
     }
   }
 </style>

@@ -1,46 +1,37 @@
 <template>
-  <app-container
-    breakpoint="fluid"
-    container="false"
-    classes="border border-blue-darken-4 h-100">
-    <app-row classes="p-1 px-3">
-      <app-col col="11"></app-col>
-      <app-col col="1">
-        <app-button-close
-          classes="border border-blue-darken-2"
-          @click="onClose"></app-button-close>
-      </app-col>
-    </app-row>
-    <app-row
-      classes="border border-blue-lighten-4 rounded-1 m-3p p-0"
-      style="height: 77%">
+  <app-container container-fluid="true" class="border border-blue-darken-4 h-100">
+    <app-modal-head title="Создание нового оффера" class="bg-grey-darken-3 grey-lighten-3-text" @click="onClose" />
+    <app-row class="border border-blue-lighten-4 rounded-1 m-3p p-0 h-77">
       <app-col col="12">
-        <type-offers-form :inp-data="data" />
+        <maket-form :inp-data="data" is-new="true" />
       </app-col>
     </app-row>
-    <app-row classes="pt-2">
-      <app-col
-        col="12"
-        classes="justify-content-end d-flex">
-        <app-button
-          classes="bg-green white-text btn-save ms-2"
-          size="sm"
-          @click="onCreate"
-          >Создать</app-button
-        >
+    <app-row class="pt-2">
+      <app-col col="12" class="justify-content-end d-flex">
+        <app-button class="bg-green-darken-3 grey-lighten-5-text btn-save ms-2" btn-size="sm" @click="onCreate">Создать</app-button>
       </app-col>
     </app-row>
   </app-container>
 </template>
 
 <script>
-import typeOffersForm from './form.vue'
+import appContainer from '../../../components/app/container/container.vue'
+import appCol from '../../../components/app/col/col.vue'
+import appRow from '../../../components/app/row/row.vue'
+import appButton from '../../../components/app/button/button.vue'
+import appModalHead from '../../../components/app/modal-head/modal-head.vue'
+import maketForm from './form.vue'
 export default {
   /*
    * Подключение компонентов
    */
   components: {
-    typeOffersForm,
+    'maket-form': maketForm,
+    'app-container': appContainer,
+    'app-col': appCol,
+    'app-row': appRow,
+    'app-button': appButton,
+    'app-modal-head': appModalHead,
   },
   /*
    * Вхрдные параметры
@@ -71,6 +62,7 @@ export default {
    * При создании компонента
    */
   created() {
+    console.log(this)
     if (this.dataInp) this.data = this.dataInp // установка полям входящих значений
   },
   /*
@@ -94,5 +86,6 @@ export default {
 </script>
 
 <style>
+  @import '~/assets/css/size.css';
 
 </style>

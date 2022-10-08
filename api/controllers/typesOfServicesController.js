@@ -30,7 +30,6 @@ exports.all = async (ctx) => {
       {},
       { name: true, description: true }
     ) // поиск всех записей
-    console.log('🚀 -> exports.all= -> result', result)
     ctx.status = 200
     ctx.body = result
   } catch (err) {

@@ -1,5 +1,5 @@
 <template>
-  <div :class="[classes]" v-bind="$attrs">
+  <div :class="classes" v-bind="$attrs">
     <slot></slot>
   </div>
 </template>
@@ -412,7 +412,7 @@ export default {
       const { flexShrink, flexSmShrink, flexMdShrink, flexLgShrink, flexXlShrink, flexXxlShrink } = this
       const { float, floatSm, floatMd, floatLg, floatXl, floatXxl } = this
       return {
-        col: strToBool(col), // проверяем что значение не является числом и является булевым типом
+        col: strToBool(col) === true, // проверяем что значение не является числом и является булевым типом
         'col-auto': col === 'auto',
         [`col-${col}`]: !!col && col !== 'auto' && col !== 'false', // проверяем что значение является числом
         'col-sm': colSm === 'true', // проверяем что значение не является числом и является булевым типом

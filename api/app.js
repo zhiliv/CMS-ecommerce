@@ -3,12 +3,12 @@
 const fs = require('fs') // модуль для работы с файловой системой
 const Koa = require('koa') // подключение koa сервера
 const bodyParser = require('koa-bodyparser') // парсер параметров адресной строки
-const koaBody = require('koa-body') // модуль для получение параметров post
+// const koaBody = require('koa-body') // модуль для получение параметров post
 const cors = require('@koa/cors') // подключение cors чтобы можно было делать запросы со сторонних ресурсов
-const moment = require('moment') // библиотека для работы с датой и временем
-const clc = require('cli-color') // цветовая подсветка в консоли
-const nodemailer = require('nodemailer') // модуль для работы с электронной почтой
-const session = require('koa-session') // модуль для генерации паролей'
+// const moment = require('moment') // библиотека для работы с датой и временем
+// const clc = require('cli-color') // цветовая подсветка в консоли
+// const nodemailer = require('nodemailer') // модуль для работы с электронной почтой
+// const session = require('koa-session') // модуль для генерации паролей'
 const jwt = require('koa-jwt') // модуль jwt для авторизации
 const bcrypt = require('bcryptjs') // модуль для шифрования
 const Router = require('koa-router') // подключение маршрутизации
@@ -33,7 +33,7 @@ userModel.count({}).exec(async (err, count) => {
   }
 })
 
-const config = JSON.parse(fs.readFileSync('./config.json').toString()) // получение конфигурации сервера
+const config = JSON.parse(fs.readFileSync('config.json').toString()) // получение конфигурации сервера
 
 // require('./routes/authRouter')
 
@@ -48,8 +48,7 @@ require('./routes/index')(app)
 
 app.use(jwt({ secret: config.secter })) // установка секретного ключа для jwt
 app.use((ctx, next) => {
-  console.log('🚀 -> app.use -> ctx', ctx)
-  return next().catch((err) => {
+  return next().catch(err => {
     if (err.status == 401) {
       ctx.status = 401
       ctx.body = 'Protected resource, use Authorization header to get access\n'
@@ -68,13 +67,13 @@ app.use((ctx, next) => {
   }
 })
 // Protected middleware
-app.use((ctx) => {
+app.use(ctx => {
   if (ctx.url.match(/^\/api/)) {
     ctx.body = 'protected\n'
   }
 })
 
-app.use((ctx) => {
+app.use(ctx => {
   ctx.body = { status: 'OK' }
 })
 
@@ -82,7 +81,11 @@ app.use((ctx) => {
  **  Запуск сервера *
  ********************/
 // запуск сервера
-app.listen(config.port, () => {
-  // вывод сообщения о запуске сервера
-  console.log(`Сервер запущен на порту ${config.port}`)
+app.listen(80, () =>  {
+  console.log('сервер запущен')
 })
+
+export default {
+  path: '/api',
+  handler: app.callback(),
+}

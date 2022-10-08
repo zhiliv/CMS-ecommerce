@@ -2,7 +2,7 @@ const fs = require('fs') // модуль для работы с файловой
 const bcrypt = require('bcryptjs') // модуль для шифрования данных
 const jwt = require('jsonwebtoken') // модуль для работы с токенами
 const userModel = require('../models/userModel') // модуль для работы с таблицей Users
-const config = JSON.parse(fs.readFileSync('./config.json')) // файл конфигурации
+const config = JSON.parse(fs.readFileSync('config.json')) // файл конфигурации
 let loadedUser // переменная для хранения найденных данных пользователя
 
 /*

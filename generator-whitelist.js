@@ -2,7 +2,6 @@
 import * as fs from 'fs'
 import { globby } from 'globby'
 
-
 export const start = async () => {
   const listClass = {
     col: /col="true"/,
@@ -469,9 +468,70 @@ export const start = async () => {
     'col-from-label-sm': /col-from-label-sm="true"/,
     'col-from-label-lg': /col-from-label-lg="true"/,
     'list-inline-item': /list-inline-item="true"/,
-    'list-group-item': /list-group-item="true"/
+    'list-group-item': /list-group-item="true"/,
+    'row-cols-auto': /row-cols="auto"/,
+    'row-cols-1': /row-cols="1"/,
+    'row-cols-2': /row-cols="2"/,
+    'row-cols-3': /row-cols="3"/,
+    'row-cols-4': /row-cols="4"/,
+    'row-cols-5': /row-cols="5"/,
+    'row-cols-6': /row-cols="6"/,
+    'row-cols-sm-auto': /row-cols-sm="auto"/,
+    'row-cols-sm-1': /row-cols-sm="1"/,
+    'row-cols-sm-2': /row-cols-sm="2"/,
+    'row-cols-sm-3': /row-cols-sm="3"/,
+    'row-cols-sm-4': /row-cols-sm="4"/,
+    'row-cols-sm-5': /row-cols-sm="5"/,
+    'row-cols-sm-6': /row-cols-sm="6"/,
+    'row-cols-md-auto': /row-cols-md="auto"/,
+    'row-cols-md-1': /row-cols-md="1"/,
+    'row-cols-md-2': /row-cols-md="2"/,
+    'row-cols-md-3': /row-cols-md="3"/,
+    'row-cols-md-4': /row-cols-md="4"/,
+    'row-cols-md-5': /row-cols-md="5"/,
+    'row-cols-md-6': /row-cols-md="6"/,
+    'row-cols-lg-auto': /row-cols-lg="auto"/,
+    'row-cols-lg-1': /row-cols-lg="1"/,
+    'row-cols-lg-2': /row-cols-lg="2"/,
+    'row-cols-lg-3': /row-cols-lg="3"/,
+    'row-cols-lg-4': /row-cols-lg="4"/,
+    'row-cols-lg-5': /row-cols-lg="5"/,
+    'row-cols-lg-6': /row-cols-lg="6"/,
+    'row-cols-xl-auto': /row-cols-xl="auto"/,
+    'row-cols-xl-1': /row-cols-xl="1"/,
+    'row-cols-xl-2': /row-cols-xl="2"/,
+    'row-cols-xl-3': /row-cols-xl="3"/,
+    'row-cols-xl-4': /row-cols-xl="4"/,
+    'row-cols-xl-5': /row-cols-xl="5"/,
+    'row-cols-xl-6': /row-cols-xl="6"/,
+    'row-cols-xxl-auto': /row-cols-xxl="auto"/,
+    'row-cols-xxl-1': /row-cols-xxl="1"/,
+    'row-cols-xxl-2': /row-cols-xxl="2"/,
+    'row-cols-xxl-3': /row-cols-xxl="3"/,
+    'row-cols-xxl-4': /row-cols-xxl="4"/,
+    'row-cols-xxl-5': /row-cols-xxl="5"/,
+    'row-cols-xxl-6': /row-cols-xxl="6"/,
+    'alert-primary': /alert-color="primary"/,
+    'alert-secondary': /alert-color="secondary"/,
+    'alert-success': /alert-color="success"/,
+    'alert-info': /alert-color="info"/,
+    'alert-warning': /alert-color="warning"/,
+    'alert-danger': /alert-color="danger"/,
+    'alert-light': /alert-color="light"/,
+    'alert-dark': /alert-color="dark"/,
+    'text-bg-primary': /badges-color="primary"/,
+    'text-bg-secondary': /badges-color="secondary"/,
+    'text-bg-success': /badges-color="success"/,
+    'text-bg-danger': /badges-color="danger"/,
+    'text-bg-warning': /badges-color="warning"/,
+    'text-bg-info': /badges-color="info"/,
+    'text-bg-light': /badges-color="light"/,
+    'text-bg-dark': /badges-color="dark"/,
+    'form-select-sm': /select-size="sm"/,
+    'form-select-lg': /select-size="lg"/,
+    'textarea-sm': /textarea-size="sm"/,
+    'textarea-lg': /textarea-size="lg"/,
   }
-
 
   let whitelist = [
     'html',
@@ -485,24 +545,21 @@ export const start = async () => {
     'vm--top-right-slot',
     'vm--modal',
   ]
-  const listPath = ['./pages/*.vue', './layouts/*.vue'] // список папок для проверки
+  const listPath = ['./pages/*.vue', './pages/**/*.vue', './layouts/*.vue'] // список папок для проверки
   let i = 0
-  let j = 0
-  for await (const namePath of listPath){
-
+  for await (const namePath of listPath) {
     // обход указанных папок
     const paths = await globby(namePath) // получение всех файлов vue в папке
-    for await(const fileName of paths){
+    for await (const fileName of paths) {
       const data = await fs.readFileSync(fileName).toString()
-      for  (let key in listClass) {
-        if(listClass[key].test(data) && !whitelist.find(wl => wl === key)) {
+      for (let key in listClass) {
+        if (listClass[key].test(data) && !whitelist.find(wl => wl === key)) {
           whitelist.push(key)
         }
       }
-      j++
     }
     i++
-    if(i === listPath.length) {
+    if (i === listPath.length) {
       await fs.writeFileSync('whitelist.js', whitelist.toString())
       console.log('√ Белый список классов сформирован')
     }

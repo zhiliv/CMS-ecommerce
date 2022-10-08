@@ -126,7 +126,6 @@ export default {
         .catch((err) => {
           console.log(err)
         })
-        console.log('response', response)
       this.items = response.data // установка полученного списка
     },
 

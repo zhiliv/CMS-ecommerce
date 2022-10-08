@@ -1,6 +1,5 @@
 <template>
   <app-container classes="border border-secondary rounded-2 vh-100">
-
   </app-container>
 </template>
 

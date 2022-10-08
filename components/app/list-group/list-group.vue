@@ -1,10 +1,10 @@
-<template>
-  <ul v-bind="$attrs" :class="[{'list-group': true}, classes]" :size="size">
+2<template>
+  <ul v-bind="$attrs" :class="{'list-group': true}">
     <template v-if="list.length && typeRow === 'item'">
-      <app-list-group-item></app-list-group-item>
+      <app-list-group-item v-for="item in list" :key="item.id" :class="classItem">{{item.text}}</app-list-group-item>
     </template>
     <template v-else-if="list.length && typeRow === 'button'">
-      <app-list-group-button></app-list-group-button>
+      <app-list-group-button v-for="item in list" :key="item.id" :class="classItem">{{item.text}}</app-list-group-button>
     </template>
     <template v-else>
       <slot></slot>
@@ -13,16 +13,14 @@
 </template>
 
 <script>
+import appListGroupItem from './item/item.vue'
+import appListGroupButton from './button/button.vue'
 export default {
+  components: {
+    'app-list-group-item': appListGroupItem,
+    'app-list-group-button': appListGroupButton,
+  },
   props: {
-    /* Размер списка */
-    size: {
-      type: String,
-      default: null,
-      validator(value) {
-        return value === 'sm' || value === 'lg' || value === null
-      },
-    },
     /* Вариант отображения */
     typeRow: {
       type: String,
@@ -36,15 +34,22 @@ export default {
       type: Array,
       default: () => [],
     },
+    /* Классы для срок */
+    classItem: {
+      type: String,
+      default: '',
+    },
   },
+
 }
 </script>
 
 <style>
   .list-group {
-    display: block;
-    list-style-type: none;
-    padding: 0;
-    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    border-radius: var(--bs-list-group-border-radius);
   }
 </style>

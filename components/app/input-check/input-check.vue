@@ -18,7 +18,12 @@
 </template>
 
 <script>
+  import appLabel from './../label/label.vue'
 export default {
+
+  components: {
+    'app-label': appLabel
+  },
   props: {
     /* Тип поля ввода */
     type: {
@@ -39,6 +44,11 @@ export default {
       default: '',
     },
   },
+  data(){
+    return {
+      value: null
+    }
+  }
 }
 </script>
 

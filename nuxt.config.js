@@ -4,7 +4,7 @@
 // const imageminMozjpeg = require('imagemin-mozjpeg')// const ImageminPlugin = require('imagemin-webpack-plugin').default
 
 const {start} = require('./generator-whitelist')
-start()
+
 import * as fs from 'fs'
 const whitelist = fs.readFileSync('whitelist.js').toString()
 
@@ -12,6 +12,9 @@ const whitelist = fs.readFileSync('whitelist.js').toString()
 
 const isDev = process.env.NODE_ENV !== 'production'
 export default {
+  serverMiddleware: [
+    { path: "/api", handler: "~/api/app.js" }
+  ],
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
@@ -68,7 +71,7 @@ export default {
   ],
   purgeCSS: {
     mode: 'postcss',
-    enabled: true,
+    enabled: !isDev,
     keyframes: true,
     paths: [
       'components/**/*.vue',
@@ -136,7 +139,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'http://localhost:23452',
+    baseURL: 'http://localhost',
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -200,6 +203,7 @@ export default {
     }),
     transpile: ['vue-lazy-hydration', 'intersection-observer'],
     extend(config, ctx) {
+      start()
       if (ctx.isDev) {
         config.devtool = ctx.isClient ? '#source-map' : '#inline-source-map'
       }

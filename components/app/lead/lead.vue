@@ -1,8 +1,18 @@
 <template>
-  <p v-bind="$attrs" :class="[{'lead': true}]">
+  <app-p v-bind="$attrs" :class="[{'lead': true}]">
     <slot></slot>
-  </p>
+  </app-p>
 </template>
+
+<script>
+  import appP from './../p/p.vue'
+  export default{
+    components: {
+      'app-p': appP
+    }
+  }
+
+</script>
 
 <style>
   .lead {

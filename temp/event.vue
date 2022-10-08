@@ -10,7 +10,8 @@
     @mousedown="$emit('mousedown', $event)"
     @mousemove="$emit('mousemove', $event)"
     @mouseout="$emit('mouseout', $event)"
-    @mouseover="$emit('mouseover', $event)"
+    @mouseover="$emit('mouseover', $event)" // при навдении курсора
+    @mouseleave="$emit('mouseleave', $event)" // убрать наведение курсора
     @mouseup="$emit('mouseup', $event)"
     @reset="$emit('reset', $event)"
     @select="$emit('select', $event)"

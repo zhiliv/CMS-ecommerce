@@ -1,5 +1,11 @@
 <template>
-  <a :href="href" v-bind="$attrs" @click="$emit('click', $event)">
+  <a
+    :href="href"
+    v-bind="$attrs"
+    @click="$emit('click', $event)"
+    @mouseover="$emit('mouseover', $event)"
+    @mouseleave="$emit('mouseleave', $event)"
+  >
     <slot></slot>
   </a>
 </template>
@@ -8,8 +14,8 @@
 export default {
   props: {
     /**
-    * Значение ссылки
-    */
+     * Значение ссылки
+     */
     href: {
       type: String,
       default: '',

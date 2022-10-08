@@ -60,3 +60,16 @@ export const strToBool = (data) => {
  * @param {String} data - Строка для преобразования
  */
 export const strToArr = (data) => (data ? data.trim().split(' ') : [])
+
+/*
+* Добавление и удаление классов при наведении
+* @function hoverActive
+* @param {Object} element - элемент dom, которому необходимо добавить\удалить классы
+* @param {String} classes - классы, добавляемые \ удаляемые
+*/
+export const addStringListClass = (element, classes) => {
+  const arrClass = strToArr(classes)
+  arrClass.forEach(cls => {
+    element.classList.toggle(cls)
+  });
+}
