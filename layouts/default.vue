@@ -92,7 +92,8 @@ export default {
   },
   mounted() {
     this.menu.forEach((item, index) => {
-      if (`${this.$route.path}/` === item.link) this.selectItemMenu(index)
+      // обход списка меню
+      if (`${this.$route.path}/` === item.link) this.selectItemMenu(index) // если совпадает ссылка то выделяем пункт меню
     })
   },
   methods: {
