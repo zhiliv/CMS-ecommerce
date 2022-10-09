@@ -31,7 +31,7 @@ export default {
   },
   data() {
     return {
-      isActive: null,
+      isActive: null, // признак активности
     }
   },
   watch: {
