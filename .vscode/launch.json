@@ -16,7 +16,7 @@
       },
       "url": "http://localhost:3000",
       "runtimeArgs": [
-        "run",
+        "http://localhost:3000",
         "dev-debug"
       ],
       "port": 9222
