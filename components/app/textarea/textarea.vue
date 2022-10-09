@@ -3,7 +3,7 @@
     <textarea
       v-bind="$attrs"
       :value="value"
-      :class="[{'form-control': true},  classes]"
+      :class="[{'form-control': true, 'h-100': true},  classes]"
       type="text"
       @input="$emit('input', $event.target.value)"
     ></textarea>
@@ -16,6 +16,7 @@
 
 <script>
 export default {
+  inheritAttrs: false,
   props: {
     /* значение */
     value: {
@@ -66,6 +67,7 @@ export default {
 
 <style>
   @import './../../../assets/css/position.css';
+  @import './../../../assets/css/size.css';
   @import './../../../assets/css/text/grey.css';
   textarea {
     margin: 0;
