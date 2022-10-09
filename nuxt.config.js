@@ -3,18 +3,15 @@
 /* eslint-disable no-dupe-keys */
 // const imageminMozjpeg = require('imagemin-mozjpeg')// const ImageminPlugin = require('imagemin-webpack-plugin').default
 
-const {start} = require('./generator-whitelist')
+// eslint-disable-next-line nuxt/no-cjs-in-config
+const { start } = require('./generator-whitelist')
 
 import * as fs from 'fs'
 const whitelist = fs.readFileSync('whitelist.js').toString()
 
-
-
 const isDev = process.env.NODE_ENV !== 'production'
 export default {
-  serverMiddleware: [
-    { path: "/api", handler: "~/api/app.js" }
-  ],
+  serverMiddleware: [{ path: '/api', handler: '~/api/app.js' }],
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
@@ -51,7 +48,7 @@ export default {
   rootDir: __dirname, // указание корневого каталога для построения ссылок в подключаемых файлах
   // Global CSS: https://go.nuxtjs.dev/config-css
   // '~/assets/css/main.css'
-  css: [ '~/assets/css/main.css'],
+  css: ['~/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -81,7 +78,7 @@ export default {
       'pages/**/*.vue',
       'pages/**/**/*.vue',
       'pages/*.vue',
-      'plugins/**/*.js'
+      'plugins/**/*.js',
     ],
     whitelist: whitelist.split(','),
     extractors: [
