@@ -46,9 +46,9 @@
                   <app-col col="12" class="h-100">
                     <app-row>
                       <app-label class="fw-semibold">Короткое описание</app-label>
-                      <app-textarea textarea-size="sm" rows="2"></app-textarea>
+                      <app-textarea textarea-size="sm" rows="2" is-count="true"/>
                       <app-label class="fw-semibold">Полное описание</app-label>
-                      <app-textarea textarea-size="sm" rows="12"></app-textarea>
+                      <app-textarea v-model="offer.description" textarea-size="sm" rows="12" is-count="true"/>
                     </app-row>
                   </app-col>
                 </app-row>
@@ -94,6 +94,9 @@ export default {
   layout: 'default',
   data() {
     return {
+      offer: {
+        description: ''
+      },
       listOffers: [],
       listTypeOffer: [{}],
       menu: [
@@ -122,6 +125,12 @@ export default {
           click: () => {},
         },
       ],
+    }
+  },
+  watch:{
+    'offer.description'(newValue){
+      console.log('🚀 -> newValue', newValue)
+
     }
   },
   mounted() {
