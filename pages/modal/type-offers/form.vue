@@ -3,17 +3,23 @@
     <app-row class="h-100">
       <app-col col="12">
         <app-label class="fw-semibold">Наименование</app-label>
-        <app-input v-model="data.name" />
+        <app-input ref="name" v-model="data.name" />
       </app-col>
       <app-col col="12" class="h-100">
         <app-label class="fw-semibold">Описание</app-label>
-        <app-textarea v-model="data.description" :class="{'h-100': !$attrs['is-new'], 'h-75': $attrs['is-new']}"></app-textarea>
+        <app-textarea
+          ref="description"
+          v-model="data.description"
+          :class="{'h-100': !$attrs['is-new'], 'h-75': $attrs['is-new']}"
+        ></app-textarea>
       </app-col>
     </app-row>
   </app-container>
 </template>
 
 <script>
+import { required, minLength } from 'vuelidate/lib/validators'
+
 import appContainer from '../../../components/app/container/container.vue'
 import appCol from '../../../components/app/col/col.vue'
 import appRow from '../../../components/app/row/row.vue'
@@ -29,18 +35,26 @@ export default {
     'app-textarea': appTextarea,
     'app-row': appRow,
   },
-  /*
-   * Входные параметры формы
-   * @typedef {Object}
-   * @property {Object} dataInp - Входные данные
-   */
   props: {
+    /* Входные данные */
     dataInp: {
       type: Object,
       default: null,
     },
   },
-
+  validations: {
+    data: {
+      name: {
+        // валидация поля "Наименование"
+        minLength: minLength(3),
+        required,
+      },
+      description: {
+        // валидация поля "Описание"
+        minLength: minLength(3),
+      },
+    },
+  },
   data() {
     /*
      * Свойства формы
@@ -55,9 +69,11 @@ export default {
     }
   },
   watch: {
-    /*
-     * Наблюдатель за изменением свойства dataInp
-     */
+    /* Отслеживание изменений поля "Наименование" */
+    'data.name'() {
+      this.$v.data.$touch()
+      this.$refs.name.$emit('is-invalid', this.$v.data.name.$invalid) // отправка события в компонент для установки ошибки валидации
+    },
     dataInp: {
       /*
        * @function handler

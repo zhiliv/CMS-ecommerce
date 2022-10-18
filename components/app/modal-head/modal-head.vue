@@ -2,7 +2,10 @@
 <template>
   <app-row class="justify-content-end p-1 px-3 bg-grey-darken-3 modal-header">
     <app-col col="10">
-      <app-h level="5" class="justify-content-center d-flex m-0 cursor-default">{{ title }}</app-h>
+      <app-h
+        level="5"
+        class="justify-content-center d-flex m-0 cursor-default no-select"
+      >{{ title }}</app-h>
     </app-col>
     <app-button-close class="bg-white" @click="$emit('click', $event)"></app-button-close>
   </app-row>
@@ -18,7 +21,7 @@ export default {
     'app-row': appRow,
     'app-col': appCol,
     'app-button-close': appBtnClose,
-    'app-h': appH
+    'app-h': appH,
   },
   props: {
     /* Заголовок */
@@ -31,7 +34,8 @@ export default {
 </script>
 
 <style>
-  .cursor-default{
-    cursor: default
+  @import './../../../assets/css/text/text.css';
+  .cursor-default {
+    cursor: default;
   }
 </style>

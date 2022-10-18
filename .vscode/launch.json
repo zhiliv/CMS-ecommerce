@@ -5,6 +5,7 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "outFiles": ["${workspaceFolder}/components/**/*.vue", "${workspaceFolder}/components/**/**/*.vue", "${workspaceFolder}/components/**/**/**/*.vue", "${workspaceFolder}/pages/*.vue", "${workspaceFolder}/pages/**/*.vue", "${workspaceFolder}/pages/modal/**/*.vue", "${workspaceFolder}/pages/**/**/*.vue", "${workspaceFolder}/layout/*.vue", "${workspaceFolder}/layout/**/*.vue", "${workspaceFolder}/layout/**/**/*.vue", "${workspaceFolder}/node_modules/nuxt/bin/nuxt.js"],
       "type": "chrome",
       "console": "integratedTerminal",
       "request": "launch",
@@ -36,19 +37,12 @@
         "program": "${workspaceFolder}/node_modules/nuxt/bin/nuxt.js"
       }
     },
-    {
-      "name": "server: koa",
-      "type": "node",
-      "request": "attach",
-      "restart": true,
-      "port": 9229
-    }
 
   ],
   "compounds": [
     {
       "name": "fullstack: nuxt",
-      "configurations": ["server: nuxt", "client: yandex"]
+      "configurations": [ "client: yandex"]
     }
   ],
 

@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { strToArr } from './../../../scripts/component/func'
 import appListGroupItem from './item/item.vue'
 import appListGroupButton from './button/button.vue'
 export default {
@@ -39,8 +40,63 @@ export default {
       type: String,
       default: '',
     },
+    /* Классы при активности */
+    classesActive: {
+      type: String,
+      default: '',
+    },
   },
+  mounted() {
+    this.$on('active', event => {
+      const { _id } = event // получение передаваемого параметра _id в переменную
+      this.setDelIsActive()
+      this.delClassActiveItem()
+      const index = this.$children.findIndex(el => el.$attrs._id === _id) // получение индекса элемента
+      if (index >= 0) {
+        this.$children[index]._data.isActive = true
+        this.setClassActiveItem(index)
+      }
+    })
+  },
+  methods: {
+    /* Установка свойства isActive для всех элементов списка в состояние false
+     * @function setDelIsActive
+     */
+    setDelIsActive() {
+      this.$children.forEach(element => {
+        element._data.isActive = false
+      })
+    },
 
+    /*
+     * Удаление классов активности из всех элементов списка
+     * @function delClassActiveItem
+     */
+    delClassActiveItem() {
+      const arrActiveClass = strToArr(this.classesActive) // получение массива из строки
+      const list = this.$children // список элементов
+      if (list && list.length) {
+        // проверка что массив не пустой
+        list.forEach(item => {
+          // обход всех элементов списка
+          arrActiveClass.forEach(
+            activeClass => item.$el.classList.remove(activeClass), // удаление класса активности у элементов, у которых есть активность
+          )
+          item.$el.classList.remove('active') // удаление класса активности у элементов
+        })
+      }
+    },
+
+    /*
+     * Установка классов активности для элемента
+     * @function setClassActiveItem
+     */
+    setClassActiveItem(index) {
+      const arrActiveClass = strToArr(this.classesActive) // получение массива из строки
+      arrActiveClass.forEach(activeClass => this.$children[index].$el.classList.add(activeClass)) // добавление класса выделенному элементу
+      this.$children[index].$el.classList.add('active')
+    },
+  },
 }
 </script>
 

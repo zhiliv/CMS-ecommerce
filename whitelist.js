@@ -1,1 +1,1 @@
-html,body,row,container,container-fluid,modals-container,vm--container,vm--overlay,vm--top-right-slot,vm--modal,col-4,alert-success,text-bg-primary,text-bg-success,col-2,col-6,col-10,col-12,flex-row,form-switch,textarea-sm,btn-sm,col-3,col-8,offset-7,col-1,offset-10,offset-11
+html,body,row,container,container-fluid,modals-container,vm--container,vm--overlay,vm--top-right-slot,vm--modal,col-4,alert-success,text-bg-primary,text-bg-success,col-12,btn-sm,col-2,col-3,col-6,col-9,flex-row,form-switch,textarea-sm,col-8,offset-7,col-1,offset-10,offset-11,col-10

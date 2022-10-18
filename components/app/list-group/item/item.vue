@@ -9,13 +9,20 @@
 </template>
 
 <script>
-import { strToArr } from './../../../../scripts/component/func'
 export default {
   props: {
     /* Классы при активности */
     classesActive: {
       type: String,
       default: '',
+    },
+    /* Проверка подтверждения выбора строки */
+    checkConfirm: {
+      type: [String, Boolean],
+      default: false,
+      validator(value) {
+        return value === 'true' || value === false
+      },
     },
   },
   data() {
@@ -29,25 +36,8 @@ export default {
      * @function isActive
      * @param {Boolean} newVal - Новое значение
      */
-    isActive(newVal) {
-      if (newVal) {
-        const list = this.$parent.$children // получение массива элементов списка
-        const arrActiveClass = strToArr(this.classesActive) // получение массива из строки
-        if (list && list.length) {
-          list.forEach(item => {
-            console.log('🚀 -> isActive -> item', item)
-            // обход всех элементов списка
-            arrActiveClass.forEach(
-              activeClass => item.$el.classList.remove(activeClass), // удаление класса активности у элементов, у которых есть активность
-            )
-            item.$el.classList.remove('active') // удаление класса активности у элементов
-          })
-        }
-        arrActiveClass.forEach(
-          activeClass => this.$el.classList.add(activeClass), // добавление класса выделенному элементу
-        )
-        this.$el.classList.add('active')
-      }
+    isActive(newVal, oldval) {
+
     },
   },
   methods: {
@@ -57,14 +47,13 @@ export default {
      * @props {Object} event - Данные события
      */
     click(event) {
-      const list = this.$parent.$children // получение всех элементов списка
-      list.forEach(item => {
-        item._data.isActive = false
-      }) // установка для всех элементов свойства isActive
-      this.isActive = true // установка для текущего элемента
+      const {_id} = event.target.__vue__.$attrs // получение текущего  _id в переменную
+      this.$parent.$emit('active', {_id}) // отправка события в компонента app-list-group
+
+      }
     },
-  },
-}
+  }
+
 </script>
 
 <style>

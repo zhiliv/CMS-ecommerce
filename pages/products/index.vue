@@ -1,6 +1,6 @@
 <template>
   <app-row class="h-100">
-    <app-col col="2">
+    <app-col col="3">
       <app-h level="5" class="text-center no-select">Список офферов</app-h>
       <app-list-group
         class="overflow-y-scroll max-vh-95 border border-grey-lighten-2 shadow-10 m-0 p-0"
@@ -13,7 +13,7 @@
         >{{ item.name }}</app-list-group-item>
       </app-list-group>
     </app-col>
-    <app-col col="10">
+    <app-col col="9">
       <app-d-flex flex-row="true" class="border border-grey-lighten-2 shadow-10">
         <app-col col="12">
           <app-navbar
@@ -114,8 +114,12 @@ export default {
                   formTypeOffers,
                   {},
                   { width: '900px', height: '600px', draggable: '.modal-header', resizable: true, clickToClose: false },
+                  { 'before-close': () => {
+                    console.log('Закрть')
+                  } },
                 )
               },
+
             },
           ],
         },

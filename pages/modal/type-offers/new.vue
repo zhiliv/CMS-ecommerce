@@ -1,6 +1,10 @@
 <template>
   <app-container container-fluid="true" class="border border-blue-darken-4 h-100">
-    <app-modal-head title="Создание нового оффера" class="bg-grey-darken-3 grey-lighten-3-text" @click="onClose" />
+    <app-modal-head
+      title="Создание нового оффера"
+      class="bg-grey-darken-3 grey-lighten-3-text"
+      @click="onClose"
+    />
     <app-row class="border border-blue-lighten-4 rounded-1 m-3p p-0 h-77">
       <app-col col="12">
         <maket-form :inp-data="data" is-new="true" />
@@ -8,7 +12,11 @@
     </app-row>
     <app-row class="pt-2">
       <app-col col="12" class="justify-content-end d-flex">
-        <app-button class="bg-green-darken-3 grey-lighten-5-text btn-save ms-2" btn-size="sm" @click="onCreate">Создать</app-button>
+        <app-button
+          class="bg-green-darken-3 grey-lighten-5-text btn-save ms-2"
+          btn-size="sm"
+          @click="onCreate"
+        >Создать</app-button>
       </app-col>
     </app-row>
   </app-container>
@@ -87,5 +95,4 @@ export default {
 
 <style>
   @import '~/assets/css/size.css';
-
 </style>
