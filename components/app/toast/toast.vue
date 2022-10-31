@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/valid-v-for -->
 <template>
-  <div aria-live="polite" aria-atomic="true" class="position-absolute end-0 bottom-0">
+  <div aria-live="polite" aria-atomic="true" class="position-absolute end-0 bottom-0 toast-list">
     <div class="toast-container top-0 end-0 p-2" style>
       <app-body-toast
         v-for="item in listToast"
@@ -39,6 +39,10 @@ export default {
 <style>
   @import '~/assets/css/position.css';
   @import '~/assets/css/padding.css';
+  .toast-list {
+    z-index: 1000;
+  }
+
   .toast-container {
     z-index: var(--bs-toast-zindex);
     width: -webkit-max-content;

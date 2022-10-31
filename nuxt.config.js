@@ -52,7 +52,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~~/plugins/event-bus.js',
+    // '~~/plugins/event-bus.js',
+    // '~/plugins/toast.js',
     { src: '~~/plugins/vue-js-modal.js', mode: 'client' },
     { src: '~~/plugins/vue-validate.js', mode: 'client' },
     // { src: '~~/plugins/vue-lazy-load.js' }

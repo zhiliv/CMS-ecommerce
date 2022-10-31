@@ -27,9 +27,9 @@ exports.create = async (ctx) => {
 exports.all = async (ctx) => {
   try {
     const result = await productsModel.find(
-      {},
-      { name: true, description: true }
+      {}
     ) // поиск всех записей
+    console.log('🚀 -> exports.all= -> result', result)
     ctx.status = 200
     ctx.body = result
   } catch (err) {

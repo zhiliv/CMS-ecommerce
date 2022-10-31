@@ -22,6 +22,7 @@
       </app-col>
     </app-row>
   </app-container>
+
 </template>
 
 <script>
@@ -86,13 +87,12 @@ export default {
      */
     async onCreate() {
       const response = await this.$axios.post('/api/type_offers', { params: this.data }).catch(err => {
-        this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } })
+        this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } }) // отправка события для отображения уведомления
       })
-      console.log('response', response)
-      if (response && response.status === 200)
+      if (response && response.status === 200) // если статус успешный
         this.$nuxt.$emit('show-toast', {
           params: { title: response.data.title, message: response.data.message, type: response.data.type_message },
-        })
+        }) // отправка события для отображения уведомления
     },
 
     /*

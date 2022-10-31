@@ -44,14 +44,12 @@ export default {
     /*
      * При клике на пункт списка
      * @function click
-     * @props {Object} event - Данные события
      */
-    click(event) {
-      const {_id} = event.target.__vue__.$attrs // получение текущего  _id в переменную
+    click() {
+      const {_id} = this.$attrs
       this.$parent.$emit('active', {_id}) // отправка события в компонента app-list-group
-
       }
-    },
+    }
   }
 
 </script>

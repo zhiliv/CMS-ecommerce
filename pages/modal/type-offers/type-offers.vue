@@ -19,7 +19,12 @@
             check-confirm="true"
             class="border-bottom border-1 border-grey bg-item-list-group-hvr white-text-hvr p-02"
             @click="onSelect(item)"
-          >{{ item.name }}</app-list-group-item>
+          >
+            <div class="w-100">
+              {{ item.name }}
+              <app-button-close style="float: right" @click="onDelete(item._id)" />
+            </div>
+          </app-list-group-item>
         </app-list-group>
       </app-col>
       <app-col col="8">
@@ -55,6 +60,7 @@ import appRow from '../../../components/app/row/row.vue'
 import appListGroup from '../../../components/app/list-group/list-group.vue'
 import appListGroupItem from '../../../components/app/list-group/item/item.vue'
 import appModalHead from '../../../components/app/modal-head/modal-head.vue'
+import appButtonClose from '../../../components/app/button/close/close.vue'
 import formNew from './new.vue'
 import maketForm from './form.vue'
 import confirmModal from './../confirm.vue'
@@ -72,6 +78,7 @@ export default {
     'app-list-group': appListGroup,
     'app-button': appButton,
     'app-list-group-item': appListGroupItem,
+    'app-button-close': appButtonClose,
   },
   data() {
     return {
@@ -107,7 +114,7 @@ export default {
       } else {
         this.$modal.show(
           confirmModal,
-          { title: 'Пример вопроса Пример вопроса Пример вопроса Пример вопроса Пример вопроса Пример вопроса' }, // передача параметров
+          { title: 'Есть не сохраненные изменения, уверены, что хотите продолжить?', typeConfirm: 'Да'}, // передача параметров
           { width: '400px', height: '120px', draggable: false, resizable: false, clickToClose: false },
           {
             'before-close': event => {
@@ -120,11 +127,58 @@ export default {
               } else {
                 const index = this.$refs.list.$children.findIndex(el => el.$attrs._id === this.selectItem._id) // поиск индекса выбранного элемента
                 this.setActiveItem(index) // установка активности элементов
+                // если длина списка больше 0
+                // this.selectItem = {name: null, description: null} // объекту для редактирования присваивается 1-ая строка
               }
             },
           },
         )
       }
+    },
+
+    /*
+     * Удаление типа оффера
+     * @function onDelete
+     * @param  {String} _id - Идентификатор типа оффера
+     */
+    onDelete(_id) {
+      const index = this.list.findIndex(el => el._id === _id)
+      const data = this.list[index]
+      this.$modal.show(
+        confirmModal,
+        { title: `Удалить тип оффера "${data.name}"` }, // передача параметров
+        { width: '400px', height: '120px', draggable: false, resizable: false, clickToClose: false },
+        {
+          'before-close': async event => {
+            const { confirm } = event.params
+            if (confirm) {
+              const response = await this.$axios.delete(`/api/type_offers/${_id}`).catch(err => {
+                console.error(err)
+                this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } }) // отправка события
+              }) // отправка запроса
+              if (response && response.status === 200) {
+                // если статус успешный
+                this.$nuxt.$emit('show-toast', {
+                  params: {
+                    title: response.data.title, // заголовок сообщения
+                    message: response.data.message, // текст сообщения
+                    type: response.data.type_message, // тип сообщения
+                  },
+                }) // отправка события для отображения уведомления
+
+                this.list.splice(index, 1) // удаление строки из массива
+                const { list } = this
+                if (list && list.length) {
+                  // проверка длины списка
+                  this.selectItem = list[0] // установка элемента
+                  this.selectId = list[0]._id // установка идентификатора выбранной строки
+                  this.setActiveItem(0) // выделение цветом активной строки
+                }
+              }
+            }
+          },
+        },
+      ) // результат полученный из модального окна
     },
 
     /*
@@ -162,7 +216,7 @@ export default {
      * @param {Number} index - Индекс текущего DOM элемента строки
      */
     setActiveItem(index) {
-      const { _id } = this.$refs.list.$children[index].$attrs
+      const { _id } = this.list[index]
       this.$refs.list.$emit('active', { _id }) // отправка события для выделения строки и установки свойства isActive = true
     },
   },
@@ -174,6 +228,7 @@ export default {
   @import '~/assets/css/margin.css';
   @import '~/assets/css/border.css';
   @import '~/assets/css/padding.css';
+  @import '~/assets/css/align.css';
   @import '~/assets/css/color/materialize-red.css';
   @import '~/assets/css/color/green.css';
   @import '~/assets/css/background/green.css';

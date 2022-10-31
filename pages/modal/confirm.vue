@@ -7,11 +7,11 @@
       </app-col>
       <app-col col="12" class="p-0 py-3">
         <app-button
-          class="bg-green-darken-3 grey-lighten-5-text btn-save ms-2"
+          class="bg-green-darken-3 grey-lighten-5-text btn-save ms-2 w-40"
           btn-size="sm"
           @click="onConfirm"
-        >Подтвердить</app-button>
-        <app-button class="bg-red-darken-4 grey-lighten-5-text btn-cancel mx-2" style="float: right" btn-size="sm" @click="onClose">Отменить</app-button>
+        >{{typeConfirm}}</app-button>
+        <app-button class="bg-red-darken-4 grey-lighten-5-text btn-cancel mx-2 w-40" style="float: right" btn-size="sm" @click="onClose">{{typeCancel}}</app-button>
       </app-col>
     </app-row>
   </app-container>
@@ -35,9 +35,20 @@ export default {
     'app-button': appButton
   },
   props: {
+    /* Заголовок */
     title: {
       type: String,
       default: ''
+    },
+    /* Значение кнопки подтверждения */
+    typeConfirm: {
+      type: String,
+      default: 'Подтвердить'
+    },
+    /* Значение кнопки отмены */
+    typeCancel: {
+      type: String,
+      default: 'Отмена'
     }
   },
   data(){
@@ -61,6 +72,7 @@ export default {
     onClose() {
       const {confirm} = this
       this.$emit('close', {confirm}) // отправка события для закрытия формы
+      this.$destroy()
     },
   },
 }

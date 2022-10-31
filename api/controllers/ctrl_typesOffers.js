@@ -18,16 +18,16 @@ exports.create = async ctx => {
    */
   const checkDouble = async () => {
     const list = await mdl_TypesOffers.find() // получение всех элементов
-    return list && list.length ? list.find(el => el.name.toUpperCase() === params.name.toUpperCase()) : null
+    console.log('params.name.toUpperCase()', params.name.toUpperCase())
+    return list && list.length ? list.findIndex(el => el.name.toUpperCase() === params.name.toUpperCase()) : -1
   }
-
   try {
-    if (await !checkDouble()) {
+    if (await checkDouble() === -1) { // проверка что такого элемента нет
       // проверка на то что записи с таким наименованием не существует
       const newRow = new mdl_TypesOffers(params) // создание объекта модели
       const result = await newRow.save() // сохранение
       ctx.status = 200 // установка статуса
-      ctx.body = { result, type: 'Операция выполнена', message: 'Запись добавлена успешно!', type_message: 'success' } // передача полученного результата сохранения записи
+      ctx.body = { result, title: 'Тип оффера добавлен успешно', message: 'Запись добавлена успешно!', type_message: 'success' } // передача полученного результата сохранения записи
     } else {
       ctx.status = 200 // установка статуса
       ctx.body = { title: 'Внимание!', message: 'Запись с таким наименованием уже существует', type_message: 'warning' } // отправка сообщения
@@ -74,8 +74,8 @@ exports.delete = async ctx => {
   const { params } = ctx // входные параметры
   try {
     const result = await mdl_TypesOffers.deleteOne({ _id: params.id })
-    ctx.status = 200
-    ctx.body = result
+    ctx.status = 200 // установка статуса
+      ctx.body = { result, title: 'Удаление завершено', message: 'Тип оффера удален успешно!', type_message: 'info' } //
   } catch (err) {
     ctx.status = 500
     ctx.throw(`Произошла ошибка: ${err}`)

@@ -104,4 +104,5 @@ export const withObject = (obj1, obj2) => (obj1 && obj2) && (checkObject(obj1) &
 * @function checkObject
 * @param {Any} obj - Проверяемые данные
 */
-export const  checkObject = obj => typeof obj === 'object'
+export const checkObject = obj => typeof obj === 'object'
+

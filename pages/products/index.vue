@@ -8,6 +8,7 @@
         <app-list-group-item
           v-for="item in listOffers"
           :key="item._id"
+          :_id="item._id"
           classes-active="bg-item-list-group grey-darken-4-text"
           class="border-bottom border-1 border-grey bg-item-list-group-hvr white-text-hvr p-02"
         >{{ item.name }}</app-list-group-item>
@@ -158,6 +159,7 @@ export default {
       const response = await this.$axios.get('/api/type_offers').catch(console.log)
       this.listTypeOffer.push(...response.data) // установка полученного списка
     },
+
   },
 }
 </script>
