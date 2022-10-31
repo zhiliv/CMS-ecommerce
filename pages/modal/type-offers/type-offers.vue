@@ -14,7 +14,7 @@
         >
           <app-list-group-item
             v-for="item in list"
-            :key="item.name"
+            :key="item._id"
             :_id="item._id"
             check-confirm="true"
             class="border-bottom border-1 border-grey bg-item-list-group-hvr white-text-hvr p-02"

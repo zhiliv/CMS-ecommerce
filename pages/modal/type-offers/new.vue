@@ -86,11 +86,12 @@ export default {
      */
     async onCreate() {
       const response = await this.$axios.post('/api/type_offers', { params: this.data }).catch(err => {
-        this.$nuxt.$emit('show-notify', { params: { title: err.title, text: err.message, type: 'error' } })
+        this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } })
       })
+      console.log('response', response)
       if (response && response.status === 200)
-        this.$nuxt.$emit('show-notify', {
-          params: { title: response.data.title, text: response.data.message, type: response.data.type_message },
+        this.$nuxt.$emit('show-toast', {
+          params: { title: response.data.title, message: response.data.message, type: response.data.type_message },
         })
     },
 

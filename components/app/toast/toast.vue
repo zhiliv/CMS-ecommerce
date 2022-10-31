@@ -3,11 +3,11 @@
   <div aria-live="polite" aria-atomic="true" class="position-absolute end-0 bottom-0">
     <div class="toast-container top-0 end-0 p-2" style>
       <app-body-toast
-        v-for="(item, index) in listToast"
-        :key="index"
+        v-for="item in listToast"
+        :id="item.id"
+        :key="item.id"
         :title="item.title"
         :message="item.message"
-        :index="index"
         :toast-color="item.type"
       ></app-body-toast>
     </div>
@@ -26,8 +26,11 @@ export default {
     }
   },
   mounted() {
+    let ind = 0
     this.$nuxt.$on('show-toast', event => {
-      this.listToast.push(event)
+      const { params } = event // получения объекта уведомления
+      params.id = ind++ // установка идентификатора
+      this.listToast.push(params) // добавление уведомления в массив
     })
   },
 }

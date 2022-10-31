@@ -30,7 +30,7 @@ exports.create = async ctx => {
       ctx.body = { result, type: 'Операция выполнена', message: 'Запись добавлена успешно!', type_message: 'success' } // передача полученного результата сохранения записи
     } else {
       ctx.status = 200 // установка статуса
-      ctx.body = { title: 'Внимание!', message: 'Запись с таким наименованием уже существует', type_message: 'warn' } // отправка сообщения
+      ctx.body = { title: 'Внимание!', message: 'Запись с таким наименованием уже существует', type_message: 'warning' } // отправка сообщения
     }
   } catch (err) {
     ctx.status = err.statusCode || err.status || 500 // установка статуса в случае ошибки

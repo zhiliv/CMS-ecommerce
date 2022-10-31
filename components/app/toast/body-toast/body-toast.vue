@@ -18,10 +18,10 @@
 <script>
 export default {
   props: {
-    /* Индекс сообщения */
-    index: {
+    /* Идентификатор уведомления */
+    id: {
       type: Number,
-      default: null,
+      default: 0,
     },
     /* Заголовок */
     title: {
@@ -79,7 +79,8 @@ export default {
      * @function onClose
      */
     onClose() {
-      this.$parent._data.listToast.splice(this.index, 1) // удаление из списка
+      const index = this.$parent._data.listToast.findIndex(el => el.id === this.id) // поиск индекса уведомления
+      this.$parent._data.listToast.splice(index, 1) // удаление из списка
     },
   },
 }
