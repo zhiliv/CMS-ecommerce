@@ -25,10 +25,13 @@
           </template>
         </app-list-group>
       </app-col>
-      <app-col col="10" class="h-100 overflow-auto">
+      <app-col col="10" class="h-100 overflow-auto" style="max-height: 100vh ">
         <nuxt />
+
       </app-col>
+
     </app-row>
+    <app-toast />
   </app-container>
 
   <!-- </template>
@@ -38,8 +41,10 @@
 </template>
 
 <script>
+// import Vue from 'vue'
 import appContainer from '../components/app/container/container.vue'
 import appRow from '../components/app/row/row.vue'
+import appToast from '../components/app/toast/toast.vue'
 import appCol from '../components/app/col/col.vue'
 import appListGroup from '../components/app/list-group/list-group.vue'
 import appListGroupButton from '../components/app/list-group/button/button.vue'
@@ -50,6 +55,8 @@ export default {
     'app-col': appCol,
     'app-list-group-button': appListGroupButton,
     'app-list-group': appListGroup,
+    // eslint-disable-next-line vue/no-unused-components
+    'app-toast': appToast,
   },
   data() {
     return {
@@ -91,6 +98,18 @@ export default {
     },
   },
   mounted() {
+    /* const test = Vue.extend(appToast)
+    console.log('🚀 -> mounted -> test', test)
+    // eslint-disable-next-line new-cap
+    const toast = new test({ propsData: { type: 'primary' }})
+    console.log('🚀 -> mounted -> toast', toast)
+    toast.$mount()
+    this.$el.appendChild(toast.$el)
+    this.$el.appendChild(toast.$el)
+    console.log('🚀 -> mounted -> this.$el', this.$el) */
+    /* Прослушивание события о показе сообщения */
+    // this.$nuxt.$on('show-notify', event => {})
+    this.$nuxt.$emit('show-toast', {title: 'Тест', message: 'Содержимое', type:'success'})
     this.menu.forEach((item, index) => {
       // обход списка меню
       if (`${this.$route.path}/` === item.link) this.selectItemMenu(index) // если совпадает ссылка то выделяем пункт меню

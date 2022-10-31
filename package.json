@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development node_modules/.bin/nuxt --debug",
+    "dev-back": "nodemon --inspect api/app.js --trace-warnings",
     "Сборка": "nuxt build --modern",
     "Запустить собранное": "cross-env NODE_ENV=production nuxt start",
     "generate": "nuxt generate",

@@ -10,9 +10,9 @@ db.on('error', err => {
   console.log(clc.red(`Произошла ошибка при работе с БД: ${err}`))
 })
 
-require('../models/userModel') // модуль "Пользователи"
-require('../models/typesServicesModel') // модель "Виды услуг"
-require('../models/organizationModel') // модель "Организация"
-require('../models/productsModel') // модель "Офферы"
+require('../models/mdl_user') // модуль "Пользователи"
+require('../models/mdl_TypesOffers') // модель "Виды услуг"
+require('../models/mdl_organization') // модель "Организация"
+require('../models/mdl_products') // модель "Офферы"
 
 module.exports = mongoose

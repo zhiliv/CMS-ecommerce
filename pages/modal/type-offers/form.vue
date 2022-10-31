@@ -3,13 +3,13 @@
     <app-row class="h-100">
       <app-col col="12">
         <app-label class="fw-semibold">Наименование</app-label>
-        <app-input ref="name" v-model="data.name" />
+        <app-input ref="name" v-model.trim="data.name" />
       </app-col>
       <app-col col="12" class="h-100">
         <app-label class="fw-semibold">Описание</app-label>
         <app-textarea
           ref="description"
-          v-model="data.description"
+          v-model.trim="data.description"
           :class="{'h-100': !$attrs['is-new'], 'h-75': $attrs['is-new']}"
         ></app-textarea>
       </app-col>
@@ -34,6 +34,10 @@ export default {
     'app-input': appInput,
     'app-textarea': appTextarea,
     'app-row': appRow,
+  },
+  model: {
+    prop: 'dataInp',
+    event: 'update',
   },
   props: {
     /* Входные данные */
@@ -73,6 +77,13 @@ export default {
     'data.name'() {
       this.$v.data.$touch()
       this.$refs.name.$emit('is-invalid', this.$v.data.name.$invalid) // отправка события в компонент для установки ошибки валидации
+    },
+    data: {
+      handler(newVal) {
+        /* отправка события с данными формы */
+        this.$emit('get-data-from-type-offer', { data: newVal }) // отправка события
+      },
+      deep: true,
     },
     dataInp: {
       /*

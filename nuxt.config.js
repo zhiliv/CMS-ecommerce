@@ -11,7 +11,7 @@ const whitelist = fs.readFileSync('whitelist.js').toString()
 
 const isDev = process.env.NODE_ENV !== 'production'
 export default {
-  serverMiddleware: [{ path: '/api', handler: '~/api/app.js' }],
+  // serverMiddleware: [{ path: '/api', handler: '~/api/app.js' }], // запуск сервера
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
@@ -52,6 +52,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~~/plugins/event-bus.js',
     { src: '~~/plugins/vue-js-modal.js', mode: 'client' },
     { src: '~~/plugins/vue-validate.js', mode: 'client' },
     // { src: '~~/plugins/vue-lazy-load.js' }

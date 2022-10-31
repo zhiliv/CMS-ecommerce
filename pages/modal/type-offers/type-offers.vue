@@ -132,7 +132,7 @@ export default {
      * @function getList
      */
     async getList() {
-      const response = await this.$axios.get('/api/type_service').catch(console.log) // отправка запроса
+      const response = await this.$axios.get('/api/type_offers').catch(console.log) // отправка запроса
       this.list.push(...response.data) // установка полученного списка
     },
 

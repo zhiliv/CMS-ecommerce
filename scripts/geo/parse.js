@@ -49,6 +49,7 @@ startRegions.then(() => {
       const region = await regionsModel
         .findOne({ kladrCode: +city.region_kladr_code })
         .exec()
+      // eslint-disable-next-line new-cap
       await new citysModel({
         kladrCode: +city.city_kladr_code,
         name: city.name,

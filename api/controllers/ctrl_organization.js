@@ -2,7 +2,7 @@
  * Модуль "Виды услуг"
  */
 
-const productsModel = require('../models/productsModel') // модуль для работы с таблицей Users
+const organizationModel = require('../models/mdl_organization') // модуль для работы с таблицей Users
 
 /*
  * Создание записи
@@ -11,7 +11,7 @@ exports.create = async (ctx) => {
   const { params } = ctx.request.body // получение параметров
   try {
     // eslint-disable-next-line new-cap
-    const newRow = new productsModel(params) // создание объекта модели
+    const newRow = new organizationModel(params) // создание объекта модели
     const result = await newRow.save() // сохранение
     ctx.status = 200
     ctx.body = result
@@ -26,7 +26,7 @@ exports.create = async (ctx) => {
  */
 exports.all = async (ctx) => {
   try {
-    const result = await productsModel.find(
+    const result = await organizationModel.find(
       {},
       { name: true, description: true }
     ) // поиск всех записей
@@ -44,7 +44,7 @@ exports.all = async (ctx) => {
 exports.update = async (ctx) => {
   const { params } = ctx.request.body // входные параметры
   try {
-    const result = await productsModel.updateOne(
+    const result = await organizationModel.updateOne(
       { _id: params._id },
       params
     )
@@ -62,7 +62,7 @@ exports.update = async (ctx) => {
 exports.delete = async (ctx) => {
   const { params } = ctx // входные параметры
   try {
-    const result = await productsModel.deleteOne({ _id: params.id })
+    const result = await organizationModel.deleteOne({ _id: params.id })
     ctx.status = 200
     ctx.body = result
   } catch (err) {

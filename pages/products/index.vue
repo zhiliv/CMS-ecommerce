@@ -158,7 +158,7 @@ export default {
      * @function getListTypeOffers
      */
     async getListTypeOffers() {
-      const response = await this.$axios.get('/api/type_service').catch(console.log)
+      const response = await this.$axios.get('/api/type_offers').catch(console.log)
       this.listTypeOffer.push(...response.data) // установка полученного списка
     },
   },

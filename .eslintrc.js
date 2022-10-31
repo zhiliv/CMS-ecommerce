@@ -31,6 +31,8 @@ module.exports = {
       ],
       "alphabetical": false
     }],
-    "vue/no-multiple-template-root": 0
+    "vue/no-multiple-template-root": 0,
+    "vue/no-v-for-template-key-on-child": 0,
+    "vue/ no-v-for-template-key": 0
   },
 }

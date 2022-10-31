@@ -57,6 +57,8 @@ export default {
         this.setClassActiveItem(index)
       }
     })
+    this.$root.$emit('test', {data: 'test'})
+    console.log('🚀 -> mounted -> this.$root', this.$root)
   },
   methods: {
     /* Установка свойства isActive для всех элементов списка в состояние false

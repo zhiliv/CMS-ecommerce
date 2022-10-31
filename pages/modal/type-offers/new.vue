@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-model-argument -->
 <template>
   <app-container container-fluid="true" class="border border-blue-darken-4 h-100">
     <app-modal-head
@@ -7,7 +8,7 @@
     />
     <app-row class="border border-blue-lighten-4 rounded-1 m-3p p-0 h-77">
       <app-col col="12">
-        <maket-form :inp-data="data" is-new="true" />
+        <maket-form ref="form" :data-inp="data" is-new="true" />
       </app-col>
     </app-row>
     <app-row class="pt-2">
@@ -15,6 +16,7 @@
         <app-button
           class="bg-green-darken-3 grey-lighten-5-text btn-save ms-2"
           btn-size="sm"
+          :disabled="disCreate"
           @click="onCreate"
         >Создать</app-button>
       </app-col>
@@ -23,6 +25,7 @@
 </template>
 
 <script>
+import { required, minLength } from 'vuelidate/lib/validators'
 import appContainer from '../../../components/app/container/container.vue'
 import appCol from '../../../components/app/col/col.vue'
 import appRow from '../../../components/app/row/row.vue'
@@ -41,47 +44,56 @@ export default {
     'app-button': appButton,
     'app-modal-head': appModalHead,
   },
-  /*
-   * Вхрдные параметры
-   * @typedef {Object}
-   * @property {Object} dataInp - Данные для заполнения строк
-   */
-  props: {
-    dataInp: {
-      type: Object,
-      default: null,
+  validations: {
+    data: {
+      name: {
+        // валидация поля "Наименование"
+        minLength: minLength(3),
+        required,
+      },
+      description: {
+        // валидация поля "Описание"
+        minLength: minLength(3),
+      },
     },
   },
   data() {
-    /*
-     * Свойства формы
-     * @typedef {Object}
-     * @property {Boolean} disCreate - Активность кнопки "Создать"
-     */
     return {
-      disCreate: false,
+      disCreate: {
+        type: Boolean,
+        default: true,
+      },
+      /* Данные формы */
       data: {
         name: null, // наименование
         description: null, // описание
       },
     }
   },
-  /*
-   * При создании компонента
-   */
-  created() {
-    console.log(this)
-    if (this.dataInp) this.data = this.dataInp // установка полям входящих значений
+
+  mounted() {
+    /* Прослушивание события при изменения данных на форме  */
+    this.$refs.form.$on('get-data-from-type-offer', event => {
+      this.data = event.data // получение данных строки
+      this.disCreate = this.$v.data.$invalid // установка значения валидности кнопки "Создать"
+    })
   },
-  /*
-   * Методы формы
-   */
+
   methods: {
     /*
      * При нажатии на кнопку "Создать"
      * @function onCreate
      */
-    onCreate() {},
+    async onCreate() {
+      const response = await this.$axios.post('/api/type_offers', { params: this.data }).catch(err => {
+        this.$nuxt.$emit('show-notify', { params: { title: err.title, text: err.message, type: 'error' } })
+      })
+      if (response && response.status === 200)
+        this.$nuxt.$emit('show-notify', {
+          params: { title: response.data.title, text: response.data.message, type: response.data.type_message },
+        })
+    },
+
     /*
      * При нажатии на кнопку закрыть
      * @function onClose

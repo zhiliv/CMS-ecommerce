@@ -1,9 +1,10 @@
+/* eslint-disable new-cap */
 'use strict'
 
 const fs = require('fs') // модуль для работы с файловой системой
 const Koa = require('koa') // подключение koa сервера
 const bodyParser = require('koa-bodyparser') // парсер параметров адресной строки
-// const koaBody = require('koa-body') // модуль для получение параметров post
+const koaBody = require('koa-body') // модуль для получение параметров post
 const cors = require('@koa/cors') // подключение cors чтобы можно было делать запросы со сторонних ресурсов
 // const moment = require('moment') // библиотека для работы с датой и временем
 // const clc = require('cli-color') // цветовая подсветка в консоли
@@ -14,7 +15,7 @@ const bcrypt = require('bcryptjs') // модуль для шифрования
 const Router = require('koa-router') // подключение маршрутизации
 const app = (module.exports = new Koa()) // создание сервера
 const router = new Router() // создание маршрутизации
-const userModel = require('./models/userModel') // модуль для работы с таблицей Users
+const userModel = require('./models/mdl_user') // модуль для работы с таблицей Users
 
 /*
  * Проверка количества записей в коллекции "User"
@@ -38,8 +39,8 @@ const config = JSON.parse(fs.readFileSync('config.json').toString()) // полу
 // require('./routes/authRouter')
 
 app.use(cors()) // установка cors для сервера
-app.use(bodyParser({ strict: false })) // установка парсера параметров для сервера
-
+// app.use(bodyParser({ strict: false })) // установка парсера параметров для сервера
+app.use(koaBody());
 app.use(router.routes())
 app.use(router.allowedMethods())
 
@@ -81,11 +82,11 @@ app.use(ctx => {
  **  Запуск сервера *
  ********************/
 // запуск сервера
-app.listen(80, () =>  {
+app.listen(80, () => {
   console.log('сервер запущен')
 })
 
-export default {
+module.exports =  {
   path: '/api',
   handler: app.callback(),
 }
