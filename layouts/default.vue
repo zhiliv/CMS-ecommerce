@@ -98,18 +98,6 @@ export default {
     },
   },
   mounted() {
-    /* const test = Vue.extend(appToast)
-    console.log('🚀 -> mounted -> test', test)
-    // eslint-disable-next-line new-cap
-    const toast = new test({ propsData: { type: 'primary' }})
-    console.log('🚀 -> mounted -> toast', toast)
-    toast.$mount()
-    this.$el.appendChild(toast.$el)
-    this.$el.appendChild(toast.$el)
-    console.log('🚀 -> mounted -> this.$el', this.$el) */
-    /* Прослушивание события о показе сообщения */
-    // this.$nuxt.$on('show-notify', event => {})
-    this.$nuxt.$emit('show-toast', {title: 'Тест', message: 'Содержимое', type:'success'})
     this.menu.forEach((item, index) => {
       // обход списка меню
       if (`${this.$route.path}/` === item.link) this.selectItemMenu(index) // если совпадает ссылка то выделяем пункт меню

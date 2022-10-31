@@ -7,7 +7,7 @@
       >
         <app-list-group-item
           v-for="item in listOffers"
-          :key="item.name"
+          :key="item._id"
           classes-active="bg-item-list-group grey-darken-4-text"
           class="border-bottom border-1 border-grey bg-item-list-group-hvr white-text-hvr p-02"
         >{{ item.name }}</app-list-group-item>
@@ -38,7 +38,7 @@
                   <app-col col="4">
                     <app-label>Тип оффера</app-label>
                     <app-select>
-                      <option v-for="item in listTypeOffer" :key="item.name">{{ item.name }}</option>
+                      <option v-for="item in listTypeOffer" :key="item._id">{{ item.name }}</option>
                     </app-select>
                   </app-col>
                 </app-row>
@@ -115,7 +115,6 @@ export default {
                   {},
                   { width: '900px', height: '600px', draggable: '.modal-header', resizable: true, clickToClose: false },
                   { 'before-close': () => {
-                    console.log('Закрть')
                   } },
                 )
               },
@@ -133,8 +132,6 @@ export default {
   },
   watch:{
     'offer.description'(newValue){
-      console.log('🚀 -> newValue', newValue)
-
     }
   },
   mounted() {

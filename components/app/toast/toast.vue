@@ -22,19 +22,14 @@ export default {
   },
   data() {
     return {
-      listToast: [
-
-      ], // список уведомлений
+      listToast: [], // список уведомлений
     }
   },
-  mounted(){
+  mounted() {
     this.$nuxt.$on('show-toast', event => {
       this.listToast.push(event)
-      console.log('🚀 -> mounted -> event', event)
-
     })
-
-}
+  },
 }
 </script>
 
