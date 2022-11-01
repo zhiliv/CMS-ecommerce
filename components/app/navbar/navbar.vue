@@ -13,8 +13,8 @@
                 <app-a :class="[{'nav-link': true}, classLink]" :href="item.href">{{item.label}}</app-a>
               </div>
             </template>
-            <template v-if="item.type === 'text'">{{item.label}}</template>
-            <template v-if="item.type === 'dropdown'">
+            <template v-else-if="item.type === 'text'">{{item.label}}</template>
+            <template v-else-if="item.type === 'dropdown'">
               <li :class="[{'nav-item': true, 'dropdown': true}, classLi]" @click="onOpenDropDown">
                 <app-a
                   :class="[{'nav-link': true, 'dropdown-toggle': true}, classLink]"
@@ -127,18 +127,18 @@ export default {
       addStringListClass(event.target, this.classLinkActive)
     },
     /*
-    * При клике на пункт меню
-    * @function handleClick
-    * @param {Object} item - Данные элемента меню
-    * @param {Object} event - Данные события
-    */
-    handleClick(item, event){
+     * При клике на пункт меню
+     * @function handleClick
+     * @param {Object} item - Данные элемента меню
+     * @param {Object} event - Данные события
+     */
+    handleClick(item, event) {
       const dropdownList = this.$el.querySelectorAll('.dropdown-menu') // получение выпадающих списков меню
       dropdownList.forEach(el => {
         el.classList.remove('show') // удаление класса для отображения выпадающего списка
       }) // скрытие всех выпадающих списков меню
-      if(item && item.click()) item.click()
-    }
+      if (item && item.click()) item.click()
+    },
   },
 }
 </script>

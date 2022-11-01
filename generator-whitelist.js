@@ -544,6 +544,14 @@ export const start = async () => {
     'vm--overlay',
     'vm--top-right-slot',
     'vm--modal',
+    'toast-primary',
+    'toast-info',
+    'toast-secondary',
+    'toast-success',
+    'toast-warning',
+    'toast-danger',
+    'toast-light',
+    'toast-dark',
   ]
   const listPath = ['./pages/*.vue', './pages/**/*.vue', './layouts/*.vue'] // список папок для проверки
   let i = 0

@@ -47,9 +47,14 @@
                   <app-col col="12" class="h-100">
                     <app-row>
                       <app-label class="fw-semibold">Короткое описание</app-label>
-                      <app-textarea textarea-size="sm" rows="2" is-count="true"/>
+                      <app-textarea textarea-size="sm" rows="2" is-count="true" />
                       <app-label class="fw-semibold">Полное описание</app-label>
-                      <app-textarea v-model="offer.description" textarea-size="sm" rows="12" is-count="true"/>
+                      <app-textarea
+                        v-model="offer.description"
+                        textarea-size="sm"
+                        rows="12"
+                        is-count="true"
+                      />
                     </app-row>
                   </app-col>
                 </app-row>
@@ -95,11 +100,9 @@ export default {
   layout: 'default',
   data() {
     return {
-      offer: {
-        description: ''
-      },
-      listOffers: [],
-      listTypeOffer: [{}],
+      offer: {}, // текущий оффер
+      listOffers: [], // список офферов
+      listTypeOffer: [{}], // типы офферов
       menu: [
         {
           id: 1,
@@ -115,25 +118,28 @@ export default {
                   formTypeOffers,
                   {},
                   { width: '900px', height: '600px', draggable: '.modal-header', resizable: true, clickToClose: false },
-                  { 'before-close': () => {
-                  } },
+                  {
+                    'before-close': event => {
+                      const { list } = event.params // получение списка типов офферов
+                      list.unshift({}) // добавление пустого объекта в начало массива
+                      this.listTypeOffer = list && list.length ? list : [] // присвоение полученного списка в значения для отображения в select
+                    },
+                  },
                 )
               },
-
             },
           ],
         },
         {
           id: 3,
-          caption: 'Управление 3',
-          click: () => {},
+          label: 'Управление 3',
+          type: 'text',
         },
-      ],
+      ], // список меню
     }
   },
-  watch:{
-    'offer.description'(newValue){
-    }
+  watch: {
+    'offer.description'(newValue) {},
   },
   mounted() {
     this.getListOffers()
@@ -146,7 +152,8 @@ export default {
      */
     async getListOffers() {
       const response = await this.$axios.get('/api/products').catch(err => {
-        console.log(err)
+        console.error(err)
+        this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } }) // отправка события для отображения уведомления
       })
       this.listOffers = response.data // установка полученного списка
     },
@@ -156,10 +163,12 @@ export default {
      * @function getListTypeOffers
      */
     async getListTypeOffers() {
-      const response = await this.$axios.get('/api/type_offers').catch(console.log)
+      const response = await this.$axios.get('/api/type_offers').catch(err => {
+        console.error(err)
+        this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } }) // отправка события для отображения уведомления
+      })
       this.listTypeOffer.push(...response.data) // установка полученного списка
     },
-
   },
 }
 </script>

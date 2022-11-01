@@ -67,10 +67,17 @@
         >Новая запись</app-button>
       </app-col>
       <app-col col="2" offset="7" class="justify-content-end d-flex">
-        <app-button class="bg-red-darken-4 grey-lighten-5-text btn-cancel" btn-size="sm">Отменить</app-button>
+        <app-button
+          class="bg-red-darken-4 grey-lighten-5-text btn-cancel"
+          btn-size="sm"
+          :disabled="disabledBtnControl"
+          @click="onCancel"
+        >Отменить</app-button>
         <app-button
           class="bg-green-darken-3 grey-lighten-5-text btn-save ms-2"
           btn-size="sm"
+          :disabled="disabledBtnControl"
+          @click="onSave"
         >Сохранить</app-button>
       </app-col>
     </app-row>
@@ -78,6 +85,7 @@
 </template>
 
 <script>
+import { required, minLength } from 'vuelidate/lib/validators'
 import appContainer from '../../../components/app/container/container.vue'
 import appCol from '../../../components/app/col/col.vue'
 import appButton from '../../../components/app/button/button.vue'
@@ -103,20 +111,45 @@ export default {
     'app-button': appButton,
     'app-list-group-item': appListGroupItem,
   },
+  validations: {
+    selectItem: {
+      name: {
+        // валидация поля "Наименование"
+        minLength: minLength(3),
+        required,
+      },
+      description: {
+        // валидация поля "Описание"
+        minLength: minLength(3),
+      },
+    },
+  },
   data() {
     return {
       list: [], // список типов офферов
-      selectItem: {}, // данные выделенного типа оффеорв
+      selectItem: {}, // данные выделенного типа офферов
       selectId: null, // идентификатор выделенного типа оффера
       hoverItem: false, // признак наведения на строку
+      disabledBtnControl: true, // доступность кнопки "сохранить" и "Отменить"
     }
+  },
+  watch: {
+    /* Отслеживание изменений выбранного объекта */
+    selectItem: {
+      handler(newVal) {
+        const index = this.list.findIndex(el => el._id === this.selectId) // получение индекса выбранного элемента
+        const item = this.list[index] // получение объекта по индексу
+        this.disabledBtnControl = !(!this.$v.selectItem.$invalid && !withObject(newVal, item)) // установка активности кнопки "Сохранить" и "Отменить"
+      },
+      deep: true,
+    },
   },
   async beforeMount() {
     await this.getList() // получение списка "Типы офферов"
     const { list } = this // заполненный список "Типы офферов"
     if (list && list.length) {
       // если длина списка больше 0
-      this.selectItem = list[0] // объекту для редактирования присваивается 1-ая строка
+      this.selectItem = cloneObject(list[0]) // объекту для редактирования присваивается 1-ая строка
       this.selectId = list[0]._id // установка значения идентификатора выделенного оффера
       this.$refs.list.$emit('active', { _id: this.selectId }) // отправка события для выделения строки и установки свойства isActive = true
     }
@@ -149,14 +182,40 @@ export default {
                 this.selectId = item._id // установка для области видимости формы идентификатора выбранного элемента
                 this.setActiveItem(index) // установка активности элементов
               } else {
-                const index = this.$refs.list.$children.findIndex(el => el.$attrs._id === this.selectItem._id) // поиск индекса выбранного элемента
+                const index = this.list.findIndex(el => el._id === this.selectItem._id) // поиск индекса выбранного элемента
                 this.setActiveItem(index) // установка активности элементов
-                // если длина списка больше 0
-                // this.selectItem = {name: null, description: null} // объекту для редактирования присваивается 1-ая строка
               }
             },
           },
         )
+      }
+    },
+
+    /*
+     * При нажати на кнопку "Отменить"
+     * @function onCancel
+     */
+    onCancel() {
+      const index = this.list.findIndex(el => el._id === this.selectId) // получение индекса выбранного элемента
+      this.selectItem = cloneObject(this.list[index]) // установка значения
+    },
+
+    /*
+     * при нажатии на кнопку "Сохранить"
+     * @function onSave
+     */
+    async onSave() {
+      const response = await this.$axios.put('/api/type_offers', { params: this.selectItem }).catch(err => {
+        console.error(err)
+        this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } }) // отправка события для отображения уведомления
+      })
+      if (response && response.status === 200) {
+        this.$nuxt.$emit('show-toast', {
+          params: { title: 'Обновлене успешно!', message: 'Обновление записи прошло успешно', type: 'success' },
+        }) // отправка события для отображения уведомления
+        const index = this.list.findIndex(el => el._id === this.selectId) // получение индекса
+        this.list.splice(index, 1, cloneObject(this.selectItem)) // замена объекта в массиве
+        this.disabledBtnControl = true // деативация кнопок "Сохранить" и "Отменить"
       }
     },
 
@@ -210,7 +269,9 @@ export default {
      * @function getList
      */
     async getList() {
-      const response = await this.$axios.get('/api/type_offers').catch(console.log) // отправка запроса
+      const response = await this.$axios.get('/api/type_offers').catch(err => {
+        this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } }) // отправка события
+      }) // отправка запроса
       this.list.push(...response.data) // установка полученного списка
     },
 
@@ -223,7 +284,6 @@ export default {
         formNew,
         { isNew: true }, // передача параметров
         { width: '600px', height: '400px', draggable: true, resizable: true, clickToClose: false },
-        { 'before-close': () => {} },
       )
     },
     /*
@@ -231,7 +291,7 @@ export default {
      * @function onClose
      */
     onClose() {
-      this.$emit('close', this.data) // отправка события для закрытия формы
+      this.$emit('close', { list: this.list }) // отправка события для закрытия формы
     },
 
     /*

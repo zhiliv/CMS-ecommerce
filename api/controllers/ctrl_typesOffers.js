@@ -22,12 +22,18 @@ exports.create = async ctx => {
     return list && list.length ? list.findIndex(el => el.name.toUpperCase() === params.name.toUpperCase()) : -1
   }
   try {
-    if (await checkDouble() === -1) { // проверка что такого элемента нет
+    if ((await checkDouble()) === -1) {
+      // проверка что такого элемента нет
       // проверка на то что записи с таким наименованием не существует
       const newRow = new mdl_TypesOffers(params) // создание объекта модели
       const result = await newRow.save() // сохранение
       ctx.status = 200 // установка статуса
-      ctx.body = { result, title: 'Тип оффера добавлен успешно', message: 'Запись добавлена успешно!', type_message: 'success' } // передача полученного результата сохранения записи
+      ctx.body = {
+        result,
+        title: 'Тип оффера добавлен успешно',
+        message: 'Запись добавлена успешно!',
+        type_message: 'success',
+      } // передача полученного результата сохранения записи
     } else {
       ctx.status = 200 // установка статуса
       ctx.body = { title: 'Внимание!', message: 'Запись с таким наименованием уже существует', type_message: 'warning' } // отправка сообщения
@@ -59,8 +65,9 @@ exports.update = async ctx => {
   const { params } = ctx.request.body // входные параметры
   try {
     const result = await mdl_TypesOffers.updateOne({ _id: params._id }, params)
+    console.log('🚀 -> result', result)
     ctx.status = 200
-    ctx.body = result
+    ctx.body = { result, title: 'Удаление завершено', message: 'Тип оффера удален успешно!', type_message: 'info' }
   } catch (err) {
     ctx.status = 500
     ctx.throw(`Произошла ошибка: ${err}`)
@@ -75,7 +82,7 @@ exports.delete = async ctx => {
   try {
     const result = await mdl_TypesOffers.deleteOne({ _id: params.id })
     ctx.status = 200 // установка статуса
-      ctx.body = { result, title: 'Удаление завершено', message: 'Тип оффера удален успешно!', type_message: 'info' } //
+    ctx.body = { result, title: 'Удаление завершено', message: 'Тип оффера удален успешно!', type_message: 'info' }
   } catch (err) {
     ctx.status = 500
     ctx.throw(`Произошла ошибка: ${err}`)

@@ -29,7 +29,6 @@ exports.all = async (ctx) => {
     const result = await productsModel.find(
       {}
     ) // поиск всех записей
-    console.log('🚀 -> exports.all= -> result', result)
     ctx.status = 200
     ctx.body = result
   } catch (err) {
