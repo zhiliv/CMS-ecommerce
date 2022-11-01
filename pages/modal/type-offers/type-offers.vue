@@ -20,9 +20,34 @@
             class="border-bottom border-1 border-grey bg-item-list-group-hvr white-text-hvr p-02"
             @click="onSelect(item)"
           >
-            <div class="w-100">
+            <div class="w-100" style="padding: 0.1em">
               {{ item.name }}
-              <app-button-close style="float: right" @click="onDelete(item._id)" />
+              <app-button
+                class="btn-close-right"
+                btn-size="sm"
+                style=" box-sizing: content-box; padding: 0 0.25em 0 0.25em; margin: 0"
+                @click="onDelete(item._id)"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  style="padding-top: 0.25em;"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <line x1="4" y1="7" x2="20" y2="7" />
+                  <line x1="10" y1="11" x2="10" y2="17" />
+                  <line x1="14" y1="11" x2="14" y2="17" />
+                  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                </svg>
+              </app-button>
             </div>
           </app-list-group-item>
         </app-list-group>
@@ -60,7 +85,6 @@ import appRow from '../../../components/app/row/row.vue'
 import appListGroup from '../../../components/app/list-group/list-group.vue'
 import appListGroupItem from '../../../components/app/list-group/item/item.vue'
 import appModalHead from '../../../components/app/modal-head/modal-head.vue'
-import appButtonClose from '../../../components/app/button/close/close.vue'
 import formNew from './new.vue'
 import maketForm from './form.vue'
 import confirmModal from './../confirm.vue'
@@ -78,13 +102,13 @@ export default {
     'app-list-group': appListGroup,
     'app-button': appButton,
     'app-list-group-item': appListGroupItem,
-    'app-button-close': appButtonClose,
   },
   data() {
     return {
       list: [], // список типов офферов
       selectItem: {}, // данные выделенного типа оффеорв
       selectId: null, // идентификатор выделенного типа оффера
+      hoverItem: false, // признак наведения на строку
     }
   },
   async beforeMount() {
@@ -114,7 +138,7 @@ export default {
       } else {
         this.$modal.show(
           confirmModal,
-          { title: 'Есть не сохраненные изменения, уверены, что хотите продолжить?', typeConfirm: 'Да'}, // передача параметров
+          { title: 'Есть не сохраненные изменения, уверены, что хотите продолжить?', typeConfirm: 'Да' }, // передача параметров
           { width: '400px', height: '120px', draggable: false, resizable: false, clickToClose: false },
           {
             'before-close': event => {
@@ -265,5 +289,18 @@ export default {
   .bg-item-list-group-hvr:hover {
     background: linear-gradient(to top, var(--amber-lighten-5), 20%, var(--amber-lighten-3));
     color: var(--black) !important;
+  }
+
+  .bg-item-list-group-hvr.active .btn-close-right {
+    display: block;
+  }
+
+  .bg-item-list-group-hvr:hover .btn-close-right {
+    display: block;
+  }
+
+  .btn-close-right {
+    float: right;
+    display: none;
   }
 </style>

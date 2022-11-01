@@ -105,6 +105,7 @@ export default {
 
   .btn-cancel {
     transition-duration: 0.6s;
+    float: right;
   }
 
   .bg-item-list-group {

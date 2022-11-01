@@ -16,29 +16,11 @@ export default {
       type: String,
       default: '',
     },
-    /* Проверка подтверждения выбора строки */
-    checkConfirm: {
-      type: [String, Boolean],
-      default: false,
-      validator(value) {
-        return value === 'true' || value === false
-      },
-    },
   },
   data() {
     return {
       isActive: false, // признак активности
     }
-  },
-  watch: {
-    /*
-     * Установка активности для элемента
-     * @function isActive
-     * @param {Boolean} newVal - Новое значение
-     */
-    isActive(newVal, oldval) {
-
-    },
   },
   methods: {
     /*
@@ -46,12 +28,11 @@ export default {
      * @function click
      */
     click() {
-      const {_id} = this.$attrs
-      this.$parent.$emit('active', {_id}) // отправка события в компонента app-list-group
-      }
-    }
-  }
-
+      const { _id } = this.$attrs
+      this.$parent.$emit('active', { _id }) // отправка события в компонента app-list-group
+    },
+  },
+}
 </script>
 
 <style>
