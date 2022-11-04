@@ -284,6 +284,10 @@ export default {
         formNew,
         { isNew: true }, // передача параметров
         { width: '600px', height: '400px', draggable: true, resizable: true, clickToClose: false },
+        {'before-close': (event) => {
+          const {item} = event.params // получение данных созданного объекта
+          if(item) this.list.push(item) // добавление нового объекта в список
+        }}
       )
     },
     /*

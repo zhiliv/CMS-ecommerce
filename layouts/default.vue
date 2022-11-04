@@ -5,12 +5,13 @@
       <app-col col="2" class="bg-grey-darken-4 col-menu">
         <app-list-group ref="menu">
           <template v-for="item in menu">
-            <router-link
+            <nuxt-link
               v-if="item.name !== null"
               :key="item.name"
               v-slot="{ href, navigate, isActive }"
               :to="item.link"
               class="text-decoration-none text-reset"
+              custom
             >
               <a :href="href" @click="navigate">
                 <app-list-group-button
@@ -21,15 +22,13 @@
                   :title="item.name"
                 >{{ item.name }}</app-list-group-button>
               </a>
-            </router-link>
+            </nuxt-link>
           </template>
         </app-list-group>
       </app-col>
       <app-col col="10" class="h-100 overflow-auto" style="max-height: 100vh ">
         <nuxt />
-
       </app-col>
-
     </app-row>
     <app-toast />
   </app-container>

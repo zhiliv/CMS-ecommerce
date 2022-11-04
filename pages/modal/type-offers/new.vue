@@ -89,10 +89,12 @@ export default {
       const response = await this.$axios.post('/api/type_offers', { params: this.data }).catch(err => {
         this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } }) // отправка события для отображения уведомления
       })
-      if (response && response.status === 200) // если статус успешный
+      if (response && response.status === 200){// если статус успешный
         this.$nuxt.$emit('show-toast', {
           params: { title: response.data.title, message: response.data.message, type: response.data.type_message },
         }) // отправка события для отображения уведомления
+        this.onClose()
+      }
     },
 
     /*
@@ -100,7 +102,7 @@ export default {
      * @function onClose
      */
     onClose() {
-      this.$emit('close', this.data) // отправка события для закрытия формы
+      this.$emit('close', {item: this.data}) // отправка события для закрытия формы
     },
   },
 }

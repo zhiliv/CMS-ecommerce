@@ -11,17 +11,17 @@ const whitelist = fs.readFileSync('whitelist.js').toString()
 
 const isDev = process.env.NODE_ENV !== 'production'
 export default {
-  // serverMiddleware: [{ path: '/api', handler: '~/api/app.js' }], // запуск сервера
+  // target: 'static', // TODO для развертыывания на статическом хостинге
+  // serverMiddleware: [{ path: '/api', handler: '~/api/app.js' }], // TODO убрать запуск сервера
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    // '@nuxtjs/pwa',
-    // https://go.nuxtjs.dev/content
-    // '@nuxt/content',
+    '@nuxtjs/pwa',
+    '@nuxt/content',
     // https://github.com/nuxt-community/auth-module
-    '@nuxtjs/auth-next',
+    // '@nuxtjs/auth-next', // TODO включить для авторизации
     'nuxt-trailingslash-module',
     'nuxt-webfontloader',
     'cookie-universal-nuxt',

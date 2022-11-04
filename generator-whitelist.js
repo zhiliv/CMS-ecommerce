@@ -531,6 +531,12 @@ export const start = async () => {
     'form-select-lg': /select-size="lg"/,
     'textarea-sm': /textarea-size="sm"/,
     'textarea-lg': /textarea-size="lg"/,
+    'h6': /level="6"/,
+    'h5': /level="5"/,
+    'h4': /level="4"/,
+    'h3': /level="3"/,
+    'h2': /level="2"/,
+    'h1': /level="1"/,
   }
 
   let whitelist = [
@@ -553,7 +559,7 @@ export const start = async () => {
     'toast-light',
     'toast-dark',
   ]
-  const listPath = ['./pages/*.vue', './pages/**/*.vue', './layouts/*.vue'] // список папок для проверки
+  const listPath = ['./pages/*.vue', './pages/modal/**/*.vue', './pages/**/*.vue', './layouts/*.vue'] // список папок для проверки
   let i = 0
   for await (const namePath of listPath) {
     // обход указанных папок

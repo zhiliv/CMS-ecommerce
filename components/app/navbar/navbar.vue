@@ -15,7 +15,7 @@
             </template>
             <template v-else-if="item.type === 'text'">{{item.label}}</template>
             <template v-else-if="item.type === 'dropdown'">
-              <li :class="[{'nav-item': true, 'dropdown': true}, classLi]" @click="onOpenDropDown">
+              <span :class="[{'nav-item': true, 'dropdown': true}, classLi]" @click="onOpenDropDown">
                 <app-a
                   :class="[{'nav-link': true, 'dropdown-toggle': true}, classLink]"
                   href="#"
@@ -44,7 +44,7 @@
                     </li>
                   </template>
                 </ul>
-              </li>
+              </span>
             </template>
           </li>
         </ul>
