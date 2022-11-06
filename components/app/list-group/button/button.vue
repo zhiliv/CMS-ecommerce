@@ -73,7 +73,7 @@ export default {
     click(event) {
       const list = this.$parent.$parent.$children // получение всех элементов списка
       list.forEach(item => {
-        item.$children[0]._data.isActive = false
+        item.$children[0].isActive = false
       }) // установка для всех элементов свойства isActive
       this.isActive = true // установка для текущего элемента
     },

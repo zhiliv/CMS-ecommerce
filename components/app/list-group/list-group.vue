@@ -1,25 +1,30 @@
-2<template>
-  <ul v-bind="$attrs" :class="{'list-group': true}">
-    <template v-if="list.length && typeRow === 'item'">
-      <app-list-group-item v-for="item in list" :key="item.id" :class="classItem">{{item.text}}</app-list-group-item>
-    </template>
-    <template v-else-if="list.length && typeRow === 'button'">
-      <app-list-group-button v-for="item in list" :key="item.id" :class="classItem">{{item.text}}</app-list-group-button>
-    </template>
-    <template v-else>
-      <slot></slot>
-    </template>
-  </ul>
+<template>
+  <div>
+    <ul v-bind="$attrs" :class="{'list-group': true}">
+      <template v-if="list && list.length && typeRow === 'item'">
+        <app-list-group-item v-for="item in list" :key="item.id" :class="classItem">{{item.text}}</app-list-group-item>
+      </template>
+      <template v-else-if="list && list.length && typeRow === 'button'">
+        <app-list-group-button v-for="item in list" :key="item.id" :class="classItem">{{item.text}}</app-list-group-button>
+      </template>
+      <template v-else>
+        <slot></slot>
+      </template>
+    </ul>
+    <app-spinner v-if="showSpinner && !isLoad" :class="[{'relative': true, 'top-50': true, 'start-50': true}, spinnerClasses]" />
+  </div>
 </template>
 
 <script>
 import { strToArr } from './../../../scripts/component/func'
 import appListGroupItem from './item/item.vue'
 import appListGroupButton from './button/button.vue'
+import appSpinner from './../spinner/spinner.vue'
 export default {
   components: {
     'app-list-group-item': appListGroupItem,
     'app-list-group-button': appListGroupButton,
+    'app-spinner': appSpinner,
   },
   props: {
     /* Вариант отображения */
@@ -33,7 +38,7 @@ export default {
     /* Список */
     list: {
       type: Array,
-      default: () => [],
+      default: null,
     },
     /* Классы для срок */
     classItem: {
@@ -45,6 +50,24 @@ export default {
       type: String,
       default: '',
     },
+    /* Классы для спиннера */
+    spinnerClasses: {
+      type: String,
+      default: null,
+    },
+    /* Признак заполнения списка */
+    isLoad: {
+      type: [String, Boolean],
+      default: false
+    },
+    /* Отображать ли спинер при отображении компонента */
+    showSpinner: {
+      type: [String, Boolean],
+      default: false,
+      validator(value){
+        return value === 'true' || value === true || value === false || value === 'false'
+      }
+    }
   },
   mounted() {
     this.$on('active', event => {
@@ -52,7 +75,7 @@ export default {
       this.setDelIsActive()
       this.delClassActiveItem()
       const index = this.$children.findIndex(el => el.$attrs._id === _id) // получение индекса элемента
-      if (index >= 0) {
+      if (index >= 0 && this.$children.length) {
         this.$children[index]._data.isActive = true
         this.setClassActiveItem(index)
       }
@@ -101,6 +124,7 @@ export default {
 </script>
 
 <style>
+  @import '~/assets/css/position.css';
   .list-group {
     display: flex;
     flex-direction: column;

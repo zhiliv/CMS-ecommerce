@@ -3,6 +3,9 @@
     <app-col col="3">
       <app-h level="5" class="text-center no-select">Список офферов</app-h>
       <app-list-group
+        :is-load="isLoadProducts"
+        show-spinner="true"
+        spinner-classes="amber-darken-3-text"
         class="overflow-y-scroll max-vh-95 border border-grey-lighten-2 shadow-10 m-0 p-0"
       >
         <app-list-group-item
@@ -102,6 +105,7 @@ export default {
     return {
       offer: {}, // текущий оффер
       listOffers: [], // список офферов
+      isLoadProducts: false, // установка признака загрузки списка офферов
       listTypeOffer: [{}], // типы офферов
       menu: [
         {
@@ -156,6 +160,7 @@ export default {
         this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } }) // отправка события для отображения уведомления
       })
       this.listOffers = response.data // установка полученного списка
+      this.isLoadProducts = true // установка признака загрузки продуктов
     },
 
     /*
@@ -183,6 +188,7 @@ export default {
   @import './../../assets/css/form.css';
   @import './../../assets/css/font.css';
   @import './../../assets/css/text/text.css';
+  @import './../../assets/css/text/amber.css';
   @import './../../assets/css/align.css';
   @import './../../assets/css/background/amber.css';
   @import './../../assets/css/text/grey.css';

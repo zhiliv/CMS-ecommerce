@@ -537,6 +537,9 @@ export const start = async () => {
     'h3': /level="3"/,
     'h2': /level="2"/,
     'h1': /level="1"/,
+    'spinner-grow': /type-spinner="grow"/,
+    'spinner-border': /type-spinner="border"/,
+    'spinner-sm': /type-spinner="border-sm"/,
   }
 
   let whitelist = [

@@ -9,6 +9,9 @@
       <app-col col="4" class="h-100 p-0">
         <app-list-group
           ref="list"
+          show-spinner="true"
+          spinner-classes="amber-darken-3-text"
+          :is-load="isLoadTypeOffers"
           class="overflow-y-scroll h-100 border border-grey-lighten-2 shadow-5 m-0"
           classes-active="bg-item-list-group grey-darken-4-text"
         >
@@ -131,6 +134,7 @@ export default {
       selectId: null, // идентификатор выделенного типа оффера
       hoverItem: false, // признак наведения на строку
       disabledBtnControl: true, // доступность кнопки "сохранить" и "Отменить"
+      isLoadTypeOffers: false // признак загрузки списка типов офферов
     }
   },
   watch: {
@@ -273,6 +277,7 @@ export default {
         this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } }) // отправка события
       }) // отправка запроса
       this.list.push(...response.data) // установка полученного списка
+      this.isLoadTypeOffers = true
     },
 
     /*

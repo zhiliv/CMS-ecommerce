@@ -65,7 +65,6 @@ exports.update = async ctx => {
   const { params } = ctx.request.body // входные параметры
   try {
     const result = await mdl_TypesOffers.updateOne({ _id: params._id }, params)
-    console.log('🚀 -> result', result)
     ctx.status = 200
     ctx.body = { result, title: 'Удаление завершено', message: 'Тип оффера удален успешно!', type_message: 'info' }
   } catch (err) {
