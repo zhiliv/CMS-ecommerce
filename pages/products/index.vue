@@ -1,20 +1,33 @@
+<!-- eslint-disable vue/no-v-model-argument -->
 <template>
   <app-row class="h-100">
     <app-col col="3">
       <app-h level="5" class="text-center no-select">Список офферов</app-h>
       <app-list-group
+        ref="listOffers"
         :is-load="isLoadProducts"
         show-spinner="true"
         spinner-classes="amber-darken-3-text"
+        classes-active="bg-item-list-group grey-darken-4-text"
         class="overflow-y-scroll max-vh-95 border border-grey-lighten-2 shadow-10 m-0 p-0"
       >
         <app-list-group-item
           v-for="item in listOffers"
           :key="item._id"
           :_id="item._id"
-          classes-active="bg-item-list-group grey-darken-4-text"
           class="border-bottom border-1 border-grey bg-item-list-group-hvr white-text-hvr p-02"
-        >{{ item.name }}</app-list-group-item>
+          @click="onSelect(item)"
+        >
+          {{ item.name }}
+          <app-button
+            class="btn-close-right"
+            btn-size="sm"
+            style=" box-sizing: content-box; padding: 0 0.25em 0 0.25em; margin: 0"
+            @click="onDelete(item._id)"
+          >
+          <svg-trash-delete width="18" height="18" viewBox="0 0 24 24" style="margin-top: 0.25em;"/>
+          </app-button>
+        </app-list-group-item>
       </app-list-group>
     </app-col>
     <app-col col="9">
@@ -67,12 +80,14 @@
         </app-col>
       </app-d-flex>
     </app-col>
+    <app-query ref="getOffers" type="get" url="/api/products" @is-load="(event) => isLoadProducts = event" @result="event => listOffers = event"></app-query>
   </app-row>
 </template>
 
 <script>
 import formTypeOffers from '../../pages/modal/type-offers/type-offers.vue'
 import appRow from '../../components/app/row/row.vue'
+import appButton from '../../components/app/button/button.vue'
 import appCol from '../../components/app/col/col.vue'
 import appListGroup from '../../components/app/list-group/list-group.vue'
 import appDFlex from '../../components/app/d-flex/d-flex.vue'
@@ -84,6 +99,9 @@ import appInput from './../../components/app/input/input.vue'
 import appSelect from './../../components/app/select/select.vue'
 import appTextarea from './../../components/app/textarea/textarea.vue'
 import appH from './../../components/app/h/h.vue'
+import appQuery from './../../components/app/query/query.vue'
+import svgTrashDelete from './../../assets/icons/basic/trash-alt-delete-bin.svg'
+import { cloneObject, withObject } from '~/scripts/component/func'
 export default {
   // шаблон
   components: {
@@ -99,6 +117,9 @@ export default {
     'app-select': appSelect,
     'app-textarea': appTextarea,
     'app-h': appH,
+    'app-button': appButton,
+    'app-query': appQuery,
+    'svg-trash-delete': svgTrashDelete
   },
   layout: 'default',
   data() {
@@ -107,6 +128,9 @@ export default {
       listOffers: [], // список офферов
       isLoadProducts: false, // установка признака загрузки списка офферов
       listTypeOffer: [{}], // типы офферов
+      selectItem: {}, // объект выделенного оффера
+      selectId: null, // идентификатор выделенного типа оффера
+
       menu: [
         {
           id: 1,
@@ -144,23 +168,38 @@ export default {
   },
   watch: {
     'offer.description'(newValue) {},
+
   },
-  mounted() {
-    this.getListOffers()
-    this.getListTypeOffers()
+  async mounted() {
+    console.log('this.refs', this.$refs)
+    this.$refs.getOffers.execute()
+    // await this.getListOffers()
+    await this.getListTypeOffers()
+    const { listOffers } = this // заполненный список "Типы офферов"
+    if (listOffers && listOffers.length) {
+      // если длина списка больше 0
+      this.selectItem = cloneObject(listOffers[0]) // объекту для редактирования присваивается 1-ая строка
+      this.selectId = listOffers[0]._id // установка значения идентификатора выделенного оффера
+      this.$refs.listOffers.$emit('active', { _id: this.selectId }) // отправка события для выделения строки и установки свойства isActive = true
+    }
   },
   methods: {
+
+    test(newVal){
+    console.log('🚀 -> test -> newVal', newVal)
+
+    },
     /*
      * Получение списка всех офферов
      * @function getListOffers
      */
     async getListOffers() {
       const response = await this.$axios.get('/api/products').catch(err => {
-        console.error(err)
         this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } }) // отправка события для отображения уведомления
       })
       this.listOffers = response.data // установка полученного списка
-      this.isLoadProducts = true // установка признака загрузки продуктов
+      // this.isLoadProducts = true // установка признака загрузки продуктов
+      return true
     },
 
     /*
@@ -173,6 +212,33 @@ export default {
         this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } }) // отправка события для отображения уведомления
       })
       this.listTypeOffer.push(...response.data) // установка полученного списка
+    },
+
+    /*
+     * При выборе офеера
+     * @function onSelect
+     * @param {Object} item - Объект выделенного оффера
+     */
+    onSelect(item) {
+      const { selectItem, selectId, listOffers } = this
+      const index = listOffers.findIndex(el => el._id === item._id) // индекс текущего DOM элемента в списке офферов
+      const indexItem = listOffers.findIndex(el => el._id === selectId) // поиск индекса элемента в списке
+      if (indexItem >= 0 && withObject(listOffers[indexItem], selectItem) && item) {
+        this.setActiveItem(index) // установка активности элементов
+        this.selectId = item._id // установка идентификатора в  область видимости формы
+        this.selectItem = cloneObject(item) // присвоение свойству selectItem значение выделенной строки
+      }
+    },
+
+    /*
+     * Удаление активности строк из списка
+     * @function setActiveItem
+     * @param {Number} index - Индекс текущего DOM элемента строки
+     */
+    setActiveItem(index) {
+      const { _id } = this.listOffers[index]
+      console.log('🚀 -> setActiveItem -> _id', _id)
+      this.$refs.listOffers.$emit('active', { _id }) // отправка события для выделения строки и установки свойства isActive = true
     },
   },
 }

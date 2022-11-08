@@ -132,7 +132,6 @@ export default {
       list: [], // список типов офферов
       selectItem: {}, // данные выделенного типа офферов
       selectId: null, // идентификатор выделенного типа оффера
-      hoverItem: false, // признак наведения на строку
       disabledBtnControl: true, // доступность кнопки "сохранить" и "Отменить"
       isLoadTypeOffers: false // признак загрузки списка типов офферов
     }
