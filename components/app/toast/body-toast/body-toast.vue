@@ -47,7 +47,8 @@ export default {
           value === 'info' ||
           value === 'warning' ||
           value === 'danger' ||
-          value === 'dark'
+          value === 'dark' ||
+          value === 'light'
         )
       },
     },
@@ -64,6 +65,7 @@ export default {
      */
     classes() {
       const { toastColor } = this
+      console.log('🚀 -> classes -> toastColor', toastColor)
       return {
         [`toast-${toastColor}`]: !!toastColor,
       }
@@ -168,6 +170,4 @@ export default {
     user-select: none;
     opacity: 0.25;
   }
-
-
 </style>

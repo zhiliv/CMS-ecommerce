@@ -32,15 +32,15 @@ exports.create = async ctx => {
         result,
         title: 'Тип оффера добавлен успешно',
         message: 'Запись добавлена успешно!',
-        type_message: 'success',
+        typeMessage: 'success',
       } // передача полученного результата сохранения записи
     } else {
       ctx.status = 200 // установка статуса
-      ctx.body = { title: 'Внимание!', message: 'Запись с таким наименованием уже существует', type_message: 'warning' } // отправка сообщения
+      ctx.body = { title: 'Внимание!', message: 'Запись с таким наименованием уже существует', typeMessage: 'warning' } // отправка сообщения
     }
   } catch (err) {
     ctx.status = err.statusCode || err.status || 500 // установка статуса в случае ошибки
-    ctx.body = { title: 'Ошибка', message: err.message, type_message: 'error' } // отправка сообщения об ошибке
+    ctx.body = { title: 'Ошибка', message: err.message, typeMessage: 'danger' } // отправка сообщения об ошибке
   }
 }
 
@@ -63,10 +63,11 @@ exports.all = async ctx => {
  */
 exports.update = async ctx => {
   const { params } = ctx.request.body // входные параметры
+  console.log('🚀 -> params', params)
   try {
     const result = await mdl_TypesOffers.updateOne({ _id: params._id }, params)
     ctx.status = 200
-    ctx.body = { result, title: 'Удаление завершено', message: 'Тип оффера удален успешно!', type_message: 'info' }
+    ctx.body = { result, title: 'Удаление завершено', message: 'Тип оффера обновлен успешно!', typeMessage: 'info' }
   } catch (err) {
     ctx.status = 500
     ctx.throw(`Произошла ошибка: ${err}`)
@@ -81,7 +82,7 @@ exports.delete = async ctx => {
   try {
     const result = await mdl_TypesOffers.deleteOne({ _id: params.id })
     ctx.status = 200 // установка статуса
-    ctx.body = { result, title: 'Удаление завершено', message: 'Тип оффера удален успешно!', type_message: 'info' }
+    ctx.body = { result, title: 'Удаление завершено', message: 'Тип оффера удален успешно!', typeMessage: 'warning' }
   } catch (err) {
     ctx.status = 500
     ctx.throw(`Произошла ошибка: ${err}`)

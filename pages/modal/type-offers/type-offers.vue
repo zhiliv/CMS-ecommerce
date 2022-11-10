@@ -28,28 +28,10 @@
               <app-button
                 class="btn-close-right"
                 btn-size="sm"
-                style=" box-sizing: content-box; padding: 0 0.25em 0 0.25em; margin: 0"
+                style=" box-sizing: content-box; padding: 0 0.15em 0 0.15em; margin: 0; height: 22px;"
                 @click="onDelete(item._id)"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  style="padding-top: 0.25em;"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <line x1="4" y1="7" x2="20" y2="7" />
-                  <line x1="10" y1="11" x2="10" y2="17" />
-                  <line x1="14" y1="11" x2="14" y2="17" />
-                  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                </svg>
+              <svg-trash-delete width="18" height="18" viewBox="0 0 24 24" style="margin-top: 0.15em;"/>
               </app-button>
             </div>
           </app-list-group-item>
@@ -84,6 +66,27 @@
         >Сохранить</app-button>
       </app-col>
     </app-row>
+    <!-- Отправка HTTP запроса для получения списка типов офферов -->
+    <app-query
+      ref="getTypeOffers"
+      type="get"
+      url="/api/type_offers"
+      @is-load="event => isLoadTypeOffers = event"
+      @result="event => list = event"
+    ></app-query>
+    <app-query
+      ref="updTypeOffers"
+      type="put"
+      show-message="true"
+      url="/api/type_offers"
+    ></app-query>
+    <app-query
+      ref="delTypeOffers"
+      type="delete"
+      show-message="true"
+      url="/api/type_offers"
+    ></app-query>
+
   </app-container>
 </template>
 
@@ -96,6 +99,8 @@ import appRow from '../../../components/app/row/row.vue'
 import appListGroup from '../../../components/app/list-group/list-group.vue'
 import appListGroupItem from '../../../components/app/list-group/item/item.vue'
 import appModalHead from '../../../components/app/modal-head/modal-head.vue'
+import svgTrashDelete from '../../../assets/icons/basic/trash-alt-delete-bin.svg'
+import appQuery from '../../../components/app/query/query.vue'
 import formNew from './new.vue'
 import maketForm from './form.vue'
 import confirmModal from './../confirm.vue'
@@ -113,6 +118,8 @@ export default {
     'app-list-group': appListGroup,
     'app-button': appButton,
     'app-list-group-item': appListGroupItem,
+    'app-query': appQuery,
+    'svg-trash-delete': svgTrashDelete
   },
   validations: {
     selectItem: {
@@ -147,8 +154,8 @@ export default {
       deep: true,
     },
   },
-  async beforeMount() {
-    await this.getList() // получение списка "Типы офферов"
+  async mounted() {
+    await this.$refs.getTypeOffers.execute() // получение списка типов офферов
     const { list } = this // заполненный список "Типы офферов"
     if (list && list.length) {
       // если длина списка больше 0
@@ -208,14 +215,8 @@ export default {
      * @function onSave
      */
     async onSave() {
-      const response = await this.$axios.put('/api/type_offers', { params: this.selectItem }).catch(err => {
-        console.error(err)
-        this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } }) // отправка события для отображения уведомления
-      })
+      const response = await this.$refs.updTypeOffers.execute({ params: this.selectItem })
       if (response && response.status === 200) {
-        this.$nuxt.$emit('show-toast', {
-          params: { title: 'Обновлене успешно!', message: 'Обновление записи прошло успешно', type: 'success' },
-        }) // отправка события для отображения уведомления
         const index = this.list.findIndex(el => el._id === this.selectId) // получение индекса
         this.list.splice(index, 1, cloneObject(this.selectItem)) // замена объекта в массиве
         this.disabledBtnControl = true // деативация кнопок "Сохранить" и "Отменить"
@@ -238,20 +239,9 @@ export default {
           'before-close': async event => {
             const { confirm } = event.params
             if (confirm) {
-              const response = await this.$axios.delete(`/api/type_offers/${_id}`).catch(err => {
-                console.error(err)
-                this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } }) // отправка события
-              }) // отправка запроса
+              const response = await this.$refs.delTypeOffers.execute({}, _id)
               if (response && response.status === 200) {
                 // если статус успешный
-                this.$nuxt.$emit('show-toast', {
-                  params: {
-                    title: response.data.title, // заголовок сообщения
-                    message: response.data.message, // текст сообщения
-                    type: response.data.type_message, // тип сообщения
-                  },
-                }) // отправка события для отображения уведомления
-
                 this.list.splice(index, 1) // удаление строки из массива
                 const { list } = this
                 if (list && list.length) {
@@ -265,18 +255,6 @@ export default {
           },
         },
       ) // результат полученный из модального окна
-    },
-
-    /*
-     * Получение списка типов офферов
-     * @function getList
-     */
-    async getList() {
-      const response = await this.$axios.get('/api/type_offers').catch(err => {
-        this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } }) // отправка события
-      }) // отправка запроса
-      this.list.push(...response.data) // установка полученного списка
-      this.isLoadTypeOffers = true
     },
 
     /*

@@ -22,10 +22,15 @@
           <app-button
             class="btn-close-right"
             btn-size="sm"
-            style=" box-sizing: content-box; padding: 0 0.25em 0 0.25em; margin: 0"
+            style=" box-sizing: content-box; padding: 0 0.15em 0 0.15em; margin: 0; height: 22px;"
             @click="onDelete(item._id)"
           >
-          <svg-trash-delete width="18" height="18" viewBox="0 0 24 24" style="margin-top: 0.25em;"/>
+            <svg-trash-delete
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              style="margin-top: 0.15em;"
+            />
           </app-button>
         </app-list-group-item>
       </app-list-group>
@@ -80,7 +85,21 @@
         </app-col>
       </app-d-flex>
     </app-col>
-    <app-query ref="getOffers" type="get" url="/api/products" @is-load="(event) => isLoadProducts = event" @result="event => listOffers = event"></app-query>
+    <!-- Отправка HTTP запроса для получения офферов -->
+    <app-query
+      ref="getOffers"
+      type="get"
+      url="/api/products"
+      @is-load="event => isLoadProducts = event"
+      @result="event => listOffers = event"
+    ></app-query>
+    <!-- Отправка HTTP запроса для получения типов офферов -->
+    <app-query
+      ref="getTypeOffers"
+      type="get"
+      url="/api/type_offers"
+      @result="event => listTypeOffer.push(...event)"
+    ></app-query>
   </app-row>
 </template>
 
@@ -119,7 +138,7 @@ export default {
     'app-h': appH,
     'app-button': appButton,
     'app-query': appQuery,
-    'svg-trash-delete': svgTrashDelete
+    'svg-trash-delete': svgTrashDelete,
   },
   layout: 'default',
   data() {
@@ -168,13 +187,12 @@ export default {
   },
   watch: {
     'offer.description'(newValue) {},
-
   },
   async mounted() {
-    console.log('this.refs', this.$refs)
-    this.$refs.getOffers.execute()
-    // await this.getListOffers()
-    await this.getListTypeOffers()
+    await this.$refs.getTypeOffers.execute() // получение списка типов офферов
+    await this.$refs.getOffers.execute() // получение списка офферов
+
+    // await this.getListTypeOffers()
     const { listOffers } = this // заполненный список "Типы офферов"
     if (listOffers && listOffers.length) {
       // если длина списка больше 0
@@ -184,36 +202,6 @@ export default {
     }
   },
   methods: {
-
-    test(newVal){
-    console.log('🚀 -> test -> newVal', newVal)
-
-    },
-    /*
-     * Получение списка всех офферов
-     * @function getListOffers
-     */
-    async getListOffers() {
-      const response = await this.$axios.get('/api/products').catch(err => {
-        this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } }) // отправка события для отображения уведомления
-      })
-      this.listOffers = response.data // установка полученного списка
-      // this.isLoadProducts = true // установка признака загрузки продуктов
-      return true
-    },
-
-    /*
-     * Получение списка типов офферов
-     * @function getListTypeOffers
-     */
-    async getListTypeOffers() {
-      const response = await this.$axios.get('/api/type_offers').catch(err => {
-        console.error(err)
-        this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } }) // отправка события для отображения уведомления
-      })
-      this.listTypeOffer.push(...response.data) // установка полученного списка
-    },
-
     /*
      * При выборе офеера
      * @function onSelect

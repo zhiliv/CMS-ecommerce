@@ -21,8 +21,8 @@
         >Создать</app-button>
       </app-col>
     </app-row>
+    <app-query ref="postTypeOffers" type="post" show-message="true" url="/api/type_offers"></app-query>
   </app-container>
-
 </template>
 
 <script>
@@ -32,6 +32,7 @@ import appCol from '../../../components/app/col/col.vue'
 import appRow from '../../../components/app/row/row.vue'
 import appButton from '../../../components/app/button/button.vue'
 import appModalHead from '../../../components/app/modal-head/modal-head.vue'
+import appQuery from '../../../components/app/query/query.vue'
 import maketForm from './form.vue'
 export default {
   /*
@@ -44,6 +45,7 @@ export default {
     'app-row': appRow,
     'app-button': appButton,
     'app-modal-head': appModalHead,
+    'app-query': appQuery,
   },
   validations: {
     data: {
@@ -86,13 +88,9 @@ export default {
      * @function onCreate
      */
     async onCreate() {
-      const response = await this.$axios.post('/api/type_offers', { params: this.data }).catch(err => {
-        this.$nuxt.$emit('show-toast', { params: { title: err.title, message: err.message, type: 'danger' } }) // отправка события для отображения уведомления
-      })
-      if (response && response.status === 200){// если статус успешный
-        this.$nuxt.$emit('show-toast', {
-          params: { title: response.data.title, message: response.data.message, type: response.data.type_message },
-        }) // отправка события для отображения уведомления
+      const response = await this.$refs.postTypeOffers.execute({ params: this.data })
+      if (response && response.status === 200) {
+        // если статус успешный
         this.onClose()
       }
     },
@@ -102,7 +100,7 @@ export default {
      * @function onClose
      */
     onClose() {
-      this.$emit('close', {item: this.data}) // отправка события для закрытия формы
+      this.$emit('close', { item: this.data }) // отправка события для закрытия формы
     },
   },
 }

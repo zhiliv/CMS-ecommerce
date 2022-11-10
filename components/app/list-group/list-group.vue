@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul v-bind="$attrs" :class="{'list-group': true}">
+    <ul v-bind="$attrs" :class="{'list-group': true, 'm-0': true}">
       <template v-if="list && list.length && typeRow === 'item'">
         <app-list-group-item v-for="item in list" :key="item.id" :class="classItem">{{item.text}}</app-list-group-item>
       </template>
@@ -125,6 +125,7 @@ export default {
 
 <style>
   @import '~/assets/css/position.css';
+  @import '~/assets/css/margin.css';
   .list-group {
     display: flex;
     flex-direction: column;
