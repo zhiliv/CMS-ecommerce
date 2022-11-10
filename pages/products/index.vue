@@ -225,7 +225,6 @@ export default {
      */
     setActiveItem(index) {
       const { _id } = this.listOffers[index]
-      console.log('🚀 -> setActiveItem -> _id', _id)
       this.$refs.listOffers.$emit('active', { _id }) // отправка события для выделения строки и установки свойства isActive = true
     },
   },
