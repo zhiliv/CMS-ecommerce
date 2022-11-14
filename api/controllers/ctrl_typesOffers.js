@@ -25,8 +25,9 @@ exports.create = async ctx => {
     if ((await checkDouble()) === -1) {
       // проверка что такого элемента нет
       // проверка на то что записи с таким наименованием не существует
-      const newRow = new mdl_TypesOffers(params) // создание объекта модели
-      const result = await newRow.save() // сохранение
+      const newRow = mdl_TypesOffers // создание объекта модели
+      const result = await newRow.create(params) // сохранение
+      console.log('🚀 -> result', result)
       ctx.status = 200 // установка статуса
       ctx.body = {
         result,
@@ -79,6 +80,7 @@ exports.update = async ctx => {
  */
 exports.delete = async ctx => {
   const { params } = ctx // входные параметры
+  console.log('🚀 -> exports.delete -> params', params)
   try {
     const result = await mdl_TypesOffers.deleteOne({ _id: params.id })
     ctx.status = 200 // установка статуса

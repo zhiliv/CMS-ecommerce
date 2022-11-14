@@ -20,7 +20,7 @@ export default {
     'doc-app-abbr': docAppAbbr,
     'doc-app-accordeon': docAppAccordeon,
     'doc-alert': docAppAlert,
-    'doc-budges': docBudges
+    'doc-budges': docBudges,
   },
   layout: 'layout-doc',
 }

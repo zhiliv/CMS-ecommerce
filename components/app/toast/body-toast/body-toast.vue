@@ -65,7 +65,6 @@ export default {
      */
     classes() {
       const { toastColor } = this
-      console.log('🚀 -> classes -> toastColor', toastColor)
       return {
         [`toast-${toastColor}`]: !!toastColor,
       }

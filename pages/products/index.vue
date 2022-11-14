@@ -51,7 +51,7 @@
               <app-col col="12" class="h-100">
                 <app-row>
                   <app-col col="2" class="h-100">
-                    <app-input-check switch="true" label="Состояние" role="switch" />
+                    <app-switch label="Состояние" role="switch" />
                   </app-col>
                   <app-col col="6">
                     <app-label>Наименование</app-label>
@@ -112,7 +112,7 @@ import appListGroup from '../../components/app/list-group/list-group.vue'
 import appDFlex from '../../components/app/d-flex/d-flex.vue'
 import appNavbar from '../../components/app/navbar/navbar.vue'
 import appListGroupItem from './../../components/app/list-group/item/item.vue'
-import appInputCheck from './../../components/app/input-check/input-check.vue'
+import appSwitch from './../../components/app/switch/switch.vue'
 import appLabel from './../../components/app/label/label.vue'
 import appInput from './../../components/app/input/input.vue'
 import appSelect from './../../components/app/select/select.vue'
@@ -130,7 +130,7 @@ export default {
     'app-d-flex': appDFlex,
     'app-navbar': appNavbar,
     'app-list-group-item': appListGroupItem,
-    'app-input-check': appInputCheck,
+    'app-switch': appSwitch,
     'app-label': appLabel,
     'app-input': appInput,
     'app-select': appSelect,

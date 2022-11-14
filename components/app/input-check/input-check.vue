@@ -1,7 +1,7 @@
 <template>
   <div :class="{'form-check': true,  'form-switch': this.switch}">
     <div class="w-100">
-      <app-label classes="form-check-label w-100 mt-2">{{label}}</app-label>
+      <app-label class="form-check-label w-100 mt-2">{{label}}</app-label>
     </div>
     <div class="w-100">
       <input
@@ -18,11 +18,10 @@
 </template>
 
 <script>
-  import appLabel from './../label/label.vue'
+import appLabel from './../label/label.vue'
 export default {
-
   components: {
-    'app-label': appLabel
+    'app-label': appLabel,
   },
   props: {
     /* Тип поля ввода */
@@ -44,11 +43,11 @@ export default {
       default: '',
     },
   },
-  data(){
+  data() {
     return {
-      value: null
+      value: null,
     }
-  }
+  },
 }
 </script>
 

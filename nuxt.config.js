@@ -12,7 +12,7 @@ const whitelist = fs.readFileSync('whitelist.js').toString()
 const isDev = process.env.NODE_ENV !== 'production'
 export default {
   // target: 'static', // TODO для развертыывания на статическом хостинге
-  // serverMiddleware: [{ path: '/api', handler: '~/api/app.js' }], // TODO убрать запуск сервера
+   // serverMiddleware: [{ path: '/api', handler: '~/api/app.js' }], // TODO убрать запуск сервера
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
