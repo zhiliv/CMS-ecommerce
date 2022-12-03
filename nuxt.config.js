@@ -5,6 +5,8 @@
 
 // eslint-disable-next-line nuxt/no-cjs-in-config
 const { start } = require('./generator-whitelist')
+// const { getComponents } = require('./scripts/get-components')
+// getComponents()
 
 import * as fs from 'fs'
 const whitelist = fs.readFileSync('whitelist.js').toString()
@@ -15,6 +17,7 @@ export default {
    // serverMiddleware: [{ path: '/api', handler: '~/api/app.js' }], // TODO убрать запуск сервера
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    'nuxt-vue-select',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
@@ -52,7 +55,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    // '~~/plugins/event-bus.js',
+    '~~/plugins/vue-demo.js',
+    '~~/plugins/draggable',
     // '~/plugins/toast.js',
     { src: '~~/plugins/vue-js-modal.js', mode: 'client' },
     { src: '~~/plugins/vue-validate.js', mode: 'client' },

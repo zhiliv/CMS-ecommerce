@@ -17,6 +17,11 @@ export default {
       default: '',
     },
   },
+  data(){
+    return {
+      value: false
+    }
+  }
 }
 </script>
 

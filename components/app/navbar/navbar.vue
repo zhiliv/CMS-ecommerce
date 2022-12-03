@@ -9,13 +9,25 @@
         <ul class="navbar-nav m-0 bg-light p-0">
           <li v-for="item in menu" :key="item.id" :class="[{'nav-item': true}, classLi]">
             <template v-if="item.type === 'link'">
-              <div>
-                <app-a :class="[{'nav-link': true}, classLink]" :href="item.href">{{item.label}}</app-a>
-              </div>
+              <app-a :class="[{'nav-link': true}, classLink]" :href="item.href">{{item.label}}</app-a>
             </template>
-            <template v-else-if="item.type === 'text'">{{item.label}}</template>
+            <template v-else-if="item.type === 'text'">
+              <span :class="[{'nav-item': true}, classLi]" @click="onOpenDropDown">
+                <app-a
+                  :class="[{'nav-link': true}, classLink]"
+                  href="#"
+                  role="button"
+                  @mouseover="onHoverLink"
+                  @mouseleave="onNotHoverLink"
+                  @click="handleClick(item, $event)"
+                >{{item.label}}</app-a>
+              </span>
+            </template>
             <template v-else-if="item.type === 'dropdown'">
-              <span :class="[{'nav-item': true, 'dropdown': true}, classLi]" @click="onOpenDropDown">
+              <span
+                :class="[{'nav-item': true, 'dropdown': true}, classLi]"
+                @click="onOpenDropDown"
+              >
                 <app-a
                   :class="[{'nav-link': true, 'dropdown-toggle': true}, classLink]"
                   href="#"
@@ -600,7 +612,7 @@ export default {
   .dropdown-toggle::after {
     display: inline-block;
     margin-left: 0.255em;
-    vertical-align: 0.255em;
+
     content: '';
     border-top: 0.3em solid;
     border-right: 0.3em solid transparent;
@@ -764,7 +776,6 @@ export default {
   .dropup .dropdown-toggle::after {
     display: inline-block;
     margin-left: 0.255em;
-    vertical-align: 0.255em;
     content: '';
     border-top: 0;
     border-right: 0.3em solid transparent;

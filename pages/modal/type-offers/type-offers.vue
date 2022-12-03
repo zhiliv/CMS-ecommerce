@@ -189,10 +189,10 @@ export default {
               if (confirm) {
                 // если нажата кнопка "Подтвердить"
                 this.selectItem = cloneObject(item) // установка значения выбранного элемента
-                this.selectId = item._id // установка для области видимости формы идентификатора выбранного элемента
+                this.selectId = item._id ? item._id : null // установка для области видимости формы идентификатора выбранного элемента
                 this.setActiveItem(index) // установка активности элементов
               } else {
-                const index = this.list.findIndex(el => el._id === this.selectItem._id) // поиск индекса выбранного элемента
+                const index = this.selectItem._id ? this.list.findIndex(el => el._id === this.selectItem._id) :  null // поиск индекса выбранного элемента
                 this.setActiveItem(index) // установка активности элементов
               }
             },
@@ -247,7 +247,7 @@ export default {
                 if (list && list.length) {
                   // проверка длины списка
                   this.selectItem = list[0] // установка элемента
-                  this.selectId = list[0]._id // установка идентификатора выбранной строки
+                  if(list && list.length) this.selectId = list[0]._id // установка идентификатора выбранной строки
                   this.setActiveItem(0) // выделение цветом активной строки
                 }
               }

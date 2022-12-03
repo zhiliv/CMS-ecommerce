@@ -2,7 +2,6 @@
   <button
     :class="[classes, { active: isActive }]"
     v-bind="$attrs"
-    :type="type"
     @click="$emit('click', $event)"
   >
     <slot></slot>
@@ -12,16 +11,6 @@
 <script>
 export default {
   props: {
-    /*
-     * Тип кнопки
-     */
-    type: {
-      type: String,
-      default: 'button',
-      validator(value) {
-        return value === 'button' || value === 'submit'
-      },
-    },
     /*
      * размер кнопки
      */

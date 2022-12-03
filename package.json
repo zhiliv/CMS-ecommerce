@@ -57,6 +57,7 @@
     "nuxt": "^2.15.8",
     "nuxt-purgecss": "^1.0.0",
     "nuxt-trailingslash-module": "1.1.0",
+    "nuxt-vue-select": "^0.1.4",
     "nuxt-webfontloader": "^1.1.0",
     "sass-loader": "8.0.2",
     "vue": "^2.6.14",
@@ -67,6 +68,7 @@
     "vue-styleguidist": "^4.54.1",
     "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.7.13",
+    "vuedraggable": "^4.1.0",
     "vuelidate": "^0.7.7",
     "webpack": "^4.46.0"
   },

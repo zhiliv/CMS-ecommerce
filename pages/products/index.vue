@@ -51,7 +51,7 @@
               <app-col col="12" class="h-100">
                 <app-row>
                   <app-col col="2" class="h-100">
-                    <app-switch label="Состояние" role="switch" />
+                    <app-switch label="Состояние" role="switch" class="mt-4v" />
                   </app-col>
                   <app-col col="6">
                     <app-label>Наименование</app-label>
@@ -59,9 +59,7 @@
                   </app-col>
                   <app-col col="4">
                     <app-label>Тип оффера</app-label>
-                    <app-select>
-                      <option v-for="item in listTypeOffer" :key="item._id">{{ item.name }}</option>
-                    </app-select>
+                    <v-select></v-select>
                   </app-col>
                 </app-row>
                 <app-row>
@@ -89,7 +87,7 @@
     <app-query
       ref="getOffers"
       type="get"
-      url="/api/products"
+      url="/api/offers"
       @is-load="event => isLoadProducts = event"
       @result="event => listOffers = event"
     ></app-query>
@@ -105,6 +103,7 @@
 
 <script>
 import formTypeOffers from '../../pages/modal/type-offers/type-offers.vue'
+import formNewProduct from '../../pages/modal/products/new.vue'
 import appRow from '../../components/app/row/row.vue'
 import appButton from '../../components/app/button/button.vue'
 import appCol from '../../components/app/col/col.vue'
@@ -115,7 +114,6 @@ import appListGroupItem from './../../components/app/list-group/item/item.vue'
 import appSwitch from './../../components/app/switch/switch.vue'
 import appLabel from './../../components/app/label/label.vue'
 import appInput from './../../components/app/input/input.vue'
-import appSelect from './../../components/app/select/select.vue'
 import appTextarea from './../../components/app/textarea/textarea.vue'
 import appH from './../../components/app/h/h.vue'
 import appQuery from './../../components/app/query/query.vue'
@@ -133,7 +131,6 @@ export default {
     'app-switch': appSwitch,
     'app-label': appLabel,
     'app-input': appInput,
-    'app-select': appSelect,
     'app-textarea': appTextarea,
     'app-h': appH,
     'app-button': appButton,
@@ -153,11 +150,31 @@ export default {
       menu: [
         {
           id: 1,
+          label: 'Создать оффер',
+          type: 'text',
+          href: '#',
+          click: () => {
+                this.$modal.show(
+                  formNewProduct,
+                  {},
+                  { width: '900px', height: '200px', draggable: '.modal-header', resizable: true, clickToClose: false },
+                  {
+                    'before-close': event => {
+                      // const { list } = event.params // получение списка типов офферов
+                      // list.unshift({}) // добавление пустого объекта в начало массива
+                      // this.listTypeOffer = list && list.length ? list : [] // присвоение полученного списка в значения для отображения в select
+                    },
+                  },
+                )
+              },
+        },
+        {
+          id: 2,
           label: 'Управление',
           type: 'dropdown',
           list: [
             {
-              id: 2,
+              id: 3,
               label: 'Типы офферов',
               href: '#',
               click: () => {
@@ -249,5 +266,9 @@ export default {
 
   .p-02 {
     padding: 0.2em;
+  }
+
+  .mt-4v{
+    margin-top: 4vh;
   }
 </style>

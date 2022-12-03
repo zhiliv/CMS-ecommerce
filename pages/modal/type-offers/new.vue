@@ -2,7 +2,7 @@
 <template>
   <app-container container-fluid="true" class="border border-blue-darken-4 h-100">
     <app-modal-head
-      title="Создание нового оффера"
+      title="Создание нового типа оффера"
       class="bg-grey-darken-3 grey-lighten-3-text"
       @click="onClose"
     />
@@ -89,18 +89,16 @@ export default {
      */
     async onCreate() {
       const response = await this.$refs.postTypeOffers.execute({ params: this.data })
-      if (response && response.status === 200) {
-        // если статус успешный
-        this.onClose()
-      }
+      if (response && response.status === 200)  this.onClose({data: response.data.result})
+
     },
 
     /*
      * При нажатии на кнопку закрыть
      * @function onClose
      */
-    onClose() {
-      this.$emit('close', { item: this.data }) // отправка события для закрытия формы
+    onClose(data) {
+      this.$emit('close', { item: data ||  this.data }) // отправка события для закрытия формы
     },
   },
 }

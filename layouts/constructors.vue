@@ -26,7 +26,7 @@
           </template>
         </app-list-group>
       </app-col>
-      <app-col col="10" class="h-100 overflow-auto" style="max-height: 100vh ">
+      <app-col col="10" class="h-100">
         <nuxt />
       </app-col>
     </app-row>
@@ -60,9 +60,7 @@ export default {
   data() {
     return {
       menu: [
-        { name: 'Конструктор форм', link: '/from-constructor/from-constructor' },
-        { name: 'Статистика', link: '/statistic/' },
-        { name: 'Управление офферами', link: '/products/' },
+        { name: 'Конструктор форм', link: '/from-constructor/from-constructor' }
       ],
     }
   },

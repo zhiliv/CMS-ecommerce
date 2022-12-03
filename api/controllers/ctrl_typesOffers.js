@@ -18,7 +18,6 @@ exports.create = async ctx => {
    */
   const checkDouble = async () => {
     const list = await mdl_TypesOffers.find() // получение всех элементов
-    console.log('params.name.toUpperCase()', params.name.toUpperCase())
     return list && list.length ? list.findIndex(el => el.name.toUpperCase() === params.name.toUpperCase()) : -1
   }
   try {
@@ -27,7 +26,6 @@ exports.create = async ctx => {
       // проверка на то что записи с таким наименованием не существует
       const newRow = mdl_TypesOffers // создание объекта модели
       const result = await newRow.create(params) // сохранение
-      console.log('🚀 -> result', result)
       ctx.status = 200 // установка статуса
       ctx.body = {
         result,
@@ -80,7 +78,6 @@ exports.update = async ctx => {
  */
 exports.delete = async ctx => {
   const { params } = ctx // входные параметры
-  console.log('🚀 -> exports.delete -> params', params)
   try {
     const result = await mdl_TypesOffers.deleteOne({ _id: params.id })
     ctx.status = 200 // установка статуса
