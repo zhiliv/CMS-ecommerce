@@ -110,7 +110,7 @@ export default {
     // },
   },
 
-  auth: {
+  auths: {
     strategies: {
       local: {
         //      scheme: "refresh",
